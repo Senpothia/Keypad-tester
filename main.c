@@ -277,12 +277,13 @@ void main(void) {
 
             } else {
 
+                alerteDefaut("ETAPE 9", &testActif, &testVoyants);
                 REL8_SetLow();
 
             }
 
             __delay_ms(2000);
-            
+
         }
 
         // ETAPE 10
@@ -306,6 +307,7 @@ void main(void) {
 
             } else {
 
+                alerteDefaut("ETAPE 10", &testActif, &testVoyants);
                 REL8_SetHigh();
 
             }

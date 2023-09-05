@@ -228,7 +228,7 @@ void alerteDefaut(char etape[], bool *testAct, bool *testVoy) {
     ledProgession(false);
     ledConforme(false);
     displayManager(etape, NON_CONFORME, ACQ, LIGNE_VIDE);
-    //REL1_SetLow();
+    REL1_SetLow();
     while (IN3_GetValue() == 1) {
     }
     while (IN3_GetValue() == 0) {
@@ -236,7 +236,6 @@ void alerteDefaut(char etape[], bool *testAct, bool *testVoy) {
     ledNonConforme(false);
     *testAct = false;
     *testVoy = false;
-
 
 }
 

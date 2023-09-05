@@ -1217,32 +1217,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "230
 [; ;tester.c: 230:     displayManager(etape, "TEST NON CONFORME", "ATTENTE ACQUITTEMENT", "");
 [e ( _displayManager (4 , , , _etape :s 1C :s 2C :s 3C ]
+"231
+[; ;tester.c: 231:     do { LATAbits.LATA0 = 0; } while(0);
+[e :U 482 ]
+{
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 481 ]
 "232
 [; ;tester.c: 232:     while (PORTDbits.RD2 == 1) {
-[e $U 480  ]
-[e :U 481 ]
+[e $U 483  ]
+[e :U 484 ]
 {
 "233
 [; ;tester.c: 233:     }
 }
-[e :U 480 ]
+[e :U 483 ]
 "232
 [; ;tester.c: 232:     while (PORTDbits.RD2 == 1) {
-[e $ == -> . . _PORTDbits 0 2 `i -> 1 `i 481  ]
-[e :U 482 ]
+[e $ == -> . . _PORTDbits 0 2 `i -> 1 `i 484  ]
+[e :U 485 ]
 "234
 [; ;tester.c: 234:     while (PORTDbits.RD2 == 0) {
-[e $U 483  ]
-[e :U 484 ]
+[e $U 486  ]
+[e :U 487 ]
 {
 "235
 [; ;tester.c: 235:     }
 }
-[e :U 483 ]
+[e :U 486 ]
 "234
 [; ;tester.c: 234:     while (PORTDbits.RD2 == 0) {
-[e $ == -> . . _PORTDbits 0 2 `i -> 0 `i 484  ]
-[e :U 485 ]
+[e $ == -> . . _PORTDbits 0 2 `i -> 0 `i 487  ]
+[e :U 488 ]
 "236
 [; ;tester.c: 236:     ledNonConforme(0);
 [e ( _ledNonConforme (1 -> -> 0 `i `a ]
@@ -1252,264 +1259,264 @@ Version 4.0 HI-TECH Software Intermediate Code
 "238
 [; ;tester.c: 238:     *testVoy = 0;
 [e = *U _testVoy -> -> 0 `i `a ]
-"241
-[; ;tester.c: 241: }
+"240
+[; ;tester.c: 240: }
 [e :UE 479 ]
 }
-"243
-[; ;tester.c: 243: _Bool reponseOperateur() {
+"242
+[; ;tester.c: 242: _Bool reponseOperateur() {
 [v _reponseOperateur `(a ~T0 @X0 1 ef ]
 {
 [e :U _reponseOperateur ]
 [f ]
-"245
-[; ;tester.c: 245:     _Bool reponse = 0;
+"244
+[; ;tester.c: 244:     _Bool reponse = 0;
 [v _reponse `a ~T0 @X0 1 a ]
 [e = _reponse -> -> 0 `i `a ]
-"246
-[; ;tester.c: 246:     while (testOK(0) && testNOK(0)) {
-[e $U 487  ]
-[e :U 488 ]
+"245
+[; ;tester.c: 245:     while (testOK(0) && testNOK(0)) {
+[e $U 490  ]
+[e :U 491 ]
 {
-"247
-[; ;tester.c: 247:     }
-}
-[e :U 487 ]
 "246
-[; ;tester.c: 246:     while (testOK(0) && testNOK(0)) {
-[e $ && != -> ( _testOK (1 -> -> 0 `i `a `i -> 0 `i != -> ( _testNOK (1 -> -> 0 `i `a `i -> 0 `i 488  ]
-[e :U 489 ]
-"248
-[; ;tester.c: 248:     if (testNOK(1)) {
-[e $ ! != -> ( _testNOK (1 -> -> 1 `i `a `i -> 0 `i 490  ]
-{
-"249
-[; ;tester.c: 249:         reponse = 0;
-[e = _reponse -> -> 0 `i `a ]
-"250
-[; ;tester.c: 250:     }
+[; ;tester.c: 246:     }
 }
 [e :U 490 ]
-"251
-[; ;tester.c: 251:     if (testOK(1)) {
-[e $ ! != -> ( _testOK (1 -> -> 1 `i `a `i -> 0 `i 491  ]
-{
-"252
-[; ;tester.c: 252:         reponse = 1;
-[e = _reponse -> -> 1 `i `a ]
-"253
-[; ;tester.c: 253:     }
-}
-[e :U 491 ]
-"255
-[; ;tester.c: 255:     while (testOK(1) || testNOK(1)) {
-[e $U 492  ]
-[e :U 493 ]
-{
-"256
-[; ;tester.c: 256:     }
-}
+"245
+[; ;tester.c: 245:     while (testOK(0) && testNOK(0)) {
+[e $ && != -> ( _testOK (1 -> -> 0 `i `a `i -> 0 `i != -> ( _testNOK (1 -> -> 0 `i `a `i -> 0 `i 491  ]
 [e :U 492 ]
-"255
-[; ;tester.c: 255:     while (testOK(1) || testNOK(1)) {
-[e $ || != -> ( _testOK (1 -> -> 1 `i `a `i -> 0 `i != -> ( _testNOK (1 -> -> 1 `i `a `i -> 0 `i 493  ]
-[e :U 494 ]
-"257
-[; ;tester.c: 257:     return reponse;
-[e ) _reponse ]
-[e $UE 486  ]
-"259
-[; ;tester.c: 259: }
-[e :UE 486 ]
+"247
+[; ;tester.c: 247:     if (testNOK(1)) {
+[e $ ! != -> ( _testNOK (1 -> -> 1 `i `a `i -> 0 `i 493  ]
+{
+"248
+[; ;tester.c: 248:         reponse = 0;
+[e = _reponse -> -> 0 `i `a ]
+"249
+[; ;tester.c: 249:     }
 }
-"261
-[; ;tester.c: 261: void setP1(_Bool active) {
+[e :U 493 ]
+"250
+[; ;tester.c: 250:     if (testOK(1)) {
+[e $ ! != -> ( _testOK (1 -> -> 1 `i `a `i -> 0 `i 494  ]
+{
+"251
+[; ;tester.c: 251:         reponse = 1;
+[e = _reponse -> -> 1 `i `a ]
+"252
+[; ;tester.c: 252:     }
+}
+[e :U 494 ]
+"254
+[; ;tester.c: 254:     while (testOK(1) || testNOK(1)) {
+[e $U 495  ]
+[e :U 496 ]
+{
+"255
+[; ;tester.c: 255:     }
+}
+[e :U 495 ]
+"254
+[; ;tester.c: 254:     while (testOK(1) || testNOK(1)) {
+[e $ || != -> ( _testOK (1 -> -> 1 `i `a `i -> 0 `i != -> ( _testNOK (1 -> -> 1 `i `a `i -> 0 `i 496  ]
+[e :U 497 ]
+"256
+[; ;tester.c: 256:     return reponse;
+[e ) _reponse ]
+[e $UE 489  ]
+"258
+[; ;tester.c: 258: }
+[e :UE 489 ]
+}
+"260
+[; ;tester.c: 260: void setP1(_Bool active) {
 [v _setP1 `(v ~T0 @X0 1 ef1`a ]
 {
 [e :U _setP1 ]
 [v _active `a ~T0 @X0 1 r1 ]
 [f ]
-"263
-[; ;tester.c: 263:     if (active) {
-[e $ ! != -> _active `i -> 0 `i 496  ]
+"262
+[; ;tester.c: 262:     if (active) {
+[e $ ! != -> _active `i -> 0 `i 499  ]
 {
-"265
-[; ;tester.c: 265:         do { LATAbits.LATA4 = 1; } while(0);
-[e :U 499 ]
+"264
+[; ;tester.c: 264:         do { LATAbits.LATA4 = 1; } while(0);
+[e :U 502 ]
 {
 [e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
-[e :U 498 ]
-"266
-[; ;tester.c: 266:     } else {
+[e :U 501 ]
+"265
+[; ;tester.c: 265:     } else {
 }
-[e $U 500  ]
-[e :U 496 ]
+[e $U 503  ]
+[e :U 499 ]
 {
-"267
-[; ;tester.c: 267:         do { LATAbits.LATA4 = 0; } while(0);
-[e :U 503 ]
+"266
+[; ;tester.c: 266:         do { LATAbits.LATA4 = 0; } while(0);
+[e :U 506 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 502 ]
-"268
-[; ;tester.c: 268:     }
+[e :U 505 ]
+"267
+[; ;tester.c: 267:     }
 }
-[e :U 500 ]
-"270
-[; ;tester.c: 270: }
-[e :UE 495 ]
+[e :U 503 ]
+"269
+[; ;tester.c: 269: }
+[e :UE 498 ]
 }
-"272
-[; ;tester.c: 272: void setP2(_Bool active) {
+"271
+[; ;tester.c: 271: void setP2(_Bool active) {
 [v _setP2 `(v ~T0 @X0 1 ef1`a ]
 {
 [e :U _setP2 ]
 [v _active `a ~T0 @X0 1 r1 ]
 [f ]
-"274
-[; ;tester.c: 274:     if (active) {
-[e $ ! != -> _active `i -> 0 `i 505  ]
+"273
+[; ;tester.c: 273:     if (active) {
+[e $ ! != -> _active `i -> 0 `i 508  ]
 {
-"276
-[; ;tester.c: 276:         do { LATAbits.LATA5 = 1; } while(0);
-[e :U 508 ]
+"275
+[; ;tester.c: 275:         do { LATAbits.LATA5 = 1; } while(0);
+[e :U 511 ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 507 ]
-"277
-[; ;tester.c: 277:     } else {
+[e :U 510 ]
+"276
+[; ;tester.c: 276:     } else {
 }
-[e $U 509  ]
-[e :U 505 ]
+[e $U 512  ]
+[e :U 508 ]
 {
-"278
-[; ;tester.c: 278:         do { LATAbits.LATA5 = 0; } while(0);
-[e :U 512 ]
+"277
+[; ;tester.c: 277:         do { LATAbits.LATA5 = 0; } while(0);
+[e :U 515 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 511 ]
-"279
-[; ;tester.c: 279:     }
+[e :U 514 ]
+"278
+[; ;tester.c: 278:     }
 }
-[e :U 509 ]
-"281
-[; ;tester.c: 281: }
-[e :UE 504 ]
+[e :U 512 ]
+"280
+[; ;tester.c: 280: }
+[e :UE 507 ]
 }
-"283
-[; ;tester.c: 283: void initialConditions(_Bool *testAct, _Bool *testVoy) {
+"282
+[; ;tester.c: 282: void initialConditions(_Bool *testAct, _Bool *testVoy) {
 [v _initialConditions `(v ~T0 @X0 1 ef2`*a`*a ]
 {
 [e :U _initialConditions ]
 [v _testAct `*a ~T0 @X0 1 r1 ]
 [v _testVoy `*a ~T0 @X0 1 r2 ]
 [f ]
-"285
-[; ;tester.c: 285:     *testAct = 0;
+"284
+[; ;tester.c: 284:     *testAct = 0;
 [e = *U _testAct -> -> 0 `i `a ]
-"286
-[; ;tester.c: 286:     *testVoy = 0;
+"285
+[; ;tester.c: 285:     *testVoy = 0;
 [e = *U _testVoy -> -> 0 `i `a ]
-"287
-[; ;tester.c: 287:     ledConforme(0);
+"286
+[; ;tester.c: 286:     ledConforme(0);
 [e ( _ledConforme (1 -> -> 0 `i `a ]
-"288
-[; ;tester.c: 288:     ledNonConforme(0);
+"287
+[; ;tester.c: 287:     ledNonConforme(0);
 [e ( _ledNonConforme (1 -> -> 0 `i `a ]
-"289
-[; ;tester.c: 289:     ledProgession(0);
+"288
+[; ;tester.c: 288:     ledProgession(0);
 [e ( _ledProgession (1 -> -> 0 `i `a ]
-"290
-[; ;tester.c: 290:     alimenter(0);
+"289
+[; ;tester.c: 289:     alimenter(0);
 [e ( _alimenter (1 -> -> 0 `i `a ]
-"291
-[; ;tester.c: 291:     pressBP1(0);
+"290
+[; ;tester.c: 290:     pressBP1(0);
 [e ( _pressBP1 (1 -> -> 0 `i `a ]
-"292
-[; ;tester.c: 292:     pressBP2(0);
+"291
+[; ;tester.c: 291:     pressBP2(0);
 [e ( _pressBP2 (1 -> -> 0 `i `a ]
-"293
-[; ;tester.c: 293:     setP1(0);
+"292
+[; ;tester.c: 292:     setP1(0);
 [e ( _setP1 (1 -> -> 0 `i `a ]
-"294
-[; ;tester.c: 294:     setP2(0);
+"293
+[; ;tester.c: 293:     setP2(0);
 [e ( _setP2 (1 -> -> 0 `i `a ]
-"296
-[; ;tester.c: 296: }
-[e :UE 513 ]
+"295
+[; ;tester.c: 295: }
+[e :UE 516 ]
 }
-"298
-[; ;tester.c: 298: void activerBuzzer(_Bool active) {
+"297
+[; ;tester.c: 297: void activerBuzzer(_Bool active) {
 [v _activerBuzzer `(v ~T0 @X0 1 ef1`a ]
 {
 [e :U _activerBuzzer ]
 [v _active `a ~T0 @X0 1 r1 ]
 [f ]
-"301
-[; ;tester.c: 301:     if (active) {
-[e $ ! != -> _active `i -> 0 `i 515  ]
+"300
+[; ;tester.c: 300:     if (active) {
+[e $ ! != -> _active `i -> 0 `i 518  ]
 {
-"303
-[; ;tester.c: 303:         do { LATBbits.LATB4 = 1; } while(0);
-[e :U 518 ]
+"302
+[; ;tester.c: 302:         do { LATBbits.LATB4 = 1; } while(0);
+[e :U 521 ]
 {
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
 }
-[e :U 517 ]
-"304
-[; ;tester.c: 304:     } else {
+[e :U 520 ]
+"303
+[; ;tester.c: 303:     } else {
 }
-[e $U 519  ]
-[e :U 515 ]
+[e $U 522  ]
+[e :U 518 ]
 {
-"305
-[; ;tester.c: 305:         do { LATBbits.LATB4 = 0; } while(0);
-[e :U 522 ]
+"304
+[; ;tester.c: 304:         do { LATBbits.LATB4 = 0; } while(0);
+[e :U 525 ]
 {
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 521 ]
-"306
-[; ;tester.c: 306:     }
+[e :U 524 ]
+"305
+[; ;tester.c: 305:     }
 }
-[e :U 519 ]
-"308
-[; ;tester.c: 308: }
-[e :UE 514 ]
+[e :U 522 ]
+"307
+[; ;tester.c: 307: }
+[e :UE 517 ]
 }
-"310
-[; ;tester.c: 310: void activerTouche(void) {
+"309
+[; ;tester.c: 309: void activerTouche(void) {
 [v _activerTouche `(v ~T0 @X0 1 ef ]
 {
 [e :U _activerTouche ]
 [f ]
-"312
-[; ;tester.c: 312:     do { LATAbits.LATA6 = 1; } while(0);
-[e :U 526 ]
+"311
+[; ;tester.c: 311:     do { LATAbits.LATA6 = 1; } while(0);
+[e :U 529 ]
 {
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 }
-[e :U 525 ]
-"313
-[; ;tester.c: 313:     _delay((unsigned long)((250)*(16000000/4000.0)));
+[e :U 528 ]
+"312
+[; ;tester.c: 312:     _delay((unsigned long)((250)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"314
-[; ;tester.c: 314:     do { LATAbits.LATA6 = 0; } while(0);
-[e :U 529 ]
+"313
+[; ;tester.c: 313:     do { LATAbits.LATA6 = 0; } while(0);
+[e :U 532 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 528 ]
-"315
-[; ;tester.c: 315:     _delay((unsigned long)((250)*(16000000/4000.0)));
+[e :U 531 ]
+"314
+[; ;tester.c: 314:     _delay((unsigned long)((250)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"317
-[; ;tester.c: 317: }
-[e :UE 523 ]
+"316
+[; ;tester.c: 316: }
+[e :UE 526 ]
 }
 [a 2C 65 84 84 69 78 84 69 32 65 67 81 85 73 84 84 69 77 69 78 84 0 ]
 [a 1C 84 69 83 84 32 78 79 78 32 67 79 78 70 79 82 77 69 0 ]

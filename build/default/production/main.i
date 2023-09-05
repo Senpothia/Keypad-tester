@@ -6032,6 +6032,7 @@ void main(void) {
 
             } else {
 
+                alerteDefaut("ETAPE 9", &testActif, &testVoyants);
                 do { LATAbits.LATA7 = 0; } while(0);
 
             }
@@ -6061,6 +6062,7 @@ void main(void) {
 
             } else {
 
+                alerteDefaut("ETAPE 10", &testActif, &testVoyants);
                 do { LATAbits.LATA7 = 1; } while(0);
 
             }

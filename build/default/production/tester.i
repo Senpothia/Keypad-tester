@@ -6033,7 +6033,7 @@ void alerteDefaut(char etape[], _Bool *testAct, _Bool *testVoy) {
     ledProgession(0);
     ledConforme(0);
     displayManager(etape, "TEST NON CONFORME", "ATTENTE ACQUITTEMENT", "");
-
+    do { LATAbits.LATA0 = 0; } while(0);
     while (PORTDbits.RD2 == 1) {
     }
     while (PORTDbits.RD2 == 0) {
@@ -6041,7 +6041,6 @@ void alerteDefaut(char etape[], _Bool *testAct, _Bool *testVoy) {
     ledNonConforme(0);
     *testAct = 0;
     *testVoy = 0;
-
 
 }
 
