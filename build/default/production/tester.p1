@@ -1218,14 +1218,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tester.c: 229:     ledConforme(0);
 [e ( _ledConforme (1 -> -> 0 `i `a ]
 "230
-[; ;tester.c: 230:     displayManager(etape, "TEST NON CONFORME", "ATTENTE ACQUITTEMENT", "");
-[e ( _displayManager (4 , , , _etape :s 1C :s 2C :s 3C ]
-"231
-[; ;tester.c: 231:     errorAlert();
-[e ( _errorAlert ..  ]
-"232
-[; ;tester.c: 232:     alimenter(0);
+[; ;tester.c: 230:     alimenter(0);
 [e ( _alimenter (1 -> -> 0 `i `a ]
+"231
+[; ;tester.c: 231:     displayManager(etape, "TEST NON CONFORME", "ATTENTE ACQUITTEMENT", "");
+[e ( _displayManager (4 , , , _etape :s 1C :s 2C :s 3C ]
+"232
+[; ;tester.c: 232:     errorAlert();
+[e ( _errorAlert ..  ]
 "233
 [; ;tester.c: 233:     while (PORTDbits.RD2 == 1) {
 [e $U 480  ]
@@ -1458,7 +1458,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _activerBuzzer ]
 [f ]
 "301
-[; ;tester.c: 301:     for(int i=0; i<50; i++) {
+[; ;tester.c: 301:     for (int i = 0; i < 50; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1528,17 +1528,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 524 ]
 }
 "321
-[; ;tester.c: 321: void startAlert(void){
+[; ;tester.c: 321: void startAlert(void) {
 [v _startAlert `(v ~T0 @X0 1 ef ]
 {
 [e :U _startAlert ]
 [f ]
 "323
-[; ;tester.c: 323:     for(int i=0; i<4; i++){
+[; ;tester.c: 323:     for (int i = 0; i < 2; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 532  ]
+[e $ < _i -> 2 `i 532  ]
 [e $U 533  ]
 [e :U 532 ]
 {
@@ -1552,21 +1552,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tester.c: 328:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 532  ]
+[e $ < _i -> 2 `i 532  ]
 [e :U 533 ]
 }
 "330
 [; ;tester.c: 330: }
 [e :UE 531 ]
 }
-"331
-[; ;tester.c: 331: void errorAlert(void){
+"332
+[; ;tester.c: 332: void errorAlert(void) {
 [v _errorAlert `(v ~T0 @X0 1 ef ]
 {
 [e :U _errorAlert ]
 [f ]
-"333
-[; ;tester.c: 333:     for(int j=0; j<4; j++){
+"334
+[; ;tester.c: 334:     for (int j = 0; j < 4; j++) {
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 0 `i ]
@@ -1574,8 +1574,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 537  ]
 [e :U 536 ]
 {
-"335
-[; ;tester.c: 335:           for(int i=0; i<4; i++){
+"336
+[; ;tester.c: 336:         for (int i = 0; i < 4; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1583,44 +1583,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 540  ]
 [e :U 539 ]
 {
-"337
-[; ;tester.c: 337:         activerBuzzer();
-[e ( _activerBuzzer ..  ]
 "338
-[; ;tester.c: 338:         _delay((unsigned long)((500)*(16000000/4000.0)));
+[; ;tester.c: 338:             activerBuzzer();
+[e ( _activerBuzzer ..  ]
+"339
+[; ;tester.c: 339:             _delay((unsigned long)((500)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"340
-[; ;tester.c: 340:     }
+"341
+[; ;tester.c: 341:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 539  ]
 [e :U 540 ]
 }
-"341
-[; ;tester.c: 341:           _delay((unsigned long)((500)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "342
-[; ;tester.c: 342:     }
+[; ;tester.c: 342:         _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"343
+[; ;tester.c: 343:     }
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 4 `i 536  ]
 [e :U 537 ]
 }
-"345
-[; ;tester.c: 345: }
+"346
+[; ;tester.c: 346: }
 [e :UE 535 ]
 }
-"346
-[; ;tester.c: 346: void okAlert(void){
+"348
+[; ;tester.c: 348: void okAlert(void) {
 [v _okAlert `(v ~T0 @X0 1 ef ]
 {
 [e :U _okAlert ]
 [f ]
-"348
-[; ;tester.c: 348:     startAlert();
-[e ( _startAlert ..  ]
 "350
-[; ;tester.c: 350: }
+[; ;tester.c: 350:     for (int i = 0; i < 2; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 2 `i 543  ]
+[e $U 544  ]
+[e :U 543 ]
+{
+"352
+[; ;tester.c: 352:         startAlert();
+[e ( _startAlert ..  ]
+"354
+[; ;tester.c: 354:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 2 `i 543  ]
+[e :U 544 ]
+}
+"357
+[; ;tester.c: 357: }
 [e :UE 542 ]
 }
 [a 2C 65 84 84 69 78 84 69 32 65 67 81 85 73 84 84 69 77 69 78 84 0 ]

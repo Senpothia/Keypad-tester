@@ -6035,9 +6035,9 @@ void alerteDefaut(char etape[], _Bool *testAct, _Bool *testVoy) {
     ledNonConforme(1);
     ledProgession(0);
     ledConforme(0);
+    alimenter(0);
     displayManager(etape, "TEST NON CONFORME", "ATTENTE ACQUITTEMENT", "");
     errorAlert();
-    alimenter(0);
     while (PORTDbits.RD2 == 1) {
     }
     while (PORTDbits.RD2 == 0) {
@@ -6106,7 +6106,7 @@ void initialConditions(_Bool *testAct, _Bool *testVoy) {
 void activerBuzzer() {
 
 
-    for(int i=0; i<50; i++) {
+    for (int i = 0; i < 50; i++) {
 
         do { LATBbits.LATB4 = 1; } while(0);
         _delay((unsigned long)((1)*(16000000/4000.0)));
@@ -6126,9 +6126,9 @@ void activerTouche(void) {
 
 }
 
-void startAlert(void){
+void startAlert(void) {
 
-    for(int i=0; i<4; i++){
+    for (int i = 0; i < 2; i++) {
 
         activerBuzzer();
         _delay((unsigned long)((500)*(16000000/4000.0)));
@@ -6136,23 +6136,30 @@ void startAlert(void){
     }
 
 }
-void errorAlert(void){
 
-    for(int j=0; j<4; j++){
+void errorAlert(void) {
 
-          for(int i=0; i<4; i++){
+    for (int j = 0; j < 4; j++) {
 
-        activerBuzzer();
+        for (int i = 0; i < 4; i++) {
+
+            activerBuzzer();
+            _delay((unsigned long)((500)*(16000000/4000.0)));
+
+        }
         _delay((unsigned long)((500)*(16000000/4000.0)));
-
-    }
-          _delay((unsigned long)((500)*(16000000/4000.0)));
     }
 
 
 }
-void okAlert(void){
 
-    startAlert();
+void okAlert(void) {
+
+    for (int i = 0; i < 2; i++) {
+
+        startAlert();
+
+    }
+
 
 }

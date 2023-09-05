@@ -227,9 +227,9 @@ void alerteDefaut(char etape[], bool *testAct, bool *testVoy) {
     ledNonConforme(true);
     ledProgession(false);
     ledConforme(false);
+    alimenter(false);
     displayManager(etape, NON_CONFORME, ACQ, LIGNE_VIDE);
     errorAlert();
-    alimenter(false);
     while (IN3_GetValue() == 1) {
     }
     while (IN3_GetValue() == 0) {
@@ -237,7 +237,7 @@ void alerteDefaut(char etape[], bool *testAct, bool *testVoy) {
     ledNonConforme(false);
     *testAct = false;
     *testVoy = false;
-   
+
 }
 
 bool reponseOperateur() {
@@ -297,12 +297,12 @@ void initialConditions(bool *testAct, bool *testVoy) {
 
 void activerBuzzer() {
 
-   
-    for(int i=0; i<50; i++) {
+
+    for (int i = 0; i < 50; i++) {
 
         BUZ_SetHigh();
         __delay_ms(1);
-   
+
         BUZ_SetLow();
         __delay_ms(1);
     }
@@ -318,33 +318,40 @@ void activerTouche(void) {
 
 }
 
-void startAlert(void){
-    
-    for(int i=0; i<4; i++){
-        
+void startAlert(void) {
+
+    for (int i = 0; i < 2; i++) {
+
         activerBuzzer();
         __delay_ms(500);
-        
+
     }
-    
+
 }
-void errorAlert(void){
-    
-    for(int j=0; j<4; j++){
-        
-          for(int i=0; i<4; i++){
-        
-        activerBuzzer();
+
+void errorAlert(void) {
+
+    for (int j = 0; j < 4; j++) {
+
+        for (int i = 0; i < 4; i++) {
+
+            activerBuzzer();
+            __delay_ms(500);
+
+        }
         __delay_ms(500);
-        
     }
-          __delay_ms(500);
-    }
-  
-    
+
+
 }
-void okAlert(void){
-    
-    startAlert();
-    
+
+void okAlert(void) {
+
+    for (int i = 0; i < 2; i++) {
+
+        startAlert();
+
+    }
+
+
 }
