@@ -39,7 +39,7 @@ text22 CODE 0 DB7 DB7 2F 2
 text23 CODE 0 9E6 9E6 9 2
 text24 CODE 0 BF3 BF3 1F 2
 text25 CODE 0 B02 B02 13 2
-text26 CODE 0 7FC 7FC 4 2
+text26 CODE 0 954 954 4 2
 text27 CODE 0 BD4 BD4 1F 2
 text28 CODE 0 A10 A10 C 2
 text29 CODE 0 9EF 9EF A 2
@@ -60,9 +60,9 @@ text43 CODE 0 990 990 6 2
 text44 CODE 0 A04 A04 C 2
 text45 CODE 0 9F9 9F9 B 2
 text46 CODE 0 C31 C31 21 2
-text48 CODE 0 954 954 4 2
+text48 CODE 0 950 950 4 2
 text49 CODE 0 D5A D5A 2E 2
-text50 CODE 0 941 941 3 2
+text50 CODE 0 93D 93D 3 2
 text51 CODE 0 D2E D2E 2C 2
 text52 CODE 0 985 985 5 2
 text53 CODE 0 980 980 5 2
@@ -74,20 +74,20 @@ text58 CODE 0 967 967 5 2
 text59 CODE 0 962 962 5 2
 text60 CODE 0 9C6 9C6 7 2
 text61 CODE 0 EDE EDE 46 2
-text62 CODE 0 7A7 7A7 55 2
+text62 CODE 0 7AB 7AB 55 2
 text63 CODE 0 9CD 9CD 8 2
 text64 CODE 0 9DD 9DD 9 2
 text65 CODE 0 95D 95D 5 2
 text66 CODE 0 D88 D88 2F 2
-text67 CODE 0 93E 93E 3 2
+text67 CODE 0 93A 93A 3 2
 text68 CODE 0 98A 98A 6 2
 text69 CODE 0 958 958 5 2
-text70 CODE 0 950 950 4 2
-text71 CODE 0 93B 93B 3 2
-text72 CODE 0 94C 94C 4 2
-text73 CODE 0 938 938 3 2
+text70 CODE 0 94C 94C 4 2
+text71 CODE 0 937 937 3 2
+text72 CODE 0 948 948 4 2
+text73 CODE 0 934 934 3 2
 text74 CODE 0 2 2 2 2
-text75 CODE 0 930 930 2 2
+text75 CODE 0 92C 92C 2 2
 text76 CODE 0 B6C B6C 18 2
 text77 CODE 0 AF1 AF1 11 2
 text78 CODE 0 AE0 AE0 11 2
@@ -96,15 +96,15 @@ text80 CODE 0 ABE ABE 11 2
 text81 CODE 0 A1C A1C D 2
 text82 CODE 0 CDD CDD 26 2
 text83 CODE 0 A9E A9E 10 2
-text84 CODE 0 935 935 3 2
-text85 CODE 0 932 932 3 2
+text84 CODE 0 931 931 3 2
+text85 CODE 0 92E 92E 3 2
 text86 CODE 0 C52 C52 22 2
 text87 CODE 0 E1F E1F 3A 2
-text88 CODE 0 948 948 4 2
-text89 CODE 0 92E 92E 1 2
-text90 CODE 0 944 944 4 2
+text88 CODE 0 944 944 4 2
+text89 CODE 0 92A 92A 1 2
+text90 CODE 0 940 940 4 2
 text91 CODE 0 B84 B84 1A 2
-maintext CODE 0 62 62 745 2
+maintext CODE 0 62 62 749 2
 cstackCOMMON COMMON 1 70 70 D 1
 cstackBANK0 BANK0 1 46 46 23 1
 stringtext1 STRCODE 0 1000 1000 35 2
@@ -119,7 +119,7 @@ stringtext9 STRCODE 0 10B8 10B8 11 2
 intentry CODE 0 4 4 43 2
 bssBANK0 BANK0 1 20 20 26 1
 bssBANK1 BANK1 1 A0 A0 25 1
-idataBANK0 CODE 0 92F 92F 1 2
+idataBANK0 CODE 0 92B 92B 1 2
 dataBANK0 BANK0 1 69 69 1 1
 clrtext CODE 0 9C0 9C0 6 2
 bssCOMMON COMMON 1 7D 7D 1 1
@@ -162,7 +162,7 @@ stringtext45 STRCODE 0 1260 1260 8 2
 stringtext46 STRCODE 0 1268 1268 8 2
 stringtext47 STRCODE 0 1270 1270 8 2
 config CONFIG 4 8007 8007 2 2
-$C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
+$C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
 idloc IDLOC 5 8000 8000 4 2
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 47 47 2 2
@@ -196,9 +196,9 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 800-92D 2
+CONST 800-929 2
 CONST 1278-3FFF 2
-ENTRY 800-92D 2
+ENTRY 800-929 2
 ENTRY 1278-3FFF 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -223,7 +223,7 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2075-23EF 1
-CODE 800-92D 2
+CODE 800-929 2
 CODE 1278-3FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -240,9 +240,9 @@ BANK11 5A0-5EF 1
 BANK12 620-64F 1
 BIGRAM 2000-23EF 1
 EEDATA F000-F0FF 2
-STRCODE 800-92D 2
+STRCODE 800-929 2
 STRCODE 1278-3FFF 2
-STRING 800-92D 2
+STRING 800-929 2
 STRING 1278-3FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -258,27 +258,27 @@ STRING 1278-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\galeoTester1.X.production.o
-49 cinit CODE >5597:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-49 cinit CODE >5600:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-49 cinit CODE >5683:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-4C cinit CODE >5684:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-4D cinit CODE >5701:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-4E cinit CODE >5705:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-4F cinit CODE >5706:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-50 cinit CODE >5707:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-51 cinit CODE >5708:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-52 cinit CODE >5709:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-53 cinit CODE >5710:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-56 cinit CODE >5714:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-57 cinit CODE >5715:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-58 cinit CODE >5716:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-59 cinit CODE >5717:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-5A cinit CODE >5718:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-5B cinit CODE >5719:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-5E cinit CODE >5725:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-5E cinit CODE >5727:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-5F cinit CODE >5728:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-60 cinit CODE >5729:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
+49 cinit CODE >5597:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+49 cinit CODE >5600:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+49 cinit CODE >5683:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+4C cinit CODE >5684:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+4D cinit CODE >5701:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+4E cinit CODE >5705:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+4F cinit CODE >5706:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+50 cinit CODE >5707:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+51 cinit CODE >5708:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+52 cinit CODE >5709:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+53 cinit CODE >5710:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+56 cinit CODE >5714:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+57 cinit CODE >5715:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+58 cinit CODE >5716:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+59 cinit CODE >5717:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+5A cinit CODE >5718:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+5B cinit CODE >5719:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+5E cinit CODE >5725:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+5E cinit CODE >5727:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+5F cinit CODE >5728:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+60 cinit CODE >5729:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
 4 intentry CODE >52:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/interrupt_manager.c
 A intentry CODE >57:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/interrupt_manager.c
@@ -300,14 +300,14 @@ B94 text91 CODE >252:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated
 B98 text91 CODE >254:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
 B99 text91 CODE >256:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
 B9D text91 CODE >257:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
-944 text90 CODE >269:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
-944 text90 CODE >270:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
-947 text90 CODE >271:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
-92E text89 CODE >259:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
-948 text88 CODE >261:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
-948 text88 CODE >264:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
-94A text88 CODE >265:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
-94B text88 CODE >267:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
+940 text90 CODE >269:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
+940 text90 CODE >270:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
+943 text90 CODE >271:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
+92A text89 CODE >259:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
+944 text88 CODE >261:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
+944 text88 CODE >264:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
+946 text88 CODE >265:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
+947 text88 CODE >267:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
 E1F text87 CODE >225:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
 E1F text87 CODE >228:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
 E25 text87 CODE >230:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
@@ -333,12 +333,12 @@ C70 text86 CODE >218:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated
 C71 text86 CODE >219:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
 C71 text86 CODE >221:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
 C73 text86 CODE >223:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/eusart.c
-932 text85 CODE >574:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-932 text85 CODE >576:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-934 text85 CODE >577:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-935 text84 CODE >594:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-935 text84 CODE >596:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-937 text84 CODE >597:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+92E text85 CODE >574:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+92E text85 CODE >576:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+930 text85 CODE >577:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+931 text84 CODE >594:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+931 text84 CODE >596:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+933 text84 CODE >597:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 A9E text83 CODE >264:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 A9F text83 CODE >266:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 AA4 text83 CODE >268:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
@@ -381,35 +381,35 @@ B6C text76 CODE >172:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated
 B7B text76 CODE >173:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/examples/i2c_master_example.c
 B82 text76 CODE >174:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/examples/i2c_master_example.c
 B83 text76 CODE >175:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/examples/i2c_master_example.c
-930 text75 CODE >521:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-930 text75 CODE >523:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-931 text75 CODE >524:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+92C text75 CODE >521:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+92C text75 CODE >523:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+92D text75 CODE >524:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 2 text74 CODE >526:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 2 text74 CODE >528:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 3 text74 CODE >529:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-938 text73 CODE >584:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-938 text73 CODE >586:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-93A text73 CODE >587:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-94C text72 CODE >610:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-94C text72 CODE >612:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-94E text72 CODE >613:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-94F text72 CODE >614:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-93B text71 CODE >564:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-93B text71 CODE >566:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-93D text71 CODE >567:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-950 text70 CODE >604:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-950 text70 CODE >606:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-952 text70 CODE >607:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-953 text70 CODE >608:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+934 text73 CODE >584:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+934 text73 CODE >586:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+936 text73 CODE >587:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+948 text72 CODE >610:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+948 text72 CODE >612:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+94A text72 CODE >613:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+94B text72 CODE >614:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+937 text71 CODE >564:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+937 text71 CODE >566:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+939 text71 CODE >567:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+94C text70 CODE >604:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+94C text70 CODE >606:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+94E text70 CODE >607:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+94F text70 CODE >608:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 958 text69 CODE >569:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 959 text69 CODE >571:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 95C text69 CODE >572:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 98A text68 CODE >599:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 98A text68 CODE >601:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 98F text68 CODE >602:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-93E text67 CODE >647:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-93E text67 CODE >649:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-940 text67 CODE >650:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+93A text67 CODE >647:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+93A text67 CODE >649:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+93C text67 CODE >650:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 D88 text66 CODE >411:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 D88 text66 CODE >413:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 D8A text66 CODE >414:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
@@ -439,23 +439,23 @@ DB6 text66 CODE >426:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated
 9CF text63 CODE >352:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 9D3 text63 CODE >353:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 9D4 text63 CODE >354:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7A7 text62 CODE >356:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7A7 text62 CODE >358:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7AB text62 CODE >356:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 7AB text62 CODE >358:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7B0 text62 CODE >363:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7B4 text62 CODE >365:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7B8 text62 CODE >369:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7BC text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7CE text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7D3 text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7D6 text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7D9 text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7DC text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7DF text62 CODE >372:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7DF text62 CODE >374:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7E1 text62 CODE >375:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7ED text62 CODE >376:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-7FB text62 CODE >378:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7AF text62 CODE >358:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7B4 text62 CODE >363:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7B8 text62 CODE >365:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7BC text62 CODE >369:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7C0 text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7D2 text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7D7 text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7DA text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7DD text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7E0 text62 CODE >370:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7E3 text62 CODE >372:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7E3 text62 CODE >374:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7E5 text62 CODE >375:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7F1 text62 CODE >376:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+7FF text62 CODE >378:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 EDE text61 CODE >380:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 EDE text61 CODE >382:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 EEC text61 CODE >383:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
@@ -522,9 +522,9 @@ D4E text51 CODE >512:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated
 D53 text51 CODE >512:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 D56 text51 CODE >512:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 D59 text51 CODE >513:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-941 text50 CODE >642:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-941 text50 CODE >644:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-943 text50 CODE >645:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+93D text50 CODE >642:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+93D text50 CODE >644:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+93F text50 CODE >645:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 D5A text49 CODE >323:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 D5A text49 CODE >325:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 D5D text49 CODE >327:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
@@ -532,9 +532,9 @@ D66 text49 CODE >327:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated
 D6A text49 CODE >329:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 D70 text49 CODE >331:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 D87 text49 CODE >332:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-954 text48 CODE >318:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-954 text48 CODE >320:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
-957 text48 CODE >321:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+950 text48 CODE >318:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+950 text48 CODE >320:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
+953 text48 CODE >321:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/i2c_master.c
 C31 text46 CODE >112:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/adc.c
 C33 text46 CODE >115:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/adc.c
 C3F text46 CODE >118:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/adc.c
@@ -685,9 +685,9 @@ BED text27 CODE >87:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_
 BEE text27 CODE >88:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/pin_manager.c
 BF0 text27 CODE >94:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/pin_manager.c
 BF2 text27 CODE >101:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/pin_manager.c
-7FC text26 CODE >75:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/mcc.c
-7FC text26 CODE >78:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/mcc.c
-7FF text26 CODE >79:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/mcc.c
+954 text26 CODE >75:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/mcc.c
+954 text26 CODE >78:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/mcc.c
+957 text26 CODE >79:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/mcc.c
 B02 text25 CODE >50:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/mcc.c
 B02 text25 CODE >53:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/mcc.c
 B05 text25 CODE >54:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/mcc.c
@@ -1118,16 +1118,17 @@ FE maintext CODE >130:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 775 maintext CODE >508:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 788 maintext CODE >509:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 78C maintext CODE >510:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
-78F maintext CODE >511:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
-798 maintext CODE >512:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
-9C0 clrtext CODE >5690:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-9C0 clrtext CODE >5691:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-9C1 clrtext CODE >5692:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-9C1 clrtext CODE >5693:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-9C2 clrtext CODE >5694:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-9C3 clrtext CODE >5695:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-9C4 clrtext CODE >5696:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
-9C5 clrtext CODE >5697:C:\Users\Michel\AppData\Local\Temp\xcAsr6g.s
+790 maintext CODE >511:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
+793 maintext CODE >512:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
+79C maintext CODE >513:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
+9C0 clrtext CODE >5690:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+9C0 clrtext CODE >5691:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+9C1 clrtext CODE >5692:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+9C1 clrtext CODE >5693:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+9C2 clrtext CODE >5694:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+9C3 clrtext CODE >5695:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+9C4 clrtext CODE >5696:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
+9C5 clrtext CODE >5697:C:\Users\Michel\AppData\Local\Temp\xcAsrt4.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1155,9 +1156,9 @@ _LCD_Write_Char 16AA 0 CODE 0 text21 dist/default/production\galeoTester1.X.prod
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _RS 3F 0 BANK0 1 bssBANK0 dist/default/production\galeoTester1.X.production.o
 __end_of_I2C_DO_RX 1E48 0 CODE 0 text61 dist/default/production\galeoTester1.X.production.o
-__end_of_I2C_DO_TX FF8 0 CODE 0 text62 dist/default/production\galeoTester1.X.production.o
-__end_of_WDT_Initialize 1000 0 CODE 0 text26 dist/default/production\galeoTester1.X.production.o
-_I2C_CallbackReturnStop 1260 0 CODE 0 text75 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_DO_TX 1000 0 CODE 0 text62 dist/default/production\galeoTester1.X.production.o
+__end_of_WDT_Initialize 12B0 0 CODE 0 text26 dist/default/production\galeoTester1.X.production.o
+_I2C_CallbackReturnStop 1258 0 CODE 0 text75 dist/default/production\galeoTester1.X.production.o
 LCD_CMD@CMD 4E 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 ADC_GetConversion@channel 4C 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __Hstrings 0 0 ABS 0 strings -
@@ -1178,7 +1179,7 @@ _RCEN 10B3 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _RSEN 10B1 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _WPUE 210 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
+___sp 0 0 STACK 2 stack C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
 _main C4 0 CODE 0 maintext dist/default/production\galeoTester1.X.production.o
 alerteDefaut@etape 5E 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
@@ -1186,7 +1187,7 @@ __end_of_ADC_GetConversion 18A4 0 CODE 0 text46 dist/default/production\galeoTes
 __end_of_I2C_MasterSendTxData 12BA 0 CODE 0 text69 dist/default/production\galeoTester1.X.production.o
 __end_of_setHorloge 153C 0 CODE 0 text4 dist/default/production\galeoTester1.X.production.o
 I2C_SetCallback@cb 70 0 COMMON 1 cstackCOMMON dist/default/production\galeoTester1.X.production.o
-start 8E 0 CODE 0 init C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
+start 8E 0 CODE 0 init C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
 __size_of_alimenter 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _I2C_DO_ADDRESS_NACK 1A5C 0 CODE 0 text51 dist/default/production\galeoTester1.X.production.o
@@ -1229,7 +1230,7 @@ __Hstringtext45 0 0 ABS 0 stringtext45 -
 __Hstringtext46 0 0 ABS 0 stringtext46 -
 __Hstringtext47 0 0 ABS 0 stringtext47 -
 __Hstringtext48 0 0 ABS 0 stringtext48 -
-_I2C_MasterStartRx 1270 0 CODE 0 text73 dist/default/production\galeoTester1.X.production.o
+_I2C_MasterStartRx 1268 0 CODE 0 text73 dist/default/production\galeoTester1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 I2C_MasterSendTxData@data 70 0 COMMON 1 cstackCOMMON dist/default/production\galeoTester1.X.production.o
 __end_of_EUSART_SetFramingErrorHandler 1350 0 CODE 0 text34 dist/default/production\galeoTester1.X.production.o
@@ -1242,7 +1243,7 @@ __size_of_LCD_CMD 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.
 __end_of_I2C_DO_RX_ACK 12F6 0 CODE 0 text55 dist/default/production\galeoTester1.X.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 _I2C_DO_RX 1DBC 0 CODE 0 text61 dist/default/production\galeoTester1.X.production.o
-_I2C_DO_TX F4E 0 CODE 0 text62 dist/default/production\galeoTester1.X.production.o
+_I2C_DO_TX F56 0 CODE 0 text62 dist/default/production\galeoTester1.X.production.o
 __end_of_EUSART_Initialize 1DBC 0 CODE 0 text30 dist/default/production\galeoTester1.X.production.o
 __end_of_wr2RegCompleteHandler 159E 0 CODE 0 text80 dist/default/production\galeoTester1.X.production.o
 _LCD_Init 1EEA 0 CODE 0 text37 dist/default/production\galeoTester1.X.production.o
@@ -1265,27 +1266,27 @@ rd1RegCompleteHandler@ptr 79 0 COMMON 1 cstackCOMMON dist/default/production\gal
 __size_of_LCD_Set_Cursor 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __size_of_rd1RegCompleteHandler 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __end_of_I2C_MasterFsm 1B10 0 CODE 0 text49 dist/default/production\galeoTester1.X.production.o
-__end_of_I2C_MasterIsr 12B0 0 CODE 0 text48 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_MasterIsr 12A8 0 CODE 0 text48 dist/default/production\galeoTester1.X.production.o
 testR1@active 4A 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __end_of_LCD_Init 2000 0 CODE 0 text37 dist/default/production\galeoTester1.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
 testR3@result 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 __end_of_LCD_Write_4Bit 167E 0 CODE 0 text39 dist/default/production\galeoTester1.X.production.o
 __end_of_LCD_Write_Char 16D8 0 CODE 0 text21 dist/default/production\galeoTester1.X.production.o
 ledConforme@active 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __size_of_ADC_Initialize 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
-__end_of_I2C_MasterClearIrq 1288 0 CODE 0 text50 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_MasterClearIrq 1280 0 CODE 0 text50 dist/default/production\galeoTester1.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_EUSART_DefaultFramingErrorHandler 125C 0 CODE 0 text89 dist/default/production\galeoTester1.X.production.o
+_EUSART_DefaultFramingErrorHandler 1254 0 CODE 0 text89 dist/default/production\galeoTester1.X.production.o
 _wr2RegCompleteHandler 157C 0 CODE 0 text80 dist/default/production\galeoTester1.X.production.o
-_EUSART_DefaultOverrunErrorHandler 1290 0 CODE 0 text88 dist/default/production\galeoTester1.X.production.o
+_EUSART_DefaultOverrunErrorHandler 1288 0 CODE 0 text88 dist/default/production\galeoTester1.X.production.o
 __size_of_I2C_SetCallback 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __end_of_EUSART_Transmit_ISR 18E8 0 CODE 0 text86 dist/default/production\galeoTester1.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
@@ -1311,7 +1312,7 @@ _ANSELE 190 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _APFCON 11D 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _BORCON 116 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __end_of_rdBlkRegCompleteHandler 1708 0 CODE 0 text76 dist/default/production\galeoTester1.X.production.o
-_I2C_MasterStop 126A 0 CODE 0 text84 dist/default/production\galeoTester1.X.production.o
+_I2C_MasterStop 1262 0 CODE 0 text84 dist/default/production\galeoTester1.X.production.o
 _EECON1bits 195 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 testR2@result 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __end_of_INTERRUPT_InterruptManager 8E 0 CODE 0 intentry dist/default/production\galeoTester1.X.production.o
@@ -1322,7 +1323,7 @@ _EEADRL 191 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _EECON2 196 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _EEDATH 194 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _EEDATL 193 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
-_I2C_MasterClearIrq 1282 0 CODE 0 text50 dist/default/production\galeoTester1.X.production.o
+_I2C_MasterClearIrq 127A 0 CODE 0 text50 dist/default/production\galeoTester1.X.production.o
 _alerteDefaut 1BCC 0 CODE 0 text15 dist/default/production\galeoTester1.X.production.o
 __size_of_I2C_DO_SEND_ADR_READ 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 I2C_SetDataCompleteCallback@ptr 77 0 COMMON 1 cstackCOMMON dist/default/production\galeoTester1.X.production.o
@@ -1332,8 +1333,8 @@ _ADC_GetConversion 1862 0 CODE 0 text46 dist/default/production\galeoTester1.X.p
 reponseOperateur@reponse 4B 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __end_of_I2C_DO_ADDRESS_NACK 1AB4 0 CODE 0 text51 dist/default/production\galeoTester1.X.production.o
 __size_of_I2C_MasterEnableRestart 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
-___stacklo 2075 0 ABS 0 - C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
+___stackhi 23EF 0 ABS 0 - C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
+___stacklo 2075 0 ABS 0 - C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
 __end_of_I2C_DO_SEND_ADR_READ 13CC 0 CODE 0 text64 dist/default/production\galeoTester1.X.production.o
 __end_of_LCD_CMD 16AA 0 CODE 0 text38 dist/default/production\galeoTester1.X.production.o
 ledNonConforme@active 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
@@ -1341,7 +1342,7 @@ __size_of_I2C_DO_SEND_RESTART 0 0 ABS 0 - dist/default/production\galeoTester1.X
 __size_of_IO_Expander_Write 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _EUSART_Initialize 1D32 0 CODE 0 text30 dist/default/production\galeoTester1.X.production.o
 testR1@result 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
-_I2C_MasterGetRxData 1276 0 CODE 0 text71 dist/default/production\galeoTester1.X.production.o
+_I2C_MasterGetRxData 126E 0 CODE 0 text71 dist/default/production\galeoTester1.X.production.o
 __size_of_setP1 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __size_of_setP2 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __size_of_I2C_DO_TX_EMPTY 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
@@ -1390,7 +1391,7 @@ __Lstringtext47 0 0 ABS 0 stringtext47 -
 __Lstringtext48 0 0 ABS 0 stringtext48 -
 start_initialization 92 0 CODE 0 cinit dist/default/production\galeoTester1.X.production.o
 _EUSART_SetErrorHandler 1338 0 CODE 0 text35 dist/default/production\galeoTester1.X.production.o
-__end_of_I2C_MasterStop 1270 0 CODE 0 text84 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_MasterStop 1268 0 CODE 0 text84 dist/default/production\galeoTester1.X.production.o
 _OSCCON 99 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __size_of_I2C_SetBuffer 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __size_of_alerteDefaut 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
@@ -1401,7 +1402,7 @@ testNOK@result 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.p
 EUSART_SetOverrunErrorHandler@interruptHandler 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __end_of_initialConditions 1A5C 0 CODE 0 text8 dist/default/production\galeoTester1.X.production.o
 _eusartRxBuffer BD 0 BANK1 1 bssBANK1 dist/default/production\galeoTester1.X.production.o
-__end_of_EUSART_DefaultErrorHandler 1290 0 CODE 0 text90 dist/default/production\galeoTester1.X.production.o
+__end_of_EUSART_DefaultErrorHandler 1288 0 CODE 0 text90 dist/default/production\galeoTester1.X.production.o
 _EUSART_RxDataHandler 1708 0 CODE 0 text91 dist/default/production\galeoTester1.X.production.o
 __size_of_EUSART_SetFramingErrorHandler 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __size_of_EUSART_SetOverrunErrorHandler 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
@@ -1410,7 +1411,7 @@ __end_of_SYSTEM_Initialize 162A 0 CODE 0 text25 dist/default/production\galeoTes
 __size_of_I2C_DO_IDLE 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __size_of_I2C_DO_RCEN 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 I2C_SetBuffer@buffer 73 0 COMMON 1 cstackCOMMON dist/default/production\galeoTester1.X.production.o
-__end_of_I2C_CallbackReturnStop 1264 0 CODE 0 text75 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_CallbackReturnStop 125C 0 CODE 0 text75 dist/default/production\galeoTester1.X.production.o
 __end_of_rd2RegCompleteHandler 15E2 0 CODE 0 text78 dist/default/production\galeoTester1.X.production.o
 __size_of_displayManager 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 clear_ram0 1380 0 CODE 0 clrtext dist/default/production\galeoTester1.X.production.o
@@ -1424,8 +1425,8 @@ setHorloge@active 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.
 _TRISC3 473 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _TRISC4 474 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 I2C_SetDataCompleteCallback@cb 75 0 COMMON 1 cstackCOMMON dist/default/production\galeoTester1.X.production.o
-__end_of_EUSART_DefaultFramingErrorHandler 125E 0 CODE 0 text89 dist/default/production\galeoTester1.X.production.o
-__end_of_EUSART_DefaultOverrunErrorHandler 1298 0 CODE 0 text88 dist/default/production\galeoTester1.X.production.o
+__end_of_EUSART_DefaultFramingErrorHandler 1256 0 CODE 0 text89 dist/default/production\galeoTester1.X.production.o
+__end_of_EUSART_DefaultOverrunErrorHandler 1290 0 CODE 0 text88 dist/default/production\galeoTester1.X.production.o
 __size_of_setHorloge 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 pressBP2@active 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __end_of_activerTouche 1824 0 CODE 0 text24 dist/default/production\galeoTester1.X.production.o
@@ -1435,7 +1436,7 @@ main@testActif 68 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.p
 _WDTCON 97 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _EUSART_TxDefaultInterruptHandler 38 0 BANK0 1 bssBANK0 dist/default/production\galeoTester1.X.production.o
 __end_of_LCD_Clear 13DE 0 CODE 0 text23 dist/default/production\galeoTester1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
+___int_sp 0 0 STACK 2 stack C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
 __end_of_I2C_SetBuffer 155C 0 CODE 0 text83 dist/default/production\galeoTester1.X.production.o
 _rd2RegCompleteHandler 15C0 0 CODE 0 text78 dist/default/production\galeoTester1.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -1507,7 +1508,7 @@ _I2C_DO_SEND_RESTART_READ 12C4 0 CODE 0 text59 dist/default/production\galeoTest
 __Hbigram 0 0 ABS 0 bigram -
 __end_of_ledNonConforme 1486 0 CODE 0 text17 dist/default/production\galeoTester1.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
-_I2C_MasterSetIrq 127C 0 CODE 0 text67 dist/default/production\galeoTester1.X.production.o
+_I2C_MasterSetIrq 1274 0 CODE 0 text67 dist/default/production\galeoTester1.X.production.o
 _ledProgession 1486 0 CODE 0 text16 dist/default/production\galeoTester1.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10012 0 CONFIG 4 config -
@@ -1646,7 +1647,7 @@ __S1 C5 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _I2C_MasterSendTxData 12B0 0 CODE 0 text69 dist/default/production\galeoTester1.X.production.o
-__end_of_I2C_MasterGetRxData 127C 0 CODE 0 text71 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_MasterGetRxData 1274 0 CODE 0 text71 dist/default/production\galeoTester1.X.production.o
 _I2C_DO_SEND_STOP 12E2 0 CODE 0 text56 dist/default/production\galeoTester1.X.production.o
 I2C_SetBuffer@bufferSize 70 0 COMMON 1 cstackCOMMON dist/default/production\galeoTester1.X.production.o
 _I2C_Status A0 0 BANK1 1 bssBANK1 dist/default/production\galeoTester1.X.production.o
@@ -1669,7 +1670,7 @@ _EUSART_SetTxInterruptHandler 1368 0 CODE 0 text31 dist/default/production\galeo
 __Lintentry 8 0 CODE 0 intentry -
 I2C_Master_Write@data 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 setP1@active 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Michel\AppData\Local\Temp\xcAsr6g.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Michel\AppData\Local\Temp\xcAsrt4.o
 ledProgession@active 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __size_of_wr2RegCompleteHandler 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _I2C_DO_RESET 130A 0 CODE 0 text52 dist/default/production\galeoTester1.X.production.o
@@ -1698,7 +1699,7 @@ _RCSTAbits 19D 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _PIE1bits 91 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _PIE2bits 92 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 ?_ADC_GetConversion 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
-__end_of_I2C_MasterSetIrq 1282 0 CODE 0 text67 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_MasterSetIrq 127A 0 CODE 0 text67 dist/default/production\galeoTester1.X.production.o
 EUSART_SetFramingErrorHandler@interruptHandler 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __ptext10 14EE 0 CODE 0 text10 dist/default/production\galeoTester1.X.production.o
 __ptext11 14D4 0 CODE 0 text11 dist/default/production\galeoTester1.X.production.o
@@ -1716,7 +1717,7 @@ __ptext22 1B6E 0 CODE 0 text22 dist/default/production\galeoTester1.X.production
 __ptext23 13CC 0 CODE 0 text23 dist/default/production\galeoTester1.X.production.o
 __ptext24 17E6 0 CODE 0 text24 dist/default/production\galeoTester1.X.production.o
 __ptext25 1604 0 CODE 0 text25 dist/default/production\galeoTester1.X.production.o
-__ptext26 FF8 0 CODE 0 text26 dist/default/production\galeoTester1.X.production.o
+__ptext26 12A8 0 CODE 0 text26 dist/default/production\galeoTester1.X.production.o
 __ptext27 17A8 0 CODE 0 text27 dist/default/production\galeoTester1.X.production.o
 __ptext28 1420 0 CODE 0 text28 dist/default/production\galeoTester1.X.production.o
 __ptext29 13DE 0 CODE 0 text29 dist/default/production\galeoTester1.X.production.o
@@ -1737,9 +1738,9 @@ __ptext43 1320 0 CODE 0 text43 dist/default/production\galeoTester1.X.production
 __ptext44 1408 0 CODE 0 text44 dist/default/production\galeoTester1.X.production.o
 __ptext45 13F2 0 CODE 0 text45 dist/default/production\galeoTester1.X.production.o
 __ptext46 1862 0 CODE 0 text46 dist/default/production\galeoTester1.X.production.o
-__ptext48 12A8 0 CODE 0 text48 dist/default/production\galeoTester1.X.production.o
+__ptext48 12A0 0 CODE 0 text48 dist/default/production\galeoTester1.X.production.o
 __ptext49 1AB4 0 CODE 0 text49 dist/default/production\galeoTester1.X.production.o
-__ptext50 1282 0 CODE 0 text50 dist/default/production\galeoTester1.X.production.o
+__ptext50 127A 0 CODE 0 text50 dist/default/production\galeoTester1.X.production.o
 __ptext51 1A5C 0 CODE 0 text51 dist/default/production\galeoTester1.X.production.o
 __ptext52 130A 0 CODE 0 text52 dist/default/production\galeoTester1.X.production.o
 __ptext53 1300 0 CODE 0 text53 dist/default/production\galeoTester1.X.production.o
@@ -1751,20 +1752,20 @@ __ptext58 12CE 0 CODE 0 text58 dist/default/production\galeoTester1.X.production
 __ptext59 12C4 0 CODE 0 text59 dist/default/production\galeoTester1.X.production.o
 __ptext60 138C 0 CODE 0 text60 dist/default/production\galeoTester1.X.production.o
 __ptext61 1DBC 0 CODE 0 text61 dist/default/production\galeoTester1.X.production.o
-__ptext62 F4E 0 CODE 0 text62 dist/default/production\galeoTester1.X.production.o
+__ptext62 F56 0 CODE 0 text62 dist/default/production\galeoTester1.X.production.o
 __ptext63 139A 0 CODE 0 text63 dist/default/production\galeoTester1.X.production.o
 __ptext64 13BA 0 CODE 0 text64 dist/default/production\galeoTester1.X.production.o
 __ptext65 12BA 0 CODE 0 text65 dist/default/production\galeoTester1.X.production.o
 __ptext66 1B10 0 CODE 0 text66 dist/default/production\galeoTester1.X.production.o
-__ptext67 127C 0 CODE 0 text67 dist/default/production\galeoTester1.X.production.o
+__ptext67 1274 0 CODE 0 text67 dist/default/production\galeoTester1.X.production.o
 __ptext68 1314 0 CODE 0 text68 dist/default/production\galeoTester1.X.production.o
 __ptext69 12B0 0 CODE 0 text69 dist/default/production\galeoTester1.X.production.o
-__ptext70 12A0 0 CODE 0 text70 dist/default/production\galeoTester1.X.production.o
-__ptext71 1276 0 CODE 0 text71 dist/default/production\galeoTester1.X.production.o
-__ptext72 1298 0 CODE 0 text72 dist/default/production\galeoTester1.X.production.o
-__ptext73 1270 0 CODE 0 text73 dist/default/production\galeoTester1.X.production.o
+__ptext70 1298 0 CODE 0 text70 dist/default/production\galeoTester1.X.production.o
+__ptext71 126E 0 CODE 0 text71 dist/default/production\galeoTester1.X.production.o
+__ptext72 1290 0 CODE 0 text72 dist/default/production\galeoTester1.X.production.o
+__ptext73 1268 0 CODE 0 text73 dist/default/production\galeoTester1.X.production.o
 __ptext74 4 0 CODE 0 text74 dist/default/production\galeoTester1.X.production.o
-__ptext75 1260 0 CODE 0 text75 dist/default/production\galeoTester1.X.production.o
+__ptext75 1258 0 CODE 0 text75 dist/default/production\galeoTester1.X.production.o
 __ptext76 16D8 0 CODE 0 text76 dist/default/production\galeoTester1.X.production.o
 __ptext77 15E2 0 CODE 0 text77 dist/default/production\galeoTester1.X.production.o
 __ptext78 15C0 0 CODE 0 text78 dist/default/production\galeoTester1.X.production.o
@@ -1773,13 +1774,13 @@ __ptext80 157C 0 CODE 0 text80 dist/default/production\galeoTester1.X.production
 __ptext81 1438 0 CODE 0 text81 dist/default/production\galeoTester1.X.production.o
 __ptext82 19BA 0 CODE 0 text82 dist/default/production\galeoTester1.X.production.o
 __ptext83 153C 0 CODE 0 text83 dist/default/production\galeoTester1.X.production.o
-__ptext84 126A 0 CODE 0 text84 dist/default/production\galeoTester1.X.production.o
-__ptext85 1264 0 CODE 0 text85 dist/default/production\galeoTester1.X.production.o
+__ptext84 1262 0 CODE 0 text84 dist/default/production\galeoTester1.X.production.o
+__ptext85 125C 0 CODE 0 text85 dist/default/production\galeoTester1.X.production.o
 __ptext86 18A4 0 CODE 0 text86 dist/default/production\galeoTester1.X.production.o
 __ptext87 1C3E 0 CODE 0 text87 dist/default/production\galeoTester1.X.production.o
-__ptext88 1290 0 CODE 0 text88 dist/default/production\galeoTester1.X.production.o
-__ptext89 125C 0 CODE 0 text89 dist/default/production\galeoTester1.X.production.o
-__ptext90 1288 0 CODE 0 text90 dist/default/production\galeoTester1.X.production.o
+__ptext88 1288 0 CODE 0 text88 dist/default/production\galeoTester1.X.production.o
+__ptext89 1254 0 CODE 0 text89 dist/default/production\galeoTester1.X.production.o
+__ptext90 1280 0 CODE 0 text90 dist/default/production\galeoTester1.X.production.o
 __ptext91 1708 0 CODE 0 text91 dist/default/production\galeoTester1.X.production.o
 __size_of_EUSART_DefaultErrorHandler 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _EUSART_Receive_ISR 1C3E 0 CODE 0 text87 dist/default/production\galeoTester1.X.production.o
@@ -1877,7 +1878,7 @@ _PIR1bits 11 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _PIR2bits 12 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __Lend_init 8E 0 CODE 0 end_init -
 __end_of_LCD_Write_String 1862 0 CODE 0 text20 dist/default/production\galeoTester1.X.production.o
-_EUSART_DefaultErrorHandler 1288 0 CODE 0 text90 dist/default/production\galeoTester1.X.production.o
+_EUSART_DefaultErrorHandler 1280 0 CODE 0 text90 dist/default/production\galeoTester1.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _EUSART_SetFramingErrorHandler 1344 0 CODE 0 text34 dist/default/production\galeoTester1.X.production.o
 _EUSART_SetOverrunErrorHandler 1350 0 CODE 0 text33 dist/default/production\galeoTester1.X.production.o
@@ -1889,7 +1890,7 @@ __Hintentry 8E 0 CODE 0 intentry -
 __end_of_I2C_SetDataCompleteCallback 1452 0 CODE 0 text81 dist/default/production\galeoTester1.X.production.o
 __size_of_LCD_Write_String 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __Lstrings 0 0 ABS 0 strings -
-__end_of_I2C_MasterSendAck 12A8 0 CODE 0 text70 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_MasterSendAck 12A0 0 CODE 0 text70 dist/default/production\galeoTester1.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __size_of_I2C_MasterStop 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
@@ -1915,10 +1916,10 @@ __ptext7 173C 0 CODE 0 text7 dist/default/production\galeoTester1.X.production.o
 __ptext8 1A06 0 CODE 0 text8 dist/default/production\galeoTester1.X.production.o
 __ptext9 1508 0 CODE 0 text9 dist/default/production\galeoTester1.X.production.o
 _eusartTxBufferRemaining 43 0 BANK0 1 bssBANK0 dist/default/production\galeoTester1.X.production.o
-_I2C_MasterEnableRestart 1264 0 CODE 0 text85 dist/default/production\galeoTester1.X.production.o
+_I2C_MasterEnableRestart 125C 0 CODE 0 text85 dist/default/production\galeoTester1.X.production.o
 __size_of_ledConforme 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 LCD_Write_4Bit@Nibble 4C 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
-__end_of_I2C_MasterEnableRestart 126A 0 CODE 0 text85 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_MasterEnableRestart 1262 0 CODE 0 text85 dist/default/production\galeoTester1.X.production.o
 __end_of_pressBP1 14D4 0 CODE 0 text12 dist/default/production\galeoTester1.X.production.o
 __end_of_pressBP2 14EE 0 CODE 0 text11 dist/default/production\galeoTester1.X.production.o
 IO_Expander_Write@Data 4A 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
@@ -1954,11 +1955,11 @@ _I2C_DO_SEND_RESTART_WRITE 12CE 0 CODE 0 text58 dist/default/production\galeoTes
 _BackLight_State 69 0 BANK0 1 dataBANK0 dist/default/production\galeoTester1.X.production.o
 __end_of__initialization BC 0 CODE 0 cinit dist/default/production\galeoTester1.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK0 125E 0 CODE 0 idataBANK0 dist/default/production\galeoTester1.X.production.o
+__pidataBANK0 1256 0 CODE 0 idataBANK0 dist/default/production\galeoTester1.X.production.o
 __size_of_ledNonConforme 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __size_of_I2C_DO_RX_NACK_RESTART 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _I2C_MasterFsm 1AB4 0 CODE 0 text49 dist/default/production\galeoTester1.X.production.o
-_I2C_MasterIsr 12A8 0 CODE 0 text48 dist/default/production\galeoTester1.X.production.o
+_I2C_MasterIsr 12A0 0 CODE 0 text48 dist/default/production\galeoTester1.X.production.o
 __end_of_EUSART_SetTxInterruptHandler 1374 0 CODE 0 text31 dist/default/production\galeoTester1.X.production.o
 __end_of_I2C_SetCallback 1A06 0 CODE 0 text82 dist/default/production\galeoTester1.X.production.o
 _eusartRxCount 41 0 BANK0 1 bssBANK0 dist/default/production\galeoTester1.X.production.o
@@ -1970,13 +1971,13 @@ __size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production\galeoTester1.X.p
 __size_of_wr1RegCompleteHandler 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\galeoTester1.X.production.o
 _TXSTAbits 19E 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
-__end_of_I2C_MasterStartRx 1276 0 CODE 0 text73 dist/default/production\galeoTester1.X.production.o
-__end_of_I2C_MasterSendNack 12A0 0 CODE 0 text72 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_MasterStartRx 126E 0 CODE 0 text73 dist/default/production\galeoTester1.X.production.o
+__end_of_I2C_MasterSendNack 1298 0 CODE 0 text72 dist/default/production\galeoTester1.X.production.o
 _SSPCON1 215 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _SSPCON2 216 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _SSPSTAT 214 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __Hend_init 92 0 CODE 0 end_init -
-__end_of_main F4E 0 CODE 0 maintext dist/default/production\galeoTester1.X.production.o
+__end_of_main F56 0 CODE 0 maintext dist/default/production\galeoTester1.X.production.o
 rd2RegCompleteHandler@ptr 79 0 COMMON 1 cstackCOMMON dist/default/production\galeoTester1.X.production.o
 _ACKDT 10B5 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _ACKEN 10B4 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
@@ -2002,10 +2003,10 @@ _setP2 1508 0 CODE 0 text9 dist/default/production\galeoTester1.X.production.o
 _setHorloge 1522 0 CODE 0 text4 dist/default/production\galeoTester1.X.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _eusartRxLastError 40 0 BANK0 1 bssBANK0 dist/default/production\galeoTester1.X.production.o
-_WDT_Initialize FF8 0 CODE 0 text26 dist/default/production\galeoTester1.X.production.o
+_WDT_Initialize 12A8 0 CODE 0 text26 dist/default/production\galeoTester1.X.production.o
 _SSPSTATbits 214 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\galeoTester1.X.production.o
-_I2C_MasterSendAck 12A0 0 CODE 0 text70 dist/default/production\galeoTester1.X.production.o
+_I2C_MasterSendAck 1298 0 CODE 0 text70 dist/default/production\galeoTester1.X.production.o
 __HdataBANK0 0 0 ABS 0 dataBANK0 -
 __size_of_EUSART_SetErrorHandler 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 __end_of_OSCILLATOR_Initialize 1438 0 CODE 0 text28 dist/default/production\galeoTester1.X.production.o
@@ -2019,7 +2020,7 @@ __size_of_I2C_DO_ADDRESS_NACK 0 0 ABS 0 - dist/default/production\galeoTester1.X
 LCD_Write_Char@Data 4E 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __end_of_I2C_DO_RX_NACK_STOP 1300 0 CODE 0 text54 dist/default/production\galeoTester1.X.production.o
 __size_of_EUSART_Receive_ISR 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
-_I2C_MasterSendNack 1298 0 CODE 0 text72 dist/default/production\galeoTester1.X.production.o
+_I2C_MasterSendNack 1290 0 CODE 0 text72 dist/default/production\galeoTester1.X.production.o
 _I2C_SetCallback 19BA 0 CODE 0 text82 dist/default/production\galeoTester1.X.production.o
 __size_of_EUSART_SetRxInterruptHandler 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 testR3@active 4A 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
@@ -2084,6 +2085,7 @@ text22 0 DB7 1B6E 2F 2
 text23 0 9E6 13CC 9 2
 text24 0 BF3 17E6 1F 2
 text25 0 B02 1604 13 2
+text26 0 954 12A8 4 2
 text27 0 BD4 17A8 1F 2
 text28 0 A10 1420 C 2
 text29 0 9EF 13DE A 2
@@ -2104,9 +2106,9 @@ text43 0 990 1320 6 2
 text44 0 A04 1408 C 2
 text45 0 9F9 13F2 B 2
 text46 0 C31 1862 21 2
-text48 0 954 12A8 4 2
+text48 0 950 12A0 4 2
 text49 0 D5A 1AB4 2E 2
-text50 0 941 1282 3 2
+text50 0 93D 127A 3 2
 text51 0 D2E 1A5C 2C 2
 text52 0 985 130A 5 2
 text53 0 980 1300 5 2
@@ -2122,14 +2124,14 @@ text63 0 9CD 139A 8 2
 text64 0 9DD 13BA 9 2
 text65 0 95D 12BA 5 2
 text66 0 D88 1B10 2F 2
-text67 0 93E 127C 3 2
+text67 0 93A 1274 3 2
 text68 0 98A 1314 6 2
 text69 0 958 12B0 5 2
-text70 0 950 12A0 4 2
-text71 0 93B 1276 3 2
-text72 0 94C 1298 4 2
-text73 0 938 1270 3 2
-text75 0 930 1260 2 2
+text70 0 94C 1298 4 2
+text71 0 937 126E 3 2
+text72 0 948 1290 4 2
+text73 0 934 1268 3 2
+text75 0 92C 1258 2 2
 text76 0 B6C 16D8 18 2
 text77 0 AF1 15E2 11 2
 text78 0 AE0 15C0 11 2
@@ -2138,13 +2140,13 @@ text80 0 ABE 157C 11 2
 text81 0 A1C 1438 D 2
 text82 0 CDD 19BA 26 2
 text83 0 A9E 153C 10 2
-text84 0 935 126A 3 2
-text85 0 932 1264 3 2
+text84 0 931 1262 3 2
+text85 0 92E 125C 3 2
 text86 0 C52 18A4 22 2
 text87 0 E1F 1C3E 3A 2
-text88 0 948 1290 4 2
-text89 0 92E 125C 1 2
-text90 0 944 1288 4 2
+text88 0 944 1288 4 2
+text89 0 92A 1254 1 2
+text90 0 940 1280 4 2
 text91 0 B84 1708 1A 2
 cstackCOMMON 1 70 70 E 1
 stringtext1 0 1000 2000 278 2
@@ -2152,7 +2154,7 @@ intentry 0 4 8 7FC 2
 reset_vec 0 0 0 4 2
 bssBANK0 1 20 20 4A 1
 bssBANK1 1 A0 A0 25 1
-idataBANK0 0 92F 125E 1 2
+idataBANK0 0 92B 1256 1 2
 clrtext 0 9C0 1380 6 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

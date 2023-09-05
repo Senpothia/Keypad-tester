@@ -1550,26 +1550,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 509:             ledConforme(1);
 [e ( _ledConforme (1 -> -> 1 `i `a ]
 "510
-[; ;main.c: 510:             attenteDemarrage();
-[e ( _attenteDemarrage ..  ]
+[; ;main.c: 510:             alimenter(0);
+[e ( _alimenter (1 -> -> 0 `i `a ]
 "511
-[; ;main.c: 511:             initialConditions(&testActif, &testVoyants);
-[e ( _initialConditions (2 , &U _testActif &U _testVoyants ]
+[; ;main.c: 511:             attenteDemarrage();
+[e ( _attenteDemarrage ..  ]
 "512
-[; ;main.c: 512:             _delay((unsigned long)((2000)*(16000000/4000.0)));
+[; ;main.c: 512:             initialConditions(&testActif, &testVoyants);
+[e ( _initialConditions (2 , &U _testActif &U _testVoyants ]
+"513
+[; ;main.c: 513:             _delay((unsigned long)((2000)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"514
-[; ;main.c: 514:         }
+"515
+[; ;main.c: 515:         }
 }
 [e :U 459 ]
-"516
-[; ;main.c: 516:     }
+"517
+[; ;main.c: 517:     }
 }
 [e :U 385 ]
 [e $U 386  ]
 [e :U 387 ]
-"520
-[; ;main.c: 520: }
+"521
+[; ;main.c: 521: }
 [e :UE 384 ]
 }
 [a 94C 70 73 78 32 68 69 32 84 69 83 84 0 ]

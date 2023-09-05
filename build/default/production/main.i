@@ -6254,6 +6254,7 @@ void main(void) {
 
             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "ATTENTE ACQUITTEMENT");
             ledConforme(1);
+            alimenter(0);
             attenteDemarrage();
             initialConditions(&testActif, &testVoyants);
             _delay((unsigned long)((2000)*(16000000/4000.0)));

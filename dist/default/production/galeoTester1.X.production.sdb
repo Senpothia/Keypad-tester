@@ -711,7 +711,7 @@ channel_FVR 31
 [v main@testVoyants testVoyants `a  1 a 1 33 ]
 "87
 [v main@testLeds testLeds `a  1 a 1 32 ]
-"520
+"521
 } 0
 "101 C:\Users\Michel\MPLABXProjects\galeoTester1.X\tester.c
 [v _testR3 testR3 `(a  1 e 1 0 ]

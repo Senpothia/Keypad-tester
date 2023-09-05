@@ -507,6 +507,7 @@ void main(void) {
 
             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", ACQ);
             ledConforme(true);
+            alimenter(false);
             attenteDemarrage();
             initialConditions(&testActif, &testVoyants);
             __delay_ms(2000);
