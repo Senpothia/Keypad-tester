@@ -18,5 +18,10 @@ bool controlVisuel();
 void setHorloge(bool active);
 void setP1(bool active);
 void setP2(bool active);
-void activerBuzzer(bool active);
+void activerBuzzer();
 void activerTouche(void);
+void startAlert(void);
+void errorAlert(void);
+void okAlert(void);
+
+

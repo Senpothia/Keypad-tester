@@ -68,7 +68,7 @@ I2C_DATA_NACK 3
 I2C_TIMEOUT 4
 I2C_NULL 5
 ]
-"307 C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
+"308 C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 [e E3374 . `uc
 C4 5
 C3 6
@@ -298,16 +298,24 @@ channel_FVR 31
 [v _attenteDemarrage attenteDemarrage `(v  1 e 1 0 ]
 "225
 [v _alerteDefaut alerteDefaut `(v  1 e 1 0 ]
-"242
+"243
 [v _reponseOperateur reponseOperateur `(a  1 e 1 0 ]
-"260
+"261
 [v _setP1 setP1 `(v  1 e 1 0 ]
-"271
+"272
 [v _setP2 setP2 `(v  1 e 1 0 ]
-"282
+"283
 [v _initialConditions initialConditions `(v  1 e 1 0 ]
-"309
+"298
+[v _activerBuzzer activerBuzzer `(v  1 e 1 0 ]
+"312
 [v _activerTouche activerTouche `(v  1 e 1 0 ]
+"321
+[v _startAlert startAlert `(v  1 e 1 0 ]
+"331
+[v _errorAlert errorAlert `(v  1 e 1 0 ]
+"346
+[v _okAlert okAlert `(v  1 e 1 0 ]
 "213 C:\Users\Michel\MPLABXProjects\galeoTester1.X/mcc_generated_files/i2c_master.h
 [v _MSSP_InterruptHandler MSSP_InterruptHandler `*.37(v  1 e 2 0 ]
 [s S557 . 1 `uc 1 IOCIF 1 0 :1:0 
@@ -339,7 +347,7 @@ channel_FVR 31
 "571
 [u S1398 . 1 `S1389 1 . 1 0 ]
 [v _PORTCbits PORTCbits `VES1398  1 e 1 @14 ]
-[s S1730 . 1 `uc 1 RD0 1 0 :1:0 
+[s S1738 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -349,8 +357,8 @@ channel_FVR 31
 `uc 1 RD7 1 0 :1:7 
 ]
 "633
-[u S1739 . 1 `S1730 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES1739  1 e 1 @15 ]
+[u S1747 . 1 `S1738 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES1747  1 e 1 @15 ]
 [s S601 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -477,7 +485,7 @@ channel_FVR 31
 [v _LATAbits LATAbits `VES1419  1 e 1 @268 ]
 "2420
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S1765 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1777 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -487,22 +495,22 @@ channel_FVR 31
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2437
-[u S1774 . 1 `S1765 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1774  1 e 1 @269 ]
+[u S1786 . 1 `S1777 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1786  1 e 1 @269 ]
 "2482
 [v _LATC LATC `VEuc  1 e 1 @270 ]
 "2544
 [v _LATD LATD `VEuc  1 e 1 @271 ]
 "2614
 [v _LATE LATE `VEuc  1 e 1 @272 ]
-[s S1751 . 1 `uc 1 LATE0 1 0 :1:0 
+[s S1759 . 1 `uc 1 LATE0 1 0 :1:0 
 `uc 1 LATE1 1 0 :1:1 
 `uc 1 LATE2 1 0 :1:2 
 `uc 1 LATE3 1 0 :1:3 
 ]
 "2627
-[u S1756 . 1 `S1751 1 . 1 0 ]
-[v _LATEbits LATEbits `VES1756  1 e 1 @272 ]
+[u S1764 . 1 `S1759 1 . 1 0 ]
+[v _LATEbits LATEbits `VES1764  1 e 1 @272 ]
 "2924
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3273
@@ -711,7 +719,7 @@ channel_FVR 31
 [v main@testVoyants testVoyants `a  1 a 1 33 ]
 "87
 [v main@testLeds testLeds `a  1 a 1 32 ]
-"521
+"523
 } 0
 "101 C:\Users\Michel\MPLABXProjects\galeoTester1.X\tester.c
 [v _testR3 testR3 `(a  1 e 1 0 ]
@@ -758,12 +766,12 @@ channel_FVR 31
 [v setHorloge@active active `a  1 a 1 3 ]
 "54
 } 0
-"242
+"243
 [v _reponseOperateur reponseOperateur `(a  1 e 1 0 ]
 {
-"244
+"245
 [v reponseOperateur@reponse reponse `a  1 a 1 5 ]
-"258
+"259
 } 0
 "124
 [v _testOK testOK `(a  1 e 1 0 ]
@@ -789,33 +797,45 @@ channel_FVR 31
 [v testNOK@active active `a  1 a 1 4 ]
 "167
 } 0
-"282
+"346
+[v _okAlert okAlert `(v  1 e 1 0 ]
+{
+"350
+} 0
+"321
+[v _startAlert startAlert `(v  1 e 1 0 ]
+{
+"323
+[v startAlert@i i `i  1 a 2 8 ]
+"330
+} 0
+"283
 [v _initialConditions initialConditions `(v  1 e 1 0 ]
 {
 [v initialConditions@testAct testAct `*.4a  1 a 1 wreg ]
 [v initialConditions@testAct testAct `*.4a  1 a 1 wreg ]
 [v initialConditions@testVoy testVoy `*.4a  1 p 1 4 ]
-"284
+"285
 [v initialConditions@testAct testAct `*.4a  1 a 1 5 ]
-"295
+"296
 } 0
-"271
+"272
 [v _setP2 setP2 `(v  1 e 1 0 ]
 {
 [v setP2@active active `a  1 a 1 wreg ]
 [v setP2@active active `a  1 a 1 wreg ]
-"273
+"274
 [v setP2@active active `a  1 a 1 3 ]
-"280
+"281
 } 0
-"260
+"261
 [v _setP1 setP1 `(v  1 e 1 0 ]
 {
 [v setP1@active active `a  1 a 1 wreg ]
 [v setP1@active active `a  1 a 1 wreg ]
-"262
+"263
 [v setP1@active active `a  1 a 1 3 ]
-"269
+"270
 } 0
 "35
 [v _pressBP2 pressBP2 `(v  1 e 1 0 ]
@@ -835,15 +855,6 @@ channel_FVR 31
 [v pressBP1@active active `a  1 a 1 3 ]
 "33
 } 0
-"15
-[v _alimenter alimenter `(v  1 e 1 0 ]
-{
-[v alimenter@active active `a  1 a 1 wreg ]
-[v alimenter@active active `a  1 a 1 wreg ]
-"17
-[v alimenter@active active `a  1 a 1 3 ]
-"23
-} 0
 "219
 [v _attenteDemarrage attenteDemarrage `(v  1 e 1 0 ]
 {
@@ -855,7 +866,7 @@ channel_FVR 31
 [v alerteDefaut@etape etape `*.25uc  1 p 2 24 ]
 [v alerteDefaut@testAct testAct `*.4a  1 p 1 26 ]
 [v alerteDefaut@testVoy testVoy `*.4a  1 p 1 27 ]
-"240
+"241
 } 0
 "207
 [v _ledProgession ledProgession `(v  1 e 1 0 ]
@@ -883,6 +894,22 @@ channel_FVR 31
 "199
 [v ledConforme@active active `a  1 a 1 3 ]
 "205
+} 0
+"331
+[v _errorAlert errorAlert `(v  1 e 1 0 ]
+{
+"335
+[v errorAlert@i i `i  1 a 2 10 ]
+"333
+[v errorAlert@j j `i  1 a 2 8 ]
+"345
+} 0
+"298
+[v _activerBuzzer activerBuzzer `(v  1 e 1 0 ]
+{
+"301
+[v activerBuzzer@i i `i  1 a 2 4 ]
+"310
 } 0
 "7 C:\Users\Michel\MPLABXProjects\galeoTester1.X\display.c
 [v _displayManager displayManager `(v  1 e 1 0 ]
@@ -925,10 +952,19 @@ channel_FVR 31
 {
 "187
 } 0
-"309 C:\Users\Michel\MPLABXProjects\galeoTester1.X\tester.c
+"15 C:\Users\Michel\MPLABXProjects\galeoTester1.X\tester.c
+[v _alimenter alimenter `(v  1 e 1 0 ]
+{
+[v alimenter@active active `a  1 a 1 wreg ]
+[v alimenter@active active `a  1 a 1 wreg ]
+"17
+[v alimenter@active active `a  1 a 1 3 ]
+"23
+} 0
+"312
 [v _activerTouche activerTouche `(v  1 e 1 0 ]
 {
-"316
+"319
 } 0
 "50 C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]

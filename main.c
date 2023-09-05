@@ -90,6 +90,7 @@ void main(void) {
 
     displayManager(TITRE, BOARD_REQUEST, OK_REQUEST, LIGNE_VIDE);
     __delay_ms(1000);
+    
 
     while (1) {
 
@@ -111,7 +112,7 @@ void main(void) {
         displayManager(TITRE, ATTENTE, CAVALIERS, OK_REQUEST);
         __delay_ms(100);
         attenteDemarrage();
-
+        startAlert();
         displayManager("ETAPE 1", "TEST 3 RELAIS ON", LIGNE_VIDE, LIGNE_VIDE);
         testActif = true;
         ledConforme(false);
@@ -508,6 +509,7 @@ void main(void) {
             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", ACQ);
             ledConforme(true);
             alimenter(false);
+             okAlert();
             attenteDemarrage();
             initialConditions(&testActif, &testVoyants);
             __delay_ms(2000);

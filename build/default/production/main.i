@@ -5800,8 +5800,11 @@ _Bool controlVisuel();
 void setHorloge(_Bool active);
 void setP1(_Bool active);
 void setP2(_Bool active);
-void activerBuzzer(_Bool active);
+void activerBuzzer();
 void activerTouche(void);
+void startAlert(void);
+void errorAlert(void);
+void okAlert(void);
 # 55 "main.c" 2
 
 # 1 "./display.h" 1
@@ -5838,6 +5841,7 @@ void main(void) {
     displayManager("TEST CARTE D925ED4", "POSITIONNER CARTE", "APPUYER SUR OK", "");
     _delay((unsigned long)((1000)*(16000000/4000.0)));
 
+
     while (1) {
 
 
@@ -5858,7 +5862,7 @@ void main(void) {
         displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "RETIRER P1 et P2", "APPUYER SUR OK");
         _delay((unsigned long)((100)*(16000000/4000.0)));
         attenteDemarrage();
-
+        startAlert();
         displayManager("ETAPE 1", "TEST 3 RELAIS ON", "", "");
         testActif = 1;
         ledConforme(0);
@@ -6255,6 +6259,7 @@ void main(void) {
             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "ATTENTE ACQUITTEMENT");
             ledConforme(1);
             alimenter(0);
+             okAlert();
             attenteDemarrage();
             initialConditions(&testActif, &testVoyants);
             _delay((unsigned long)((2000)*(16000000/4000.0)));
