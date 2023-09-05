@@ -1,44 +1,53 @@
 /**
-  Generated Main Source File
-
-  Company:
-    Microchip Technology Inc.
-
-  File Name:
-    main.c
-
-  Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
-  Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
-        Device            :  PIC16LF1939
-        Driver Version    :  2.00
+ TEST CARTE D925ED4 - BOX GALEO BLTH
+ * 
+ * Septembre 2023
+ * 
+ * Michel LOPEZ
+ * 
  */
 
 /*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
-    
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
-    
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
-    
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
+ Equipement: automate v1.0
+ * PIC16LF1939
+ * 
+ * Relais:
+ * 
+ * R1: alimentation
+ * R2: BP1
+ * R3: BP2
+ * R4: Horloge
+ * R5: Cavalier P1
+ * R6: Cavalier P2
+ * R7: Touche clavier - "Doigt"
+ * R8: Avant séquence de test = indicateur inhibition tests des leds; dans sequence de test = indicateur éclairage clavier
+ * 
+ * Entrées:
+ * 
+ * J13/(IN1 dans le code): NC1
+ * J15/IN2: NO1
+ * J16/IN4: NC2
+ * J17/IN5: NO2
+ * J19/IN6: NC3
+ * J18/IN7: NO3
+ * J14/IN3: Bouton de validation OK 
+ * J20/IN8: Bouton de confirmation NOK
+ * J21/AN1: test éclairage clavier par mesure analogique
+ * 
+ * Sorties:
+ * J25.1/C2: led rouge (indication non conforme)
+ * J25.2/C4: led verte (indication conforme)
+ * J25.3/C2: led jaune (indication test en cours)
+ * J26(serigraphie OV)/GPIO1: inhibition test des leds - starp au OV = tests des leds inhibé
+ * 
+ * Mode d'emploi:
+ * 1- Sélectionner mode de test des leds (strap = inhibition)
+ * 2- Appuyer sur OK, pour lancer la séquence
+ * 3- Appuyer sur OK pour valider / sur NOK pour invalider
+ * 4- En fin de séquence le résultat est donné par la led verte ou rouge
+ * 5- Acquiter le résultat en appuyant sur OK
+ * 
+ * 
  */
 
 #include "mcc_generated_files/mcc.h"
@@ -69,7 +78,6 @@ void main(void) {
     //INTERRUPT_PeripheralInterruptDisable();
 
 
-
     // lCD
     I2C_Master_Init();
     LCD_Init(0x4E); // Initialize LCD module with I2C address = 0x4E
@@ -85,15 +93,7 @@ void main(void) {
 
     while (1) {
 
-        /*
-        if(GPIO1_GetValue() == 1){
         
-            REL8_SetHigh();
-        }else{
-            REL8_SetLow();
-        }
-         **/
-
         if (GPIO1_GetValue() == 1) {
 
             REL8_SetHigh();
@@ -104,8 +104,6 @@ void main(void) {
             testLeds = false;
             REL8_SetLow();
         }
-
-
 
 
         // Attente de démarrage

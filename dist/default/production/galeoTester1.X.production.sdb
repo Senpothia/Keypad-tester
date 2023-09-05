@@ -68,7 +68,7 @@ I2C_DATA_NACK 3
 I2C_TIMEOUT 4
 I2C_NULL 5
 ]
-"309 C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
+"307 C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 [e E3374 . `uc
 C4 5
 C3 6
@@ -114,7 +114,7 @@ channel_FVR 31
 [v _LCD_Set_Cursor LCD_Set_Cursor `(v  1 e 1 0 ]
 "183
 [v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
-"52 C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
+"61 C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -700,18 +700,18 @@ channel_FVR 31
 ]
 "165
 [v _I2C_Status I2C_Status `S803  1 e 29 0 ]
-"52 C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
+"61 C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"78
+"86
 [v main@lectureAN1 lectureAN1 `i  1 a 2 30 ]
-"76
+"84
 [v main@testActif testActif `a  1 a 1 34 ]
-"77
+"85
 [v main@testVoyants testVoyants `a  1 a 1 33 ]
-"79
+"87
 [v main@testLeds testLeds `a  1 a 1 32 ]
-"522
+"520
 } 0
 "101 C:\Users\Michel\MPLABXProjects\galeoTester1.X\tester.c
 [v _testR3 testR3 `(a  1 e 1 0 ]

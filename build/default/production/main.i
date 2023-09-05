@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 44 "main.c"
+# 53 "main.c"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 1 3
@@ -5749,7 +5749,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 99 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 44 "main.c" 2
+# 53 "main.c" 2
 
 # 1 "./I2C_LCD.h" 1
 # 99 "./I2C_LCD.h"
@@ -5777,7 +5777,7 @@ void noBacklight();
 void LCD_SR();
 void LCD_SL();
 void LCD_Clear();
-# 45 "main.c" 2
+# 54 "main.c" 2
 
 # 1 "./tester.h" 1
 
@@ -5802,12 +5802,12 @@ void setP1(_Bool active);
 void setP2(_Bool active);
 void activerBuzzer(_Bool active);
 void activerTouche(void);
-# 46 "main.c" 2
+# 55 "main.c" 2
 
 # 1 "./display.h" 1
 # 17 "./display.h"
 void displayManager(char s1[], char s2[], char s3[], char s4[]);
-# 47 "main.c" 2
+# 56 "main.c" 2
 
 
 
@@ -5825,7 +5825,7 @@ void main(void) {
 
 
     (INTCONbits.PEIE = 1);
-# 74 "main.c"
+# 82 "main.c"
     I2C_Master_Init();
     LCD_Init(0x4E);
     _Bool testActif = 0;
@@ -5839,7 +5839,8 @@ void main(void) {
     _delay((unsigned long)((1000)*(16000000/4000.0)));
 
     while (1) {
-# 97 "main.c"
+
+
         if (PORTCbits.RC0 == 1) {
 
             do { LATAbits.LATA7 = 1; } while(0);
@@ -5850,8 +5851,6 @@ void main(void) {
             testLeds = 0;
             do { LATAbits.LATA7 = 0; } while(0);
         }
-
-
 
 
 

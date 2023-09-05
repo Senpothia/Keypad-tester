@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Tue Sep 05 11:12:49 2023
+                                                                                               Tue Sep 05 11:49:04 2023
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16LF1939
@@ -4101,7 +4101,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4087 ;;
   4088 ;; *************** function _main *****************
   4089 ;; Defined at:
-  4090 ;;		line 52 in file "main.c"
+  4090 ;;		line 61 in file "main.c"
   4091 ;; Parameters:    Size  Location     Type
   4092 ;;		None
   4093 ;; Auto vars:     Size  Location     Type
@@ -4165,33 +4165,33 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4146                           ; Regs used in _main: [wreg-fsr1h+status,2+status,0+pclath+cstack]
   4147                           
   4148                           
-  4149                           ;main.c: 54:     SYSTEM_Initialize();
+  4149                           ;main.c: 63:     SYSTEM_Initialize();
   4150  0062  318B  2302  3180   	fcall	_SYSTEM_Initialize
   4151  0065                     l4723:
   4152                           
-  4153                           ;main.c: 60:     (INTCONbits.GIE = 1);
+  4153                           ;main.c: 69:     (INTCONbits.GIE = 1);
   4154  0065  178B               	bsf	11,7	;volatile
   4155  0066                     l4725:
   4156                           
-  4157                           ;main.c: 63:     (INTCONbits.PEIE = 1);
+  4157                           ;main.c: 72:     (INTCONbits.PEIE = 1);
   4158  0066  170B               	bsf	11,6	;volatile
   4159                           
-  4160                           ;main.c: 74:     I2C_Master_Init();
+  4160                           ;main.c: 82:     I2C_Master_Init();
   4161  0067  3189  21F9  3180   	fcall	_I2C_Master_Init
   4162                           
-  4163                           ;main.c: 75:     LCD_Init(0x4E);
+  4163                           ;main.c: 83:     LCD_Init(0x4E);
   4164  006A  304E               	movlw	78
   4165  006B  318F  2775  3180   	fcall	_LCD_Init
   4166  006E                     l4727:
   4167  006E                     l4729:
   4168                           
-  4169                           ;main.c: 77:     _Bool testVoyants = 0;
+  4169                           ;main.c: 85:     _Bool testVoyants = 0;
   4170  006E  0020               	movlb	0	; select bank0
   4171  006F  01E7               	clrf	main@testVoyants
   4172  0070                     l4731:
   4173  0070                     l4733:
   4174                           
-  4175                           ;main.c: 83:     displayManager("TEST CARTE D925ED4", "POSITIONNER CARTE", "APPUYER SUR 
+  4175                           ;main.c: 91:     displayManager("TEST CARTE D925ED4", "POSITIONNER CARTE", "APPUYER SUR 
       +                          OK", "");
   4176  0070  305D               	movlw	low (STR_1| (0+32768))
   4177  0071  00D4               	movwf	displayManager@s1
@@ -4212,7 +4212,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4192  0080  318F  2724  3180   	fcall	_displayManager
   4193  0083                     l4735:
   4194                           
-  4195                           ;main.c: 84:     _delay((unsigned long)((1000)*(16000000/4000.0)));
+  4195                           ;main.c: 92:     _delay((unsigned long)((1000)*(16000000/4000.0)));
   4196  0083  3015               	movlw	21
   4197  0084  0020               	movlb	0	; select bank0
   4198  0085  00E3               	movwf	??_main+1
@@ -4260,7 +4260,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4240  009D  138C               	bcf	12,7	;volatile
   4241  009E                     l4743:
   4242                           
-  4243                           ;main.c: 113:         displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "RETIRER
+  4243                           ;main.c: 111:         displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "RETIRER
       +                           P1 et P2", "APPUYER SUR OK");
   4244  009E  305D               	movlw	low (STR_1| (0+32768))
   4245  009F  0020               	movlb	0	; select bank0
@@ -4282,7 +4282,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4261  00AF  318F  2724  3180   	fcall	_displayManager
   4262  00B2                     l4745:
   4263                           
-  4264                           ;main.c: 114:         _delay((unsigned long)((100)*(16000000/4000.0)));
+  4264                           ;main.c: 112:         _delay((unsigned long)((100)*(16000000/4000.0)));
   4265  00B2  3003               	movlw	3
   4266  00B3  0020               	movlb	0	; select bank0
   4267  00B4  00E3               	movwf	??_main+1
@@ -4298,11 +4298,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4277  00BD  28B8               	goto	u3207
   4278  00BE                     l4747:
   4279                           
-  4280                           ;main.c: 115:         attenteDemarrage();
+  4280                           ;main.c: 113:         attenteDemarrage();
   4281  00BE  3189  21BA  3180   	fcall	_attenteDemarrage
   4282  00C1                     l4749:
   4283                           
-  4284                           ;main.c: 117:         displayManager("ETAPE 1", "TEST 3 RELAIS ON", "", "");
+  4284                           ;main.c: 115:         displayManager("ETAPE 1", "TEST 3 RELAIS ON", "", "");
   4285  00C1  3020               	movlw	low (STR_9| (0+32768))
   4286  00C2  0020               	movlb	0	; select bank0
   4287  00C3  00D4               	movwf	displayManager@s1
@@ -4323,23 +4323,23 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4302  00D2  318F  2724  3180   	fcall	_displayManager
   4303  00D5                     l4751:
   4304                           
-  4305                           ;main.c: 118:         testActif = 1;
+  4305                           ;main.c: 116:         testActif = 1;
   4306  00D5  0020               	movlb	0	; select bank0
   4307  00D6  01E8               	clrf	main@testActif
   4308  00D7  0AE8               	incf	main@testActif,f
   4309  00D8                     l4753:
   4310                           
-  4311                           ;main.c: 119:         ledConforme(0);
+  4311                           ;main.c: 117:         ledConforme(0);
   4312  00D8  3000               	movlw	0
   4313  00D9  318A  2229  3180   	fcall	_ledConforme
   4314  00DC                     l4755:
   4315                           
-  4316                           ;main.c: 120:         ledNonConforme(0);
+  4316                           ;main.c: 118:         ledNonConforme(0);
   4317  00DC  3000               	movlw	0
   4318  00DD  318A  2236  3180   	fcall	_ledNonConforme
   4319  00E0                     l4757:
   4320                           
-  4321                           ;main.c: 121:         ledProgession(1);
+  4321                           ;main.c: 119:         ledProgession(1);
   4322  00E0  3001               	movlw	1
   4323  00E1  318A  2243  3180   	fcall	_ledProgession
   4324  00E4                     l4759:
@@ -4347,17 +4347,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4326  00E5  138C               	bcf	12,7	;volatile
   4327  00E6                     l4761:
   4328                           
-  4329                           ;main.c: 128:         pressBP1(1);
+  4329                           ;main.c: 126:         pressBP1(1);
   4330  00E6  3001               	movlw	1
   4331  00E7  318A  225D  3180   	fcall	_pressBP1
   4332  00EA                     l4763:
   4333                           
-  4334                           ;main.c: 129:         pressBP2(1);
+  4334                           ;main.c: 127:         pressBP2(1);
   4335  00EA  3001               	movlw	1
   4336  00EB  318A  226A  3180   	fcall	_pressBP2
   4337  00EE                     l4765:
   4338                           
-  4339                           ;main.c: 130:         _delay((unsigned long)((100)*(16000000/4000.0)));
+  4339                           ;main.c: 128:         _delay((unsigned long)((100)*(16000000/4000.0)));
   4340  00EE  3003               	movlw	3
   4341  00EF  0020               	movlb	0	; select bank0
   4342  00F0  00E3               	movwf	??_main+1
@@ -4373,12 +4373,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4352  00F9  28F4               	goto	u3217
   4353  00FA                     l4767:
   4354                           
-  4355                           ;main.c: 131:         alimenter(1);
+  4355                           ;main.c: 129:         alimenter(1);
   4356  00FA  3001               	movlw	1
   4357  00FB  318A  2250  3180   	fcall	_alimenter
   4358  00FE                     l4769:
   4359                           
-  4360                           ;main.c: 132:         _delay((unsigned long)((2000)*(16000000/4000.0)));
+  4360                           ;main.c: 130:         _delay((unsigned long)((2000)*(16000000/4000.0)));
   4361  00FE  3029               	movlw	41
   4362  00FF  0020               	movlb	0	; select bank0
   4363  0100  00E3               	movwf	??_main+1
@@ -4394,7 +4394,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4373  0109  2904               	goto	u3227
   4374  010A                     l4771:
   4375                           
-  4376                           ;main.c: 135:         if (testR1(1) && testR2(1) && testR3(1)) {
+  4376                           ;main.c: 133:         if (testR1(1) && testR2(1) && testR3(1)) {
   4377  010A  3001               	movlw	1
   4378  010B  318C  2474  3180   	fcall	_testR1
   4379  010E  3A00               	xorlw	0
@@ -4427,22 +4427,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4406  0125  2940               	goto	l4787
   4407  0126                     l4779:
   4408                           
-  4409                           ;main.c: 139:             testActif = 0;
+  4409                           ;main.c: 137:             testActif = 0;
   4410  0126  0020               	movlb	0	; select bank0
   4411  0127  01E8               	clrf	main@testActif
   4412  0128                     l4781:
   4413                           
-  4414                           ;main.c: 140:             pressBP1(0);
+  4414                           ;main.c: 138:             pressBP1(0);
   4415  0128  3000               	movlw	0
   4416  0129  318A  225D  3180   	fcall	_pressBP1
   4417  012C                     l4783:
   4418                           
-  4419                           ;main.c: 141:             pressBP2(0);
+  4419                           ;main.c: 139:             pressBP2(0);
   4420  012C  3000               	movlw	0
   4421  012D  318A  226A  3180   	fcall	_pressBP2
   4422  0130                     l4785:
   4423                           
-  4424                           ;main.c: 142:             alerteDefaut("ETAPE 1", &testActif, &testVoyants);
+  4424                           ;main.c: 140:             alerteDefaut("ETAPE 1", &testActif, &testVoyants);
   4425  0130  3020               	movlw	low (STR_9| (0+32768))
   4426  0131  0020               	movlb	0	; select bank0
   4427  0132  00DE               	movwf	alerteDefaut@etape
@@ -4459,7 +4459,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4438  013D  318D  25E6  3180   	fcall	_alerteDefaut
   4439  0140                     l4787:
   4440                           
-  4441                           ;main.c: 146:         _delay((unsigned long)((1000)*(16000000/4000.0)));
+  4441                           ;main.c: 144:         _delay((unsigned long)((1000)*(16000000/4000.0)));
   4442  0140  3015               	movlw	21
   4443  0141  0020               	movlb	0	; select bank0
   4444  0142  00E3               	movwf	??_main+1
@@ -4476,17 +4476,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4455  014C  0000               	nop
   4456  014D                     l4789:
   4457                           
-  4458                           ;main.c: 148:         pressBP1(0);
+  4458                           ;main.c: 146:         pressBP1(0);
   4459  014D  3000               	movlw	0
   4460  014E  318A  225D  3180   	fcall	_pressBP1
   4461  0151                     l4791:
   4462                           
-  4463                           ;main.c: 149:         pressBP2(0);
+  4463                           ;main.c: 147:         pressBP2(0);
   4464  0151  3000               	movlw	0
   4465  0152  318A  226A  3180   	fcall	_pressBP2
   4466  0155                     l4793:
   4467                           
-  4468                           ;main.c: 153:         if (testActif) {
+  4468                           ;main.c: 151:         if (testActif) {
   4469  0155  0020               	movlb	0	; select bank0
   4470  0156  0868               	movf	main@testActif,w
   4471  0157  1903               	btfsc	3,2
@@ -4497,7 +4497,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4476  015B                     u2680:
   4477  015B                     l4795:
   4478                           
-  4479                           ;main.c: 155:             displayManager("ETAPE 2", "TEST 3 RELAIS OFF", "", "");
+  4479                           ;main.c: 153:             displayManager("ETAPE 2", "TEST 3 RELAIS OFF", "", "");
   4480  015B  3030               	movlw	low (STR_14| (0+32768))
   4481  015C  00D4               	movwf	displayManager@s1
   4482  015D  3092               	movlw	high (STR_14| (0+32768))
@@ -4517,17 +4517,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4496  016B  318F  2724  3180   	fcall	_displayManager
   4497  016E                     l4797:
   4498                           
-  4499                           ;main.c: 156:             pressBP1(0);
+  4499                           ;main.c: 154:             pressBP1(0);
   4500  016E  3000               	movlw	0
   4501  016F  318A  225D  3180   	fcall	_pressBP1
   4502  0172                     l4799:
   4503                           
-  4504                           ;main.c: 157:             pressBP2(0);
+  4504                           ;main.c: 155:             pressBP2(0);
   4505  0172  3000               	movlw	0
   4506  0173  318A  226A  3180   	fcall	_pressBP2
   4507  0176                     l4801:
   4508                           
-  4509                           ;main.c: 158:             _delay((unsigned long)((500)*(16000000/4000.0)));
+  4509                           ;main.c: 156:             _delay((unsigned long)((500)*(16000000/4000.0)));
   4510  0176  300B               	movlw	11
   4511  0177  0020               	movlb	0	; select bank0
   4512  0178  00E3               	movwf	??_main+1
@@ -4544,7 +4544,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4523  0182  3200               	nop2
   4524  0183                     l4803:
   4525                           
-  4526                           ;main.c: 159:             if (!testR1(1) && !testR2(1) && !testR3(1)) {
+  4526                           ;main.c: 157:             if (!testR1(1) && !testR2(1) && !testR3(1)) {
   4527  0183  3001               	movlw	1
   4528  0184  318C  2474  3180   	fcall	_testR1
   4529  0187  3A00               	xorlw	0
@@ -4577,12 +4577,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4556  019E  29B0               	goto	l4815
   4557  019F                     l4811:
   4558                           
-  4559                           ;main.c: 163:                 testActif = 0;
+  4559                           ;main.c: 161:                 testActif = 0;
   4560  019F  0020               	movlb	0	; select bank0
   4561  01A0  01E8               	clrf	main@testActif
   4562  01A1                     l4813:
   4563                           
-  4564                           ;main.c: 164:                 alerteDefaut("ETAPE 2", &testActif, &testVoyants);
+  4564                           ;main.c: 162:                 alerteDefaut("ETAPE 2", &testActif, &testVoyants);
   4565  01A1  3030               	movlw	low (STR_14| (0+32768))
   4566  01A2  00DE               	movwf	alerteDefaut@etape
   4567  01A3  3092               	movlw	high (STR_14| (0+32768))
@@ -4598,7 +4598,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4577  01AD  318D  25E6  3180   	fcall	_alerteDefaut
   4578  01B0                     l4815:
   4579                           
-  4580                           ;main.c: 171:         if (testActif) {
+  4580                           ;main.c: 169:         if (testActif) {
   4581  01B0  0020               	movlb	0	; select bank0
   4582  01B1  0868               	movf	main@testActif,w
   4583  01B2  1903               	btfsc	3,2
@@ -4609,7 +4609,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4588  01B6                     u2720:
   4589  01B6                     l4817:
   4590                           
-  4591                           ;main.c: 173:             displayManager("ETAPE 3", "TEST LED ROUGE", "", "");
+  4591                           ;main.c: 171:             displayManager("ETAPE 3", "TEST LED ROUGE", "", "");
   4592  01B6  3040               	movlw	low (STR_19| (0+32768))
   4593  01B7  00D4               	movwf	displayManager@s1
   4594  01B8  3092               	movlw	high (STR_19| (0+32768))
@@ -4629,12 +4629,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4608  01C6  318F  2724  3180   	fcall	_displayManager
   4609  01C9                     l4819:
   4610                           
-  4611                           ;main.c: 174:             pressBP1(1);
+  4611                           ;main.c: 172:             pressBP1(1);
   4612  01C9  3001               	movlw	1
   4613  01CA  318A  225D  3180   	fcall	_pressBP1
   4614  01CD                     l4821:
   4615                           
-  4616                           ;main.c: 175:             _delay((unsigned long)((250)*(16000000/4000.0)));
+  4616                           ;main.c: 173:             _delay((unsigned long)((250)*(16000000/4000.0)));
   4617  01CD  3006               	movlw	6
   4618  01CE  0020               	movlb	0	; select bank0
   4619  01CF  00E3               	movwf	??_main+1
@@ -4651,12 +4651,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4630  01D9  3200               	nop2
   4631  01DA                     l4823:
   4632                           
-  4633                           ;main.c: 176:             pressBP1(0);
+  4633                           ;main.c: 174:             pressBP1(0);
   4634  01DA  3000               	movlw	0
   4635  01DB  318A  225D  3180   	fcall	_pressBP1
   4636  01DE                     l4825:
   4637                           
-  4638                           ;main.c: 177:             if (testLeds) {
+  4638                           ;main.c: 175:             if (testLeds) {
   4639  01DE  0020               	movlb	0	; select bank0
   4640  01DF  0866               	movf	main@testLeds,w
   4641  01E0  1903               	btfsc	3,2
@@ -4667,7 +4667,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4646  01E4                     u2730:
   4647  01E4                     l4827:
   4648                           
-  4649                           ;main.c: 179:                 testVoyants = reponseOperateur();
+  4649                           ;main.c: 177:                 testVoyants = reponseOperateur();
   4650  01E4  318E  2659  3180   	fcall	_reponseOperateur
   4651  01E7  0020               	movlb	0	; select bank0
   4652  01E8  00E2               	movwf	??_main
@@ -4675,7 +4675,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4654  01EA  00E7               	movwf	main@testVoyants
   4655  01EB                     l4829:
   4656                           
-  4657                           ;main.c: 180:                 if (!testVoyants) {
+  4657                           ;main.c: 178:                 if (!testVoyants) {
   4658  01EB  0867               	movf	main@testVoyants,w
   4659  01EC  1D03               	btfss	3,2
   4660  01ED  29EF               	goto	u2741
@@ -4685,11 +4685,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4664  01F0                     u2740:
   4665  01F0                     l4831:
   4666                           
-  4667                           ;main.c: 182:                     testActif = 0;
+  4667                           ;main.c: 180:                     testActif = 0;
   4668  01F0  01E8               	clrf	main@testActif
   4669  01F1                     l4833:
   4670                           
-  4671                           ;main.c: 183:                     alerteDefaut("ETAPE 3", &testActif, &testVoyants);
+  4671                           ;main.c: 181:                     alerteDefaut("ETAPE 3", &testActif, &testVoyants);
   4672  01F1  3040               	movlw	low (STR_19| (0+32768))
   4673  01F2  00DE               	movwf	alerteDefaut@etape
   4674  01F3  3092               	movlw	high (STR_19| (0+32768))
@@ -4705,7 +4705,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4684  01FD  318D  25E6  3180   	fcall	_alerteDefaut
   4685  0200                     l4835:
   4686                           
-  4687                           ;main.c: 192:         if (testActif) {
+  4687                           ;main.c: 190:         if (testActif) {
   4688  0200  0020               	movlb	0	; select bank0
   4689  0201  0868               	movf	main@testActif,w
   4690  0202  1903               	btfsc	3,2
@@ -4716,7 +4716,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4695  0206                     u2750:
   4696  0206                     l4837:
   4697                           
-  4698                           ;main.c: 194:             displayManager("ETAPE 4", "TEST LED BLEUE", "", "");
+  4698                           ;main.c: 192:             displayManager("ETAPE 4", "TEST LED BLEUE", "", "");
   4699  0206  3048               	movlw	low (STR_24| (0+32768))
   4700  0207  00D4               	movwf	displayManager@s1
   4701  0208  3092               	movlw	high (STR_24| (0+32768))
@@ -4736,12 +4736,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4715  0216  318F  2724  3180   	fcall	_displayManager
   4716  0219                     l4839:
   4717                           
-  4718                           ;main.c: 195:             pressBP1(1);
+  4718                           ;main.c: 193:             pressBP1(1);
   4719  0219  3001               	movlw	1
   4720  021A  318A  225D  3180   	fcall	_pressBP1
   4721  021D                     l4841:
   4722                           
-  4723                           ;main.c: 196:             _delay((unsigned long)((250)*(16000000/4000.0)));
+  4723                           ;main.c: 194:             _delay((unsigned long)((250)*(16000000/4000.0)));
   4724  021D  3006               	movlw	6
   4725  021E  0020               	movlb	0	; select bank0
   4726  021F  00E3               	movwf	??_main+1
@@ -4758,12 +4758,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4737  0229  3200               	nop2
   4738  022A                     l4843:
   4739                           
-  4740                           ;main.c: 197:             pressBP1(0);
+  4740                           ;main.c: 195:             pressBP1(0);
   4741  022A  3000               	movlw	0
   4742  022B  318A  225D  3180   	fcall	_pressBP1
   4743  022E                     l4845:
   4744                           
-  4745                           ;main.c: 198:             if (testLeds) {
+  4745                           ;main.c: 196:             if (testLeds) {
   4746  022E  0020               	movlb	0	; select bank0
   4747  022F  0866               	movf	main@testLeds,w
   4748  0230  1903               	btfsc	3,2
@@ -4774,7 +4774,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4753  0234                     u2760:
   4754  0234                     l4847:
   4755                           
-  4756                           ;main.c: 200:                 testVoyants = reponseOperateur();
+  4756                           ;main.c: 198:                 testVoyants = reponseOperateur();
   4757  0234  318E  2659  3180   	fcall	_reponseOperateur
   4758  0237  0020               	movlb	0	; select bank0
   4759  0238  00E2               	movwf	??_main
@@ -4782,7 +4782,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4761  023A  00E7               	movwf	main@testVoyants
   4762  023B                     l4849:
   4763                           
-  4764                           ;main.c: 201:                 if (!testVoyants) {
+  4764                           ;main.c: 199:                 if (!testVoyants) {
   4765  023B  0867               	movf	main@testVoyants,w
   4766  023C  1D03               	btfss	3,2
   4767  023D  2A3F               	goto	u2771
@@ -4792,11 +4792,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4771  0240                     u2770:
   4772  0240                     l4851:
   4773                           
-  4774                           ;main.c: 203:                     testActif = 0;
+  4774                           ;main.c: 201:                     testActif = 0;
   4775  0240  01E8               	clrf	main@testActif
   4776  0241                     l4853:
   4777                           
-  4778                           ;main.c: 204:                     alerteDefaut("ETAPE 4", &testActif, &testVoyants);
+  4778                           ;main.c: 202:                     alerteDefaut("ETAPE 4", &testActif, &testVoyants);
   4779  0241  3048               	movlw	low (STR_24| (0+32768))
   4780  0242  00DE               	movwf	alerteDefaut@etape
   4781  0243  3092               	movlw	high (STR_24| (0+32768))
@@ -4812,7 +4812,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4791  024D  318D  25E6  3180   	fcall	_alerteDefaut
   4792  0250                     l4855:
   4793                           
-  4794                           ;main.c: 213:         if (testActif) {
+  4794                           ;main.c: 211:         if (testActif) {
   4795  0250  0020               	movlb	0	; select bank0
   4796  0251  0868               	movf	main@testActif,w
   4797  0252  1903               	btfsc	3,2
@@ -4823,7 +4823,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4802  0256                     u2780:
   4803  0256                     l4857:
   4804                           
-  4805                           ;main.c: 215:             displayManager("ETAPE 5", "TEST LED VERTE", "", "");
+  4805                           ;main.c: 213:             displayManager("ETAPE 5", "TEST LED VERTE", "", "");
   4806  0256  3050               	movlw	low (STR_29| (0+32768))
   4807  0257  00D4               	movwf	displayManager@s1
   4808  0258  3092               	movlw	high (STR_29| (0+32768))
@@ -4843,12 +4843,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4822  0266  318F  2724  3180   	fcall	_displayManager
   4823  0269                     l4859:
   4824                           
-  4825                           ;main.c: 216:             pressBP1(1);
+  4825                           ;main.c: 214:             pressBP1(1);
   4826  0269  3001               	movlw	1
   4827  026A  318A  225D  3180   	fcall	_pressBP1
   4828  026D                     l4861:
   4829                           
-  4830                           ;main.c: 217:             _delay((unsigned long)((250)*(16000000/4000.0)));
+  4830                           ;main.c: 215:             _delay((unsigned long)((250)*(16000000/4000.0)));
   4831  026D  3006               	movlw	6
   4832  026E  0020               	movlb	0	; select bank0
   4833  026F  00E3               	movwf	??_main+1
@@ -4865,12 +4865,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4844  0279  3200               	nop2
   4845  027A                     l4863:
   4846                           
-  4847                           ;main.c: 218:             pressBP1(0);
+  4847                           ;main.c: 216:             pressBP1(0);
   4848  027A  3000               	movlw	0
   4849  027B  318A  225D  3180   	fcall	_pressBP1
   4850  027E                     l4865:
   4851                           
-  4852                           ;main.c: 219:             if (testLeds) {
+  4852                           ;main.c: 217:             if (testLeds) {
   4853  027E  0020               	movlb	0	; select bank0
   4854  027F  0866               	movf	main@testLeds,w
   4855  0280  1903               	btfsc	3,2
@@ -4881,7 +4881,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4860  0284                     u2790:
   4861  0284                     l4867:
   4862                           
-  4863                           ;main.c: 221:                 testVoyants = reponseOperateur();
+  4863                           ;main.c: 219:                 testVoyants = reponseOperateur();
   4864  0284  318E  2659  3180   	fcall	_reponseOperateur
   4865  0287  0020               	movlb	0	; select bank0
   4866  0288  00E2               	movwf	??_main
@@ -4889,7 +4889,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4868  028A  00E7               	movwf	main@testVoyants
   4869  028B                     l4869:
   4870                           
-  4871                           ;main.c: 222:                 if (!testVoyants) {
+  4871                           ;main.c: 220:                 if (!testVoyants) {
   4872  028B  0867               	movf	main@testVoyants,w
   4873  028C  1D03               	btfss	3,2
   4874  028D  2A8F               	goto	u2801
@@ -4899,11 +4899,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4878  0290                     u2800:
   4879  0290                     l4871:
   4880                           
-  4881                           ;main.c: 224:                     testActif = 0;
+  4881                           ;main.c: 222:                     testActif = 0;
   4882  0290  01E8               	clrf	main@testActif
   4883  0291                     l4873:
   4884                           
-  4885                           ;main.c: 225:                     alerteDefaut("ETAPE 5", &testActif, &testVoyants);
+  4885                           ;main.c: 223:                     alerteDefaut("ETAPE 5", &testActif, &testVoyants);
   4886  0291  3050               	movlw	low (STR_29| (0+32768))
   4887  0292  00DE               	movwf	alerteDefaut@etape
   4888  0293  3092               	movlw	high (STR_29| (0+32768))
@@ -4919,7 +4919,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4898  029D  318D  25E6  3180   	fcall	_alerteDefaut
   4899  02A0                     l4875:
   4900                           
-  4901                           ;main.c: 235:         if (testActif) {
+  4901                           ;main.c: 233:         if (testActif) {
   4902  02A0  0020               	movlb	0	; select bank0
   4903  02A1  0868               	movf	main@testActif,w
   4904  02A2  1903               	btfsc	3,2
@@ -4930,7 +4930,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4909  02A6                     u2810:
   4910  02A6                     l4877:
   4911                           
-  4912                           ;main.c: 237:             displayManager("ETAPE 6", "TEST R1 ON", "", "");
+  4912                           ;main.c: 235:             displayManager("ETAPE 6", "TEST R1 ON", "", "");
   4913  02A6  3058               	movlw	low (STR_34| (0+32768))
   4914  02A7  00D4               	movwf	displayManager@s1
   4915  02A8  3092               	movlw	high (STR_34| (0+32768))
@@ -4950,12 +4950,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4929  02B6  318F  2724  3180   	fcall	_displayManager
   4930  02B9                     l4879:
   4931                           
-  4932                           ;main.c: 238:             pressBP1(1);
+  4932                           ;main.c: 236:             pressBP1(1);
   4933  02B9  3001               	movlw	1
   4934  02BA  318A  225D  3180   	fcall	_pressBP1
   4935  02BD                     l4881:
   4936                           
-  4937                           ;main.c: 239:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+  4937                           ;main.c: 237:             _delay((unsigned long)((1000)*(16000000/4000.0)));
   4938  02BD  3015               	movlw	21
   4939  02BE  0020               	movlb	0	; select bank0
   4940  02BF  00E3               	movwf	??_main+1
@@ -4972,12 +4972,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4951  02C9  0000               	nop
   4952  02CA                     l4883:
   4953                           
-  4954                           ;main.c: 240:             pressBP1(0);
+  4954                           ;main.c: 238:             pressBP1(0);
   4955  02CA  3000               	movlw	0
   4956  02CB  318A  225D  3180   	fcall	_pressBP1
   4957  02CE                     l4885:
   4958                           
-  4959                           ;main.c: 242:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+  4959                           ;main.c: 240:             _delay((unsigned long)((1000)*(16000000/4000.0)));
   4960  02CE  3015               	movlw	21
   4961  02CF  0020               	movlb	0	; select bank0
   4962  02D0  00E3               	movwf	??_main+1
@@ -4994,7 +4994,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4973  02DA  0000               	nop
   4974  02DB                     l4887:
   4975                           
-  4976                           ;main.c: 244:             if (testR1(1)) {
+  4976                           ;main.c: 242:             if (testR1(1)) {
   4977  02DB  3001               	movlw	1
   4978  02DC  318C  2474  3180   	fcall	_testR1
   4979  02DF  3A00               	xorlw	0
@@ -5007,12 +5007,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4986  02E4  2AF6               	goto	l4895
   4987  02E5                     l4891:
   4988                           
-  4989                           ;main.c: 248:                 testActif = 0;
+  4989                           ;main.c: 246:                 testActif = 0;
   4990  02E5  0020               	movlb	0	; select bank0
   4991  02E6  01E8               	clrf	main@testActif
   4992  02E7                     l4893:
   4993                           
-  4994                           ;main.c: 249:                 alerteDefaut("ETAPE 6", &testActif, &testVoyants);
+  4994                           ;main.c: 247:                 alerteDefaut("ETAPE 6", &testActif, &testVoyants);
   4995  02E7  3058               	movlw	low (STR_34| (0+32768))
   4996  02E8  00DE               	movwf	alerteDefaut@etape
   4997  02E9  3092               	movlw	high (STR_34| (0+32768))
@@ -5028,7 +5028,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5007  02F3  318D  25E6  3180   	fcall	_alerteDefaut
   5008  02F6                     l4895:
   5009                           
-  5010                           ;main.c: 256:         if (testActif) {
+  5010                           ;main.c: 254:         if (testActif) {
   5011  02F6  0020               	movlb	0	; select bank0
   5012  02F7  0868               	movf	main@testActif,w
   5013  02F8  1903               	btfsc	3,2
@@ -5039,7 +5039,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5018  02FC                     u2830:
   5019  02FC                     l4897:
   5020                           
-  5021                           ;main.c: 258:             displayManager("ETAPE 7", "TEST R1 OFF - R2 ON", "", "");
+  5021                           ;main.c: 256:             displayManager("ETAPE 7", "TEST R1 OFF - R2 ON", "", "");
   5022  02FC  3060               	movlw	low (STR_39| (0+32768))
   5023  02FD  00D4               	movwf	displayManager@s1
   5024  02FE  3092               	movlw	high (STR_39| (0+32768))
@@ -5059,12 +5059,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5038  030C  318F  2724  3180   	fcall	_displayManager
   5039  030F                     l4899:
   5040                           
-  5041                           ;main.c: 259:             pressBP1(1);
+  5041                           ;main.c: 257:             pressBP1(1);
   5042  030F  3001               	movlw	1
   5043  0310  318A  225D  3180   	fcall	_pressBP1
   5044  0313                     l4901:
   5045                           
-  5046                           ;main.c: 260:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+  5046                           ;main.c: 258:             _delay((unsigned long)((1000)*(16000000/4000.0)));
   5047  0313  3015               	movlw	21
   5048  0314  0020               	movlb	0	; select bank0
   5049  0315  00E3               	movwf	??_main+1
@@ -5081,12 +5081,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5060  031F  0000               	nop
   5061  0320                     l4903:
   5062                           
-  5063                           ;main.c: 261:             pressBP1(0);
+  5063                           ;main.c: 259:             pressBP1(0);
   5064  0320  3000               	movlw	0
   5065  0321  318A  225D  3180   	fcall	_pressBP1
   5066  0324                     l4905:
   5067                           
-  5068                           ;main.c: 263:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+  5068                           ;main.c: 261:             _delay((unsigned long)((1000)*(16000000/4000.0)));
   5069  0324  3015               	movlw	21
   5070  0325  0020               	movlb	0	; select bank0
   5071  0326  00E3               	movwf	??_main+1
@@ -5103,7 +5103,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5082  0330  0000               	nop
   5083  0331                     l4907:
   5084                           
-  5085                           ;main.c: 265:             if (testR1(0) && testR2(1)) {
+  5085                           ;main.c: 263:             if (testR1(0) && testR2(1)) {
   5086  0331  3000               	movlw	0
   5087  0332  318C  2474  3180   	fcall	_testR1
   5088  0335  3A00               	xorlw	0
@@ -5126,12 +5126,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5105  0343  2B55               	goto	l4917
   5106  0344                     l4913:
   5107                           
-  5108                           ;main.c: 269:                 testActif = 0;
+  5108                           ;main.c: 267:                 testActif = 0;
   5109  0344  0020               	movlb	0	; select bank0
   5110  0345  01E8               	clrf	main@testActif
   5111  0346                     l4915:
   5112                           
-  5113                           ;main.c: 270:                 alerteDefaut("ETAPE 7", &testActif, &testVoyants);
+  5113                           ;main.c: 268:                 alerteDefaut("ETAPE 7", &testActif, &testVoyants);
   5114  0346  3060               	movlw	low (STR_39| (0+32768))
   5115  0347  00DE               	movwf	alerteDefaut@etape
   5116  0348  3092               	movlw	high (STR_39| (0+32768))
@@ -5147,7 +5147,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5126  0352  318D  25E6  3180   	fcall	_alerteDefaut
   5127  0355                     l4917:
   5128                           
-  5129                           ;main.c: 277:         if (testActif) {
+  5129                           ;main.c: 275:         if (testActif) {
   5130  0355  0020               	movlb	0	; select bank0
   5131  0356  0868               	movf	main@testActif,w
   5132  0357  1903               	btfsc	3,2
@@ -5158,7 +5158,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5137  035B                     u2860:
   5138  035B                     l4919:
   5139                           
-  5140                           ;main.c: 279:             displayManager("ETAPE 8", "TEST R2 OFF - R3 ON", "", "");
+  5140                           ;main.c: 277:             displayManager("ETAPE 8", "TEST R2 OFF - R3 ON", "", "");
   5141  035B  3068               	movlw	low (STR_44| (0+32768))
   5142  035C  00D4               	movwf	displayManager@s1
   5143  035D  3092               	movlw	high (STR_44| (0+32768))
@@ -5178,12 +5178,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5157  036B  318F  2724  3180   	fcall	_displayManager
   5158  036E                     l4921:
   5159                           
-  5160                           ;main.c: 280:             pressBP1(1);
+  5160                           ;main.c: 278:             pressBP1(1);
   5161  036E  3001               	movlw	1
   5162  036F  318A  225D  3180   	fcall	_pressBP1
   5163  0372                     l4923:
   5164                           
-  5165                           ;main.c: 281:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+  5165                           ;main.c: 279:             _delay((unsigned long)((1000)*(16000000/4000.0)));
   5166  0372  3015               	movlw	21
   5167  0373  0020               	movlb	0	; select bank0
   5168  0374  00E3               	movwf	??_main+1
@@ -5200,12 +5200,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5179  037E  0000               	nop
   5180  037F                     l4925:
   5181                           
-  5182                           ;main.c: 282:             pressBP1(0);
+  5182                           ;main.c: 280:             pressBP1(0);
   5183  037F  3000               	movlw	0
   5184  0380  318A  225D  3180   	fcall	_pressBP1
   5185  0383                     l4927:
   5186                           
-  5187                           ;main.c: 284:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+  5187                           ;main.c: 282:             _delay((unsigned long)((1000)*(16000000/4000.0)));
   5188  0383  3015               	movlw	21
   5189  0384  0020               	movlb	0	; select bank0
   5190  0385  00E3               	movwf	??_main+1
@@ -5222,7 +5222,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5201  038F  0000               	nop
   5202  0390                     l4929:
   5203                           
-  5204                           ;main.c: 286:             if (testR2(0) && testR3(1)) {
+  5204                           ;main.c: 284:             if (testR2(0) && testR3(1)) {
   5205  0390  3000               	movlw	0
   5206  0391  318C  2497  3180   	fcall	_testR2
   5207  0394  3A00               	xorlw	0
@@ -5245,12 +5245,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5224  03A2  2BB4               	goto	l4939
   5225  03A3                     l4935:
   5226                           
-  5227                           ;main.c: 290:                 testActif = 0;
+  5227                           ;main.c: 288:                 testActif = 0;
   5228  03A3  0020               	movlb	0	; select bank0
   5229  03A4  01E8               	clrf	main@testActif
   5230  03A5                     l4937:
   5231                           
-  5232                           ;main.c: 291:                 alerteDefaut("ETAPE 8", &testActif, &testVoyants);
+  5232                           ;main.c: 289:                 alerteDefaut("ETAPE 8", &testActif, &testVoyants);
   5233  03A5  3068               	movlw	low (STR_44| (0+32768))
   5234  03A6  00DE               	movwf	alerteDefaut@etape
   5235  03A7  3092               	movlw	high (STR_44| (0+32768))
@@ -5266,7 +5266,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5245  03B1  318D  25E6  3180   	fcall	_alerteDefaut
   5246  03B4                     l4939:
   5247                           
-  5248                           ;main.c: 298:         if (testActif) {
+  5248                           ;main.c: 296:         if (testActif) {
   5249  03B4  0020               	movlb	0	; select bank0
   5250  03B5  0868               	movf	main@testActif,w
   5251  03B6  1903               	btfsc	3,2
@@ -5277,7 +5277,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5256  03BA                     u2890:
   5257  03BA                     l4941:
   5258                           
-  5259                           ;main.c: 300:             displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE
+  5259                           ;main.c: 298:             displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE
       +                          ?", "");
   5260  03BA  3070               	movlw	low (STR_49| (0+32768))
   5261  03BB  00D4               	movwf	displayManager@s1
@@ -5298,12 +5298,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5276  03CA  318F  2724  3180   	fcall	_displayManager
   5277  03CD                     l4943:
   5278                           
-  5279                           ;main.c: 301:             pressBP1(1);
+  5279                           ;main.c: 299:             pressBP1(1);
   5280  03CD  3001               	movlw	1
   5281  03CE  318A  225D  3180   	fcall	_pressBP1
   5282  03D1                     l4945:
   5283                           
-  5284                           ;main.c: 302:             _delay((unsigned long)((250)*(16000000/4000.0)));
+  5284                           ;main.c: 300:             _delay((unsigned long)((250)*(16000000/4000.0)));
   5285  03D1  3006               	movlw	6
   5286  03D2  0020               	movlb	0	; select bank0
   5287  03D3  00E3               	movwf	??_main+1
@@ -5320,12 +5320,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5298  03DD  3200               	nop2
   5299  03DE                     l4947:
   5300                           
-  5301                           ;main.c: 303:             pressBP1(0);
+  5301                           ;main.c: 301:             pressBP1(0);
   5302  03DE  3000               	movlw	0
   5303  03DF  318A  225D  3180   	fcall	_pressBP1
   5304  03E2                     l4949:
   5305                           
-  5306                           ;main.c: 304:             _delay((unsigned long)((500)*(16000000/4000.0)));
+  5306                           ;main.c: 302:             _delay((unsigned long)((500)*(16000000/4000.0)));
   5307  03E2  300B               	movlw	11
   5308  03E3  0020               	movlb	0	; select bank0
   5309  03E4  00E3               	movwf	??_main+1
@@ -5342,7 +5342,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5320  03EE  3200               	nop2
   5321  03EF                     l4951:
   5322                           
-  5323                           ;main.c: 309:             lectureAN1 = ADC_GetConversion(VIN1);
+  5323                           ;main.c: 307:             lectureAN1 = ADC_GetConversion(VIN1);
   5324  03EF  300C               	movlw	12
   5325  03F0  318C  2431  3180   	fcall	_ADC_GetConversion
   5326  03F3  0020               	movlb	0	; select bank0
@@ -5352,7 +5352,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5330  03F7  00E4               	movwf	main@lectureAN1
   5331  03F8                     l4953:
   5332                           
-  5333                           ;main.c: 310:             if (lectureAN1 < 480) {
+  5333                           ;main.c: 308:             if (lectureAN1 < 480) {
   5334  03F8  0865               	movf	main@lectureAN1+1,w
   5335  03F9  3A80               	xorlw	128
   5336  03FA  00E2               	movwf	??_main
@@ -5370,14 +5370,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5348  0404  2C08               	goto	l4955
   5349  0405                     u2900:
   5350  0405                     l883:	
-  5351                           ;main.c: 313:                 do { LATAbits.LATA7 = 1; } while(0);
+  5351                           ;main.c: 311:                 do { LATAbits.LATA7 = 1; } while(0);
   5352                           
   5353  0405  0022               	movlb	2	; select bank2
   5354  0406  178C               	bsf	12,7	;volatile
   5355  0407  2C1A               	goto	l4959
   5356  0408                     l4955:
   5357                           
-  5358                           ;main.c: 317:                 alerteDefaut("ETAPE 9", &testActif, &testVoyants);
+  5358                           ;main.c: 315:                 alerteDefaut("ETAPE 9", &testActif, &testVoyants);
   5359  0408  3070               	movlw	low (STR_49| (0+32768))
   5360  0409  0020               	movlb	0	; select bank0
   5361  040A  00DE               	movwf	alerteDefaut@etape
@@ -5397,7 +5397,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5375  0419  138C               	bcf	12,7	;volatile
   5376  041A                     l4959:
   5377                           
-  5378                           ;main.c: 322:             _delay((unsigned long)((2000)*(16000000/4000.0)));
+  5378                           ;main.c: 320:             _delay((unsigned long)((2000)*(16000000/4000.0)));
   5379  041A  3029               	movlw	41
   5380  041B  0020               	movlb	0	; select bank0
   5381  041C  00E3               	movwf	??_main+1
@@ -5413,7 +5413,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5391  0425  2C20               	goto	u3367
   5392  0426                     l4961:
   5393                           
-  5394                           ;main.c: 328:         if (testActif) {
+  5394                           ;main.c: 326:         if (testActif) {
   5395  0426  0020               	movlb	0	; select bank0
   5396  0427  0868               	movf	main@testActif,w
   5397  0428  1903               	btfsc	3,2
@@ -5424,7 +5424,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5402  042C                     u2910:
   5403  042C                     l4963:
   5404                           
-  5405                           ;main.c: 330:             displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT
+  5405                           ;main.c: 328:             displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT
       +                          ?", "");
   5406  042C  30CF               	movlw	low (STR_54| (0+32768))
   5407  042D  00D4               	movwf	displayManager@s1
@@ -5445,12 +5445,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5422  043C  318F  2724  3180   	fcall	_displayManager
   5423  043F                     l4965:
   5424                           
-  5425                           ;main.c: 331:             pressBP1(1);
+  5425                           ;main.c: 329:             pressBP1(1);
   5426  043F  3001               	movlw	1
   5427  0440  318A  225D  3180   	fcall	_pressBP1
   5428  0443                     l4967:
   5429                           
-  5430                           ;main.c: 332:             _delay((unsigned long)((250)*(16000000/4000.0)));
+  5430                           ;main.c: 330:             _delay((unsigned long)((250)*(16000000/4000.0)));
   5431  0443  3006               	movlw	6
   5432  0444  0020               	movlb	0	; select bank0
   5433  0445  00E3               	movwf	??_main+1
@@ -5467,12 +5467,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5444  044F  3200               	nop2
   5445  0450                     l4969:
   5446                           
-  5447                           ;main.c: 333:             pressBP1(0);
+  5447                           ;main.c: 331:             pressBP1(0);
   5448  0450  3000               	movlw	0
   5449  0451  318A  225D  3180   	fcall	_pressBP1
   5450  0454                     l4971:
   5451                           
-  5452                           ;main.c: 338:             _delay((unsigned long)((500)*(16000000/4000.0)));
+  5452                           ;main.c: 336:             _delay((unsigned long)((500)*(16000000/4000.0)));
   5453  0454  300B               	movlw	11
   5454  0455  0020               	movlb	0	; select bank0
   5455  0456  00E3               	movwf	??_main+1
@@ -5489,7 +5489,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5466  0460  3200               	nop2
   5467  0461                     l4973:
   5468                           
-  5469                           ;main.c: 339:             lectureAN1 = ADC_GetConversion(VIN1);
+  5469                           ;main.c: 337:             lectureAN1 = ADC_GetConversion(VIN1);
   5470  0461  300C               	movlw	12
   5471  0462  318C  2431  3180   	fcall	_ADC_GetConversion
   5472  0465  0020               	movlb	0	; select bank0
@@ -5499,7 +5499,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5476  0469  00E4               	movwf	main@lectureAN1
   5477  046A                     l4975:
   5478                           
-  5479                           ;main.c: 340:             if (lectureAN1 > 480) {
+  5479                           ;main.c: 338:             if (lectureAN1 > 480) {
   5480  046A  0865               	movf	main@lectureAN1+1,w
   5481  046B  3A80               	xorlw	128
   5482  046C  00E2               	movwf	??_main
@@ -5517,14 +5517,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5494  0476  2C7A               	goto	l4977
   5495  0477                     u2920:
   5496  0477                     l890:	
-  5497                           ;main.c: 343:                 do { LATAbits.LATA7 = 0; } while(0);
+  5497                           ;main.c: 341:                 do { LATAbits.LATA7 = 0; } while(0);
   5498                           
   5499  0477  0022               	movlb	2	; select bank2
   5500  0478  138C               	bcf	12,7	;volatile
   5501  0479  2C8C               	goto	l4981
   5502  047A                     l4977:
   5503                           
-  5504                           ;main.c: 347:                 alerteDefaut("ETAPE 10", &testActif, &testVoyants);
+  5504                           ;main.c: 345:                 alerteDefaut("ETAPE 10", &testActif, &testVoyants);
   5505  047A  30CF               	movlw	low (STR_54| (0+32768))
   5506  047B  0020               	movlb	0	; select bank0
   5507  047C  00DE               	movwf	alerteDefaut@etape
@@ -5544,7 +5544,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5521  048B  178C               	bsf	12,7	;volatile
   5522  048C                     l4981:
   5523                           
-  5524                           ;main.c: 351:             _delay((unsigned long)((2000)*(16000000/4000.0)));
+  5524                           ;main.c: 349:             _delay((unsigned long)((2000)*(16000000/4000.0)));
   5525  048C  3029               	movlw	41
   5526  048D  0020               	movlb	0	; select bank0
   5527  048E  00E3               	movwf	??_main+1
@@ -5560,7 +5560,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5537  0497  2C92               	goto	u3397
   5538  0498                     l4983:
   5539                           
-  5540                           ;main.c: 358:         if (testActif) {
+  5540                           ;main.c: 356:         if (testActif) {
   5541  0498  0020               	movlb	0	; select bank0
   5542  0499  0868               	movf	main@testActif,w
   5543  049A  1903               	btfsc	3,2
@@ -5571,7 +5571,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5548  049E                     u2930:
   5549  049E                     l4985:
   5550                           
-  5551                           ;main.c: 360:             displayManager("ETAPE 12", "TEST SFLASH", "", "");
+  5551                           ;main.c: 358:             displayManager("ETAPE 12", "TEST SFLASH", "", "");
   5552  049E  30D8               	movlw	low (STR_59| (0+32768))
   5553  049F  00D4               	movwf	displayManager@s1
   5554  04A0  3091               	movlw	high (STR_59| (0+32768))
@@ -5591,7 +5591,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5568  04AE  318F  2724  3180   	fcall	_displayManager
   5569  04B1                     l4987:
   5570                           
-  5571                           ;main.c: 361:             _delay((unsigned long)((500)*(16000000/4000.0)));
+  5571                           ;main.c: 359:             _delay((unsigned long)((500)*(16000000/4000.0)));
   5572  04B1  300B               	movlw	11
   5573  04B2  0020               	movlb	0	; select bank0
   5574  04B3  00E3               	movwf	??_main+1
@@ -5608,12 +5608,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5585  04BD  3200               	nop2
   5586  04BE                     l4989:
   5587                           
-  5588                           ;main.c: 362:             pressBP1(1);
+  5588                           ;main.c: 360:             pressBP1(1);
   5589  04BE  3001               	movlw	1
   5590  04BF  318A  225D  3180   	fcall	_pressBP1
   5591  04C2                     l4991:
   5592                           
-  5593                           ;main.c: 363:             _delay((unsigned long)((250)*(16000000/4000.0)));
+  5593                           ;main.c: 361:             _delay((unsigned long)((250)*(16000000/4000.0)));
   5594  04C2  3006               	movlw	6
   5595  04C3  0020               	movlb	0	; select bank0
   5596  04C4  00E3               	movwf	??_main+1
@@ -5630,12 +5630,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5607  04CE  3200               	nop2
   5608  04CF                     l4993:
   5609                           
-  5610                           ;main.c: 364:             pressBP1(0);
+  5610                           ;main.c: 362:             pressBP1(0);
   5611  04CF  3000               	movlw	0
   5612  04D0  318A  225D  3180   	fcall	_pressBP1
   5613  04D3                     l4995:
   5614                           
-  5615                           ;main.c: 366:             _delay((unsigned long)((3000)*(16000000/4000.0)));
+  5615                           ;main.c: 364:             _delay((unsigned long)((3000)*(16000000/4000.0)));
   5616  04D3  303D               	movlw	61
   5617  04D4  0020               	movlb	0	; select bank0
   5618  04D5  00E3               	movwf	??_main+1
@@ -5652,12 +5652,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5629  04DF  3200               	nop2
   5630  04E0                     l4997:
   5631                           
-  5632                           ;main.c: 368:             pressBP1(1);
+  5632                           ;main.c: 366:             pressBP1(1);
   5633  04E0  3001               	movlw	1
   5634  04E1  318A  225D  3180   	fcall	_pressBP1
   5635  04E4                     l4999:
   5636                           
-  5637                           ;main.c: 369:             _delay((unsigned long)((250)*(16000000/4000.0)));
+  5637                           ;main.c: 367:             _delay((unsigned long)((250)*(16000000/4000.0)));
   5638  04E4  3006               	movlw	6
   5639  04E5  0020               	movlb	0	; select bank0
   5640  04E6  00E3               	movwf	??_main+1
@@ -5674,12 +5674,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5651  04F0  3200               	nop2
   5652  04F1                     l5001:
   5653                           
-  5654                           ;main.c: 370:             pressBP1(0);
+  5654                           ;main.c: 368:             pressBP1(0);
   5655  04F1  3000               	movlw	0
   5656  04F2  318A  225D  3180   	fcall	_pressBP1
   5657  04F5                     l5003:
   5658                           
-  5659                           ;main.c: 371:             _delay((unsigned long)((750)*(16000000/4000.0)));
+  5659                           ;main.c: 369:             _delay((unsigned long)((750)*(16000000/4000.0)));
   5660  04F5  3010               	movlw	16
   5661  04F6  0020               	movlb	0	; select bank0
   5662  04F7  00E3               	movwf	??_main+1
@@ -5696,7 +5696,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5673  0501  3200               	nop2
   5674  0502                     l5005:
   5675                           
-  5676                           ;main.c: 373:             if (testR1(1) && testR2(1) && testR3(0)) {
+  5676                           ;main.c: 371:             if (testR1(1) && testR2(1) && testR3(0)) {
   5677  0502  3001               	movlw	1
   5678  0503  318C  2474  3180   	fcall	_testR1
   5679  0506  3A00               	xorlw	0
@@ -5729,22 +5729,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5706  051D  2D38               	goto	l5021
   5707  051E                     l5013:
   5708                           
-  5709                           ;main.c: 377:                 testActif = 0;
+  5709                           ;main.c: 375:                 testActif = 0;
   5710  051E  0020               	movlb	0	; select bank0
   5711  051F  01E8               	clrf	main@testActif
   5712  0520                     l5015:
   5713                           
-  5714                           ;main.c: 378:                 pressBP1(0);
+  5714                           ;main.c: 376:                 pressBP1(0);
   5715  0520  3000               	movlw	0
   5716  0521  318A  225D  3180   	fcall	_pressBP1
   5717  0524                     l5017:
   5718                           
-  5719                           ;main.c: 379:                 pressBP2(0);
+  5719                           ;main.c: 377:                 pressBP2(0);
   5720  0524  3000               	movlw	0
   5721  0525  318A  226A  3180   	fcall	_pressBP2
   5722  0528                     l5019:
   5723                           
-  5724                           ;main.c: 380:                 alerteDefaut("ETAPE 12", &testActif, &testVoyants);
+  5724                           ;main.c: 378:                 alerteDefaut("ETAPE 12", &testActif, &testVoyants);
   5725  0528  30D8               	movlw	low (STR_59| (0+32768))
   5726  0529  0020               	movlb	0	; select bank0
   5727  052A  00DE               	movwf	alerteDefaut@etape
@@ -5761,7 +5761,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5738  0535  318D  25E6  3180   	fcall	_alerteDefaut
   5739  0538                     l5021:
   5740                           
-  5741                           ;main.c: 384:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+  5741                           ;main.c: 382:             _delay((unsigned long)((1000)*(16000000/4000.0)));
   5742  0538  3015               	movlw	21
   5743  0539  0020               	movlb	0	; select bank0
   5744  053A  00E3               	movwf	??_main+1
@@ -5778,17 +5778,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5755  0544  0000               	nop
   5756  0545                     l5023:
   5757                           
-  5758                           ;main.c: 386:             pressBP1(0);
+  5758                           ;main.c: 384:             pressBP1(0);
   5759  0545  3000               	movlw	0
   5760  0546  318A  225D  3180   	fcall	_pressBP1
   5761  0549                     l5025:
   5762                           
-  5763                           ;main.c: 387:             pressBP2(0);
+  5763                           ;main.c: 385:             pressBP2(0);
   5764  0549  3000               	movlw	0
   5765  054A  318A  226A  3180   	fcall	_pressBP2
   5766  054D                     l5027:
   5767                           
-  5768                           ;main.c: 394:         if (testActif) {
+  5768                           ;main.c: 392:         if (testActif) {
   5769  054D  0020               	movlb	0	; select bank0
   5770  054E  0868               	movf	main@testActif,w
   5771  054F  1903               	btfsc	3,2
@@ -5799,7 +5799,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5776  0553                     u2970:
   5777  0553                     l5029:
   5778                           
-  5779                           ;main.c: 396:             displayManager("ETAPE 13", "TEST LEDS CARTE", "LEDS ALLUMEES",
+  5779                           ;main.c: 394:             displayManager("ETAPE 13", "TEST LEDS CARTE", "LEDS ALLUMEES",
       +                           "PRESSER OK / NOK");
   5780  0553  30EA               	movlw	low (STR_64| (0+32768))
   5781  0554  00D4               	movwf	displayManager@s1
@@ -5820,12 +5820,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5796  0563  318F  2724  3180   	fcall	_displayManager
   5797  0566                     l5031:
   5798                           
-  5799                           ;main.c: 397:             pressBP1(1);
+  5799                           ;main.c: 395:             pressBP1(1);
   5800  0566  3001               	movlw	1
   5801  0567  318A  225D  3180   	fcall	_pressBP1
   5802  056A                     l5033:
   5803                           
-  5804                           ;main.c: 398:             _delay((unsigned long)((250)*(16000000/4000.0)));
+  5804                           ;main.c: 396:             _delay((unsigned long)((250)*(16000000/4000.0)));
   5805  056A  3006               	movlw	6
   5806  056B  0020               	movlb	0	; select bank0
   5807  056C  00E3               	movwf	??_main+1
@@ -5842,12 +5842,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5818  0576  3200               	nop2
   5819  0577                     l5035:
   5820                           
-  5821                           ;main.c: 399:             pressBP1(0);
+  5821                           ;main.c: 397:             pressBP1(0);
   5822  0577  3000               	movlw	0
   5823  0578  318A  225D  3180   	fcall	_pressBP1
   5824  057B                     l5037:
   5825                           
-  5826                           ;main.c: 401:             testVoyants = reponseOperateur();
+  5826                           ;main.c: 399:             testVoyants = reponseOperateur();
   5827  057B  318E  2659  3180   	fcall	_reponseOperateur
   5828  057E  0020               	movlb	0	; select bank0
   5829  057F  00E2               	movwf	??_main
@@ -5855,7 +5855,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5831  0581  00E7               	movwf	main@testVoyants
   5832  0582                     l5039:
   5833                           
-  5834                           ;main.c: 402:             if (!testVoyants) {
+  5834                           ;main.c: 400:             if (!testVoyants) {
   5835  0582  0867               	movf	main@testVoyants,w
   5836  0583  1D03               	btfss	3,2
   5837  0584  2D86               	goto	u2981
@@ -5865,11 +5865,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5841  0587                     u2980:
   5842  0587                     l5041:
   5843                           
-  5844                           ;main.c: 404:                 testActif = 0;
+  5844                           ;main.c: 402:                 testActif = 0;
   5845  0587  01E8               	clrf	main@testActif
   5846  0588                     l5043:
   5847                           
-  5848                           ;main.c: 405:                 alerteDefaut("ETAPE 13", &testActif, &testVoyants);
+  5848                           ;main.c: 403:                 alerteDefaut("ETAPE 13", &testActif, &testVoyants);
   5849  0588  30EA               	movlw	low (STR_64| (0+32768))
   5850  0589  00DE               	movwf	alerteDefaut@etape
   5851  058A  3091               	movlw	high (STR_64| (0+32768))
@@ -5885,7 +5885,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5861  0594  318D  25E6  3180   	fcall	_alerteDefaut
   5862  0597                     l5045:
   5863                           
-  5864                           ;main.c: 411:         if (testActif) {
+  5864                           ;main.c: 409:         if (testActif) {
   5865  0597  0020               	movlb	0	; select bank0
   5866  0598  0868               	movf	main@testActif,w
   5867  0599  1903               	btfsc	3,2
@@ -5896,7 +5896,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5872  059D                     u2990:
   5873  059D                     l5047:
   5874                           
-  5875                           ;main.c: 413:             displayManager("ETAPE 14", "TEST BP2", "", "");
+  5875                           ;main.c: 411:             displayManager("ETAPE 14", "TEST BP2", "", "");
   5876  059D  30F3               	movlw	low (STR_69| (0+32768))
   5877  059E  00D4               	movwf	displayManager@s1
   5878  059F  3091               	movlw	high (STR_69| (0+32768))
@@ -5916,12 +5916,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5892  05AD  318F  2724  3180   	fcall	_displayManager
   5893  05B0                     l5049:
   5894                           
-  5895                           ;main.c: 414:             pressBP2(1);
+  5895                           ;main.c: 412:             pressBP2(1);
   5896  05B0  3001               	movlw	1
   5897  05B1  318A  226A  3180   	fcall	_pressBP2
   5898  05B4                     l5051:
   5899                           
-  5900                           ;main.c: 415:             _delay((unsigned long)((250)*(16000000/4000.0)));
+  5900                           ;main.c: 413:             _delay((unsigned long)((250)*(16000000/4000.0)));
   5901  05B4  3006               	movlw	6
   5902  05B5  0020               	movlb	0	; select bank0
   5903  05B6  00E3               	movwf	??_main+1
@@ -5938,12 +5938,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5914  05C0  3200               	nop2
   5915  05C1                     l5053:
   5916                           
-  5917                           ;main.c: 416:             pressBP2(0);
+  5917                           ;main.c: 414:             pressBP2(0);
   5918  05C1  3000               	movlw	0
   5919  05C2  318A  226A  3180   	fcall	_pressBP2
   5920  05C5                     l5055:
   5921                           
-  5922                           ;main.c: 417:             _delay((unsigned long)((500)*(16000000/4000.0)));
+  5922                           ;main.c: 415:             _delay((unsigned long)((500)*(16000000/4000.0)));
   5923  05C5  300B               	movlw	11
   5924  05C6  0020               	movlb	0	; select bank0
   5925  05C7  00E3               	movwf	??_main+1
@@ -5960,7 +5960,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5936  05D1  3200               	nop2
   5937  05D2                     l5057:
   5938                           
-  5939                           ;main.c: 419:             if (testR1(1) && testR2(1) && testR3(1)) {
+  5939                           ;main.c: 417:             if (testR1(1) && testR2(1) && testR3(1)) {
   5940  05D2  3001               	movlw	1
   5941  05D3  318C  2474  3180   	fcall	_testR1
   5942  05D6  3A00               	xorlw	0
@@ -5993,12 +5993,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5969  05ED  2DFF               	goto	l5069
   5970  05EE                     l5065:
   5971                           
-  5972                           ;main.c: 423:                 testActif = 0;
+  5972                           ;main.c: 421:                 testActif = 0;
   5973  05EE  0020               	movlb	0	; select bank0
   5974  05EF  01E8               	clrf	main@testActif
   5975  05F0                     l5067:
   5976                           
-  5977                           ;main.c: 424:                 alerteDefaut("ETAPE 14", &testActif, &testVoyants);
+  5977                           ;main.c: 422:                 alerteDefaut("ETAPE 14", &testActif, &testVoyants);
   5978  05F0  30F3               	movlw	low (STR_69| (0+32768))
   5979  05F1  00DE               	movwf	alerteDefaut@etape
   5980  05F2  3091               	movlw	high (STR_69| (0+32768))
@@ -6014,7 +6014,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5990  05FC  318D  25E6  3180   	fcall	_alerteDefaut
   5991  05FF                     l5069:
   5992                           
-  5993                           ;main.c: 431:         if (testActif) {
+  5993                           ;main.c: 429:         if (testActif) {
   5994  05FF  0020               	movlb	0	; select bank0
   5995  0600  0868               	movf	main@testActif,w
   5996  0601  1903               	btfsc	3,2
@@ -6025,7 +6025,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6001  0605                     u3030:
   6002  0605                     l5071:
   6003                           
-  6004                           ;main.c: 433:             displayManager("ETAPE 15", "TEST HORLOGE", "", "");
+  6004                           ;main.c: 431:             displayManager("ETAPE 15", "TEST HORLOGE", "", "");
   6005  0605  30FC               	movlw	low (STR_74| (0+32768))
   6006  0606  00D4               	movwf	displayManager@s1
   6007  0607  3091               	movlw	high (STR_74| (0+32768))
@@ -6045,12 +6045,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6021  0615  318F  2724  3180   	fcall	_displayManager
   6022  0618                     l5073:
   6023                           
-  6024                           ;main.c: 434:             setHorloge(1);
+  6024                           ;main.c: 432:             setHorloge(1);
   6025  0618  3001               	movlw	1
   6026  0619  318A  2291  3180   	fcall	_setHorloge
   6027  061C                     l5075:
   6028                           
-  6029                           ;main.c: 435:             _delay((unsigned long)((250)*(16000000/4000.0)));
+  6029                           ;main.c: 433:             _delay((unsigned long)((250)*(16000000/4000.0)));
   6030  061C  3006               	movlw	6
   6031  061D  0020               	movlb	0	; select bank0
   6032  061E  00E3               	movwf	??_main+1
@@ -6067,12 +6067,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6043  0628  3200               	nop2
   6044  0629                     l5077:
   6045                           
-  6046                           ;main.c: 436:             setHorloge(0);
+  6046                           ;main.c: 434:             setHorloge(0);
   6047  0629  3000               	movlw	0
   6048  062A  318A  2291  3180   	fcall	_setHorloge
   6049  062D                     l5079:
   6050                           
-  6051                           ;main.c: 437:             _delay((unsigned long)((500)*(16000000/4000.0)));
+  6051                           ;main.c: 435:             _delay((unsigned long)((500)*(16000000/4000.0)));
   6052  062D  300B               	movlw	11
   6053  062E  0020               	movlb	0	; select bank0
   6054  062F  00E3               	movwf	??_main+1
@@ -6089,7 +6089,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6065  0639  3200               	nop2
   6066  063A                     l5081:
   6067                           
-  6068                           ;main.c: 439:             if (testR1(0) && testR2(0) && testR3(0)) {
+  6068                           ;main.c: 437:             if (testR1(0) && testR2(0) && testR3(0)) {
   6069  063A  3000               	movlw	0
   6070  063B  318C  2474  3180   	fcall	_testR1
   6071  063E  3A00               	xorlw	0
@@ -6122,12 +6122,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6098  0655  2E67               	goto	l5093
   6099  0656                     l5089:
   6100                           
-  6101                           ;main.c: 443:                 testActif = 0;
+  6101                           ;main.c: 441:                 testActif = 0;
   6102  0656  0020               	movlb	0	; select bank0
   6103  0657  01E8               	clrf	main@testActif
   6104  0658                     l5091:
   6105                           
-  6106                           ;main.c: 444:                 alerteDefaut("ETAPE 15", &testActif, &testVoyants);
+  6106                           ;main.c: 442:                 alerteDefaut("ETAPE 15", &testActif, &testVoyants);
   6107  0658  30FC               	movlw	low (STR_74| (0+32768))
   6108  0659  00DE               	movwf	alerteDefaut@etape
   6109  065A  3091               	movlw	high (STR_74| (0+32768))
@@ -6143,7 +6143,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6119  0664  318D  25E6  3180   	fcall	_alerteDefaut
   6120  0667                     l5093:
   6121                           
-  6122                           ;main.c: 451:         if (testActif) {
+  6122                           ;main.c: 449:         if (testActif) {
   6123  0667  0020               	movlb	0	; select bank0
   6124  0668  0868               	movf	main@testActif,w
   6125  0669  1903               	btfsc	3,2
@@ -6154,7 +6154,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6130  066D                     u3070:
   6131  066D                     l5095:
   6132                           
-  6133                           ;main.c: 453:             displayManager("ETAPE 16", "TEST P1", "", "");
+  6133                           ;main.c: 451:             displayManager("ETAPE 16", "TEST P1", "", "");
   6134  066D  3005               	movlw	low (STR_79| (0+32768))
   6135  066E  00D4               	movwf	displayManager@s1
   6136  066F  3092               	movlw	high (STR_79| (0+32768))
@@ -6174,12 +6174,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6150  067D  318F  2724  3180   	fcall	_displayManager
   6151  0680                     l5097:
   6152                           
-  6153                           ;main.c: 454:             setP1(1);
+  6153                           ;main.c: 452:             setP1(1);
   6154  0680  3001               	movlw	1
   6155  0681  318A  2277  3180   	fcall	_setP1
   6156  0684                     l5099:
   6157                           
-  6158                           ;main.c: 455:             _delay((unsigned long)((1200)*(16000000/4000.0)));
+  6158                           ;main.c: 453:             _delay((unsigned long)((1200)*(16000000/4000.0)));
   6159  0684  3019               	movlw	25
   6160  0685  0020               	movlb	0	; select bank0
   6161  0686  00E3               	movwf	??_main+1
@@ -6196,12 +6196,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6172  0690  3200               	nop2
   6173  0691                     l5101:
   6174                           
-  6175                           ;main.c: 456:             setP1(0);
+  6175                           ;main.c: 454:             setP1(0);
   6176  0691  3000               	movlw	0
   6177  0692  318A  2277  3180   	fcall	_setP1
   6178  0695                     l5103:
   6179                           
-  6180                           ;main.c: 457:             _delay((unsigned long)((500)*(16000000/4000.0)));
+  6180                           ;main.c: 455:             _delay((unsigned long)((500)*(16000000/4000.0)));
   6181  0695  300B               	movlw	11
   6182  0696  0020               	movlb	0	; select bank0
   6183  0697  00E3               	movwf	??_main+1
@@ -6218,7 +6218,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6194  06A1  3200               	nop2
   6195  06A2                     l5105:
   6196                           
-  6197                           ;main.c: 458:             if (testR1(1) && testR2(1) && testR3(1)) {
+  6197                           ;main.c: 456:             if (testR1(1) && testR2(1) && testR3(1)) {
   6198  06A2  3001               	movlw	1
   6199  06A3  318C  2474  3180   	fcall	_testR1
   6200  06A6  3A00               	xorlw	0
@@ -6251,12 +6251,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6227  06BD  2ECF               	goto	l5117
   6228  06BE                     l5113:
   6229                           
-  6230                           ;main.c: 462:                 testActif = 0;
+  6230                           ;main.c: 460:                 testActif = 0;
   6231  06BE  0020               	movlb	0	; select bank0
   6232  06BF  01E8               	clrf	main@testActif
   6233  06C0                     l5115:
   6234                           
-  6235                           ;main.c: 463:                 alerteDefaut("ETAPE 16", &testActif, &testVoyants);
+  6235                           ;main.c: 461:                 alerteDefaut("ETAPE 16", &testActif, &testVoyants);
   6236  06C0  3005               	movlw	low (STR_79| (0+32768))
   6237  06C1  00DE               	movwf	alerteDefaut@etape
   6238  06C2  3092               	movlw	high (STR_79| (0+32768))
@@ -6272,7 +6272,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6248  06CC  318D  25E6  3180   	fcall	_alerteDefaut
   6249  06CF                     l5117:
   6250                           
-  6251                           ;main.c: 470:         if (testActif) {
+  6251                           ;main.c: 468:         if (testActif) {
   6252  06CF  0020               	movlb	0	; select bank0
   6253  06D0  0868               	movf	main@testActif,w
   6254  06D1  1903               	btfsc	3,2
@@ -6283,7 +6283,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6259  06D5                     u3110:
   6260  06D5                     l5119:
   6261                           
-  6262                           ;main.c: 472:             displayManager("ETAPE 17", "TEST P2", "", "");
+  6262                           ;main.c: 470:             displayManager("ETAPE 17", "TEST P2", "", "");
   6263  06D5  300E               	movlw	low (STR_84| (0+32768))
   6264  06D6  00D4               	movwf	displayManager@s1
   6265  06D7  3092               	movlw	high (STR_84| (0+32768))
@@ -6303,12 +6303,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6279  06E5  318F  2724  3180   	fcall	_displayManager
   6280  06E8                     l5121:
   6281                           
-  6282                           ;main.c: 473:             setP2(1);
+  6282                           ;main.c: 471:             setP2(1);
   6283  06E8  3001               	movlw	1
   6284  06E9  318A  2284  3180   	fcall	_setP2
   6285  06EC                     l5123:
   6286                           
-  6287                           ;main.c: 474:             _delay((unsigned long)((1200)*(16000000/4000.0)));
+  6287                           ;main.c: 472:             _delay((unsigned long)((1200)*(16000000/4000.0)));
   6288  06EC  3019               	movlw	25
   6289  06ED  0020               	movlb	0	; select bank0
   6290  06EE  00E3               	movwf	??_main+1
@@ -6325,12 +6325,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6301  06F8  3200               	nop2
   6302  06F9                     l5125:
   6303                           
-  6304                           ;main.c: 475:             setP2(0);
+  6304                           ;main.c: 473:             setP2(0);
   6305  06F9  3000               	movlw	0
   6306  06FA  318A  2284  3180   	fcall	_setP2
   6307  06FD                     l5127:
   6308                           
-  6309                           ;main.c: 476:             _delay((unsigned long)((500)*(16000000/4000.0)));
+  6309                           ;main.c: 474:             _delay((unsigned long)((500)*(16000000/4000.0)));
   6310  06FD  300B               	movlw	11
   6311  06FE  0020               	movlb	0	; select bank0
   6312  06FF  00E3               	movwf	??_main+1
@@ -6347,7 +6347,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6323  0709  3200               	nop2
   6324  070A                     l5129:
   6325                           
-  6326                           ;main.c: 478:             if (testR1(0) && testR2(0) && testR3(0)) {
+  6326                           ;main.c: 476:             if (testR1(0) && testR2(0) && testR3(0)) {
   6327  070A  3000               	movlw	0
   6328  070B  318C  2474  3180   	fcall	_testR1
   6329  070E  3A00               	xorlw	0
@@ -6380,12 +6380,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6356  0725  2F37               	goto	l5141
   6357  0726                     l5137:
   6358                           
-  6359                           ;main.c: 482:                 testActif = 0;
+  6359                           ;main.c: 480:                 testActif = 0;
   6360  0726  0020               	movlb	0	; select bank0
   6361  0727  01E8               	clrf	main@testActif
   6362  0728                     l5139:
   6363                           
-  6364                           ;main.c: 483:                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
+  6364                           ;main.c: 481:                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
   6365  0728  300E               	movlw	low (STR_84| (0+32768))
   6366  0729  00DE               	movwf	alerteDefaut@etape
   6367  072A  3092               	movlw	high (STR_84| (0+32768))
@@ -6401,7 +6401,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6377  0734  318D  25E6  3180   	fcall	_alerteDefaut
   6378  0737                     l5141:
   6379                           
-  6380                           ;main.c: 491:         if (testActif) {
+  6380                           ;main.c: 489:         if (testActif) {
   6381  0737  0020               	movlb	0	; select bank0
   6382  0738  0868               	movf	main@testActif,w
   6383  0739  1903               	btfsc	3,2
@@ -6412,7 +6412,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6388  073D                     u3150:
   6389  073D                     l5143:
   6390                           
-  6391                           ;main.c: 493:             displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PR
+  6391                           ;main.c: 491:             displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PR
       +                          ESSER OK / NOK");
   6392  073D  3017               	movlw	low (STR_89| (0+32768))
   6393  073E  00D4               	movwf	displayManager@s1
@@ -6433,11 +6433,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6408  074D  318F  2724  3180   	fcall	_displayManager
   6409  0750                     l5145:
   6410                           
-  6411                           ;main.c: 494:             activerTouche();
+  6411                           ;main.c: 492:             activerTouche();
   6412  0750  318B  23F3  3180   	fcall	_activerTouche
   6413  0753                     l5147:
   6414                           
-  6415                           ;main.c: 495:             testVoyants = reponseOperateur();
+  6415                           ;main.c: 493:             testVoyants = reponseOperateur();
   6416  0753  318E  2659  3180   	fcall	_reponseOperateur
   6417  0756  0020               	movlb	0	; select bank0
   6418  0757  00E2               	movwf	??_main
@@ -6445,7 +6445,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6420  0759  00E7               	movwf	main@testVoyants
   6421  075A                     l5149:
   6422                           
-  6423                           ;main.c: 496:             if (!testVoyants) {
+  6423                           ;main.c: 494:             if (!testVoyants) {
   6424  075A  0867               	movf	main@testVoyants,w
   6425  075B  1D03               	btfss	3,2
   6426  075C  2F5E               	goto	u3161
@@ -6455,11 +6455,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6430  075F                     u3160:
   6431  075F                     l5151:
   6432                           
-  6433                           ;main.c: 498:                 testActif = 0;
+  6433                           ;main.c: 496:                 testActif = 0;
   6434  075F  01E8               	clrf	main@testActif
   6435  0760                     l5153:
   6436                           
-  6437                           ;main.c: 499:                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
+  6437                           ;main.c: 497:                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
   6438  0760  3017               	movlw	low (STR_89| (0+32768))
   6439  0761  00DE               	movwf	alerteDefaut@etape
   6440  0762  3092               	movlw	high (STR_89| (0+32768))
@@ -6475,7 +6475,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6450  076C  318D  25E6  3180   	fcall	_alerteDefaut
   6451  076F                     l5155:
   6452                           
-  6453                           ;main.c: 508:         if (testActif) {
+  6453                           ;main.c: 506:         if (testActif) {
   6454  076F  0020               	movlb	0	; select bank0
   6455  0770  0868               	movf	main@testActif,w
   6456  0771  1903               	btfsc	3,2
@@ -6486,7 +6486,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6461  0775                     u3170:
   6462  0775                     l5157:
   6463                           
-  6464                           ;main.c: 510:             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "AT
+  6464                           ;main.c: 508:             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "AT
       +                          TENTE ACQUITTEMENT");
   6465  0775  30AD               	movlw	low (STR_94| (0+32768))
   6466  0776  00D4               	movwf	displayManager@s1
@@ -6507,16 +6507,16 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6481  0785  318F  2724  3180   	fcall	_displayManager
   6482  0788                     l5159:
   6483                           
-  6484                           ;main.c: 511:             ledConforme(1);
+  6484                           ;main.c: 509:             ledConforme(1);
   6485  0788  3001               	movlw	1
   6486  0789  318A  2229  3180   	fcall	_ledConforme
   6487  078C                     l5161:
   6488                           
-  6489                           ;main.c: 512:             attenteDemarrage();
+  6489                           ;main.c: 510:             attenteDemarrage();
   6490  078C  3189  21BA  3180   	fcall	_attenteDemarrage
   6491  078F                     l5163:
   6492                           
-  6493                           ;main.c: 513:             initialConditions(&testActif, &testVoyants);
+  6493                           ;main.c: 511:             initialConditions(&testActif, &testVoyants);
   6494  078F  3067               	movlw	(low (main@testVoyants| 0))& (0+255)
   6495  0790  0020               	movlb	0	; select bank0
   6496  0791  00E2               	movwf	??_main
@@ -6526,7 +6526,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6500  0795  318D  2503  3180   	fcall	_initialConditions
   6501  0798                     l5165:
   6502                           
-  6503                           ;main.c: 514:             _delay((unsigned long)((2000)*(16000000/4000.0)));
+  6503                           ;main.c: 512:             _delay((unsigned long)((2000)*(16000000/4000.0)));
   6504  0798  3029               	movlw	41
   6505  0799  0020               	movlb	0	; select bank0
   6506  079A  00E3               	movwf	??_main+1
@@ -15424,7 +15424,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Tue Sep 05 11:12:49 2023
+Symbol Table                                                                                   Tue Sep 05 11:49:04 2023
 
                 ?_EUSART_SetRxInterruptHandler 0049                         ??_I2C_DO_SEND_ADR_READ 0070  
                   __size_of_I2C_MasterSendNack 0004                        ??_I2C_DO_SEND_ADR_WRITE 0071  
