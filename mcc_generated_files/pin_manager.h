@@ -205,6 +205,17 @@
 #define BUZ_SetAnalogMode()      do { ANSELBbits.ANSB4 = 1; } while(0)
 #define BUZ_SetDigitalMode()     do { ANSELBbits.ANSB4 = 0; } while(0)
 
+// get/set GPIO1 aliases
+#define GPIO1_TRIS                 TRISCbits.TRISC0
+#define GPIO1_LAT                  LATCbits.LATC0
+#define GPIO1_PORT                 PORTCbits.RC0
+#define GPIO1_SetHigh()            do { LATCbits.LATC0 = 1; } while(0)
+#define GPIO1_SetLow()             do { LATCbits.LATC0 = 0; } while(0)
+#define GPIO1_Toggle()             do { LATCbits.LATC0 = ~LATCbits.LATC0; } while(0)
+#define GPIO1_GetValue()           PORTCbits.RC0
+#define GPIO1_SetDigitalInput()    do { TRISCbits.TRISC0 = 1; } while(0)
+#define GPIO1_SetDigitalOutput()   do { TRISCbits.TRISC0 = 0; } while(0)
+
 // get/set RC3 procedures
 #define RC3_SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
 #define RC3_SetLow()             do { LATCbits.LATC3 = 0; } while(0)

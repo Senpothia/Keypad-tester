@@ -68,7 +68,7 @@ I2C_DATA_NACK 3
 I2C_TIMEOUT 4
 I2C_NULL 5
 ]
-"272 C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
+"309 C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 [e E3374 . `uc
 C4 5
 C3 6
@@ -327,7 +327,19 @@ channel_FVR 31
 ]
 [u S571 . 1 `S557 1 . 1 0 `S566 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES571  1 e 1 @11 ]
-[s S1700 . 1 `uc 1 RD0 1 0 :1:0 
+[s S1389 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"571
+[u S1398 . 1 `S1389 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES1398  1 e 1 @14 ]
+[s S1730 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -337,8 +349,8 @@ channel_FVR 31
 `uc 1 RD7 1 0 :1:7 
 ]
 "633
-[u S1709 . 1 `S1700 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES1709  1 e 1 @15 ]
+[u S1739 . 1 `S1730 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES1739  1 e 1 @15 ]
 [s S601 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -451,7 +463,7 @@ channel_FVR 31
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2358
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1458 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1410 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -461,11 +473,11 @@ channel_FVR 31
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2375
-[u S1467 . 1 `S1458 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1467  1 e 1 @268 ]
+[u S1419 . 1 `S1410 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1419  1 e 1 @268 ]
 "2420
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S1735 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1765 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -475,22 +487,22 @@ channel_FVR 31
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2437
-[u S1744 . 1 `S1735 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1744  1 e 1 @269 ]
+[u S1774 . 1 `S1765 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1774  1 e 1 @269 ]
 "2482
 [v _LATC LATC `VEuc  1 e 1 @270 ]
 "2544
 [v _LATD LATD `VEuc  1 e 1 @271 ]
 "2614
 [v _LATE LATE `VEuc  1 e 1 @272 ]
-[s S1721 . 1 `uc 1 LATE0 1 0 :1:0 
+[s S1751 . 1 `uc 1 LATE0 1 0 :1:0 
 `uc 1 LATE1 1 0 :1:1 
 `uc 1 LATE2 1 0 :1:2 
 `uc 1 LATE3 1 0 :1:3 
 ]
 "2627
-[u S1726 . 1 `S1721 1 . 1 0 ]
-[v _LATEbits LATEbits `VES1726  1 e 1 @272 ]
+[u S1756 . 1 `S1751 1 . 1 0 ]
+[v _LATEbits LATEbits `VES1756  1 e 1 @272 ]
 "2924
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3273
@@ -694,10 +706,12 @@ channel_FVR 31
 "78
 [v main@lectureAN1 lectureAN1 `i  1 a 2 30 ]
 "76
-[v main@testActif testActif `a  1 a 1 33 ]
+[v main@testActif testActif `a  1 a 1 34 ]
 "77
-[v main@testVoyants testVoyants `a  1 a 1 32 ]
-"485
+[v main@testVoyants testVoyants `a  1 a 1 33 ]
+"79
+[v main@testLeds testLeds `a  1 a 1 32 ]
+"522
 } 0
 "101 C:\Users\Michel\MPLABXProjects\galeoTester1.X\tester.c
 [v _testR3 testR3 `(a  1 e 1 0 ]

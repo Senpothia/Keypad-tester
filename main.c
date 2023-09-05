@@ -76,6 +76,7 @@ void main(void) {
     bool testActif = false;
     bool testVoyants = false;
     int lectureAN1;
+    bool testLeds = true;
 
     // Affichage message d'accueil
 
@@ -83,6 +84,29 @@ void main(void) {
     __delay_ms(1000);
 
     while (1) {
+
+        /*
+        if(GPIO1_GetValue() == 1){
+        
+            REL8_SetHigh();
+        }else{
+            REL8_SetLow();
+        }
+         **/
+
+        if (GPIO1_GetValue() == 1) {
+
+            REL8_SetHigh();
+            testLeds = true;
+
+        } else {
+
+            testLeds = false;
+            REL8_SetLow();
+        }
+
+
+
 
         // Attente de démarrage
 
@@ -95,7 +119,7 @@ void main(void) {
         ledConforme(false);
         ledNonConforme(false);
         ledProgession(true);
-
+        REL8_SetLow();
         // entrée dans la séquence de test
 
         // ETAPE 1
@@ -150,12 +174,16 @@ void main(void) {
             pressBP1(true);
             __delay_ms(250);
             pressBP1(false);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
+            if (testLeds) {
 
-                testActif = false;
-                alerteDefaut("ETAPE 3", &testActif, &testVoyants);
+                testVoyants = reponseOperateur();
+                if (!testVoyants) {
+
+                    testActif = false;
+                    alerteDefaut("ETAPE 3", &testActif, &testVoyants);
+                }
             }
+
 
         }
 
@@ -167,12 +195,16 @@ void main(void) {
             pressBP1(true);
             __delay_ms(250);
             pressBP1(false);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
+            if (testLeds) {
 
-                testActif = false;
-                alerteDefaut("ETAPE 4", &testActif, &testVoyants);
+                testVoyants = reponseOperateur();
+                if (!testVoyants) {
+
+                    testActif = false;
+                    alerteDefaut("ETAPE 4", &testActif, &testVoyants);
+                }
             }
+
 
         }
 
@@ -184,14 +216,19 @@ void main(void) {
             pressBP1(true);
             __delay_ms(250);
             pressBP1(false);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
+            if (testLeds) {
 
-                testActif = false;
-                alerteDefaut("ETAPE 5", &testActif, &testVoyants);
+                testVoyants = reponseOperateur();
+                if (!testVoyants) {
+
+                    testActif = false;
+                    alerteDefaut("ETAPE 5", &testActif, &testVoyants);
+                }
             }
 
         }
+
+
 
         // ETAPE 6
 

@@ -5376,9 +5376,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 404 "./mcc_generated_files/pin_manager.h"
+# 415 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 416 "./mcc_generated_files/pin_manager.h"
+# 427 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5831,6 +5831,7 @@ void main(void) {
     _Bool testActif = 0;
     _Bool testVoyants = 0;
     int lectureAN1;
+    _Bool testLeds = 1;
 
 
 
@@ -5838,6 +5839,20 @@ void main(void) {
     _delay((unsigned long)((1000)*(16000000/4000.0)));
 
     while (1) {
+# 97 "main.c"
+        if (PORTCbits.RC0 == 1) {
+
+            do { LATAbits.LATA7 = 1; } while(0);
+            testLeds = 1;
+
+        } else {
+
+            testLeds = 0;
+            do { LATAbits.LATA7 = 0; } while(0);
+        }
+
+
+
 
 
 
@@ -5850,7 +5865,7 @@ void main(void) {
         ledConforme(0);
         ledNonConforme(0);
         ledProgession(1);
-
+        do { LATAbits.LATA7 = 0; } while(0);
 
 
 
@@ -5905,12 +5920,16 @@ void main(void) {
             pressBP1(1);
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
+            if (testLeds) {
 
-                testActif = 0;
-                alerteDefaut("ETAPE 3", &testActif, &testVoyants);
+                testVoyants = reponseOperateur();
+                if (!testVoyants) {
+
+                    testActif = 0;
+                    alerteDefaut("ETAPE 3", &testActif, &testVoyants);
+                }
             }
+
 
         }
 
@@ -5922,12 +5941,16 @@ void main(void) {
             pressBP1(1);
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
+            if (testLeds) {
 
-                testActif = 0;
-                alerteDefaut("ETAPE 4", &testActif, &testVoyants);
+                testVoyants = reponseOperateur();
+                if (!testVoyants) {
+
+                    testActif = 0;
+                    alerteDefaut("ETAPE 4", &testActif, &testVoyants);
+                }
             }
+
 
         }
 
@@ -5939,14 +5962,19 @@ void main(void) {
             pressBP1(1);
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
+            if (testLeds) {
 
-                testActif = 0;
-                alerteDefaut("ETAPE 5", &testActif, &testVoyants);
+                testVoyants = reponseOperateur();
+                if (!testVoyants) {
+
+                    testActif = 0;
+                    alerteDefaut("ETAPE 5", &testActif, &testVoyants);
+                }
             }
 
         }
+
+
 
 
 
