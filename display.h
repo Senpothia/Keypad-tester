@@ -1,0 +1,17 @@
+
+#define TITRE "TEST CARTE D925ED4"
+#define ATTENTE "ATTENTE DEMARRAGE"
+#define CONFORME "TEST CONFORME"
+#define NON_CONFORME "TEST NON CONFORME"
+#define LIGNE_VIDE ""
+#define OK_REQUEST "APPUYER SUR OK"
+#define PROGRESS "TEST EN COURS"
+#define CAVALIERS "RETIRER P1 et P2"
+#define BOARD_REQUEST "POSITIONNER CARTE"
+#define ACQ "ATTENTE ACQUITTEMENT"
+#define FIN "FIN DE TEST"
+
+
+
+
+void displayManager(char s1[], char s2[], char s3[], char s4[]);
