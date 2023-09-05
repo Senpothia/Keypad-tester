@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "mcc_generated_files/eusart.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 44 "main.c"
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/eusart.c" 2
+# 50 "mcc_generated_files/eusart.c"
+# 1 "mcc_generated_files/eusart.h" 1
+# 54 "mcc_generated_files/eusart.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5370,60 +5370,12 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 404 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 416 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
-
+# 54 "mcc_generated_files/eusart.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 1 3
+# 55 "mcc_generated_files/eusart.h" 2
 
 
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\__null.h" 1 3
-# 9 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 54 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 55 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/i2c_master.h" 1
-# 54 "./mcc_generated_files/i2c_master.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5562,135 +5514,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 54 "./mcc_generated_files/i2c_master.h" 2
-
-
-
-
-typedef enum {
-    I2C_NOERR,
-    I2C_BUSY,
-    I2C_FAIL
-
-
-} i2c_error_t;
-
-typedef enum
-{
-    I2C_STOP=1,
-    I2C_RESTART_READ,
-    I2C_RESTART_WRITE,
-    I2C_CONTINUE,
-    I2C_RESET_LINK
-} i2c_operations_t;
-
-typedef uint8_t i2c_address_t;
-typedef i2c_operations_t (*i2c_callback_t)(void *funPtr);
-
-
-i2c_operations_t I2C_CallbackReturnStop(void *funPtr);
-i2c_operations_t I2C_CallbackReturnReset(void *funPtr);
-i2c_operations_t I2C_CallbackRestartWrite(void *funPtr);
-i2c_operations_t I2C_CallbackRestartRead(void *funPtr);
-
-
-
-
-
-
-void I2C_Initialize(void);
-# 101 "./mcc_generated_files/i2c_master.h"
-i2c_error_t I2C_Open(i2c_address_t address);
-# 111 "./mcc_generated_files/i2c_master.h"
-i2c_error_t I2C_Close(void);
-# 123 "./mcc_generated_files/i2c_master.h"
-i2c_error_t I2C_MasterOperation(_Bool read);
-
-
-
-
-i2c_error_t I2C_MasterWrite(void);
-
-
-
-
-i2c_error_t I2C_MasterRead(void);
-# 142 "./mcc_generated_files/i2c_master.h"
-void I2C_SetTimeout(uint8_t timeOut);
-# 152 "./mcc_generated_files/i2c_master.h"
-void I2C_SetBuffer(void *buffer, size_t bufferSize);
-# 164 "./mcc_generated_files/i2c_master.h"
-void I2C_SetDataCompleteCallback(i2c_callback_t cb, void *ptr);
-# 174 "./mcc_generated_files/i2c_master.h"
-void I2C_SetWriteCollisionCallback(i2c_callback_t cb, void *ptr);
-# 184 "./mcc_generated_files/i2c_master.h"
-void I2C_SetAddressNackCallback(i2c_callback_t cb, void *ptr);
-# 194 "./mcc_generated_files/i2c_master.h"
-void I2C_SetDataNackCallback(i2c_callback_t cb, void *ptr);
-# 204 "./mcc_generated_files/i2c_master.h"
-void I2C_SetTimeoutCallback(i2c_callback_t cb, void *ptr);
-# 213 "./mcc_generated_files/i2c_master.h"
-void (*MSSP_InterruptHandler)(void);
-# 222 "./mcc_generated_files/i2c_master.h"
-void I2C_SetInterruptHandler(void (* InterruptHandler)(void));
-# 56 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/memory.h" 1
-# 99 "./mcc_generated_files/memory.h"
-uint16_t FLASH_ReadWord(uint16_t flashAddr);
-# 128 "./mcc_generated_files/memory.h"
-void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-# 164 "./mcc_generated_files/memory.h"
-int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-# 189 "./mcc_generated_files/memory.h"
-void FLASH_EraseBlock(uint16_t startAddr);
-# 220 "./mcc_generated_files/memory.h"
-void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
-# 246 "./mcc_generated_files/memory.h"
-uint8_t DATAEE_ReadByte(uint8_t bAdd);
-# 57 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/adc.h" 1
-# 72 "./mcc_generated_files/adc.h"
-typedef uint16_t adc_result_t;
-
-
-
-
-typedef struct
-{
-    adc_result_t adcResult1;
-    adc_result_t adcResult2;
-} adc_sync_double_result_t;
-# 95 "./mcc_generated_files/adc.h"
-typedef enum
-{
-    C4 = 0x5,
-    C3 = 0x6,
-    C2 = 0x7,
-    VIN1 = 0xC,
-    channel_Temp = 0x1D,
-    channel_DAC = 0x1E,
-    channel_FVR = 0x1F
-} adc_channel_t;
-# 139 "./mcc_generated_files/adc.h"
-void ADC_Initialize(void);
-# 169 "./mcc_generated_files/adc.h"
-void ADC_SelectChannel(adc_channel_t channel);
-# 196 "./mcc_generated_files/adc.h"
-void ADC_StartConversion(void);
-# 228 "./mcc_generated_files/adc.h"
-_Bool ADC_IsConversionDone(void);
-# 261 "./mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversionResult(void);
-# 291 "./mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 319 "./mcc_generated_files/adc.h"
-void ADC_TemperatureAcquisitionDelay(void);
-# 58 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/eusart.h" 1
-# 76 "./mcc_generated_files/eusart.h"
+# 57 "mcc_generated_files/eusart.h" 2
+# 76 "mcc_generated_files/eusart.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -5712,527 +5537,265 @@ extern volatile uint8_t eusartRxCount;
 
 extern void (*EUSART_TxDefaultInterruptHandler)(void);
 extern void (*EUSART_RxDefaultInterruptHandler)(void);
-# 118 "./mcc_generated_files/eusart.h"
+# 118 "mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 166 "./mcc_generated_files/eusart.h"
+# 166 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_ready(void);
-# 214 "./mcc_generated_files/eusart.h"
+# 214 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_rx_ready(void);
-# 261 "./mcc_generated_files/eusart.h"
+# 261 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 309 "./mcc_generated_files/eusart.h"
+# 309 "mcc_generated_files/eusart.h"
 eusart_status_t EUSART_get_last_status(void);
-# 329 "./mcc_generated_files/eusart.h"
+# 329 "mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 349 "./mcc_generated_files/eusart.h"
+# 349 "mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 370 "./mcc_generated_files/eusart.h"
+# 370 "mcc_generated_files/eusart.h"
 void EUSART_Transmit_ISR(void);
-# 391 "./mcc_generated_files/eusart.h"
+# 391 "mcc_generated_files/eusart.h"
 void EUSART_Receive_ISR(void);
-# 412 "./mcc_generated_files/eusart.h"
+# 412 "mcc_generated_files/eusart.h"
 void EUSART_RxDataHandler(void);
-# 430 "./mcc_generated_files/eusart.h"
+# 430 "mcc_generated_files/eusart.h"
 void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 448 "./mcc_generated_files/eusart.h"
+# 448 "mcc_generated_files/eusart.h"
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 466 "./mcc_generated_files/eusart.h"
+# 466 "mcc_generated_files/eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 486 "./mcc_generated_files/eusart.h"
+# 486 "mcc_generated_files/eusart.h"
 void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 506 "./mcc_generated_files/eusart.h"
+# 506 "mcc_generated_files/eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 59 "./mcc_generated_files/mcc.h" 2
-# 74 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 87 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 99 "./mcc_generated_files/mcc.h"
-void WDT_Initialize(void);
-# 44 "main.c" 2
+# 50 "mcc_generated_files/eusart.c" 2
+# 62 "mcc_generated_files/eusart.c"
+volatile uint8_t eusartTxHead = 0;
+volatile uint8_t eusartTxTail = 0;
+volatile uint8_t eusartTxBuffer[8];
+volatile uint8_t eusartTxBufferRemaining;
 
-# 1 "./I2C_LCD.h" 1
-# 99 "./I2C_LCD.h"
-void I2C_Master_Init();
-void I2C_Master_Wait();
-void I2C_Master_Start();
-void I2C_Master_RepeatedStart();
-void I2C_Master_Stop();
-void I2C_ACK();
-void I2C_NACK();
-unsigned char I2C_Master_Write(unsigned char data);
-unsigned char I2C_Read_Byte(void);
-
-
-
-void LCD_Init(unsigned char I2C_Add);
-void IO_Expander_Write(unsigned char Data);
-void LCD_Write_4Bit(unsigned char Nibble);
-void LCD_CMD(unsigned char CMD);
-void LCD_Set_Cursor(unsigned char ROW, unsigned char COL);
-void LCD_Write_Char(char);
-void LCD_Write_String(char*);
-void Backlight();
-void noBacklight();
-void LCD_SR();
-void LCD_SL();
-void LCD_Clear();
-# 45 "main.c" 2
-
-# 1 "./tester.h" 1
-
-void initialConditions(_Bool *, _Bool *);
-void pressBP1(_Bool active);
-void pressBP2(_Bool active);
-void alimenter(_Bool active);
-_Bool testR1(_Bool active);
-_Bool testR2(_Bool active);
-_Bool testR3(_Bool active);
-_Bool testOK(_Bool active);
-_Bool testNOK(_Bool active);
-void ledNonConforme(_Bool active);
-void ledConforme(_Bool active);
-void ledProgession(_Bool active);
-void attenteDemarrage();
-void alerteDefaut(char etape[], _Bool *, _Bool *);
-_Bool reponseOperateur();
-_Bool controlVisuel();
-void setHorloge(_Bool active);
-void setP1(_Bool active);
-void setP2(_Bool active);
-void activerBuzzer(_Bool active);
-void activerTouche(void);
-# 46 "main.c" 2
-
-# 1 "./display.h" 1
-# 17 "./display.h"
-void displayManager(char s1[], char s2[], char s3[], char s4[]);
-# 47 "main.c" 2
+volatile uint8_t eusartRxHead = 0;
+volatile uint8_t eusartRxTail = 0;
+volatile uint8_t eusartRxBuffer[8];
+volatile eusart_status_t eusartRxStatusBuffer[8];
+volatile uint8_t eusartRxCount;
+volatile eusart_status_t eusartRxLastError;
 
 
 
 
+void (*EUSART_TxDefaultInterruptHandler)(void);
+void (*EUSART_RxDefaultInterruptHandler)(void);
 
-void main(void) {
+void (*EUSART_FramingErrorHandler)(void);
+void (*EUSART_OverrunErrorHandler)(void);
+void (*EUSART_ErrorHandler)(void);
 
-    SYSTEM_Initialize();
+void EUSART_DefaultFramingErrorHandler(void);
+void EUSART_DefaultOverrunErrorHandler(void);
+void EUSART_DefaultErrorHandler(void);
 
+void EUSART_Initialize(void)
+{
 
-
-
-
-    (INTCONbits.GIE = 1);
-
-
-    (INTCONbits.PEIE = 1);
-# 74 "main.c"
-    I2C_Master_Init();
-    LCD_Init(0x4E);
-    _Bool testActif = 0;
-    _Bool testVoyants = 0;
-    int lectureAN1;
-
-
-
-    displayManager("TEST CARTE D925ED4", "POSITIONNER CARTE", "APPUYER SUR OK", "");
-    _delay((unsigned long)((1000)*(16000000/4000.0)));
-
-    while (1) {
+    PIE1bits.RCIE = 0;
+    EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
+    PIE1bits.TXIE = 0;
+    EUSART_SetTxInterruptHandler(EUSART_Transmit_ISR);
 
 
 
-        displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "RETIRER P1 et P2", "APPUYER SUR OK");
-        _delay((unsigned long)((100)*(16000000/4000.0)));
-        attenteDemarrage();
-
-        displayManager("ETAPE 1", "TEST 3 RELAIS ON", "", "");
-        testActif = 1;
-        ledConforme(0);
-        ledNonConforme(0);
-        ledProgession(1);
+    BAUDCON = 0x08;
 
 
+    RCSTA = 0x90;
 
 
+    TXSTA = 0x24;
 
 
-        pressBP1(1);
-        pressBP2(1);
-        _delay((unsigned long)((100)*(16000000/4000.0)));
-        alimenter(1);
-        _delay((unsigned long)((2000)*(16000000/4000.0)));
+    SPBRGL = 0x40;
 
 
-        if (testR1(1) && testR2(1) && testR3(1)) {
+    SPBRGH = 0x03;
 
-        } else {
 
-            testActif = 0;
-            pressBP1(0);
-            pressBP2(0);
-            alerteDefaut("ETAPE 1", &testActif, &testVoyants);
+    EUSART_SetFramingErrorHandler(EUSART_DefaultFramingErrorHandler);
+    EUSART_SetOverrunErrorHandler(EUSART_DefaultOverrunErrorHandler);
+    EUSART_SetErrorHandler(EUSART_DefaultErrorHandler);
 
+    eusartRxLastError.status = 0;
+
+
+    eusartTxHead = 0;
+    eusartTxTail = 0;
+    eusartTxBufferRemaining = sizeof(eusartTxBuffer);
+
+    eusartRxHead = 0;
+    eusartRxTail = 0;
+    eusartRxCount = 0;
+
+
+    PIE1bits.RCIE = 1;
+}
+
+_Bool EUSART_is_tx_ready(void)
+{
+    return (eusartTxBufferRemaining ? 1 : 0);
+}
+
+_Bool EUSART_is_rx_ready(void)
+{
+    return (eusartRxCount ? 1 : 0);
+}
+
+_Bool EUSART_is_tx_done(void)
+{
+    return TXSTAbits.TRMT;
+}
+
+eusart_status_t EUSART_get_last_status(void){
+    return eusartRxLastError;
+}
+
+uint8_t EUSART_Read(void)
+{
+    uint8_t readValue = 0;
+
+    while(0 == eusartRxCount)
+    {
+    }
+
+    eusartRxLastError = eusartRxStatusBuffer[eusartRxTail];
+
+    readValue = eusartRxBuffer[eusartRxTail++];
+    if(sizeof(eusartRxBuffer) <= eusartRxTail)
+    {
+        eusartRxTail = 0;
+    }
+    PIE1bits.RCIE = 0;
+    eusartRxCount--;
+    PIE1bits.RCIE = 1;
+
+    return readValue;
+}
+
+void EUSART_Write(uint8_t txData)
+{
+    while(0 == eusartTxBufferRemaining)
+    {
+    }
+
+    if(0 == PIE1bits.TXIE)
+    {
+        TXREG = txData;
+    }
+    else
+    {
+        PIE1bits.TXIE = 0;
+        eusartTxBuffer[eusartTxHead++] = txData;
+        if(sizeof(eusartTxBuffer) <= eusartTxHead)
+        {
+            eusartTxHead = 0;
         }
+        eusartTxBufferRemaining--;
+    }
+    PIE1bits.TXIE = 1;
+}
 
-        _delay((unsigned long)((1000)*(16000000/4000.0)));
+char getch(void)
+{
+    return EUSART_Read();
+}
 
-        pressBP1(0);
-        pressBP2(0);
+void putch(char txData)
+{
+    EUSART_Write(txData);
+}
+
+void EUSART_Transmit_ISR(void)
+{
 
 
-
-        if (testActif) {
-
-            displayManager("ETAPE 2", "TEST 3 RELAIS OFF", "", "");
-            pressBP1(0);
-            pressBP2(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-            if (!testR1(1) && !testR2(1) && !testR3(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 2", &testActif, &testVoyants);
-            }
+    if(sizeof(eusartTxBuffer) > eusartTxBufferRemaining)
+    {
+        TXREG = eusartTxBuffer[eusartTxTail++];
+        if(sizeof(eusartTxBuffer) <= eusartTxTail)
+        {
+            eusartTxTail = 0;
         }
-
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 3", "TEST LED ROUGE", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 3", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 4", "TEST LED BLEUE", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 4", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 5", "TEST LED VERTE", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 5", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 6", "TEST R1 ON", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-            pressBP1(0);
-
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-
-            if (testR1(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 6", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 7", "TEST R1 OFF - R2 ON", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-            pressBP1(0);
-
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-
-            if (testR1(0) && testR2(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 7", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 8", "TEST R2 OFF - R3 ON", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-            pressBP1(0);
-
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-
-            if (testR2(0) && testR3(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 8", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE?", "");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-
-
-
-
-            lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 < 480) {
-
-
-                do { LATAbits.LATA7 = 1; } while(0);
-
-            } else {
-
-                do { LATAbits.LATA7 = 0; } while(0);
-
-            }
-
-            _delay((unsigned long)((2000)*(16000000/4000.0)));
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", "");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-
-
-
-
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-            lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 > 480) {
-
-
-                do { LATAbits.LATA7 = 0; } while(0);
-
-            } else {
-
-                do { LATAbits.LATA7 = 1; } while(0);
-
-            }
-            _delay((unsigned long)((2000)*(16000000/4000.0)));
-
-        }
-
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 12", "TEST SFLASH", "", "");
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-
-            _delay((unsigned long)((3000)*(16000000/4000.0)));
-
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-            _delay((unsigned long)((750)*(16000000/4000.0)));
-
-            if (testR1(1) && testR2(1) && testR3(0)) {
-
-            } else {
-
-                testActif = 0;
-                pressBP1(0);
-                pressBP2(0);
-                alerteDefaut("ETAPE 12", &testActif, &testVoyants);
-
-            }
-
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-
-            pressBP1(0);
-            pressBP2(0);
-
-        }
-
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 13", "TEST LEDS CARTE", "LEDS ALLUMEES", "PRESSER OK / NOK");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 13", &testActif, &testVoyants);
-            }
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 14", "TEST BP2", "", "");
-            pressBP2(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP2(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-
-            if (testR1(1) && testR2(1) && testR3(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 14", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 15", "TEST HORLOGE", "", "");
-            setHorloge(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            setHorloge(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-
-            if (testR1(0) && testR2(0) && testR3(0)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 15", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 16", "TEST P1", "", "");
-            setP1(1);
-            _delay((unsigned long)((1200)*(16000000/4000.0)));
-            setP1(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-            if (testR1(1) && testR2(1) && testR3(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 16", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 17", "TEST P2", "", "");
-            setP2(1);
-            _delay((unsigned long)((1200)*(16000000/4000.0)));
-            setP2(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-
-            if (testR1(0) && testR2(0) && testR3(0)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 17", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
-            activerTouche();
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 18", &testActif, &testVoyants);
-            }
-
-
-        }
-
-
-
-
-        if (testActif) {
-
-            displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "ATTENTE ACQUITTEMENT");
-            ledConforme(1);
-            attenteDemarrage();
-            initialConditions(&testActif, &testVoyants);
-            _delay((unsigned long)((2000)*(16000000/4000.0)));
-
-        }
-
+        eusartTxBufferRemaining++;
+    }
+    else
+    {
+        PIE1bits.TXIE = 0;
+    }
+}
+
+void EUSART_Receive_ISR(void)
+{
+
+    eusartRxStatusBuffer[eusartRxHead].status = 0;
+
+    if(RCSTAbits.FERR){
+        eusartRxStatusBuffer[eusartRxHead].ferr = 1;
+        EUSART_FramingErrorHandler();
+    }
+
+    if(RCSTAbits.OERR){
+        eusartRxStatusBuffer[eusartRxHead].oerr = 1;
+        EUSART_OverrunErrorHandler();
+    }
+
+    if(eusartRxStatusBuffer[eusartRxHead].status){
+        EUSART_ErrorHandler();
+    } else {
+        EUSART_RxDataHandler();
     }
 
 
+}
 
+void EUSART_RxDataHandler(void){
+
+    eusartRxBuffer[eusartRxHead++] = RCREG;
+    if(sizeof(eusartRxBuffer) <= eusartRxHead)
+    {
+        eusartRxHead = 0;
+    }
+    eusartRxCount++;
+}
+
+void EUSART_DefaultFramingErrorHandler(void){}
+
+void EUSART_DefaultOverrunErrorHandler(void){
+
+
+    RCSTAbits.CREN = 0;
+    RCSTAbits.CREN = 1;
+
+}
+
+void EUSART_DefaultErrorHandler(void){
+    EUSART_RxDataHandler();
+}
+
+void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void)){
+    EUSART_FramingErrorHandler = interruptHandler;
+}
+
+void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void)){
+    EUSART_OverrunErrorHandler = interruptHandler;
+}
+
+void EUSART_SetErrorHandler(void (* interruptHandler)(void)){
+    EUSART_ErrorHandler = interruptHandler;
+}
+
+void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void)){
+    EUSART_TxDefaultInterruptHandler = interruptHandler;
+}
+
+void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
+    EUSART_RxDefaultInterruptHandler = interruptHandler;
 }

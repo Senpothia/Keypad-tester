@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\galeoTester1.X.production.hex">
+  <executable name="dist/default/debug\galeoTester1.X.debug.hex">
     <memory name="program">
       <units>words</units>
       <length>16384</length>
-      <used>4358</used>
-      <free>12026</free>
+      <used>4345</used>
+      <free>12039</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "tester.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 44 "main.c"
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "tester.c" 2
+
+
+
+
+
+
+
+
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5370,8 +5375,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 9 "tester.c" 2
 
+# 1 "./mcc_generated_files/mcc.h" 1
+# 50 "./mcc_generated_files/mcc.h"
 # 1 "./mcc_generated_files/device_config.h" 1
 # 50 "./mcc_generated_files/mcc.h" 2
 
@@ -5749,7 +5756,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 99 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 44 "main.c" 2
+# 10 "tester.c" 2
 
 # 1 "./I2C_LCD.h" 1
 # 99 "./I2C_LCD.h"
@@ -5777,7 +5784,7 @@ void noBacklight();
 void LCD_SR();
 void LCD_SL();
 void LCD_Clear();
-# 45 "main.c" 2
+# 11 "tester.c" 2
 
 # 1 "./tester.h" 1
 
@@ -5802,437 +5809,314 @@ void setP1(_Bool active);
 void setP2(_Bool active);
 void activerBuzzer(_Bool active);
 void activerTouche(void);
-# 46 "main.c" 2
+# 12 "tester.c" 2
 
 # 1 "./display.h" 1
 # 17 "./display.h"
 void displayManager(char s1[], char s2[], char s3[], char s4[]);
-# 47 "main.c" 2
+# 13 "tester.c" 2
 
 
+void alimenter(_Bool active) {
 
+    if (active) {
 
+        do { LATAbits.LATA0 = 1; } while(0);
+    } else {
+        do { LATAbits.LATA0 = 0; } while(0);
+    }
+}
 
-void main(void) {
+void pressBP1(_Bool active) {
 
-    SYSTEM_Initialize();
+    if (active) {
 
+        do { LATAbits.LATA1 = 1; } while(0);
+    } else {
+        do { LATAbits.LATA1 = 0; } while(0);
+    }
+}
 
+void pressBP2(_Bool active) {
 
+    if (active) {
 
+        do { LATAbits.LATA2 = 1; } while(0);
+    } else {
+        do { LATAbits.LATA2 = 0; } while(0);
+    }
+}
 
-    (INTCONbits.GIE = 1);
+void setHorloge(_Bool active) {
 
+    if (active) {
 
-    (INTCONbits.PEIE = 1);
-# 74 "main.c"
-    I2C_Master_Init();
-    LCD_Init(0x4E);
-    _Bool testActif = 0;
-    _Bool testVoyants = 0;
-    int lectureAN1;
+        do { LATAbits.LATA3 = 1; } while(0);
+    } else {
+        do { LATAbits.LATA3 = 0; } while(0);
+    }
 
+}
 
+_Bool testR1(_Bool active) {
 
-    displayManager("TEST CARTE D925ED4", "POSITIONNER CARTE", "APPUYER SUR OK", "");
-    _delay((unsigned long)((1000)*(16000000/4000.0)));
+    _Bool result = 0;
+    if (active) {
 
-    while (1) {
+        if (PORTDbits.RD0 == 1 && PORTDbits.RD1 == 0) {
 
-
-
-        displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "RETIRER P1 et P2", "APPUYER SUR OK");
-        _delay((unsigned long)((100)*(16000000/4000.0)));
-        attenteDemarrage();
-
-        displayManager("ETAPE 1", "TEST 3 RELAIS ON", "", "");
-        testActif = 1;
-        ledConforme(0);
-        ledNonConforme(0);
-        ledProgession(1);
-
-
-
-
-
-
-        pressBP1(1);
-        pressBP2(1);
-        _delay((unsigned long)((100)*(16000000/4000.0)));
-        alimenter(1);
-        _delay((unsigned long)((2000)*(16000000/4000.0)));
-
-
-        if (testR1(1) && testR2(1) && testR3(1)) {
-
-        } else {
-
-            testActif = 0;
-            pressBP1(0);
-            pressBP2(0);
-            alerteDefaut("ETAPE 1", &testActif, &testVoyants);
-
+            result = 1;
         }
+    }
 
-        _delay((unsigned long)((1000)*(16000000/4000.0)));
+    if (!active) {
 
-        pressBP1(0);
-        pressBP2(0);
-
+        if (PORTDbits.RD0 == 0 && PORTDbits.RD1 == 1) {
 
 
-        if (testActif) {
-
-            displayManager("ETAPE 2", "TEST 3 RELAIS OFF", "", "");
-            pressBP1(0);
-            pressBP2(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-            if (!testR1(1) && !testR2(1) && !testR3(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 2", &testActif, &testVoyants);
-            }
+            result = 1;
         }
+    }
 
+    return result;
+}
 
+_Bool testR2(_Bool active) {
 
+    _Bool result = 0;
+    if (active) {
 
-        if (testActif) {
+        if (PORTDbits.RD3 == 1 && PORTDbits.RD4 == 0) {
 
-            displayManager("ETAPE 3", "TEST LED ROUGE", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 3", &testActif, &testVoyants);
-            }
-
+            result = 1;
         }
+    }
 
+    if (!active) {
 
+        if (PORTDbits.RD3 == 0 && PORTDbits.RD4 == 1) {
 
-        if (testActif) {
-
-            displayManager("ETAPE 4", "TEST LED BLEUE", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 4", &testActif, &testVoyants);
-            }
-
+            result = 1;
         }
+    }
+
+    return result;
+}
+
+_Bool testR3(_Bool active) {
 
 
+    _Bool result = 0;
+    if (active) {
 
-        if (testActif) {
+        if (PORTDbits.RD5 == 1 && PORTDbits.RD6 == 0) {
 
-            displayManager("ETAPE 5", "TEST LED VERTE", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 5", &testActif, &testVoyants);
-            }
-
+            result = 1;
         }
+    }
 
+    if (!active) {
 
+        if (PORTDbits.RD5 == 0 && PORTDbits.RD6 == 1) {
 
-        if (testActif) {
-
-            displayManager("ETAPE 6", "TEST R1 ON", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-            pressBP1(0);
-
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-
-            if (testR1(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 6", &testActif, &testVoyants);
-            }
-
+            result = 1;
         }
+    }
 
+    return result;
+}
 
+_Bool testOK(_Bool active) {
 
-        if (testActif) {
+    _Bool result = 0;
+    if (active) {
 
-            displayManager("ETAPE 7", "TEST R1 OFF - R2 ON", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-            pressBP1(0);
+        if (PORTDbits.RD2 == 0) {
 
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-
-            if (testR1(0) && testR2(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 7", &testActif, &testVoyants);
-            }
-
+            result = 1;
         }
+    }
 
+    if (!active) {
 
+        if (PORTDbits.RD2 == 1) {
 
-        if (testActif) {
-
-            displayManager("ETAPE 8", "TEST R2 OFF - R3 ON", "", "");
-            pressBP1(1);
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-            pressBP1(0);
-
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-
-            if (testR2(0) && testR3(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 8", &testActif, &testVoyants);
-            }
-
+            result = 1;
         }
+    }
 
+    return result;
 
+}
 
-        if (testActif) {
+_Bool testNOK(_Bool active) {
 
-            displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE?", "");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
+    _Bool result = 0;
+    if (active) {
 
+        if (PORTDbits.RD7 == 0) {
 
-
-
-            lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 < 480) {
-
-
-                do { LATAbits.LATA7 = 1; } while(0);
-
-            } else {
-
-                do { LATAbits.LATA7 = 0; } while(0);
-
-            }
-
-            _delay((unsigned long)((2000)*(16000000/4000.0)));
-
+            result = 1;
         }
+    }
 
+    if (!active) {
 
+        if (PORTDbits.RD7 == 1) {
 
-        if (testActif) {
-
-            displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", "");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-
-
-
-
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-            lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 > 480) {
-
-
-                do { LATAbits.LATA7 = 0; } while(0);
-
-            } else {
-
-                do { LATAbits.LATA7 = 1; } while(0);
-
-            }
-            _delay((unsigned long)((2000)*(16000000/4000.0)));
-
+            result = 1;
         }
+    }
 
+    return result;
+}
 
+_Bool controlVisuel() {
 
+    _Bool result = 0;
 
-        if (testActif) {
 
-            displayManager("ETAPE 12", "TEST SFLASH", "", "");
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
+    if (PORTDbits.RD2 == 0) {
 
-            _delay((unsigned long)((3000)*(16000000/4000.0)));
+        result = 1;
+    }
 
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-            _delay((unsigned long)((750)*(16000000/4000.0)));
+    if (PORTDbits.RD2 == 1) {
 
-            if (testR1(1) && testR2(1) && testR3(0)) {
-
-            } else {
-
-                testActif = 0;
-                pressBP1(0);
-                pressBP2(0);
-                alerteDefaut("ETAPE 12", &testActif, &testVoyants);
-
-            }
-
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
-
-            pressBP1(0);
-            pressBP2(0);
-
-        }
-
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 13", "TEST LEDS CARTE", "LEDS ALLUMEES", "PRESSER OK / NOK");
-            pressBP1(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP1(0);
-
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 13", &testActif, &testVoyants);
-            }
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 14", "TEST BP2", "", "");
-            pressBP2(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            pressBP2(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-
-            if (testR1(1) && testR2(1) && testR3(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 14", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 15", "TEST HORLOGE", "", "");
-            setHorloge(1);
-            _delay((unsigned long)((250)*(16000000/4000.0)));
-            setHorloge(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-
-            if (testR1(0) && testR2(0) && testR3(0)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 15", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 16", "TEST P1", "", "");
-            setP1(1);
-            _delay((unsigned long)((1200)*(16000000/4000.0)));
-            setP1(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-            if (testR1(1) && testR2(1) && testR3(1)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 16", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 17", "TEST P2", "", "");
-            setP2(1);
-            _delay((unsigned long)((1200)*(16000000/4000.0)));
-            setP2(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
-
-            if (testR1(0) && testR2(0) && testR3(0)) {
-
-            } else {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 17", &testActif, &testVoyants);
-            }
-
-        }
-
-
-
-
-        if (testActif) {
-
-            displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
-            activerTouche();
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
-
-                testActif = 0;
-                alerteDefaut("ETAPE 18", &testActif, &testVoyants);
-            }
-
-
-        }
-
-
-
-
-        if (testActif) {
-
-            displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "ATTENTE ACQUITTEMENT");
-            ledConforme(1);
-            attenteDemarrage();
-            initialConditions(&testActif, &testVoyants);
-            _delay((unsigned long)((2000)*(16000000/4000.0)));
-
-        }
+        result = 0;
 
     }
 
+}
 
+void ledNonConforme(_Bool active) {
+
+    if (active) {
+
+        do { LATEbits.LATE1 = 1; } while(0);
+    } else {
+        do { LATEbits.LATE1 = 0; } while(0);
+    }
+}
+
+void ledConforme(_Bool active) {
+
+    if (active) {
+
+        do { LATEbits.LATE0 = 1; } while(0);
+    } else {
+        do { LATEbits.LATE0 = 0; } while(0);
+    }
+}
+
+void ledProgession(_Bool active) {
+
+    if (active) {
+
+        do { LATEbits.LATE2 = 1; } while(0);
+
+    } else {
+
+        do { LATEbits.LATE2 = 0; } while(0);
+    }
+}
+
+void attenteDemarrage() {
+
+    while (PORTDbits.RD2 == 1) {
+    }
+}
+
+void alerteDefaut(char etape[], _Bool *testAct, _Bool *testVoy) {
+
+    ledNonConforme(1);
+    ledProgession(0);
+    ledConforme(0);
+    displayManager(etape, "TEST NON CONFORME", "ATTENTE ACQUITTEMENT", "");
+
+    while (PORTDbits.RD2 == 1) {
+    }
+    while (PORTDbits.RD2 == 0) {
+    }
+    ledNonConforme(0);
+    *testAct = 0;
+    *testVoy = 0;
+
+
+}
+
+_Bool reponseOperateur() {
+
+    _Bool reponse = 0;
+    while (testOK(0) && testNOK(0)) {
+    }
+    if (testNOK(1)) {
+        reponse = 0;
+    }
+    if (testOK(1)) {
+        reponse = 1;
+    }
+
+    while (testOK(1) || testNOK(1)) {
+    }
+    return reponse;
+
+}
+
+void setP1(_Bool active) {
+
+    if (active) {
+
+        do { LATAbits.LATA4 = 1; } while(0);
+    } else {
+        do { LATAbits.LATA4 = 0; } while(0);
+    }
+
+}
+
+void setP2(_Bool active) {
+
+    if (active) {
+
+        do { LATAbits.LATA5 = 1; } while(0);
+    } else {
+        do { LATAbits.LATA5 = 0; } while(0);
+    }
+
+}
+
+void initialConditions(_Bool *testAct, _Bool *testVoy) {
+
+    *testAct = 0;
+    *testVoy = 0;
+    ledConforme(0);
+    ledNonConforme(0);
+    ledProgession(0);
+    alimenter(0);
+    pressBP1(0);
+    pressBP2(0);
+    setP1(0);
+    setP2(0);
+
+}
+
+void activerBuzzer(_Bool active) {
+
+
+    if (active) {
+
+        do { LATBbits.LATB4 = 1; } while(0);
+    } else {
+        do { LATBbits.LATB4 = 0; } while(0);
+    }
+
+}
+
+void activerTouche(void) {
+
+    do { LATAbits.LATA6 = 1; } while(0);
+    _delay((unsigned long)((250)*(16000000/4000.0)));
+    do { LATAbits.LATA6 = 0; } while(0);
+    _delay((unsigned long)((250)*(16000000/4000.0)));
 
 }

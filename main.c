@@ -260,16 +260,17 @@ void main(void) {
 
         if (testActif) {
 
-            displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE?", "PRESSER OK / NOK");
+            displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE?", LIGNE_VIDE);
             pressBP1(true);
             __delay_ms(250);
             pressBP1(false);
-
+            __delay_ms(500);
             // Lecture analogique
-             // Van = 680
-            /*
+            // Led on: Van = 433
+            // Led off: Van = 587
+
             lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 < 750) {
+            if (lectureAN1 < 480) {
 
 
                 REL8_SetHigh();
@@ -279,51 +280,36 @@ void main(void) {
                 REL8_SetLow();
 
             }
-            **/
-            
-            
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
 
-                testActif = false;
-                alerteDefaut("ETAPE 9", &testActif, &testVoyants);
-            }
-             
-
+            __delay_ms(2000);
+            
         }
 
         // ETAPE 10
 
         if (testActif) {
 
-            displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", "PRESSER OK / NOK");
+            displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", LIGNE_VIDE);
             pressBP1(true);
             __delay_ms(250);
             pressBP1(false);
-            
-             // Lecture analogique
-             // Van = 680
-            /*
+
+            // Lecture analogique
+            // Led on: Van = 433
+            // Led off: Van = 587
+            __delay_ms(500);
             lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 > 750) {
+            if (lectureAN1 > 480) {
 
-
-                REL8_SetHigh();
-
-            } else {
 
                 REL8_SetLow();
 
-            }
-            **/
-            
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
+            } else {
 
-                testActif = false;
-                alerteDefaut("ETAPE 10", &testActif, &testVoyants);
+                REL8_SetHigh();
+
             }
-             
+            __delay_ms(2000);
 
         }
 
@@ -368,7 +354,7 @@ void main(void) {
 
         if (testActif) {
 
-            displayManager("ETAPE 13", "TEST LED CARTE", "LED ALLUMEES", "PRESSER OK / NOK");
+            displayManager("ETAPE 13", "TEST LEDS CARTE", "LEDS ALLUMEES", "PRESSER OK / NOK");
             pressBP1(true);
             __delay_ms(250);
             pressBP1(false);
@@ -465,7 +451,7 @@ void main(void) {
 
         if (testActif) {
 
-            displayManager("ETAPE 18", "PRESSER TOUCHE CLAVIER", "TESTER BLUETOOTH", "PRESSER OK / NOK");
+            displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
             activerTouche();
             testVoyants = reponseOperateur();
             if (!testVoyants) {

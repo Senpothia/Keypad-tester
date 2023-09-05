@@ -6015,11 +6015,10 @@ void main(void) {
 
         if (testActif) {
 
-            displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE?", "");
+            displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE?", "PRESSER OK / NOK");
             pressBP1(1);
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
 
 
 
@@ -6037,18 +6036,17 @@ void main(void) {
             }
 
             _delay((unsigned long)((2000)*(16000000/4000.0)));
-
+# 297 "main.c"
         }
 
 
 
         if (testActif) {
 
-            displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", "");
+            displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", "PRESSER OK / NOK");
             pressBP1(1);
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
-
 
 
 
@@ -6065,7 +6063,7 @@ void main(void) {
 
             }
             _delay((unsigned long)((2000)*(16000000/4000.0)));
-
+# 336 "main.c"
         }
 
 
