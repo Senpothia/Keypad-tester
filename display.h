@@ -12,6 +12,4 @@
 #define FIN "FIN DE TEST"
 
 
-
-
 void displayManager(char s1[], char s2[], char s3[], char s4[]);

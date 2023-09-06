@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\galeoTester1.X.production.sym \
   --cmf=dist/default/production\galeoTester1.X.production.cmf -z -Q16LF1939 \
-  -oC:\Users\Michel\AppData\Local\Temp\xcAs49s.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Michel\AppData\Local\Temp\xcAsggs.5 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/galeoTester1.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=02075h-023EFh -pstack=STACK \
   -ACODE=00h-07FFhx8 -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 \
@@ -32,7 +32,7 @@ Linker command line:
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE \
   -pcinit=CODE -pfunctab=ENTRY -k \
-  C:\Users\Michel\AppData\Local\Temp\xcAs49s.o \
+  C:\Users\Michel\AppData\Local\Temp\xcAsggs.o \
   dist/default/production\galeoTester1.X.production.o 
 
 Object code version is 3.11
@@ -42,7 +42,7 @@ Machine type is 16LF1939
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Michel\AppData\Local\Temp\xcAs49s.o
+C:\Users\Michel\AppData\Local\Temp\xcAsggs.o
                 end_init                             47       47        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2        0       4
