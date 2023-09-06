@@ -301,10 +301,13 @@ void activerBuzzer() {
     for (int i = 0; i < 50; i++) {
 
         BUZ_SetHigh();
-        __delay_ms(1);
+        // __delay_ms(1);
+        __delay_us(1000);
 
         BUZ_SetLow();
-        __delay_ms(1);
+        // __delay_ms(1);
+        __delay_us(1000);
+
     }
 
 }

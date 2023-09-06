@@ -1473,68 +1473,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 519 ]
-"304
-[; ;tester.c: 304:         _delay((unsigned long)((1)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"306
-[; ;tester.c: 306:         do { LATBbits.LATB4 = 0; } while(0);
+"305
+[; ;tester.c: 305:         _delay((unsigned long)((1000)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"307
+[; ;tester.c: 307:         do { LATBbits.LATB4 = 0; } while(0);
 [e :U 523 ]
 {
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 }
 [e :U 522 ]
-"307
-[; ;tester.c: 307:         _delay((unsigned long)((1)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"308
-[; ;tester.c: 308:     }
+"309
+[; ;tester.c: 309:         _delay((unsigned long)((1000)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"311
+[; ;tester.c: 311:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 50 `i 515  ]
 [e :U 516 ]
 }
-"310
-[; ;tester.c: 310: }
+"313
+[; ;tester.c: 313: }
 [e :UE 514 ]
 }
-"312
-[; ;tester.c: 312: void activerTouche(void) {
+"315
+[; ;tester.c: 315: void activerTouche(void) {
 [v _activerTouche `(v ~T0 @X0 1 ef ]
 {
 [e :U _activerTouche ]
 [f ]
-"314
-[; ;tester.c: 314:     do { LATAbits.LATA6 = 1; } while(0);
+"317
+[; ;tester.c: 317:     do { LATAbits.LATA6 = 1; } while(0);
 [e :U 527 ]
 {
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 }
 [e :U 526 ]
-"315
-[; ;tester.c: 315:     _delay((unsigned long)((250)*(16000000/4000.0)));
+"318
+[; ;tester.c: 318:     _delay((unsigned long)((250)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"316
-[; ;tester.c: 316:     do { LATAbits.LATA6 = 0; } while(0);
+"319
+[; ;tester.c: 319:     do { LATAbits.LATA6 = 0; } while(0);
 [e :U 530 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
 [e :U 529 ]
-"317
-[; ;tester.c: 317:     _delay((unsigned long)((250)*(16000000/4000.0)));
+"320
+[; ;tester.c: 320:     _delay((unsigned long)((250)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"319
-[; ;tester.c: 319: }
+"322
+[; ;tester.c: 322: }
 [e :UE 524 ]
 }
-"321
-[; ;tester.c: 321: void startAlert(void) {
+"324
+[; ;tester.c: 324: void startAlert(void) {
 [v _startAlert `(v ~T0 @X0 1 ef ]
 {
 [e :U _startAlert ]
 [f ]
-"323
-[; ;tester.c: 323:     for (int i = 0; i < 2; i++) {
+"326
+[; ;tester.c: 326:     for (int i = 0; i < 2; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1542,31 +1542,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 533  ]
 [e :U 532 ]
 {
-"325
-[; ;tester.c: 325:         activerBuzzer();
-[e ( _activerBuzzer ..  ]
-"326
-[; ;tester.c: 326:         _delay((unsigned long)((500)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "328
-[; ;tester.c: 328:     }
+[; ;tester.c: 328:         activerBuzzer();
+[e ( _activerBuzzer ..  ]
+"329
+[; ;tester.c: 329:         _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"331
+[; ;tester.c: 331:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 2 `i 532  ]
 [e :U 533 ]
 }
-"330
-[; ;tester.c: 330: }
+"333
+[; ;tester.c: 333: }
 [e :UE 531 ]
 }
-"332
-[; ;tester.c: 332: void errorAlert(void) {
+"335
+[; ;tester.c: 335: void errorAlert(void) {
 [v _errorAlert `(v ~T0 @X0 1 ef ]
 {
 [e :U _errorAlert ]
 [f ]
-"334
-[; ;tester.c: 334:     for (int j = 0; j < 4; j++) {
+"337
+[; ;tester.c: 337:     for (int j = 0; j < 4; j++) {
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 0 `i ]
@@ -1574,8 +1574,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 537  ]
 [e :U 536 ]
 {
-"336
-[; ;tester.c: 336:         for (int i = 0; i < 4; i++) {
+"339
+[; ;tester.c: 339:         for (int i = 0; i < 4; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1583,41 +1583,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 540  ]
 [e :U 539 ]
 {
-"338
-[; ;tester.c: 338:             activerBuzzer();
-[e ( _activerBuzzer ..  ]
-"339
-[; ;tester.c: 339:             _delay((unsigned long)((500)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "341
-[; ;tester.c: 341:         }
+[; ;tester.c: 341:             activerBuzzer();
+[e ( _activerBuzzer ..  ]
+"342
+[; ;tester.c: 342:             _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"344
+[; ;tester.c: 344:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 539  ]
 [e :U 540 ]
 }
-"342
-[; ;tester.c: 342:         _delay((unsigned long)((500)*(16000000/4000.0)));
+"345
+[; ;tester.c: 345:         _delay((unsigned long)((500)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"343
-[; ;tester.c: 343:     }
+"346
+[; ;tester.c: 346:     }
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 4 `i 536  ]
 [e :U 537 ]
 }
-"346
-[; ;tester.c: 346: }
+"349
+[; ;tester.c: 349: }
 [e :UE 535 ]
 }
-"348
-[; ;tester.c: 348: void okAlert(void) {
+"351
+[; ;tester.c: 351: void okAlert(void) {
 [v _okAlert `(v ~T0 @X0 1 ef ]
 {
 [e :U _okAlert ]
 [f ]
-"350
-[; ;tester.c: 350:     for (int i = 0; i < 2; i++) {
+"353
+[; ;tester.c: 353:     for (int i = 0; i < 2; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1625,18 +1625,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 544  ]
 [e :U 543 ]
 {
-"352
-[; ;tester.c: 352:         startAlert();
+"355
+[; ;tester.c: 355:         startAlert();
 [e ( _startAlert ..  ]
-"354
-[; ;tester.c: 354:     }
+"357
+[; ;tester.c: 357:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 2 `i 543  ]
 [e :U 544 ]
 }
-"357
-[; ;tester.c: 357: }
+"360
+[; ;tester.c: 360: }
 [e :UE 542 ]
 }
 [a 2C 65 84 84 69 78 84 69 32 65 67 81 85 73 84 84 69 77 69 78 84 0 ]

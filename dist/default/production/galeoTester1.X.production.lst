@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Tue Sep 05 15:46:33 2023
+                                                                                               Wed Sep 06 08:46:14 2023
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16LF1939
@@ -7393,7 +7393,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   7332  0ABF                     __ptext8:	
   7333 ;; *************** function _okAlert *****************
   7334 ;; Defined at:
-  7335 ;;		line 348 in file "tester.c"
+  7335 ;;		line 351 in file "tester.c"
   7336 ;; Parameters:    Size  Location     Type
   7337 ;;		None
   7338 ;; Auto vars:     Size  Location     Type
@@ -7434,17 +7434,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   7368                           ; Regs used in _okAlert: [wreg+status,2+status,0+pclath+cstack]
   7369                           
   7370                           
-  7371                           ;tester.c: 350:     for (int i = 0; i < 2; i++) {
+  7371                           ;tester.c: 353:     for (int i = 0; i < 2; i++) {
   7372  0ABF  0020               	movlb	0	; select bank0
   7373  0AC0  01D1               	clrf	okAlert@i
   7374  0AC1  01D2               	clrf	okAlert@i+1
   7375  0AC2                     l4596:
   7376                           
-  7377                           ;tester.c: 352:         startAlert();
+  7377                           ;tester.c: 355:         startAlert();
   7378  0AC2  318C  2457  318A   	fcall	_startAlert
   7379  0AC5                     l4598:
   7380                           
-  7381                           ;tester.c: 354:     }
+  7381                           ;tester.c: 357:     }
   7382  0AC5  3001               	movlw	1
   7383  0AC6  0020               	movlb	0	; select bank0
   7384  0AC7  07D1               	addwf	okAlert@i,f
@@ -7475,7 +7475,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   7409  0C57                     __ptext9:	
   7410 ;; *************** function _startAlert *****************
   7411 ;; Defined at:
-  7412 ;;		line 321 in file "tester.c"
+  7412 ;;		line 324 in file "tester.c"
   7413 ;; Parameters:    Size  Location     Type
   7414 ;;		None
   7415 ;; Auto vars:     Size  Location     Type
@@ -7517,17 +7517,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   7446                           ; Regs used in _startAlert: [wreg+status,2+status,0+pclath+cstack]
   7447                           
   7448                           
-  7449                           ;tester.c: 323:     for (int i = 0; i < 2; i++) {
+  7449                           ;tester.c: 326:     for (int i = 0; i < 2; i++) {
   7450  0C57  0020               	movlb	0	; select bank0
   7451  0C58  01CE               	clrf	startAlert@i
   7452  0C59  01CF               	clrf	startAlert@i+1
   7453  0C5A                     l4258:
   7454                           
-  7455                           ;tester.c: 325:         activerBuzzer();
+  7455                           ;tester.c: 328:         activerBuzzer();
   7456  0C5A  318C  24D4  318C   	fcall	_activerBuzzer
   7457  0C5D                     l4260:
   7458                           
-  7459                           ;tester.c: 326:         _delay((unsigned long)((500)*(16000000/4000.0)));
+  7459                           ;tester.c: 329:         _delay((unsigned long)((500)*(16000000/4000.0)));
   7460  0C5D  300B               	movlw	11
   7461  0C5E  0020               	movlb	0	; select bank0
   7462  0C5F  00CD               	movwf	??_startAlert+1
@@ -7544,7 +7544,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   7473  0C69  3200               	nop2
   7474  0C6A                     l4262:
   7475                           
-  7476                           ;tester.c: 328:     }
+  7476                           ;tester.c: 331:     }
   7477  0C6A  3001               	movlw	1
   7478  0C6B  0020               	movlb	0	; select bank0
   7479  0C6C  07CE               	addwf	startAlert@i,f
@@ -8403,7 +8403,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   8281  07B1                     __ptext20:	
   8282 ;; *************** function _errorAlert *****************
   8283 ;; Defined at:
-  8284 ;;		line 332 in file "tester.c"
+  8284 ;;		line 335 in file "tester.c"
   8285 ;; Parameters:    Size  Location     Type
   8286 ;;		None
   8287 ;; Auto vars:     Size  Location     Type
@@ -8445,23 +8445,23 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   8318                           ; Regs used in _errorAlert: [wreg+status,2+status,0+pclath+cstack]
   8319                           
   8320                           
-  8321                           ;tester.c: 334:     for (int j = 0; j < 4; j++) {
+  8321                           ;tester.c: 337:     for (int j = 0; j < 4; j++) {
   8322  07B1  0020               	movlb	0	; select bank0
   8323  07B2  01CE               	clrf	errorAlert@j
   8324  07B3  01CF               	clrf	errorAlert@j+1
   8325  07B4                     l4324:
   8326                           
-  8327                           ;tester.c: 336:         for (int i = 0; i < 4; i++) {
+  8327                           ;tester.c: 339:         for (int i = 0; i < 4; i++) {
   8328  07B4  0020               	movlb	0	; select bank0
   8329  07B5  01D0               	clrf	errorAlert@i
   8330  07B6  01D1               	clrf	errorAlert@i+1
   8331  07B7                     l4330:
   8332                           
-  8333                           ;tester.c: 338:             activerBuzzer();
+  8333                           ;tester.c: 341:             activerBuzzer();
   8334  07B7  318C  24D4  3187   	fcall	_activerBuzzer
   8335  07BA                     l4332:
   8336                           
-  8337                           ;tester.c: 339:             _delay((unsigned long)((500)*(16000000/4000.0)));
+  8337                           ;tester.c: 342:             _delay((unsigned long)((500)*(16000000/4000.0)));
   8338  07BA  300B               	movlw	11
   8339  07BB  0020               	movlb	0	; select bank0
   8340  07BC  00CD               	movwf	??_errorAlert+1
@@ -8478,7 +8478,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   8351  07C6  3200               	nop2
   8352  07C7                     l4334:
   8353                           
-  8354                           ;tester.c: 341:         }
+  8354                           ;tester.c: 344:         }
   8355  07C7  3001               	movlw	1
   8356  07C8  0020               	movlb	0	; select bank0
   8357  07C9  07D0               	addwf	errorAlert@i,f
@@ -8503,7 +8503,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   8376  07D9                     u2020:
   8377  07D9                     l4338:
   8378                           
-  8379                           ;tester.c: 342:         _delay((unsigned long)((500)*(16000000/4000.0)));
+  8379                           ;tester.c: 345:         _delay((unsigned long)((500)*(16000000/4000.0)));
   8380  07D9  300B               	movlw	11
   8381  07DA  0020               	movlb	0	; select bank0
   8382  07DB  00CD               	movwf	??_errorAlert+1
@@ -8519,7 +8519,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   8392  07E4  2FDF               	goto	u3677
   8393  07E5  3200               	nop2
   8394                           
-  8395                           ;tester.c: 343:     }
+  8395                           ;tester.c: 346:     }
   8396  07E6  3001               	movlw	1
   8397  07E7  0020               	movlb	0	; select bank0
   8398  07E8  07CE               	addwf	errorAlert@j,f
@@ -8602,7 +8602,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   8470  0CD8  160D               	bsf	13,4	;volatile
   8471  0CD9                     l4140:
   8472                           
-  8473                           ;tester.c: 304:         _delay((unsigned long)((1)*(16000000/4000.0)));
+  8473                           ;tester.c: 305:         _delay((unsigned long)((1000)*(16000000/4000000.0)));
   8474  0CD9  3006               	movlw	6
   8475  0CDA  0020               	movlb	0	; select bank0
   8476  0CDB  00C9               	movwf	??_activerBuzzer
@@ -8618,7 +8618,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   8486  0CE3  120D               	bcf	13,4	;volatile
   8487  0CE4                     l1220:
   8488                           
-  8489                           ;tester.c: 307:         _delay((unsigned long)((1)*(16000000/4000.0)));
+  8489                           ;tester.c: 309:         _delay((unsigned long)((1000)*(16000000/4000000.0)));
   8490  0CE4  3006               	movlw	6
   8491  0CE5  0020               	movlb	0	; select bank0
   8492  0CE6  00C9               	movwf	??_activerBuzzer
@@ -8630,7 +8630,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   8498  0CEB  2CE8               	goto	u3697
   8499  0CEC  0000               	nop
   8500                           
-  8501                           ;tester.c: 308:     }
+  8501                           ;tester.c: 311:     }
   8502  0CED  3001               	movlw	1
   8503  0CEE  0020               	movlb	0	; select bank0
   8504  0CEF  07CA               	addwf	activerBuzzer@i,f
@@ -9288,7 +9288,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   9122  0B47                     __ptext28:	
   9123 ;; *************** function _activerTouche *****************
   9124 ;; Defined at:
-  9125 ;;		line 312 in file "tester.c"
+  9125 ;;		line 315 in file "tester.c"
   9126 ;; Parameters:    Size  Location     Type
   9127 ;;		None
   9128 ;; Auto vars:     Size  Location     Type
@@ -9327,13 +9327,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   9156  0B47                     l1224:	
   9157                           ;incstack = 0
   9158                           ; Regs used in _activerTouche: [wreg]
-  9159                           ;tester.c: 314:     do { LATAbits.LATA6 = 1; } while(0);
+  9159                           ;tester.c: 317:     do { LATAbits.LATA6 = 1; } while(0);
   9160                           
   9161  0B47  0022               	movlb	2	; select bank2
   9162  0B48  170C               	bsf	12,6	;volatile
   9163  0B49                     l4586:
   9164                           
-  9165                           ;tester.c: 315:     _delay((unsigned long)((250)*(16000000/4000.0)));
+  9165                           ;tester.c: 318:     _delay((unsigned long)((250)*(16000000/4000.0)));
   9166  0B49  3006               	movlw	6
   9167  0B4A  0020               	movlb	0	; select bank0
   9168  0B4B  00CA               	movwf	??_activerTouche+1
@@ -9353,7 +9353,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   9182  0B57  130C               	bcf	12,6	;volatile
   9183  0B58                     l1227:
   9184                           
-  9185                           ;tester.c: 317:     _delay((unsigned long)((250)*(16000000/4000.0)));
+  9185                           ;tester.c: 320:     _delay((unsigned long)((250)*(16000000/4000.0)));
   9186  0B58  3006               	movlw	6
   9187  0B59  0020               	movlb	0	; select bank0
   9188  0B5A  00CA               	movwf	??_activerTouche+1
@@ -15958,7 +15958,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Tue Sep 05 15:46:33 2023
+Symbol Table                                                                                   Wed Sep 06 08:46:14 2023
 
                 ?_EUSART_SetRxInterruptHandler 0049                         ??_I2C_DO_SEND_ADR_READ 0070  
                   __size_of_I2C_MasterSendNack 0004                        ??_I2C_DO_SEND_ADR_WRITE 0071  

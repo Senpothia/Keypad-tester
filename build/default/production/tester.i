@@ -6109,10 +6109,13 @@ void activerBuzzer() {
     for (int i = 0; i < 50; i++) {
 
         do { LATBbits.LATB4 = 1; } while(0);
-        _delay((unsigned long)((1)*(16000000/4000.0)));
+
+        _delay((unsigned long)((1000)*(16000000/4000000.0)));
 
         do { LATBbits.LATB4 = 0; } while(0);
-        _delay((unsigned long)((1)*(16000000/4000.0)));
+
+        _delay((unsigned long)((1000)*(16000000/4000000.0)));
+
     }
 
 }
