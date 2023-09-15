@@ -85,16 +85,23 @@ void main(void) {
     bool testVoyants = false;
     int lectureAN1;
     bool testLeds = true;
+    bool automatique = false;
+
+
+
 
     // Affichage message d'accueil
 
     displayManager(TITRE, BOARD_REQUEST, OK_REQUEST, LIGNE_VIDE);
     __delay_ms(1000);
-    
+
 
     while (1) {
 
-        
+
+        // sélection test individuel des leds
+        // le test est inhibé si l'entrée GPIO1 est à zéro
+
         if (GPIO1_GetValue() == 1) {
 
             REL8_SetHigh();
@@ -111,7 +118,9 @@ void main(void) {
 
         displayManager(TITRE, ATTENTE, CAVALIERS, OK_REQUEST);
         __delay_ms(100);
-        attenteDemarrage();
+        // attenteDemarrage(&automatique, &testActif);
+        attenteDemarrage2(&automatique, &testActif);
+        testActif = true;
         startAlert();
         displayManager("ETAPE 1", "TEST 3 RELAIS ON", LIGNE_VIDE, LIGNE_VIDE);
         testActif = true;
@@ -175,7 +184,8 @@ void main(void) {
             pressBP1(false);
             if (testLeds) {
 
-                testVoyants = reponseOperateur();
+                printf("Attente validation led rouge\r\n");
+                testVoyants = reponseOperateur(automatique);
                 if (!testVoyants) {
 
                     testActif = false;
@@ -196,7 +206,7 @@ void main(void) {
             pressBP1(false);
             if (testLeds) {
 
-                testVoyants = reponseOperateur();
+                testVoyants = reponseOperateur(automatique);
                 if (!testVoyants) {
 
                     testActif = false;
@@ -217,7 +227,7 @@ void main(void) {
             pressBP1(false);
             if (testLeds) {
 
-                testVoyants = reponseOperateur();
+                testVoyants = reponseOperateur(automatique);
                 if (!testVoyants) {
 
                     testActif = false;
@@ -397,7 +407,8 @@ void main(void) {
             __delay_ms(250);
             pressBP1(false);
 
-            testVoyants = reponseOperateur();
+            printf("ATTENTE VALIDATION LEDS\r\n");
+            testVoyants = reponseOperateur(automatique);
             if (!testVoyants) {
 
                 testActif = false;
@@ -491,14 +502,13 @@ void main(void) {
 
             displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
             activerTouche();
-            testVoyants = reponseOperateur();
+            printf("ATTENTE VALIDATION BLUETOOTH\r\n");
+            testVoyants = reponseOperateur(automatique);
             if (!testVoyants) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
             }
-
-
         }
 
 
@@ -509,9 +519,9 @@ void main(void) {
             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", ACQ);
             ledConforme(true);
             alimenter(false);
-             okAlert();
-            attenteDemarrage();
-            initialConditions(&testActif, &testVoyants);
+            okAlert();
+            attenteDemarrage(&automatique, &testActif);
+            initialConditions(&testActif, &testVoyants, &automatique);
             __delay_ms(2000);
 
         }

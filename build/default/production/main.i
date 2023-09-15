@@ -5781,7 +5781,7 @@ void LCD_Clear();
 
 # 1 "./tester.h" 1
 
-void initialConditions(_Bool *, _Bool *);
+void initialConditions(_Bool *, _Bool *, _Bool *);
 void pressBP1(_Bool active);
 void pressBP2(_Bool active);
 void alimenter(_Bool active);
@@ -5793,9 +5793,9 @@ _Bool testNOK(_Bool active);
 void ledNonConforme(_Bool active);
 void ledConforme(_Bool active);
 void ledProgession(_Bool active);
-void attenteDemarrage();
+void attenteDemarrage(_Bool *, _Bool *);
 void alerteDefaut(char etape[], _Bool *, _Bool *);
-_Bool reponseOperateur();
+_Bool reponseOperateur(_Bool automatique);
 _Bool controlVisuel();
 void setHorloge(_Bool active);
 void setP1(_Bool active);
@@ -5805,10 +5805,11 @@ void activerTouche(void);
 void startAlert(void);
 void errorAlert(void);
 void okAlert(void);
+void attenteDemarrage2(_Bool *, _Bool *);
 # 55 "main.c" 2
 
 # 1 "./display.h" 1
-# 17 "./display.h"
+# 15 "./display.h"
 void displayManager(char s1[], char s2[], char s3[], char s4[]);
 # 56 "main.c" 2
 
@@ -5835,6 +5836,10 @@ void main(void) {
     _Bool testVoyants = 0;
     int lectureAN1;
     _Bool testLeds = 1;
+    _Bool automatique = 0;
+
+
+
 
 
 
@@ -5843,6 +5848,9 @@ void main(void) {
 
 
     while (1) {
+
+
+
 
 
         if (PORTCbits.RC0 == 1) {
@@ -5861,7 +5869,9 @@ void main(void) {
 
         displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "RETIRER P1 et P2", "APPUYER SUR OK");
         _delay((unsigned long)((100)*(16000000/4000.0)));
-        attenteDemarrage();
+
+        attenteDemarrage2(&automatique, &testActif);
+        testActif = 1;
         startAlert();
         displayManager("ETAPE 1", "TEST 3 RELAIS ON", "", "");
         testActif = 1;
@@ -5925,7 +5935,8 @@ void main(void) {
             pressBP1(0);
             if (testLeds) {
 
-                testVoyants = reponseOperateur();
+                printf("Attente validation led rouge\r\n");
+                testVoyants = reponseOperateur(automatique);
                 if (!testVoyants) {
 
                     testActif = 0;
@@ -5946,7 +5957,7 @@ void main(void) {
             pressBP1(0);
             if (testLeds) {
 
-                testVoyants = reponseOperateur();
+                testVoyants = reponseOperateur(automatique);
                 if (!testVoyants) {
 
                     testActif = 0;
@@ -5967,7 +5978,7 @@ void main(void) {
             pressBP1(0);
             if (testLeds) {
 
-                testVoyants = reponseOperateur();
+                testVoyants = reponseOperateur(automatique);
                 if (!testVoyants) {
 
                     testActif = 0;
@@ -6147,7 +6158,8 @@ void main(void) {
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
 
-            testVoyants = reponseOperateur();
+            printf("ATTENTE VALIDATION LEDS\r\n");
+            testVoyants = reponseOperateur(automatique);
             if (!testVoyants) {
 
                 testActif = 0;
@@ -6241,14 +6253,13 @@ void main(void) {
 
             displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
             activerTouche();
-            testVoyants = reponseOperateur();
+            printf("ATTENTE VALIDATION BLUETOOTH\r\n");
+            testVoyants = reponseOperateur(automatique);
             if (!testVoyants) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
             }
-
-
         }
 
 
@@ -6259,9 +6270,9 @@ void main(void) {
             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "ATTENTE ACQUITTEMENT");
             ledConforme(1);
             alimenter(0);
-             okAlert();
-            attenteDemarrage();
-            initialConditions(&testActif, &testVoyants);
+            okAlert();
+            attenteDemarrage(&automatique, &testActif);
+            initialConditions(&testActif, &testVoyants, &automatique);
             _delay((unsigned long)((2000)*(16000000/4000.0)));
 
         }

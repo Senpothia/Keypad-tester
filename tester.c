@@ -11,6 +11,8 @@
 #include "I2C_LCD.h"
 #include "tester.h"
 #include "display.h"
+#include <stdio.h>
+#include <string.h>
 
 void alimenter(bool active) {
 
@@ -216,20 +218,140 @@ void ledProgession(bool active) {
     }
 }
 
-void attenteDemarrage() {
+void attenteDemarrage(bool *autom, bool *testAct) {
 
-    while (IN3_GetValue() == 1) {
+
+    unsigned char reception;
+    bool repOperateur = false;
+
+    if (!*autom) {
+
+        while (IN3_GetValue() == 1 && !*autom) {
+
+            if (IN3_GetValue() == 0) {
+
+                if (!*testAct) {
+
+                    printf("-> TEST MANUEL EN COURS\r\n");
+
+                } else {
+
+                    printf("-> FIN TEST MANUEL\r\n");
+                }
+
+            }
+
+            if (eusartRxCount != 0) {
+
+                *autom = true;
+                reception = EUSART_Read(); // read a byte for RX
+
+                switch (reception) // check command  
+                {
+                    case '1':
+                    {
+
+                        printf("-> TEST ON\r\n");
+                        *autom = true;
+                        __delay_ms(50);
+                        repOperateur = true;
+                        break;
+                    }
+
+                    case '0':
+                    {
+
+
+                        printf("-> TEST OFF\r\n");
+                        __delay_ms(50);
+                        repOperateur = true;
+                        *autom = false;
+                        break;
+                    }
+
+                    case '4':
+                    {
+
+
+                        printf("-> TEST ACQUITTE\r\n");
+                        __delay_ms(50);
+                        repOperateur = false;
+                        *autom = false;
+                        break;
+                    }
+                }
+            }
+
+        }
+        repOperateur = true;
     }
+
+    if (*autom) {
+
+        while (!repOperateur) {
+
+
+            // Réception RX
+
+
+            if (eusartRxCount != 0) {
+                *autom = true;
+                reception = EUSART_Read(); // read a byte for RX
+
+                switch (reception) // check command  
+                {
+                    case '1':
+                    {
+
+                        printf("-> TEST ON\r\n");
+                        __delay_ms(50);
+                        repOperateur = true;
+                        *autom = true;
+                        break;
+                    }
+
+                    case '0':
+                    {
+
+
+                        printf("-> TEST OFF\r\n");
+                        __delay_ms(50);
+                        repOperateur = true;
+                        *autom = false;
+                        break;
+                    }
+
+                    case '4':
+                    {
+
+                        printf("-> TEST ACQUITTE\r\n");
+                        __delay_ms(50);
+                        repOperateur = true;
+                        *autom = false;
+                        break;
+                    }
+                }
+
+            }
+        }
+
+    }
+
 }
 
 void alerteDefaut(char etape[], bool *testAct, bool *testVoy) {
 
+    char error[20] = "-> ERREUR: ";
+    char eol[10] = "\r\n";
     ledNonConforme(true);
     ledProgession(false);
     ledConforme(false);
     alimenter(false);
     displayManager(etape, NON_CONFORME, ACQ, LIGNE_VIDE);
+    printf(strcat(strcat(error, etape), eol));
     errorAlert();
+
+
     while (IN3_GetValue() == 1) {
     }
     while (IN3_GetValue() == 0) {
@@ -238,22 +360,70 @@ void alerteDefaut(char etape[], bool *testAct, bool *testVoy) {
     *testAct = false;
     *testVoy = false;
 
+
+
 }
 
-bool reponseOperateur() {
+bool reponseOperateur(bool automatique) {
 
     bool reponse = false;
-    while (testOK(false) && testNOK(false)) {
-    }
-    if (testNOK(true)) {
-        reponse = false;
-    }
-    if (testOK(true)) {
-        reponse = true;
+    bool testAuto = false;
+    unsigned char reception;
+
+    if (automatique) {
+
+        while (!testAuto) {
+
+            if (eusartRxCount != 0) {
+
+                reception = EUSART_Read(); // read a byte for RX
+
+                switch (reception) // check command  
+                {
+                    case '2':
+                    {
+
+                        __delay_ms(50);
+                        reponse = true;
+                        testAuto = true;
+                        break;
+                    }
+
+                    case '3':
+                    {
+
+                        __delay_ms(50);
+                        reponse = false;
+                        testAuto = true;
+                        break;
+                    }
+                }
+
+            }
+
+
+        }
+
+
+
     }
 
-    while (testOK(true) || testNOK(true)) {
+    if (!automatique) {
+
+        while (!testAuto) {
+
+            if (testNOK(true)) {
+                reponse = false;
+                testAuto = true;
+            }
+            if (testOK(true)) {
+                reponse = true;
+                testAuto = true;
+            }
+        }
+
     }
+
     return reponse;
 
 }
@@ -280,10 +450,15 @@ void setP2(bool active) {
 
 }
 
-void initialConditions(bool *testAct, bool *testVoy) {
+void initialConditions(bool *testAct, bool *testVoy, bool *autom) {
 
+    if (!*autom) {
+
+        printf("-> FIN TEST MANUEL\r\n");
+    }
     *testAct = false;
     *testVoy = false;
+    *autom = false;
     ledConforme(false);
     ledNonConforme(false);
     ledProgession(false);
@@ -292,6 +467,7 @@ void initialConditions(bool *testAct, bool *testVoy) {
     pressBP2(false);
     setP1(false);
     setP2(false);
+
 
 }
 
@@ -350,11 +526,50 @@ void errorAlert(void) {
 
 void okAlert(void) {
 
+
+    printf("-> TEST CONFORME - ATTENTE ACQUITTEMENT\r\n");
     for (int i = 0; i < 2; i++) {
 
         startAlert();
 
     }
+
+
+}
+
+void attenteDemarrage2(bool *autom, bool *testAct) {
+
+    unsigned char reception;
+    bool repOperateur = false;
+
+    while (!repOperateur) {
+
+
+        if (IN3_GetValue() == 0) {
+
+            printf("-> TEST MANUEL EN COURS\r\n");
+            repOperateur = true;
+            *autom = false;
+        }
+
+        if (eusartRxCount != 0) {
+
+            reception = EUSART_Read(); // read a byte for RX
+
+            switch (reception) // check command  
+            {
+                case '1':
+                {
+                    printf("-> TEST ON2\r\n");
+                    *autom = true;
+                    __delay_ms(50);
+                    repOperateur = true;
+                    break;
+                }
+            }
+        }
+    }
+
 
 
 }
