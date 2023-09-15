@@ -24,5 +24,6 @@ void startAlert(void);
 void errorAlert(void);
 void okAlert(void);
 void attenteDemarrage2(bool *, bool *);
+void attenteAquittement(bool *, bool *);
 
 

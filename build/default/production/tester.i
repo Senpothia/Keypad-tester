@@ -5813,6 +5813,7 @@ void startAlert(void);
 void errorAlert(void);
 void okAlert(void);
 void attenteDemarrage2(_Bool *, _Bool *);
+void attenteAquittement(_Bool *, _Bool *);
 # 12 "tester.c" 2
 
 # 1 "./display.h" 1
@@ -6232,12 +6233,12 @@ void alerteDefaut(char etape[], _Bool *testAct, _Bool *testVoy) {
 _Bool reponseOperateur(_Bool automatique) {
 
     _Bool reponse = 0;
-    _Bool testAuto = 0;
+    _Bool repOperateur = 0;
     unsigned char reception;
 
     if (automatique) {
 
-        while (!testAuto) {
+        while (!repOperateur) {
 
             if (eusartRxCount != 0) {
 
@@ -6250,7 +6251,7 @@ _Bool reponseOperateur(_Bool automatique) {
 
                         _delay((unsigned long)((50)*(16000000/4000.0)));
                         reponse = 1;
-                        testAuto = 1;
+                        repOperateur = 1;
                         break;
                     }
 
@@ -6259,7 +6260,7 @@ _Bool reponseOperateur(_Bool automatique) {
 
                         _delay((unsigned long)((50)*(16000000/4000.0)));
                         reponse = 0;
-                        testAuto = 1;
+                        repOperateur = 1;
                         break;
                     }
                 }
@@ -6275,15 +6276,15 @@ _Bool reponseOperateur(_Bool automatique) {
 
     if (!automatique) {
 
-        while (!testAuto) {
+        while (!repOperateur) {
 
             if (testNOK(1)) {
                 reponse = 0;
-                testAuto = 1;
+                repOperateur = 1;
             }
             if (testOK(1)) {
                 reponse = 1;
-                testAuto = 1;
+                repOperateur = 1;
             }
         }
 
@@ -6425,7 +6426,7 @@ void attenteDemarrage2(_Bool *autom, _Bool *testAct) {
             {
                 case '1':
                 {
-                    printf("-> TEST ON2\r\n");
+                    printf("-> TEST ON\r\n");
                     *autom = 1;
                     _delay((unsigned long)((50)*(16000000/4000.0)));
                     repOperateur = 1;
@@ -6435,6 +6436,42 @@ void attenteDemarrage2(_Bool *autom, _Bool *testAct) {
         }
     }
 
+}
 
+
+void attenteAquittement(_Bool *autom, _Bool *testAct) {
+
+    unsigned char reception;
+    _Bool repOperateur = 0;
+
+    while (!repOperateur) {
+
+
+        if (PORTDbits.RD2 == 0) {
+
+            printf("-> FIN TEST MANUEL\r\n");
+            repOperateur = 1;
+            *autom = 0;
+            *testAct = 0;
+        }
+
+        if (eusartRxCount != 0) {
+
+            reception = EUSART_Read();
+
+            switch (reception)
+            {
+                case '4':
+                {
+                    printf("-> TEST ACQUITTE\r\n");
+                    *autom = 0;
+                    *testAct = 0;
+                    _delay((unsigned long)((50)*(16000000/4000.0)));
+                    repOperateur = 1;
+                    break;
+                }
+            }
+        }
+    }
 
 }

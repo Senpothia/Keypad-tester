@@ -1492,8 +1492,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _testAct `*a ~T0 @X0 1 r2 ]
 [v _testVoy `*a ~T0 @X0 1 r3 ]
 [f ]
-[v F3733 `uc ~T0 @X0 -> 20 `i s ]
-[i F3733
+[v F3736 `uc ~T0 @X0 -> 20 `i s ]
+[i F3736
 :U ..
 "344
 [; ;tester.c: 344:     char error[20] = "-> ERREUR: ";
@@ -1512,9 +1512,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _error `uc ~T0 @X0 -> 20 `i a ]
-[e = _error F3733 ]
-[v F3735 `uc ~T0 @X0 -> 10 `i s ]
-[i F3735
+[e = _error F3736 ]
+[v F3738 `uc ~T0 @X0 -> 10 `i s ]
+[i F3738
 :U ..
 "345
 [; ;tester.c: 345:     char eol[10] = "\r\n";
@@ -1524,7 +1524,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _eol `uc ~T0 @X0 -> 10 `i a ]
-[e = _eol F3735 ]
+[e = _eol F3738 ]
 "346
 [; ;tester.c: 346:     ledNonConforme(1);
 [e ( _ledNonConforme (1 -> -> 1 `i `a ]
@@ -1597,9 +1597,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _reponse `a ~T0 @X0 1 a ]
 [e = _reponse -> -> 0 `i `a ]
 "370
-[; ;tester.c: 370:     _Bool testAuto = 0;
-[v _testAuto `a ~T0 @X0 1 a ]
-[e = _testAuto -> -> 0 `i `a ]
+[; ;tester.c: 370:     _Bool repOperateur = 0;
+[v _repOperateur `a ~T0 @X0 1 a ]
+[e = _repOperateur -> -> 0 `i `a ]
 "371
 [; ;tester.c: 371:     unsigned char reception;
 [v _reception `uc ~T0 @X0 1 a ]
@@ -1608,7 +1608,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> _automatique `i -> 0 `i 508  ]
 {
 "375
-[; ;tester.c: 375:         while (!testAuto) {
+[; ;tester.c: 375:         while (!repOperateur) {
 [e $U 509  ]
 [e :U 510 ]
 {
@@ -1638,8 +1638,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tester.c: 387:                         reponse = 1;
 [e = _reponse -> -> 1 `i `a ]
 "388
-[; ;tester.c: 388:                         testAuto = 1;
-[e = _testAuto -> -> 1 `i `a ]
+[; ;tester.c: 388:                         repOperateur = 1;
+[e = _repOperateur -> -> 1 `i `a ]
 "389
 [; ;tester.c: 389:                         break;
 [e $U 513  ]
@@ -1659,8 +1659,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tester.c: 396:                         reponse = 0;
 [e = _reponse -> -> 0 `i `a ]
 "397
-[; ;tester.c: 397:                         testAuto = 1;
-[e = _testAuto -> -> 1 `i `a ]
+[; ;tester.c: 397:                         repOperateur = 1;
+[e = _repOperateur -> -> 1 `i `a ]
 "398
 [; ;tester.c: 398:                         break;
 [e $U 513  ]
@@ -1685,8 +1685,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 509 ]
 "375
-[; ;tester.c: 375:         while (!testAuto) {
-[e $ ! != -> _testAuto `i -> 0 `i 510  ]
+[; ;tester.c: 375:         while (!repOperateur) {
+[e $ ! != -> _repOperateur `i -> 0 `i 510  ]
 [e :U 511 ]
 "409
 [; ;tester.c: 409:     }
@@ -1697,7 +1697,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! ! != -> _automatique `i -> 0 `i 517  ]
 {
 "413
-[; ;tester.c: 413:         while (!testAuto) {
+[; ;tester.c: 413:         while (!repOperateur) {
 [e $U 518  ]
 [e :U 519 ]
 {
@@ -1709,8 +1709,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tester.c: 416:                 reponse = 0;
 [e = _reponse -> -> 0 `i `a ]
 "417
-[; ;tester.c: 417:                 testAuto = 1;
-[e = _testAuto -> -> 1 `i `a ]
+[; ;tester.c: 417:                 repOperateur = 1;
+[e = _repOperateur -> -> 1 `i `a ]
 "418
 [; ;tester.c: 418:             }
 }
@@ -1723,8 +1723,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tester.c: 420:                 reponse = 1;
 [e = _reponse -> -> 1 `i `a ]
 "421
-[; ;tester.c: 421:                 testAuto = 1;
-[e = _testAuto -> -> 1 `i `a ]
+[; ;tester.c: 421:                 repOperateur = 1;
+[e = _repOperateur -> -> 1 `i `a ]
 "422
 [; ;tester.c: 422:             }
 }
@@ -1734,8 +1734,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 518 ]
 "413
-[; ;tester.c: 413:         while (!testAuto) {
-[e $ ! != -> _testAuto `i -> 0 `i 519  ]
+[; ;tester.c: 413:         while (!repOperateur) {
+[e $ ! != -> _repOperateur `i -> 0 `i 519  ]
 [e :U 520 ]
 "425
 [; ;tester.c: 425:     }
@@ -2132,7 +2132,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tester.c: 562:                 {
 {
 "563
-[; ;tester.c: 563:                     printf("-> TEST ON2\r\n");
+[; ;tester.c: 563:                     printf("-> TEST ON\r\n");
 [e ( _printf :s 15C ]
 "564
 [; ;tester.c: 564:                     *autom = 1;
@@ -2169,9 +2169,113 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tester.c: 545:     while (!repOperateur) {
 [e $ ! != -> _repOperateur `i -> 0 `i 577  ]
 [e :U 578 ]
-"575
-[; ;tester.c: 575: }
+"573
+[; ;tester.c: 573: }
 [e :UE 575 ]
+}
+"576
+[; ;tester.c: 576: void attenteAquittement(_Bool *autom, _Bool *testAct) {
+[v _attenteAquittement `(v ~T0 @X0 1 ef2`*a`*a ]
+{
+[e :U _attenteAquittement ]
+[v _autom `*a ~T0 @X0 1 r1 ]
+[v _testAct `*a ~T0 @X0 1 r2 ]
+[f ]
+"578
+[; ;tester.c: 578:     unsigned char reception;
+[v _reception `uc ~T0 @X0 1 a ]
+"579
+[; ;tester.c: 579:     _Bool repOperateur = 0;
+[v _repOperateur `a ~T0 @X0 1 a ]
+[e = _repOperateur -> -> 0 `i `a ]
+"581
+[; ;tester.c: 581:     while (!repOperateur) {
+[e $U 585  ]
+[e :U 586 ]
+{
+"584
+[; ;tester.c: 584:         if (PORTDbits.RD2 == 0) {
+[e $ ! == -> . . _PORTDbits 0 2 `i -> 0 `i 588  ]
+{
+"586
+[; ;tester.c: 586:             printf("-> FIN TEST MANUEL\r\n");
+[e ( _printf :s 16C ]
+"587
+[; ;tester.c: 587:             repOperateur = 1;
+[e = _repOperateur -> -> 1 `i `a ]
+"588
+[; ;tester.c: 588:             *autom = 0;
+[e = *U _autom -> -> 0 `i `a ]
+"589
+[; ;tester.c: 589:             *testAct = 0;
+[e = *U _testAct -> -> 0 `i `a ]
+"590
+[; ;tester.c: 590:         }
+}
+[e :U 588 ]
+"592
+[; ;tester.c: 592:         if (eusartRxCount != 0) {
+[e $ ! != -> _eusartRxCount `i -> 0 `i 589  ]
+{
+"594
+[; ;tester.c: 594:             reception = EUSART_Read();
+[e = _reception ( _EUSART_Read ..  ]
+"596
+[; ;tester.c: 596:             switch (reception)
+[e $U 591  ]
+"597
+[; ;tester.c: 597:             {
+{
+"598
+[; ;tester.c: 598:                 case '4':
+[e :U 592 ]
+"599
+[; ;tester.c: 599:                 {
+{
+"600
+[; ;tester.c: 600:                     printf("-> TEST ACQUITTE\r\n");
+[e ( _printf :s 17C ]
+"601
+[; ;tester.c: 601:                     *autom = 0;
+[e = *U _autom -> -> 0 `i `a ]
+"602
+[; ;tester.c: 602:                     *testAct = 0;
+[e = *U _testAct -> -> 0 `i `a ]
+"603
+[; ;tester.c: 603:                     _delay((unsigned long)((50)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"604
+[; ;tester.c: 604:                     repOperateur = 1;
+[e = _repOperateur -> -> 1 `i `a ]
+"605
+[; ;tester.c: 605:                     break;
+[e $U 590  ]
+"606
+[; ;tester.c: 606:                 }
+}
+"607
+[; ;tester.c: 607:             }
+}
+[e $U 590  ]
+[e :U 591 ]
+[e [\ -> _reception `i , $ -> -> 52 `ui `i 592
+ 590 ]
+[e :U 590 ]
+"608
+[; ;tester.c: 608:         }
+}
+[e :U 589 ]
+"609
+[; ;tester.c: 609:     }
+}
+[e :U 585 ]
+"581
+[; ;tester.c: 581:     while (!repOperateur) {
+[e $ ! != -> _repOperateur `i -> 0 `i 586  ]
+[e :U 587 ]
+"611
+[; ;tester.c: 611: }
+[e :UE 584 ]
 }
 [p f _printf 9437696 ]
 [a 10C 65 84 84 69 78 84 69 32 65 67 81 85 73 84 84 69 77 69 78 84 0 ]
@@ -2181,11 +2285,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 14C 45 62 32 84 69 83 84 32 77 65 78 85 69 76 32 69 78 32 67 79 85 82 83 13 10 0 ]
 [a 3C 45 62 32 84 69 83 84 32 79 78 13 10 0 ]
 [a 6C 45 62 32 84 69 83 84 32 79 78 13 10 0 ]
+[a 15C 45 62 32 84 69 83 84 32 79 78 13 10 0 ]
 [a 2C 45 62 32 70 73 78 32 84 69 83 84 32 77 65 78 85 69 76 13 10 0 ]
 [a 12C 45 62 32 70 73 78 32 84 69 83 84 32 77 65 78 85 69 76 13 10 0 ]
+[a 16C 45 62 32 70 73 78 32 84 69 83 84 32 77 65 78 85 69 76 13 10 0 ]
 [a 4C 45 62 32 84 69 83 84 32 79 70 70 13 10 0 ]
 [a 7C 45 62 32 84 69 83 84 32 79 70 70 13 10 0 ]
 [a 5C 45 62 32 84 69 83 84 32 65 67 81 85 73 84 84 69 13 10 0 ]
 [a 8C 45 62 32 84 69 83 84 32 65 67 81 85 73 84 84 69 13 10 0 ]
-[a 15C 45 62 32 84 69 83 84 32 79 78 50 13 10 0 ]
+[a 17C 45 62 32 84 69 83 84 32 65 67 81 85 73 84 84 69 13 10 0 ]
 [a 11C 0 ]

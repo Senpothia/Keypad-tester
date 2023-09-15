@@ -520,7 +520,8 @@ void main(void) {
             ledConforme(true);
             alimenter(false);
             okAlert();
-            attenteDemarrage(&automatique, &testActif);
+            //attenteDemarrage(&automatique, &testActif);
+            attenteAquittement(&automatique, &testActif);
             initialConditions(&testActif, &testVoyants, &automatique);
             __delay_ms(2000);
 

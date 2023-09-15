@@ -117,9 +117,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25
 [; ;./tester.h: 25: void okAlert(void);
 [v _okAlert `(v ~T0 @X0 0 ef ]
-"14
-[; ;./tester.h: 14: void attenteDemarrage(_Bool *, _Bool *);
-[v _attenteDemarrage `(v ~T0 @X0 0 ef2`*a`*a ]
+"27
+[; ;./tester.h: 27: void attenteAquittement(_Bool *, _Bool *);
+[v _attenteAquittement `(v ~T0 @X0 0 ef2`*a`*a ]
 "2
 [; ;./tester.h: 2: void initialConditions(_Bool *, _Bool *, _Bool *);
 [v _initialConditions `(v ~T0 @X0 0 ef3`*a`*a`*a ]
@@ -1585,27 +1585,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "522
 [; ;main.c: 522:             okAlert();
 [e ( _okAlert ..  ]
-"523
-[; ;main.c: 523:             attenteDemarrage(&automatique, &testActif);
-[e ( _attenteDemarrage (2 , &U _automatique &U _testActif ]
 "524
-[; ;main.c: 524:             initialConditions(&testActif, &testVoyants, &automatique);
-[e ( _initialConditions (3 , , &U _testActif &U _testVoyants &U _automatique ]
+[; ;main.c: 524:             attenteAquittement(&automatique, &testActif);
+[e ( _attenteAquittement (2 , &U _automatique &U _testActif ]
 "525
-[; ;main.c: 525:             _delay((unsigned long)((2000)*(16000000/4000.0)));
+[; ;main.c: 525:             initialConditions(&testActif, &testVoyants, &automatique);
+[e ( _initialConditions (3 , , &U _testActif &U _testVoyants &U _automatique ]
+"526
+[; ;main.c: 526:             _delay((unsigned long)((2000)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"527
-[; ;main.c: 527:         }
+"528
+[; ;main.c: 528:         }
 }
 [e :U 459 ]
-"529
-[; ;main.c: 529:     }
+"530
+[; ;main.c: 530:     }
 }
 [e :U 385 ]
 [e $U 386  ]
 [e :U 387 ]
-"533
-[; ;main.c: 533: }
+"534
+[; ;main.c: 534: }
 [e :UE 384 ]
 }
 [p f _printf 8388608 ]

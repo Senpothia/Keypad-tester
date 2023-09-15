@@ -367,12 +367,12 @@ void alerteDefaut(char etape[], bool *testAct, bool *testVoy) {
 bool reponseOperateur(bool automatique) {
 
     bool reponse = false;
-    bool testAuto = false;
+    bool repOperateur = false;
     unsigned char reception;
 
     if (automatique) {
 
-        while (!testAuto) {
+        while (!repOperateur) {
 
             if (eusartRxCount != 0) {
 
@@ -385,7 +385,7 @@ bool reponseOperateur(bool automatique) {
 
                         __delay_ms(50);
                         reponse = true;
-                        testAuto = true;
+                        repOperateur = true;
                         break;
                     }
 
@@ -394,7 +394,7 @@ bool reponseOperateur(bool automatique) {
 
                         __delay_ms(50);
                         reponse = false;
-                        testAuto = true;
+                        repOperateur = true;
                         break;
                     }
                 }
@@ -410,15 +410,15 @@ bool reponseOperateur(bool automatique) {
 
     if (!automatique) {
 
-        while (!testAuto) {
+        while (!repOperateur) {
 
             if (testNOK(true)) {
                 reponse = false;
-                testAuto = true;
+                repOperateur = true;
             }
             if (testOK(true)) {
                 reponse = true;
-                testAuto = true;
+                repOperateur = true;
             }
         }
 
@@ -560,7 +560,7 @@ void attenteDemarrage2(bool *autom, bool *testAct) {
             {
                 case '1':
                 {
-                    printf("-> TEST ON2\r\n");
+                    printf("-> TEST ON\r\n");
                     *autom = true;
                     __delay_ms(50);
                     repOperateur = true;
@@ -570,6 +570,42 @@ void attenteDemarrage2(bool *autom, bool *testAct) {
         }
     }
 
+}
 
+
+void attenteAquittement(bool *autom, bool *testAct) {
+
+    unsigned char reception;
+    bool repOperateur = false;
+
+    while (!repOperateur) {
+
+
+        if (IN3_GetValue() == 0) {
+
+            printf("-> FIN TEST MANUEL\r\n");
+            repOperateur = true;
+            *autom = false;
+            *testAct = false;
+        }
+
+        if (eusartRxCount != 0) {
+
+            reception = EUSART_Read(); // read a byte for RX
+
+            switch (reception) // check command  
+            {
+                case '4':
+                {
+                    printf("-> TEST ACQUITTE\r\n");
+                    *autom = false;
+                    *testAct = false;
+                    __delay_ms(50);
+                    repOperateur = true;
+                    break;
+                }
+            }
+        }
+    }
 
 }

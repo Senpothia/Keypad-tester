@@ -5806,6 +5806,7 @@ void startAlert(void);
 void errorAlert(void);
 void okAlert(void);
 void attenteDemarrage2(_Bool *, _Bool *);
+void attenteAquittement(_Bool *, _Bool *);
 # 55 "main.c" 2
 
 # 1 "./display.h" 1
@@ -6271,7 +6272,8 @@ void main(void) {
             ledConforme(1);
             alimenter(0);
             okAlert();
-            attenteDemarrage(&automatique, &testActif);
+
+            attenteAquittement(&automatique, &testActif);
             initialConditions(&testActif, &testVoyants, &automatique);
             _delay((unsigned long)((2000)*(16000000/4000.0)));
 
