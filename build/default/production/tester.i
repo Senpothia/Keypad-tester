@@ -5814,6 +5814,7 @@ void errorAlert(void);
 void okAlert(void);
 void attenteDemarrage2(_Bool *, _Bool *);
 void attenteAquittement(_Bool *, _Bool *);
+void sortieErreur(_Bool *, _Bool *,_Bool *);
 # 12 "tester.c" 2
 
 # 1 "./display.h" 1
@@ -6116,7 +6117,6 @@ void attenteDemarrage(_Bool *autom, _Bool *testAct) {
                 {
                     case '1':
                     {
-
                         printf("-> TEST ON\r\n");
                         *autom = 1;
                         _delay((unsigned long)((50)*(16000000/4000.0)));
@@ -6126,8 +6126,6 @@ void attenteDemarrage(_Bool *autom, _Bool *testAct) {
 
                     case '0':
                     {
-
-
                         printf("-> TEST OFF\r\n");
                         _delay((unsigned long)((50)*(16000000/4000.0)));
                         repOperateur = 1;
@@ -6137,8 +6135,6 @@ void attenteDemarrage(_Bool *autom, _Bool *testAct) {
 
                     case '4':
                     {
-
-
                         printf("-> TEST ACQUITTE\r\n");
                         _delay((unsigned long)((50)*(16000000/4000.0)));
                         repOperateur = 0;
@@ -6168,7 +6164,6 @@ void attenteDemarrage(_Bool *autom, _Bool *testAct) {
                 {
                     case '1':
                     {
-
                         printf("-> TEST ON\r\n");
                         _delay((unsigned long)((50)*(16000000/4000.0)));
                         repOperateur = 1;
@@ -6178,8 +6173,6 @@ void attenteDemarrage(_Bool *autom, _Bool *testAct) {
 
                     case '0':
                     {
-
-
                         printf("-> TEST OFF\r\n");
                         _delay((unsigned long)((50)*(16000000/4000.0)));
                         repOperateur = 1;
@@ -6189,7 +6182,6 @@ void attenteDemarrage(_Bool *autom, _Bool *testAct) {
 
                     case '4':
                     {
-
                         printf("-> TEST ACQUITTE\r\n");
                         _delay((unsigned long)((50)*(16000000/4000.0)));
                         repOperateur = 1;
@@ -6217,16 +6209,13 @@ void alerteDefaut(char etape[], _Bool *testAct, _Bool *testVoy) {
     printf(strcat(strcat(error, etape), eol));
     errorAlert();
 
-
-    while (PORTDbits.RD2 == 1) {
-    }
     while (PORTDbits.RD2 == 0) {
+        ;
     }
+
     ledNonConforme(0);
     *testAct = 0;
     *testVoy = 0;
-
-
 
 }
 
@@ -6267,10 +6256,7 @@ _Bool reponseOperateur(_Bool automatique) {
 
             }
 
-
         }
-
-
 
     }
 
@@ -6333,7 +6319,6 @@ void initialConditions(_Bool *testAct, _Bool *testVoy, _Bool *autom) {
     pressBP2(0);
     setP1(0);
     setP2(0);
-
 
 }
 
@@ -6438,7 +6423,6 @@ void attenteDemarrage2(_Bool *autom, _Bool *testAct) {
 
 }
 
-
 void attenteAquittement(_Bool *autom, _Bool *testAct) {
 
     unsigned char reception;
@@ -6473,5 +6457,13 @@ void attenteAquittement(_Bool *autom, _Bool *testAct) {
             }
         }
     }
+
+}
+
+void sortieErreur(_Bool *autom, _Bool *testAct, _Bool *testVoy) {
+
+    attenteAquittement(*autom, *testAct);
+    initialConditions(*testAct, *testVoy, *autom);
+    _delay((unsigned long)((2000)*(16000000/4000.0)));
 
 }

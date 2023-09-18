@@ -148,6 +148,7 @@ void main(void) {
             pressBP1(false);
             pressBP2(false);
             alerteDefaut("ETAPE 1", &testActif, &testVoyants);
+            sortieErreur(&automatique, &testActif, &testVoyants);
 
         }
 
@@ -170,6 +171,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 2", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
         }
 
@@ -190,6 +192,7 @@ void main(void) {
 
                     testActif = false;
                     alerteDefaut("ETAPE 3", &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants);
                 }
             }
 
@@ -211,6 +214,7 @@ void main(void) {
 
                     testActif = false;
                     alerteDefaut("ETAPE 4", &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants);
                 }
             }
 
@@ -232,6 +236,7 @@ void main(void) {
 
                     testActif = false;
                     alerteDefaut("ETAPE 5", &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants);
                 }
             }
 
@@ -256,6 +261,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 6", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -277,6 +283,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 7", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -298,6 +305,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 8", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -325,6 +333,7 @@ void main(void) {
 
                 alerteDefaut("ETAPE 9", &testActif, &testVoyants);
                 REL8_SetLow();
+                sortieErreur(&automatique, &testActif, &testVoyants);
 
             }
 
@@ -355,6 +364,7 @@ void main(void) {
 
                 alerteDefaut("ETAPE 10", &testActif, &testVoyants);
                 REL8_SetHigh();
+                sortieErreur(&automatique, &testActif, &testVoyants);
 
             }
             __delay_ms(2000);
@@ -387,6 +397,7 @@ void main(void) {
                 pressBP1(false);
                 pressBP2(false);
                 alerteDefaut("ETAPE 12", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
 
             }
 
@@ -413,6 +424,12 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 13", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
+                /*
+                attenteAquittement(&automatique, &testActif);
+                initialConditions(&testActif, &testVoyants, &automatique);
+                __delay_ms(2000);
+                 */
             }
         }
 
@@ -432,6 +449,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 14", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -452,6 +470,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 15", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -471,6 +490,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 16", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -491,6 +511,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -508,6 +529,9 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
+                initialConditions(&testActif, &testVoyants, &automatique);
+                __delay_ms(2000);
             }
         }
 

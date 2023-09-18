@@ -250,7 +250,6 @@ void attenteDemarrage(bool *autom, bool *testAct) {
                 {
                     case '1':
                     {
-
                         printf("-> TEST ON\r\n");
                         *autom = true;
                         __delay_ms(50);
@@ -260,8 +259,6 @@ void attenteDemarrage(bool *autom, bool *testAct) {
 
                     case '0':
                     {
-
-
                         printf("-> TEST OFF\r\n");
                         __delay_ms(50);
                         repOperateur = true;
@@ -271,8 +268,6 @@ void attenteDemarrage(bool *autom, bool *testAct) {
 
                     case '4':
                     {
-
-
                         printf("-> TEST ACQUITTE\r\n");
                         __delay_ms(50);
                         repOperateur = false;
@@ -302,7 +297,6 @@ void attenteDemarrage(bool *autom, bool *testAct) {
                 {
                     case '1':
                     {
-
                         printf("-> TEST ON\r\n");
                         __delay_ms(50);
                         repOperateur = true;
@@ -312,8 +306,6 @@ void attenteDemarrage(bool *autom, bool *testAct) {
 
                     case '0':
                     {
-
-
                         printf("-> TEST OFF\r\n");
                         __delay_ms(50);
                         repOperateur = true;
@@ -323,7 +315,6 @@ void attenteDemarrage(bool *autom, bool *testAct) {
 
                     case '4':
                     {
-
                         printf("-> TEST ACQUITTE\r\n");
                         __delay_ms(50);
                         repOperateur = true;
@@ -351,16 +342,13 @@ void alerteDefaut(char etape[], bool *testAct, bool *testVoy) {
     printf(strcat(strcat(error, etape), eol));
     errorAlert();
 
-
-    while (IN3_GetValue() == 1) {
-    }
     while (IN3_GetValue() == 0) {
+        ;
     }
+
     ledNonConforme(false);
     *testAct = false;
     *testVoy = false;
-
-
 
 }
 
@@ -401,10 +389,7 @@ bool reponseOperateur(bool automatique) {
 
             }
 
-
         }
-
-
 
     }
 
@@ -467,7 +452,6 @@ void initialConditions(bool *testAct, bool *testVoy, bool *autom) {
     pressBP2(false);
     setP1(false);
     setP2(false);
-
 
 }
 
@@ -572,7 +556,6 @@ void attenteDemarrage2(bool *autom, bool *testAct) {
 
 }
 
-
 void attenteAquittement(bool *autom, bool *testAct) {
 
     unsigned char reception;
@@ -607,5 +590,13 @@ void attenteAquittement(bool *autom, bool *testAct) {
             }
         }
     }
+
+}
+
+void sortieErreur(bool *autom, bool *testAct, bool *testVoy) {
+
+    attenteAquittement(*autom, *testAct);
+    initialConditions(*testAct, *testVoy, *autom);
+    __delay_ms(2000);
 
 }

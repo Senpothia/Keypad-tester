@@ -5807,6 +5807,7 @@ void errorAlert(void);
 void okAlert(void);
 void attenteDemarrage2(_Bool *, _Bool *);
 void attenteAquittement(_Bool *, _Bool *);
+void sortieErreur(_Bool *, _Bool *,_Bool *);
 # 55 "main.c" 2
 
 # 1 "./display.h" 1
@@ -5900,6 +5901,7 @@ void main(void) {
             pressBP1(0);
             pressBP2(0);
             alerteDefaut("ETAPE 1", &testActif, &testVoyants);
+            sortieErreur(&automatique, &testActif, &testVoyants);
 
         }
 
@@ -5922,6 +5924,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 2", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
         }
 
@@ -5942,6 +5945,7 @@ void main(void) {
 
                     testActif = 0;
                     alerteDefaut("ETAPE 3", &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants);
                 }
             }
 
@@ -5963,6 +5967,7 @@ void main(void) {
 
                     testActif = 0;
                     alerteDefaut("ETAPE 4", &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants);
                 }
             }
 
@@ -5984,6 +5989,7 @@ void main(void) {
 
                     testActif = 0;
                     alerteDefaut("ETAPE 5", &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants);
                 }
             }
 
@@ -6008,6 +6014,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 6", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6029,6 +6036,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 7", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6050,6 +6058,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 8", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6077,6 +6086,7 @@ void main(void) {
 
                 alerteDefaut("ETAPE 9", &testActif, &testVoyants);
                 do { LATAbits.LATA7 = 0; } while(0);
+                sortieErreur(&automatique, &testActif, &testVoyants);
 
             }
 
@@ -6107,6 +6117,7 @@ void main(void) {
 
                 alerteDefaut("ETAPE 10", &testActif, &testVoyants);
                 do { LATAbits.LATA7 = 1; } while(0);
+                sortieErreur(&automatique, &testActif, &testVoyants);
 
             }
             _delay((unsigned long)((2000)*(16000000/4000.0)));
@@ -6139,6 +6150,7 @@ void main(void) {
                 pressBP1(0);
                 pressBP2(0);
                 alerteDefaut("ETAPE 12", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
 
             }
 
@@ -6165,6 +6177,12 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 13", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
+
+
+
+
+
             }
         }
 
@@ -6184,6 +6202,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 14", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6204,6 +6223,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 15", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6223,6 +6243,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 16", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6243,6 +6264,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6260,6 +6282,9 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
+                initialConditions(&testActif, &testVoyants, &automatique);
+                _delay((unsigned long)((2000)*(16000000/4000.0)));
             }
         }
 
