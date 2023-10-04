@@ -137,7 +137,7 @@ void main(void) {
         pressBP2(true);
         __delay_ms(100);
         alimenter(true);
-        __delay_ms(2000); // 2000 pour D925ED4; 10000 pour D850
+        __delay_ms(10000); // 2000 pour D925ED4; 10000 pour D850
 
 
         if (testR1(true) && testR2(true) && testR3(true)) {
