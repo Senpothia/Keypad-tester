@@ -1,3 +1,5 @@
+#define LIM_H 800  // 480 pour Vcc=3.3V
+#define LIM_L 300  // 480 pour Vcc=3.3V
 
 void initialConditions(bool *, bool *, bool *);
 void pressBP1(bool active);
@@ -13,6 +15,7 @@ void ledConforme(bool active);
 void ledProgession(bool active);
 void attenteDemarrage(bool *, bool *);
 void alerteDefaut(char etape[], bool *, bool *);
+void alerteDefautEtape16(char etape[], bool *, bool *, bool *);
 bool reponseOperateur(bool automatique);
 bool controlVisuel();
 void setHorloge(bool active);

@@ -5788,6 +5788,8 @@ void LCD_Clear();
 
 # 1 "./tester.h" 1
 
+
+
 void initialConditions(_Bool *, _Bool *, _Bool *);
 void pressBP1(_Bool active);
 void pressBP2(_Bool active);
@@ -5802,6 +5804,7 @@ void ledConforme(_Bool active);
 void ledProgession(_Bool active);
 void attenteDemarrage(_Bool *, _Bool *);
 void alerteDefaut(char etape[], _Bool *, _Bool *);
+void alerteDefautEtape16(char etape[], _Bool *, _Bool *, _Bool *);
 _Bool reponseOperateur(_Bool automatique);
 _Bool controlVisuel();
 void setHorloge(_Bool active);
@@ -6202,7 +6205,7 @@ void alerteDefaut(char etape[], _Bool *testAct, _Bool *testVoy) {
     char error[20] = "-> ERREUR: ";
     char eol[10] = "\r\n";
     ledNonConforme(1);
-    ledProgession(0);
+    ledProgession(1);
     ledConforme(0);
     alimenter(0);
     displayManager(etape, "TEST NON CONFORME", "ATTENTE ACQUITTEMENT", "");
@@ -6213,7 +6216,7 @@ void alerteDefaut(char etape[], _Bool *testAct, _Bool *testVoy) {
         ;
     }
 
-    ledNonConforme(0);
+
     *testAct = 0;
     *testVoy = 0;
 
@@ -6465,5 +6468,54 @@ void sortieErreur(_Bool *autom, _Bool *testAct, _Bool *testVoy) {
     attenteAquittement(*autom, *testAct);
     initialConditions(*testAct, *testVoy, *autom);
     _delay((unsigned long)((2000)*(16000000/4000.0)));
+
+}
+
+void alerteDefautEtape16(char etape[], _Bool *testAct, _Bool *testVoy, _Bool *autom) {
+
+    char error[20] = "-> ERREUR: ";
+    char eol[10] = "\r\n";
+    ledNonConforme(1);
+    ledProgession(1);
+    ledConforme(0);
+
+    displayManager(etape, "TEST NON CONFORME", "VERIFIER P1 ET P2", "PRESSER OK OU ERREUR");
+    printf(strcat(strcat(error, etape), eol));
+    errorAlert();
+
+    _Bool reponse = reponseOperateur(*autom);
+    _delay((unsigned long)((500)*(16000000/4000.0)));
+    if (reponse) {
+
+
+        *testAct = 0;
+        *testVoy = 0;
+
+        displayManager("ETAPE 16", "NON CONFORME", "RESULTAT CONFIRME", "ATTENTE ACQUITTEMENT" );
+        sortieErreur(&autom, &testAct, &testVoy);
+
+    } else {
+
+        displayManager("ETAPE 16", "TEST P1", "", "");
+        ledNonConforme(0);
+        ledProgession(1);
+        ledConforme(0);
+        setP1(1);
+        _delay((unsigned long)((1200)*(16000000/4000.0)));
+        setP1(0);
+        _delay((unsigned long)((1000)*(16000000/4000.0)));
+        if (testR1(1) && testR2(1) && testR3(1)) {
+
+            displayManager("ETAPE 16", "TEST P1", "ERREUR VALIDEE", "TEST OK");
+
+        } else {
+
+            *testAct = 0;
+            alerteDefaut("ETAPE 16", &testAct, &testVoy);
+            sortieErreur(&autom, &testAct, &testVoy);
+        }
+
+    }
+
 
 }

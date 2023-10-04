@@ -137,7 +137,7 @@ void main(void) {
         pressBP2(true);
         __delay_ms(100);
         alimenter(true);
-        __delay_ms(2000);
+        __delay_ms(2000); // 2000 pour D925ED4; 10000 pour D850
 
 
         if (testR1(true) && testR2(true) && testR3(true)) {
@@ -324,7 +324,7 @@ void main(void) {
             // Led off: Van = 587
 
             lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 < 480) {
+            if (lectureAN1 < LIM_H) {
 
 
                 REL8_SetHigh();
@@ -355,7 +355,7 @@ void main(void) {
             // Led off: Van = 587
             __delay_ms(500);
             lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 > 480) {
+            if (lectureAN1 < LIM_L) {
 
 
                 REL8_SetLow();
@@ -481,16 +481,19 @@ void main(void) {
 
             displayManager("ETAPE 16", "TEST P1", LIGNE_VIDE, LIGNE_VIDE);
             setP1(true);
-            __delay_ms(1200);
+            __delay_ms(1200);  // 1200 pour D925ED2
+            
             setP1(false);
             __delay_ms(500);
             if (testR1(true) && testR2(true) && testR3(true)) {
 
+               
+
             } else {
 
-                testActif = false;
-                alerteDefaut("ETAPE 16", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                //testActif = false;
+                alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique);
+                //sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -530,7 +533,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants);
-                initialConditions(&testActif, &testVoyants, &automatique);
+                //initialConditions(&testActif, &testVoyants, &automatique);
                 __delay_ms(2000);
             }
         }

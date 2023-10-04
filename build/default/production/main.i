@@ -5781,6 +5781,8 @@ void LCD_Clear();
 
 # 1 "./tester.h" 1
 
+
+
 void initialConditions(_Bool *, _Bool *, _Bool *);
 void pressBP1(_Bool active);
 void pressBP2(_Bool active);
@@ -5795,6 +5797,7 @@ void ledConforme(_Bool active);
 void ledProgession(_Bool active);
 void attenteDemarrage(_Bool *, _Bool *);
 void alerteDefaut(char etape[], _Bool *, _Bool *);
+void alerteDefautEtape16(char etape[], _Bool *, _Bool *, _Bool *);
 _Bool reponseOperateur(_Bool automatique);
 _Bool controlVisuel();
 void setHorloge(_Bool active);
@@ -5869,7 +5872,7 @@ void main(void) {
 
 
 
-        displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "RETIRER P1 et P2", "APPUYER SUR OK");
+        displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "PLACER P1 ET P2", "APPUYER SUR OK");
         _delay((unsigned long)((100)*(16000000/4000.0)));
 
         attenteDemarrage2(&automatique, &testActif);
@@ -5890,7 +5893,7 @@ void main(void) {
         pressBP2(1);
         _delay((unsigned long)((100)*(16000000/4000.0)));
         alimenter(1);
-        _delay((unsigned long)((2000)*(16000000/4000.0)));
+        _delay((unsigned long)((10000)*(16000000/4000.0)));
 
 
         if (testR1(1) && testR2(1) && testR3(1)) {
@@ -6077,7 +6080,7 @@ void main(void) {
 
 
             lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 < 480) {
+            if (lectureAN1 < 800) {
 
 
                 do { LATAbits.LATA7 = 1; } while(0);
@@ -6108,7 +6111,7 @@ void main(void) {
 
             _delay((unsigned long)((500)*(16000000/4000.0)));
             lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 > 480) {
+            if (lectureAN1 < 300) {
 
 
                 do { LATAbits.LATA7 = 0; } while(0);
@@ -6234,16 +6237,20 @@ void main(void) {
 
             displayManager("ETAPE 16", "TEST P1", "", "");
             setP1(1);
-            _delay((unsigned long)((1200)*(16000000/4000.0)));
+            _delay((unsigned long)((500)*(16000000/4000.0)));
+
             setP1(0);
             _delay((unsigned long)((500)*(16000000/4000.0)));
+
             if (testR1(1) && testR2(1) && testR3(1)) {
+
+
 
             } else {
 
-                testActif = 0;
-                alerteDefaut("ETAPE 16", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+
+                alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique);
+
             }
 
         }
@@ -6283,7 +6290,7 @@ void main(void) {
                 testActif = 0;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants);
-                initialConditions(&testActif, &testVoyants, &automatique);
+
                 _delay((unsigned long)((2000)*(16000000/4000.0)));
             }
         }

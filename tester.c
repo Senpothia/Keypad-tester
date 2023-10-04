@@ -335,7 +335,7 @@ void alerteDefaut(char etape[], bool *testAct, bool *testVoy) {
     char error[20] = "-> ERREUR: ";
     char eol[10] = "\r\n";
     ledNonConforme(true);
-    ledProgession(false);
+    ledProgession(true);
     ledConforme(false);
     alimenter(false);
     displayManager(etape, NON_CONFORME, ACQ, LIGNE_VIDE);
@@ -346,7 +346,7 @@ void alerteDefaut(char etape[], bool *testAct, bool *testVoy) {
         ;
     }
 
-    ledNonConforme(false);
+    // ledNonConforme(false);
     *testAct = false;
     *testVoy = false;
 
@@ -598,5 +598,54 @@ void sortieErreur(bool *autom, bool *testAct, bool *testVoy) {
     attenteAquittement(*autom, *testAct);
     initialConditions(*testAct, *testVoy, *autom);
     __delay_ms(2000);
+
+}
+
+void alerteDefautEtape16(char etape[], bool *testAct, bool *testVoy, bool *autom) {
+
+    char error[20] = "-> ERREUR: ";
+    char eol[10] = "\r\n";
+    ledNonConforme(true);
+    ledProgession(true);
+    ledConforme(false);
+    //alimenter(false);
+    displayManager(etape, NON_CONFORME, "VERIFIER P1 ET P2", "PRESSER OK OU ERREUR");
+    printf(strcat(strcat(error, etape), eol));
+    errorAlert();
+
+    bool reponse = reponseOperateur(*autom);
+    __delay_ms(500);
+    if (reponse) {
+
+        // ledNonConforme(false);
+        *testAct = false;
+        *testVoy = false;
+        //alerteDefaut("ETAPE 16 CONFIRMEE", &testAct, &testVoy);
+        displayManager("ETAPE 16", "NON CONFORME", "RESULTAT CONFIRME", ACQ );
+        sortieErreur(&autom, &testAct, &testVoy);
+
+    } else {
+
+        displayManager("ETAPE 16", "TEST P1", LIGNE_VIDE, LIGNE_VIDE);
+        ledNonConforme(false);
+        ledProgession(true);
+        ledConforme(false);
+        setP1(true);
+        __delay_ms(1200);
+        setP1(false);
+        __delay_ms(1000);
+        if (testR1(true) && testR2(true) && testR3(true)) {
+
+            displayManager("ETAPE 16", "TEST P1", "ERREUR VALIDEE", "TEST OK");
+
+        } else {
+
+            *testAct = false;
+            alerteDefaut("ETAPE 16", &testAct, &testVoy);
+            sortieErreur(&autom, &testAct, &testVoy);
+        }
+
+    }
+
 
 }

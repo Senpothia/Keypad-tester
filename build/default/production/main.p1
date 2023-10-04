@@ -54,49 +54,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2375
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16lf1939.h: 2375: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
 [v _LATAbits `VS118 ~T0 @X0 0 e@268 ]
-"26 ./tester.h
-[; ;./tester.h: 26: void attenteDemarrage2(_Bool *, _Bool *);
+"29 ./tester.h
+[; ;./tester.h: 29: void attenteDemarrage2(_Bool *, _Bool *);
 [v _attenteDemarrage2 `(v ~T0 @X0 0 ef2`*a`*a ]
-"23
-[; ;./tester.h: 23: void startAlert(void);
+"26
+[; ;./tester.h: 26: void startAlert(void);
 [v _startAlert `(v ~T0 @X0 0 ef ]
-"12
-[; ;./tester.h: 12: void ledConforme(_Bool active);
+"14
+[; ;./tester.h: 14: void ledConforme(_Bool active);
 [v _ledConforme `(v ~T0 @X0 0 ef1`a ]
-"11
-[; ;./tester.h: 11: void ledNonConforme(_Bool active);
-[v _ledNonConforme `(v ~T0 @X0 0 ef1`a ]
 "13
-[; ;./tester.h: 13: void ledProgession(_Bool active);
-[v _ledProgession `(v ~T0 @X0 0 ef1`a ]
-"3
-[; ;./tester.h: 3: void pressBP1(_Bool active);
-[v _pressBP1 `(v ~T0 @X0 0 ef1`a ]
-"4
-[; ;./tester.h: 4: void pressBP2(_Bool active);
-[v _pressBP2 `(v ~T0 @X0 0 ef1`a ]
-"5
-[; ;./tester.h: 5: void alimenter(_Bool active);
-[v _alimenter `(v ~T0 @X0 0 ef1`a ]
-"6
-[; ;./tester.h: 6: _Bool testR1(_Bool active);
-[v _testR1 `(a ~T0 @X0 0 ef1`a ]
-"7
-[; ;./tester.h: 7: _Bool testR2(_Bool active);
-[v _testR2 `(a ~T0 @X0 0 ef1`a ]
-"8
-[; ;./tester.h: 8: _Bool testR3(_Bool active);
-[v _testR3 `(a ~T0 @X0 0 ef1`a ]
+[; ;./tester.h: 13: void ledNonConforme(_Bool active);
+[v _ledNonConforme `(v ~T0 @X0 0 ef1`a ]
 "15
-[; ;./tester.h: 15: void alerteDefaut(char etape[], _Bool *, _Bool *);
+[; ;./tester.h: 15: void ledProgession(_Bool active);
+[v _ledProgession `(v ~T0 @X0 0 ef1`a ]
+"5
+[; ;./tester.h: 5: void pressBP1(_Bool active);
+[v _pressBP1 `(v ~T0 @X0 0 ef1`a ]
+"6
+[; ;./tester.h: 6: void pressBP2(_Bool active);
+[v _pressBP2 `(v ~T0 @X0 0 ef1`a ]
+"7
+[; ;./tester.h: 7: void alimenter(_Bool active);
+[v _alimenter `(v ~T0 @X0 0 ef1`a ]
+"8
+[; ;./tester.h: 8: _Bool testR1(_Bool active);
+[v _testR1 `(a ~T0 @X0 0 ef1`a ]
+"9
+[; ;./tester.h: 9: _Bool testR2(_Bool active);
+[v _testR2 `(a ~T0 @X0 0 ef1`a ]
+"10
+[; ;./tester.h: 10: _Bool testR3(_Bool active);
+[v _testR3 `(a ~T0 @X0 0 ef1`a ]
+"17
+[; ;./tester.h: 17: void alerteDefaut(char etape[], _Bool *, _Bool *);
 [v _alerteDefaut `(v ~T0 @X0 0 ef3`*uc`*a`*a ]
-"28
-[; ;./tester.h: 28: void sortieErreur(_Bool *, _Bool *,_Bool *);
+"31
+[; ;./tester.h: 31: void sortieErreur(_Bool *, _Bool *,_Bool *);
 [v _sortieErreur `(v ~T0 @X0 0 ef3`*a`*a`*a ]
 "111 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"16 ./tester.h
-[; ;./tester.h: 16: _Bool reponseOperateur(_Bool automatique);
+"19 ./tester.h
+[; ;./tester.h: 19: _Bool reponseOperateur(_Bool automatique);
 [v _reponseOperateur `(a ~T0 @X0 0 ef1`a ]
 "326 main.c
 [; ;main.c: 326:             lectureAN1 = ADC_GetConversion(VIN1);
@@ -105,27 +105,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "291 ./mcc_generated_files/adc.h
 [; ;./mcc_generated_files/adc.h: 291: adc_result_t ADC_GetConversion(adc_channel_t channel);
 [v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E3374 ]
-"18 ./tester.h
-[; ;./tester.h: 18: void setHorloge(_Bool active);
+"21 ./tester.h
+[; ;./tester.h: 21: void setHorloge(_Bool active);
 [v _setHorloge `(v ~T0 @X0 0 ef1`a ]
-"19
-[; ;./tester.h: 19: void setP1(_Bool active);
-[v _setP1 `(v ~T0 @X0 0 ef1`a ]
-"20
-[; ;./tester.h: 20: void setP2(_Bool active);
-[v _setP2 `(v ~T0 @X0 0 ef1`a ]
 "22
-[; ;./tester.h: 22: void activerTouche(void);
-[v _activerTouche `(v ~T0 @X0 0 ef ]
-"2
-[; ;./tester.h: 2: void initialConditions(_Bool *, _Bool *, _Bool *);
-[v _initialConditions `(v ~T0 @X0 0 ef3`*a`*a`*a ]
+[; ;./tester.h: 22: void setP1(_Bool active);
+[v _setP1 `(v ~T0 @X0 0 ef1`a ]
+"18
+[; ;./tester.h: 18: void alerteDefautEtape16(char etape[], _Bool *, _Bool *, _Bool *);
+[v _alerteDefautEtape16 `(v ~T0 @X0 0 ef4`*uc`*a`*a`*a ]
+"23
+[; ;./tester.h: 23: void setP2(_Bool active);
+[v _setP2 `(v ~T0 @X0 0 ef1`a ]
 "25
-[; ;./tester.h: 25: void okAlert(void);
+[; ;./tester.h: 25: void activerTouche(void);
+[v _activerTouche `(v ~T0 @X0 0 ef ]
+"28
+[; ;./tester.h: 28: void okAlert(void);
 [v _okAlert `(v ~T0 @X0 0 ef ]
-"27
-[; ;./tester.h: 27: void attenteAquittement(_Bool *, _Bool *);
+"30
+[; ;./tester.h: 30: void attenteAquittement(_Bool *, _Bool *);
 [v _attenteAquittement `(v ~T0 @X0 0 ef2`*a`*a ]
+"4
+[; ;./tester.h: 4: void initialConditions(_Bool *, _Bool *, _Bool *);
+[v _initialConditions `(v ~T0 @X0 0 ef3`*a`*a`*a ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16lf1939.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16lf1939.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -740,7 +743,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 392 ]
 "119
-[; ;main.c: 119:         displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "RETIRER P1 et P2", "APPUYER SUR OK");
+[; ;main.c: 119:         displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "PLACER P1 ET P2", "APPUYER SUR OK");
 [e ( _displayManager (4 , , , :s 5C :s 6C :s 7C :s 8C ]
 "120
 [; ;main.c: 120:         _delay((unsigned long)((100)*(16000000/4000.0)));
@@ -789,8 +792,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 139:         alimenter(1);
 [e ( _alimenter (1 -> -> 1 `i `a ]
 "140
-[; ;main.c: 140:         _delay((unsigned long)((2000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 140:         _delay((unsigned long)((10000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "143
 [; ;main.c: 143:         if (testR1(1) && testR2(1) && testR3(1)) {
 [e $ ! && && != -> ( _testR1 (1 -> -> 1 `i `a `i -> 0 `i != -> ( _testR2 (1 -> -> 1 `i `a `i -> 0 `i != -> ( _testR3 (1 -> -> 1 `i `a `i -> 0 `i 399  ]
@@ -1180,8 +1183,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 326:             lectureAN1 = ADC_GetConversion(VIN1);
 [e = _lectureAN1 -> ( _ADC_GetConversion (1 . `E3374 3 `i ]
 "327
-[; ;main.c: 327:             if (lectureAN1 < 480) {
-[e $ ! < _lectureAN1 -> 480 `i 423  ]
+[; ;main.c: 327:             if (lectureAN1 < 800) {
+[e $ ! < _lectureAN1 -> 800 `i 423  ]
 {
 "330
 [; ;main.c: 330:                 do { LATAbits.LATA7 = 1; } while(0);
@@ -1243,8 +1246,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 357:             lectureAN1 = ADC_GetConversion(VIN1);
 [e = _lectureAN1 -> ( _ADC_GetConversion (1 . `E3374 3 `i ]
 "358
-[; ;main.c: 358:             if (lectureAN1 > 480) {
-[e $ ! > _lectureAN1 -> 480 `i 432  ]
+[; ;main.c: 358:             if (lectureAN1 < 300) {
+[e $ ! < _lectureAN1 -> 300 `i 432  ]
 {
 "361
 [; ;main.c: 361:                 do { LATAbits.LATA7 = 0; } while(0);
@@ -1505,167 +1508,158 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 483:             setP1(1);
 [e ( _setP1 (1 -> -> 1 `i `a ]
 "484
-[; ;main.c: 484:             _delay((unsigned long)((1200)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"485
-[; ;main.c: 485:             setP1(0);
-[e ( _setP1 (1 -> -> 0 `i `a ]
-"486
-[; ;main.c: 486:             _delay((unsigned long)((500)*(16000000/4000.0)));
+[; ;main.c: 484:             _delay((unsigned long)((500)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"486
+[; ;main.c: 486:             setP1(0);
+[e ( _setP1 (1 -> -> 0 `i `a ]
 "487
-[; ;main.c: 487:             if (testR1(1) && testR2(1) && testR3(1)) {
+[; ;main.c: 487:             _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"489
+[; ;main.c: 489:             if (testR1(1) && testR2(1) && testR3(1)) {
 [e $ ! && && != -> ( _testR1 (1 -> -> 1 `i `a `i -> 0 `i != -> ( _testR2 (1 -> -> 1 `i `a `i -> 0 `i != -> ( _testR3 (1 -> -> 1 `i `a `i -> 0 `i 452  ]
 {
-"489
-[; ;main.c: 489:             } else {
+"493
+[; ;main.c: 493:             } else {
 }
 [e $U 453  ]
 [e :U 452 ]
 {
-"491
-[; ;main.c: 491:                 testActif = 0;
-[e = _testActif -> -> 0 `i `a ]
-"492
-[; ;main.c: 492:                 alerteDefaut("ETAPE 16", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 85C &U _testActif &U _testVoyants ]
-"493
-[; ;main.c: 493:                 sortieErreur(&automatique, &testActif, &testVoyants);
-[e ( _sortieErreur (3 , , &U _automatique &U _testActif &U _testVoyants ]
-"494
-[; ;main.c: 494:             }
+"496
+[; ;main.c: 496:                 alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique);
+[e ( _alerteDefautEtape16 (4 , , , :s 85C &U _testActif &U _testVoyants &U _automatique ]
+"498
+[; ;main.c: 498:             }
 }
 [e :U 453 ]
-"496
-[; ;main.c: 496:         }
+"500
+[; ;main.c: 500:         }
 }
 [e :U 451 ]
-"500
-[; ;main.c: 500:         if (testActif) {
+"504
+[; ;main.c: 504:         if (testActif) {
 [e $ ! != -> _testActif `i -> 0 `i 454  ]
 {
-"502
-[; ;main.c: 502:             displayManager("ETAPE 17", "TEST P2", "", "");
-[e ( _displayManager (4 , , , :s 86C :s 87C :s 88C :s 89C ]
-"503
-[; ;main.c: 503:             setP2(1);
-[e ( _setP2 (1 -> -> 1 `i `a ]
-"504
-[; ;main.c: 504:             _delay((unsigned long)((1200)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"505
-[; ;main.c: 505:             setP2(0);
-[e ( _setP2 (1 -> -> 0 `i `a ]
 "506
-[; ;main.c: 506:             _delay((unsigned long)((500)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 506:             displayManager("ETAPE 17", "TEST P2", "", "");
+[e ( _displayManager (4 , , , :s 86C :s 87C :s 88C :s 89C ]
+"507
+[; ;main.c: 507:             setP2(1);
+[e ( _setP2 (1 -> -> 1 `i `a ]
 "508
-[; ;main.c: 508:             if (testR1(0) && testR2(0) && testR3(0)) {
+[; ;main.c: 508:             _delay((unsigned long)((1200)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"509
+[; ;main.c: 509:             setP2(0);
+[e ( _setP2 (1 -> -> 0 `i `a ]
+"510
+[; ;main.c: 510:             _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"512
+[; ;main.c: 512:             if (testR1(0) && testR2(0) && testR3(0)) {
 [e $ ! && && != -> ( _testR1 (1 -> -> 0 `i `a `i -> 0 `i != -> ( _testR2 (1 -> -> 0 `i `a `i -> 0 `i != -> ( _testR3 (1 -> -> 0 `i `a `i -> 0 `i 455  ]
 {
-"510
-[; ;main.c: 510:             } else {
+"514
+[; ;main.c: 514:             } else {
 }
 [e $U 456  ]
 [e :U 455 ]
 {
-"512
-[; ;main.c: 512:                 testActif = 0;
+"516
+[; ;main.c: 516:                 testActif = 0;
 [e = _testActif -> -> 0 `i `a ]
-"513
-[; ;main.c: 513:                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
+"517
+[; ;main.c: 517:                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
 [e ( _alerteDefaut (3 , , :s 90C &U _testActif &U _testVoyants ]
-"514
-[; ;main.c: 514:                 sortieErreur(&automatique, &testActif, &testVoyants);
+"518
+[; ;main.c: 518:                 sortieErreur(&automatique, &testActif, &testVoyants);
 [e ( _sortieErreur (3 , , &U _automatique &U _testActif &U _testVoyants ]
-"515
-[; ;main.c: 515:             }
+"519
+[; ;main.c: 519:             }
 }
 [e :U 456 ]
-"517
-[; ;main.c: 517:         }
+"521
+[; ;main.c: 521:         }
 }
 [e :U 454 ]
-"522
-[; ;main.c: 522:         if (testActif) {
+"526
+[; ;main.c: 526:         if (testActif) {
 [e $ ! != -> _testActif `i -> 0 `i 457  ]
 {
-"524
-[; ;main.c: 524:             displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
-[e ( _displayManager (4 , , , :s 91C :s 92C :s 93C :s 94C ]
-"525
-[; ;main.c: 525:             activerTouche();
-[e ( _activerTouche ..  ]
-"526
-[; ;main.c: 526:             printf("ATTENTE VALIDATION BLUETOOTH\r\n");
-[e ( _printf :s 95C ]
-"527
-[; ;main.c: 527:             testVoyants = reponseOperateur(automatique);
-[e = _testVoyants ( _reponseOperateur (1 _automatique ]
 "528
-[; ;main.c: 528:             if (!testVoyants) {
+[; ;main.c: 528:             displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
+[e ( _displayManager (4 , , , :s 91C :s 92C :s 93C :s 94C ]
+"529
+[; ;main.c: 529:             activerTouche();
+[e ( _activerTouche ..  ]
+"530
+[; ;main.c: 530:             printf("ATTENTE VALIDATION BLUETOOTH\r\n");
+[e ( _printf :s 95C ]
+"531
+[; ;main.c: 531:             testVoyants = reponseOperateur(automatique);
+[e = _testVoyants ( _reponseOperateur (1 _automatique ]
+"532
+[; ;main.c: 532:             if (!testVoyants) {
 [e $ ! ! != -> _testVoyants `i -> 0 `i 458  ]
 {
-"530
-[; ;main.c: 530:                 testActif = 0;
-[e = _testActif -> -> 0 `i `a ]
-"531
-[; ;main.c: 531:                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 96C &U _testActif &U _testVoyants ]
-"532
-[; ;main.c: 532:                 sortieErreur(&automatique, &testActif, &testVoyants);
-[e ( _sortieErreur (3 , , &U _automatique &U _testActif &U _testVoyants ]
-"533
-[; ;main.c: 533:                 initialConditions(&testActif, &testVoyants, &automatique);
-[e ( _initialConditions (3 , , &U _testActif &U _testVoyants &U _automatique ]
 "534
-[; ;main.c: 534:                 _delay((unsigned long)((2000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 534:                 testActif = 0;
+[e = _testActif -> -> 0 `i `a ]
 "535
-[; ;main.c: 535:             }
+[; ;main.c: 535:                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
+[e ( _alerteDefaut (3 , , :s 96C &U _testActif &U _testVoyants ]
+"536
+[; ;main.c: 536:                 sortieErreur(&automatique, &testActif, &testVoyants);
+[e ( _sortieErreur (3 , , &U _automatique &U _testActif &U _testVoyants ]
+"538
+[; ;main.c: 538:                 _delay((unsigned long)((2000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"539
+[; ;main.c: 539:             }
 }
 [e :U 458 ]
-"536
-[; ;main.c: 536:         }
+"540
+[; ;main.c: 540:         }
 }
 [e :U 457 ]
-"541
-[; ;main.c: 541:         if (testActif) {
+"545
+[; ;main.c: 545:         if (testActif) {
 [e $ ! != -> _testActif `i -> 0 `i 459  ]
 {
-"543
-[; ;main.c: 543:             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "ATTENTE ACQUITTEMENT");
+"547
+[; ;main.c: 547:             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "ATTENTE ACQUITTEMENT");
 [e ( _displayManager (4 , , , :s 97C :s 98C :s 99C :s 100C ]
-"544
-[; ;main.c: 544:             ledConforme(1);
-[e ( _ledConforme (1 -> -> 1 `i `a ]
-"545
-[; ;main.c: 545:             alimenter(0);
-[e ( _alimenter (1 -> -> 0 `i `a ]
-"546
-[; ;main.c: 546:             okAlert();
-[e ( _okAlert ..  ]
 "548
-[; ;main.c: 548:             attenteAquittement(&automatique, &testActif);
-[e ( _attenteAquittement (2 , &U _automatique &U _testActif ]
+[; ;main.c: 548:             ledConforme(1);
+[e ( _ledConforme (1 -> -> 1 `i `a ]
 "549
-[; ;main.c: 549:             initialConditions(&testActif, &testVoyants, &automatique);
-[e ( _initialConditions (3 , , &U _testActif &U _testVoyants &U _automatique ]
+[; ;main.c: 549:             alimenter(0);
+[e ( _alimenter (1 -> -> 0 `i `a ]
 "550
-[; ;main.c: 550:             _delay((unsigned long)((2000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 550:             okAlert();
+[e ( _okAlert ..  ]
 "552
-[; ;main.c: 552:         }
+[; ;main.c: 552:             attenteAquittement(&automatique, &testActif);
+[e ( _attenteAquittement (2 , &U _automatique &U _testActif ]
+"553
+[; ;main.c: 553:             initialConditions(&testActif, &testVoyants, &automatique);
+[e ( _initialConditions (3 , , &U _testActif &U _testVoyants &U _automatique ]
+"554
+[; ;main.c: 554:             _delay((unsigned long)((2000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"556
+[; ;main.c: 556:         }
 }
 [e :U 459 ]
-"554
-[; ;main.c: 554:     }
+"558
+[; ;main.c: 558:     }
 }
 [e :U 385 ]
 [e $U 386  ]
 [e :U 387 ]
-"558
-[; ;main.c: 558: }
+"562
+[; ;main.c: 562: }
 [e :UE 384 ]
 }
 [p f _printf 8388608 ]
@@ -1726,8 +1720,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 19C 69 84 65 80 69 32 51 0 ]
 [a 24C 69 84 65 80 69 32 51 0 ]
 [a 72C 84 69 83 84 32 66 80 50 0 ]
-[a 7C 82 69 84 73 82 69 82 32 80 49 32 101 116 32 80 50 0 ]
 [a 87C 84 69 83 84 32 80 50 0 ]
+[a 7C 80 76 65 67 69 82 32 80 49 32 69 84 32 80 50 0 ]
 [a 60C 69 84 65 80 69 32 49 50 0 ]
 [a 64C 69 84 65 80 69 32 49 50 0 ]
 [a 14C 69 84 65 80 69 32 50 0 ]
