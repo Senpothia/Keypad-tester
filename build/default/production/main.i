@@ -5848,7 +5848,7 @@ void main(void) {
 
 
 
-    displayManager("TEST CARTE D925ED4", "POSITIONNER CARTE", "APPUYER SUR OK", "");
+    displayManager("TEST CARTE D850", "POSITIONNER CARTE", "APPUYER SUR OK", "");
     _delay((unsigned long)((1000)*(16000000/4000.0)));
 
 
@@ -5872,7 +5872,7 @@ void main(void) {
 
 
 
-        displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "PLACER P1 ET P2", "APPUYER SUR OK");
+        displayManager("TEST CARTE D850", "ATTENTE DEMARRAGE", "PLACER P1 ET P2", "APPUYER SUR OK");
         _delay((unsigned long)((100)*(16000000/4000.0)));
 
         attenteDemarrage2(&automatique, &testActif);
@@ -6235,12 +6235,16 @@ void main(void) {
 
         if (testActif) {
 
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
             displayManager("ETAPE 16", "TEST P1", "", "");
             setP1(1);
+            _delay((unsigned long)((100)*(16000000/4000.0)));
+             setP1(0);
             _delay((unsigned long)((500)*(16000000/4000.0)));
 
-            setP1(0);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
+
+
+
 
             if (testR1(1) && testR2(1) && testR3(1)) {
 
@@ -6252,6 +6256,9 @@ void main(void) {
                 alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique);
 
             }
+
+            setP1(0);
+            _delay((unsigned long)((500)*(16000000/4000.0)));
 
         }
 

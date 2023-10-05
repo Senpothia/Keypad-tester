@@ -479,15 +479,20 @@ void main(void) {
 
         if (testActif) {
 
+            __delay_ms(1000);
             displayManager("ETAPE 16", "TEST P1", LIGNE_VIDE, LIGNE_VIDE);
             setP1(true);
-            __delay_ms(1200);  // 1200 pour D925ED2
-            
+            __delay_ms(100); // 1200 pour D925ED2
+             setP1(false);
+            __delay_ms(500);
+
+            /*
             setP1(false);
             __delay_ms(500);
+             */
             if (testR1(true) && testR2(true) && testR3(true)) {
 
-               
+
 
             } else {
 
@@ -495,6 +500,9 @@ void main(void) {
                 alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique);
                 //sortieErreur(&automatique, &testActif, &testVoyants);
             }
+
+            setP1(false);
+            __delay_ms(500);
 
         }
 
