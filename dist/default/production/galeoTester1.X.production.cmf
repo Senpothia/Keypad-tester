@@ -203,7 +203,7 @@ stringtext60 STRCODE 0 1B49 1B49 8 2
 stringtext61 STRCODE 0 1B51 1B51 8 2
 config CONFIG 4 8007 8007 2 2
 maintext_split_1 CODE 0 8B 8B 6F2 2
-$C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
+$C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
 idloc IDLOC 5 8000 8000 4 2
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 4A 4A 2 2
@@ -299,59 +299,59 @@ STRING 1B59-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\galeoTester1.X.production.o
-4C cinit CODE >6115:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-4C cinit CODE >6118:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-4C cinit CODE >6260:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-4D cinit CODE >6261:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-50 cinit CODE >6262:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-51 cinit CODE >6266:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-52 cinit CODE >6267:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-53 cinit CODE >6268:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-54 cinit CODE >6269:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-55 cinit CODE >6270:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-56 cinit CODE >6271:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-57 cinit CODE >6272:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-58 cinit CODE >6273:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-59 cinit CODE >6274:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-5A cinit CODE >6275:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-5D cinit CODE >6279:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-5E cinit CODE >6280:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-5F cinit CODE >6281:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-60 cinit CODE >6282:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-61 cinit CODE >6283:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-62 cinit CODE >6284:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-63 cinit CODE >6285:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-64 cinit CODE >6286:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-65 cinit CODE >6287:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-66 cinit CODE >6288:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-69 cinit CODE >6305:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-6A cinit CODE >6309:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-6B cinit CODE >6310:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-6C cinit CODE >6311:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-6D cinit CODE >6312:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-6E cinit CODE >6313:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-6F cinit CODE >6317:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-70 cinit CODE >6318:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-71 cinit CODE >6319:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-72 cinit CODE >6320:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-73 cinit CODE >6321:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-74 cinit CODE >6322:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-77 cinit CODE >6326:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-78 cinit CODE >6327:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-79 cinit CODE >6328:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-7A cinit CODE >6329:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-7B cinit CODE >6330:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-7C cinit CODE >6331:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-7F cinit CODE >6335:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-80 cinit CODE >6336:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-81 cinit CODE >6337:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-82 cinit CODE >6338:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-83 cinit CODE >6339:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-84 cinit CODE >6340:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-87 cinit CODE >6346:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-87 cinit CODE >6348:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-88 cinit CODE >6349:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-89 cinit CODE >6350:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
+4C cinit CODE >6115:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+4C cinit CODE >6118:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+4C cinit CODE >6260:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+4D cinit CODE >6261:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+50 cinit CODE >6262:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+51 cinit CODE >6266:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+52 cinit CODE >6267:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+53 cinit CODE >6268:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+54 cinit CODE >6269:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+55 cinit CODE >6270:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+56 cinit CODE >6271:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+57 cinit CODE >6272:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+58 cinit CODE >6273:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+59 cinit CODE >6274:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+5A cinit CODE >6275:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+5D cinit CODE >6279:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+5E cinit CODE >6280:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+5F cinit CODE >6281:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+60 cinit CODE >6282:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+61 cinit CODE >6283:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+62 cinit CODE >6284:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+63 cinit CODE >6285:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+64 cinit CODE >6286:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+65 cinit CODE >6287:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+66 cinit CODE >6288:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+69 cinit CODE >6305:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+6A cinit CODE >6309:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+6B cinit CODE >6310:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+6C cinit CODE >6311:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+6D cinit CODE >6312:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+6E cinit CODE >6313:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+6F cinit CODE >6317:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+70 cinit CODE >6318:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+71 cinit CODE >6319:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+72 cinit CODE >6320:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+73 cinit CODE >6321:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+74 cinit CODE >6322:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+77 cinit CODE >6326:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+78 cinit CODE >6327:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+79 cinit CODE >6328:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+7A cinit CODE >6329:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+7B cinit CODE >6330:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+7C cinit CODE >6331:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+7F cinit CODE >6335:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+80 cinit CODE >6336:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+81 cinit CODE >6337:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+82 cinit CODE >6338:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+83 cinit CODE >6339:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+84 cinit CODE >6340:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+87 cinit CODE >6346:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+87 cinit CODE >6348:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+88 cinit CODE >6349:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+89 cinit CODE >6350:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
 4 intentry CODE >52:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/interrupt_manager.c
 A intentry CODE >57:C:\Users\Michel\MPLABXProjects\galeoTester1.X\mcc_generated_files/interrupt_manager.c
@@ -1447,22 +1447,22 @@ FD7 maintext CODE >193:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 FD8 maintext CODE >194:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 FE8 maintext CODE >195:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
 FF8 maintext CODE >204:C:\Users\Michel\MPLABXProjects\galeoTester1.X\main.c
-1215 clrtext CODE >6294:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-1215 clrtext CODE >6295:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-1216 clrtext CODE >6296:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-1216 clrtext CODE >6297:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-1217 clrtext CODE >6298:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-1218 clrtext CODE >6299:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-1219 clrtext CODE >6300:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-121A clrtext CODE >6301:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-121B inittext CODE >6249:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-121B inittext CODE >6250:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-121C inittext CODE >6251:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-121C inittext CODE >6252:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-121D inittext CODE >6253:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-121E inittext CODE >6254:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-121F inittext CODE >6255:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
-1220 inittext CODE >6256:C:\Users\Michel\AppData\Local\Temp\xcAs5uk.s
+1215 clrtext CODE >6294:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+1215 clrtext CODE >6295:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+1216 clrtext CODE >6296:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+1216 clrtext CODE >6297:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+1217 clrtext CODE >6298:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+1218 clrtext CODE >6299:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+1219 clrtext CODE >6300:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+121A clrtext CODE >6301:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+121B inittext CODE >6249:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+121B inittext CODE >6250:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+121C inittext CODE >6251:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+121C inittext CODE >6252:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+121D inittext CODE >6253:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+121E inittext CODE >6254:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+121F inittext CODE >6255:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
+1220 inittext CODE >6256:C:\Users\Michel\AppData\Local\Temp\xcAsmas.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1530,7 +1530,7 @@ _RCEN 10B3 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _RSEN 10B1 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _WPUE 210 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
+___sp 0 0 STACK 2 stack C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
 _main 1C1C 0 CODE 0 maintext dist/default/production\galeoTester1.X.production.o
 _nout D2 0 BANK1 1 bssBANK1 dist/default/production\galeoTester1.X.production.o
 _prec D6 0 BANK1 1 bssBANK1 dist/default/production\galeoTester1.X.production.o
@@ -1541,7 +1541,7 @@ __end_of_ADC_GetConversion 2A6A 0 CODE 0 text63 dist/default/production\galeoTes
 __end_of_I2C_MasterSendTxData 23AC 0 CODE 0 text86 dist/default/production\galeoTester1.X.production.o
 __end_of_setHorloge 2644 0 CODE 0 text1 dist/default/production\galeoTester1.X.production.o
 I2C_SetCallback@cb 70 0 COMMON 1 cstackCOMMON dist/default/production\galeoTester1.X.production.o
-start 94 0 CODE 0 init C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
+start 94 0 CODE 0 init C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
 __size_of_alimenter 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
 _EUSART_Write 2D56 0 CODE 0 text29 dist/default/production\galeoTester1.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
@@ -1644,12 +1644,12 @@ __end_of_I2C_MasterFsm 2E0C 0 CODE 0 text66 dist/default/production\galeoTester1
 __end_of_I2C_MasterIsr 239A 0 CODE 0 text65 dist/default/production\galeoTester1.X.production.o
 testR1@active 24 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __end_of_LCD_Init 184A 0 CODE 0 text54 dist/default/production\galeoTester1.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
 __ptext100 2644 0 CODE 0 text100 dist/default/production\galeoTester1.X.production.o
 __ptext101 2354 0 CODE 0 text101 dist/default/production\galeoTester1.X.production.o
 __ptext102 234E 0 CODE 0 text102 dist/default/production\galeoTester1.X.production.o
@@ -1733,8 +1733,8 @@ attenteAquittement@autom 43 0 BANK0 1 cstackBANK0 dist/default/production\galeoT
 __end_of_I2C_DO_ADDRESS_NACK 2D56 0 CODE 0 text68 dist/default/production\galeoTester1.X.production.o
 ?_strlen 23 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 __size_of_I2C_MasterEnableRestart 0 0 ABS 0 - dist/default/production\galeoTester1.X.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
-___stacklo 2138 0 ABS 0 - C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
+___stackhi 23EF 0 ABS 0 - C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
+___stacklo 2138 0 ABS 0 - C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
 __end_of_I2C_DO_SEND_ADR_READ 2490 0 CODE 0 text81 dist/default/production\galeoTester1.X.production.o
 __end_of_LCD_CMD 2866 0 CODE 0 text55 dist/default/production\galeoTester1.X.production.o
 ledNonConforme@active 23 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
@@ -1867,7 +1867,7 @@ fputc@fp 28 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.product
 attenteAquittement@reception 49 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 _EUSART_TxDefaultInterruptHandler E2 0 BANK1 1 bssBANK1 dist/default/production\galeoTester1.X.production.o
 __end_of_LCD_Clear 24FC 0 CODE 0 text39 dist/default/production\galeoTester1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
+___int_sp 0 0 STACK 2 stack C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
 __end_of_EUSART_Read 2E68 0 CODE 0 text19 dist/default/production\galeoTester1.X.production.o
 __end_of_I2C_SetBuffer 2664 0 CODE 0 text100 dist/default/production\galeoTester1.X.production.o
 _rd2RegCompleteHandler 26C8 0 CODE 0 text95 dist/default/production\galeoTester1.X.production.o
@@ -2131,7 +2131,7 @@ I2C_Master_Write@data 23 0 BANK0 1 cstackBANK0 dist/default/production\galeoTest
 strcpy@d 2E 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 strcpy@s 2C 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 setP1@active 23 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Michel\AppData\Local\Temp\xcAs5uk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Michel\AppData\Local\Temp\xcAsmas.o
 EUSART_Read@readValue 24 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 strlen@a 26 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
 strlen@s 27 0 BANK0 1 cstackBANK0 dist/default/production\galeoTester1.X.production.o
