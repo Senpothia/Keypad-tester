@@ -1,5 +1,5 @@
 #define LIM_H 800  // 480 pour Vcc=3.3V
-#define LIM_L 300  // 480 pour Vcc=3.3V
+#define LIM_L 600  // 480 pour Vcc=3.3V
 
 void initialConditions(bool *, bool *, bool *);
 void pressBP1(bool active);

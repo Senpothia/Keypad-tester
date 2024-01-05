@@ -54,6 +54,7 @@
 #include "I2C_LCD.h"
 #include "tester.h"
 #include "display.h"
+#include <stdlib.h>
 
 /*
                          Main application
@@ -84,6 +85,7 @@ void main(void) {
     bool testActif = false;
     bool testVoyants = false;
     int lectureAN1;
+    char slectureAN1[5];
     bool testLeds = true;
     bool automatique = false;
 
@@ -324,6 +326,7 @@ void main(void) {
             // Led off: Van = 587
 
             lectureAN1 = ADC_GetConversion(VIN1);
+            int buffer = sprintf(slectureAN1, "%d", lectureAN1);
             if (lectureAN1 < LIM_H) {
 
 
@@ -332,6 +335,7 @@ void main(void) {
             } else {
 
                 alerteDefaut("ETAPE 9", &testActif, &testVoyants);
+                //displayManager("ETAPE 9", "TEST LED CLAVIER", slectureAN1, LIGNE_VIDE); // Ligne de test: affichage valeur de mesure analogique
                 REL8_SetLow();
                 sortieErreur(&automatique, &testActif, &testVoyants);
 
@@ -355,6 +359,8 @@ void main(void) {
             // Led off: Van = 587
             __delay_ms(500);
             lectureAN1 = ADC_GetConversion(VIN1);
+            int buffer = sprintf(slectureAN1, "%d", lectureAN1);
+
             if (lectureAN1 < LIM_L) {
 
 
@@ -363,6 +369,7 @@ void main(void) {
             } else {
 
                 alerteDefaut("ETAPE 10", &testActif, &testVoyants);
+                //displayManager("ETAPE 10", "TEST LED CLAVIER", slectureAN1, LIGNE_VIDE); // Ligne de test: affichage valeur de mesure analogique
                 REL8_SetHigh();
                 sortieErreur(&automatique, &testActif, &testVoyants);
 
@@ -481,13 +488,13 @@ void main(void) {
 
             displayManager("ETAPE 16", "TEST P1", LIGNE_VIDE, LIGNE_VIDE);
             setP1(true);
-            __delay_ms(1200);  // 1200 pour D925ED2
-            
+            __delay_ms(1200); // 1200 pour D925ED2
+
             setP1(false);
             __delay_ms(500);
             if (testR1(true) && testR2(true) && testR3(true)) {
 
-               
+
 
             } else {
 

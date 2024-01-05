@@ -5814,9 +5814,10 @@ void sortieErreur(_Bool *, _Bool *,_Bool *);
 # 55 "main.c" 2
 
 # 1 "./display.h" 1
-# 15 "./display.h"
+# 16 "./display.h"
 void displayManager(char s1[], char s2[], char s3[], char s4[]);
 # 56 "main.c" 2
+
 
 
 
@@ -5834,12 +5835,13 @@ void main(void) {
 
 
     (INTCONbits.PEIE = 1);
-# 82 "main.c"
+# 83 "main.c"
     I2C_Master_Init();
     LCD_Init(0x4E);
     _Bool testActif = 0;
     _Bool testVoyants = 0;
     int lectureAN1;
+    char slectureAN1[5];
     _Bool testLeds = 1;
     _Bool automatique = 0;
 
@@ -5893,7 +5895,7 @@ void main(void) {
         pressBP2(1);
         _delay((unsigned long)((100)*(16000000/4000.0)));
         alimenter(1);
-        _delay((unsigned long)((10000)*(16000000/4000.0)));
+        _delay((unsigned long)((2000)*(16000000/4000.0)));
 
 
         if (testR1(1) && testR2(1) && testR3(1)) {
@@ -6080,6 +6082,7 @@ void main(void) {
 
 
             lectureAN1 = ADC_GetConversion(VIN1);
+            int buffer = sprintf(slectureAN1, "%d", lectureAN1);
             if (lectureAN1 < 800) {
 
 
@@ -6088,6 +6091,7 @@ void main(void) {
             } else {
 
                 alerteDefaut("ETAPE 9", &testActif, &testVoyants);
+
                 do { LATAbits.LATA7 = 0; } while(0);
                 sortieErreur(&automatique, &testActif, &testVoyants);
 
@@ -6111,7 +6115,9 @@ void main(void) {
 
             _delay((unsigned long)((500)*(16000000/4000.0)));
             lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 < 300) {
+            int buffer = sprintf(slectureAN1, "%d", lectureAN1);
+
+            if (lectureAN1 < 600) {
 
 
                 do { LATAbits.LATA7 = 0; } while(0);
@@ -6119,6 +6125,7 @@ void main(void) {
             } else {
 
                 alerteDefaut("ETAPE 10", &testActif, &testVoyants);
+
                 do { LATAbits.LATA7 = 1; } while(0);
                 sortieErreur(&automatique, &testActif, &testVoyants);
 
@@ -6237,11 +6244,10 @@ void main(void) {
 
             displayManager("ETAPE 16", "TEST P1", "", "");
             setP1(1);
-            _delay((unsigned long)((500)*(16000000/4000.0)));
+            _delay((unsigned long)((1200)*(16000000/4000.0)));
 
             setP1(0);
             _delay((unsigned long)((500)*(16000000/4000.0)));
-
             if (testR1(1) && testR2(1) && testR3(1)) {
 
 
