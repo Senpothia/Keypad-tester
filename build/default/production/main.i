@@ -5874,7 +5874,7 @@ void main(void) {
 
 
 
-        displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "PLACER P1 ET P2", "APPUYER SUR OK");
+        displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "", "APPUYER SUR OK");
         _delay((unsigned long)((100)*(16000000/4000.0)));
 
         attenteDemarrage2(&automatique, &testActif);

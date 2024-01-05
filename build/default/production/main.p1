@@ -748,7 +748,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 392 ]
 "121
-[; ;main.c: 121:         displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "PLACER P1 ET P2", "APPUYER SUR OK");
+[; ;main.c: 121:         displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "", "APPUYER SUR OK");
 [e ( _displayManager (4 , , , :s 5C :s 6C :s 7C :s 8C ]
 "122
 [; ;main.c: 122:         _delay((unsigned long)((100)*(16000000/4000.0)));
@@ -1737,7 +1737,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 24C 69 84 65 80 69 32 51 0 ]
 [a 74C 84 69 83 84 32 66 80 50 0 ]
 [a 89C 84 69 83 84 32 80 50 0 ]
-[a 7C 80 76 65 67 69 82 32 80 49 32 69 84 32 80 50 0 ]
 [a 62C 69 84 65 80 69 32 49 50 0 ]
 [a 66C 69 84 65 80 69 32 49 50 0 ]
 [a 14C 69 84 65 80 69 32 50 0 ]
@@ -1751,6 +1750,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 71C 65 84 84 69 78 84 69 32 86 65 76 73 68 65 84 73 79 78 32 76 69 68 83 13 10 0 ]
 [a 97C 65 84 84 69 78 84 69 32 86 65 76 73 68 65 84 73 79 78 32 66 76 85 69 84 79 79 84 72 13 10 0 ]
 [a 4C 0 ]
+[a 7C 0 ]
 [a 11C 0 ]
 [a 12C 0 ]
 [a 16C 0 ]

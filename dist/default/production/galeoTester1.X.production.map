@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\galeoTester1.X.production.sym \
   --cmf=dist/default/production\galeoTester1.X.production.cmf -z -Q16LF1939 \
-  -oC:\Users\Michel\AppData\Local\Temp\xcAsp44.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Michel\AppData\Local\Temp\xcAs7pc.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/galeoTester1.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=02183h-023EFh -pstack=STACK \
   -ACODE=00h-07FFhx8 -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 \
@@ -32,7 +32,7 @@ Linker command line:
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE \
   -pcinit=CODE -pfunctab=ENTRY -k \
-  C:\Users\Michel\AppData\Local\Temp\xcAsp44.o \
+  C:\Users\Michel\AppData\Local\Temp\xcAs7pc.o \
   dist/default/production\galeoTester1.X.production.o 
 
 Object code version is 3.11
@@ -42,7 +42,7 @@ Machine type is 16LF1939
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Michel\AppData\Local\Temp\xcAsp44.o
+C:\Users\Michel\AppData\Local\Temp\xcAs7pc.o
                 end_init                             4A       4A        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2        0       4
@@ -184,44 +184,43 @@ dist/default/production\galeoTester1.X.production.o
                 bssBANK1                             E1       E1        6       A0       1
                 bssBANK0                             6A       6A        3       20       1
                 bssCOMMON                            7D       7D        1       70       1
-                stringtext62                       231E     231E        3     4000       0
-                stringtext61                       2316     2316        8     4000       0
-                stringtext60                       230E     230E        8     4000       0
-                stringtext59                       2306     2306        8     4000       0
-                stringtext58                       22FE     22FE        8     4000       0
-                stringtext57                       22F6     22F6        8     4000       0
-                stringtext56                       22EE     22EE        8     4000       0
-                stringtext55                       22E6     22E6        8     4000       0
-                stringtext54                       22DE     22DE        8     4000       0
-                stringtext53                       22D6     22D6        8     4000       0
-                stringtext52                       22CE     22CE        8     4000       0
-                stringtext51                       22C6     22C6        8     4000       0
-                stringtext50                       22BE     22BE        8     4000       0
-                stringtext49                       22B5     22B5        9     4000       0
-                stringtext48                       22AC     22AC        9     4000       0
-                stringtext47                       22A3     22A3        9     4000       0
-                stringtext46                       229A     229A        9     4000       0
-                stringtext45                       2291     2291        9     4000       0
-                stringtext44                       2288     2288        9     4000       0
-                stringtext43                       227F     227F        9     4000       0
-                stringtext42                       2276     2276        9     4000       0
-                stringtext41                       226D     226D        9     4000       0
-                stringtext40                       2262     2262        B     4000       0
-                stringtext39                       2257     2257        B     4000       0
-                stringtext38                       224B     224B        C     4000       0
-                stringtext37                       223F     223F        C     4000       0
-                stringtext36                       2232     2232        D     4000       0
-                stringtext35                       2225     2225        D     4000       0
-                stringtext34                       2217     2217        E     4000       0
-                stringtext33                       2209     2209        E     4000       0
-                stringtext32                       21FB     21FB        E     4000       0
-                stringtext31                       21EC     21EC        F     4000       0
-                stringtext30                       21DD     21DD        F     4000       0
-                stringtext29                       21CE     21CE        F     4000       0
-                stringtext28                       21BF     21BF        F     4000       0
-                stringtext27                       21B0     21B0        F     4000       0
-                stringtext26                       21A1     21A1        F     4000       0
-                stringtext25                       2191     2191       10     4000       0
+                stringtext61                       230E     230E        3     4000       0
+                stringtext60                       2306     2306        8     4000       0
+                stringtext59                       22FE     22FE        8     4000       0
+                stringtext58                       22F6     22F6        8     4000       0
+                stringtext57                       22EE     22EE        8     4000       0
+                stringtext56                       22E6     22E6        8     4000       0
+                stringtext55                       22DE     22DE        8     4000       0
+                stringtext54                       22D6     22D6        8     4000       0
+                stringtext53                       22CE     22CE        8     4000       0
+                stringtext52                       22C6     22C6        8     4000       0
+                stringtext51                       22BE     22BE        8     4000       0
+                stringtext50                       22B6     22B6        8     4000       0
+                stringtext49                       22AE     22AE        8     4000       0
+                stringtext48                       22A5     22A5        9     4000       0
+                stringtext47                       229C     229C        9     4000       0
+                stringtext46                       2293     2293        9     4000       0
+                stringtext45                       228A     228A        9     4000       0
+                stringtext44                       2281     2281        9     4000       0
+                stringtext43                       2278     2278        9     4000       0
+                stringtext42                       226F     226F        9     4000       0
+                stringtext41                       2266     2266        9     4000       0
+                stringtext40                       225D     225D        9     4000       0
+                stringtext39                       2252     2252        B     4000       0
+                stringtext38                       2247     2247        B     4000       0
+                stringtext37                       223B     223B        C     4000       0
+                stringtext36                       222F     222F        C     4000       0
+                stringtext35                       2222     2222        D     4000       0
+                stringtext34                       2215     2215        D     4000       0
+                stringtext33                       2207     2207        E     4000       0
+                stringtext32                       21F9     21F9        E     4000       0
+                stringtext31                       21EB     21EB        E     4000       0
+                stringtext30                       21DC     21DC        F     4000       0
+                stringtext29                       21CD     21CD        F     4000       0
+                stringtext28                       21BE     21BE        F     4000       0
+                stringtext27                       21AF     21AF        F     4000       0
+                stringtext26                       21A0     21A0        F     4000       0
+                stringtext25                       2191     2191        F     4000       0
                 stringtext24                       2181     2181       10     4000       0
                 stringtext23                       2171     2171       10     4000       0
                 stringtext22                       2160     2160       11     4000       0
@@ -381,44 +380,43 @@ TOTAL           Name                               Link     Load   Length     Sp
                 idataBANK2                         1C7B     1C7B        1         0
 
         CLASS   STRCODE        
-                stringtext62                       231E     231E        3         0
-                stringtext61                       2316     2316        8         0
-                stringtext60                       230E     230E        8         0
-                stringtext59                       2306     2306        8         0
-                stringtext58                       22FE     22FE        8         0
-                stringtext57                       22F6     22F6        8         0
-                stringtext56                       22EE     22EE        8         0
-                stringtext55                       22E6     22E6        8         0
-                stringtext54                       22DE     22DE        8         0
-                stringtext53                       22D6     22D6        8         0
-                stringtext52                       22CE     22CE        8         0
-                stringtext51                       22C6     22C6        8         0
-                stringtext50                       22BE     22BE        8         0
-                stringtext49                       22B5     22B5        9         0
-                stringtext48                       22AC     22AC        9         0
-                stringtext47                       22A3     22A3        9         0
-                stringtext46                       229A     229A        9         0
-                stringtext45                       2291     2291        9         0
-                stringtext44                       2288     2288        9         0
-                stringtext43                       227F     227F        9         0
-                stringtext42                       2276     2276        9         0
-                stringtext41                       226D     226D        9         0
-                stringtext40                       2262     2262        B         0
-                stringtext39                       2257     2257        B         0
-                stringtext38                       224B     224B        C         0
-                stringtext37                       223F     223F        C         0
-                stringtext36                       2232     2232        D         0
-                stringtext35                       2225     2225        D         0
-                stringtext34                       2217     2217        E         0
-                stringtext33                       2209     2209        E         0
-                stringtext32                       21FB     21FB        E         0
-                stringtext31                       21EC     21EC        F         0
-                stringtext30                       21DD     21DD        F         0
-                stringtext29                       21CE     21CE        F         0
-                stringtext28                       21BF     21BF        F         0
-                stringtext27                       21B0     21B0        F         0
-                stringtext26                       21A1     21A1        F         0
-                stringtext25                       2191     2191       10         0
+                stringtext61                       230E     230E        3         0
+                stringtext60                       2306     2306        8         0
+                stringtext59                       22FE     22FE        8         0
+                stringtext58                       22F6     22F6        8         0
+                stringtext57                       22EE     22EE        8         0
+                stringtext56                       22E6     22E6        8         0
+                stringtext55                       22DE     22DE        8         0
+                stringtext54                       22D6     22D6        8         0
+                stringtext53                       22CE     22CE        8         0
+                stringtext52                       22C6     22C6        8         0
+                stringtext51                       22BE     22BE        8         0
+                stringtext50                       22B6     22B6        8         0
+                stringtext49                       22AE     22AE        8         0
+                stringtext48                       22A5     22A5        9         0
+                stringtext47                       229C     229C        9         0
+                stringtext46                       2293     2293        9         0
+                stringtext45                       228A     228A        9         0
+                stringtext44                       2281     2281        9         0
+                stringtext43                       2278     2278        9         0
+                stringtext42                       226F     226F        9         0
+                stringtext41                       2266     2266        9         0
+                stringtext40                       225D     225D        9         0
+                stringtext39                       2252     2252        B         0
+                stringtext38                       2247     2247        B         0
+                stringtext37                       223B     223B        C         0
+                stringtext36                       222F     222F        C         0
+                stringtext35                       2222     2222        D         0
+                stringtext34                       2215     2215        D         0
+                stringtext33                       2207     2207        E         0
+                stringtext32                       21F9     21F9        E         0
+                stringtext31                       21EB     21EB        E         0
+                stringtext30                       21DC     21DC        F         0
+                stringtext29                       21CD     21CD        F         0
+                stringtext28                       21BE     21BE        F         0
+                stringtext27                       21AF     21AF        F         0
+                stringtext26                       21A0     21A0        F         0
+                stringtext25                       2191     2191        F         0
                 stringtext24                       2181     2181       10         0
                 stringtext23                       2171     2171       10         0
                 stringtext22                       2160     2160       11         0
@@ -738,7 +736,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text51                         001FA3  00001F  001FC2      3F46       0  CODE        2
                 text48                         001FC2  00001F  001FE1      3F84       0  CODE        2
                 text43                         001FE1  00001F  002000      3FC2       0  CODE        2
-                stringtext4                    002000  000321  002321      4000       0  STRCODE     2
+                stringtext4                    002000  000311  002311      4000       0  STRCODE     2
 
 
 UNUSED ADDRESS RANGES
@@ -759,12 +757,12 @@ UNUSED ADDRESS RANGES
         BANK9            0004A0-0004EF               50           1
         BIGRAM           002000-0023EF              3F0           1
         CODE             001888-001C79              3F2           2
-                         002321-003FFF              800
+                         002311-003FFF              800
         CONST            001888-001C79              100           2
-                         002321-003FFF              100
+                         002311-003FFF              100
         EEDATA           00F000-00F0FF              100           2
         ENTRY            001888-001C79              100           2
-                         002321-003FFF              100
+                         002311-003FFF              100
         RAM              00006D-00006F                3           1
                          0000E7-0000EF                9
                          00016F-00016F                1
@@ -812,9 +810,9 @@ UNUSED ADDRESS RANGES
         SFR9             000480-00049F               20           1
         STACK            002183-0023EF              26D           1
         STRCODE          001888-001C79              3F2           2
-                         002321-003FFF             1CDF
+                         002311-003FFF             1CEF
         STRING           001888-001C79              100           2
-                         002321-003FFF              100
+                         002311-003FFF              100
 
                                   Symbol Table
 
@@ -1106,7 +1104,7 @@ __Hsfr6                                        sfr6             000000
 __Hsfr7                                        sfr7             000000
 __Hsfr8                                        sfr8             000000
 __Hsfr9                                        sfr9             000000
-__Hspace_0                                     (abs)            002321
+__Hspace_0                                     (abs)            002311
 __Hspace_1                                     (abs)            000263
 __Hspace_2                                     (abs)            000000
 __Hspace_3                                     (abs)            000000
@@ -1172,7 +1170,6 @@ __Hstringtext6                                 stringtext6      000000
 __Hstringtext60                                stringtext60     000000
 __Hstringtext61                                stringtext61     000000
 __Hstringtext62                                stringtext62     000000
-__Hstringtext63                                stringtext63     000000
 __Hstringtext7                                 stringtext7      000000
 __Hstringtext8                                 stringtext8      000000
 __Hstringtext9                                 stringtext9      000000
@@ -1343,12 +1340,11 @@ __Lstringtext6                                 stringtext6      000000
 __Lstringtext60                                stringtext60     000000
 __Lstringtext61                                stringtext61     000000
 __Lstringtext62                                stringtext62     000000
-__Lstringtext63                                stringtext63     000000
 __Lstringtext7                                 stringtext7      000000
 __Lstringtext8                                 stringtext8      000000
 __Lstringtext9                                 stringtext9      000000
 __Ltext                                        text             000000
-__S0                                           (abs)            002321
+__S0                                           (abs)            002311
 __S1                                           (abs)            000263
 __S2                                           (abs)            000000
 __S3                                           (abs)            000000
@@ -1524,48 +1520,47 @@ __pstringtext22                                stringtext22     002160
 __pstringtext23                                stringtext23     002171
 __pstringtext24                                stringtext24     002181
 __pstringtext25                                stringtext25     002191
-__pstringtext26                                stringtext26     0021A1
-__pstringtext27                                stringtext27     0021B0
-__pstringtext28                                stringtext28     0021BF
-__pstringtext29                                stringtext29     0021CE
+__pstringtext26                                stringtext26     0021A0
+__pstringtext27                                stringtext27     0021AF
+__pstringtext28                                stringtext28     0021BE
+__pstringtext29                                stringtext29     0021CD
 __pstringtext3                                 stringtext3      001869
-__pstringtext30                                stringtext30     0021DD
-__pstringtext31                                stringtext31     0021EC
-__pstringtext32                                stringtext32     0021FB
-__pstringtext33                                stringtext33     002209
-__pstringtext34                                stringtext34     002217
-__pstringtext35                                stringtext35     002225
-__pstringtext36                                stringtext36     002232
-__pstringtext37                                stringtext37     00223F
-__pstringtext38                                stringtext38     00224B
-__pstringtext39                                stringtext39     002257
+__pstringtext30                                stringtext30     0021DC
+__pstringtext31                                stringtext31     0021EB
+__pstringtext32                                stringtext32     0021F9
+__pstringtext33                                stringtext33     002207
+__pstringtext34                                stringtext34     002215
+__pstringtext35                                stringtext35     002222
+__pstringtext36                                stringtext36     00222F
+__pstringtext37                                stringtext37     00223B
+__pstringtext38                                stringtext38     002247
+__pstringtext39                                stringtext39     002252
 __pstringtext4                                 stringtext4      002000
-__pstringtext40                                stringtext40     002262
-__pstringtext41                                stringtext41     00226D
-__pstringtext42                                stringtext42     002276
-__pstringtext43                                stringtext43     00227F
-__pstringtext44                                stringtext44     002288
-__pstringtext45                                stringtext45     002291
-__pstringtext46                                stringtext46     00229A
-__pstringtext47                                stringtext47     0022A3
-__pstringtext48                                stringtext48     0022AC
-__pstringtext49                                stringtext49     0022B5
+__pstringtext40                                stringtext40     00225D
+__pstringtext41                                stringtext41     002266
+__pstringtext42                                stringtext42     00226F
+__pstringtext43                                stringtext43     002278
+__pstringtext44                                stringtext44     002281
+__pstringtext45                                stringtext45     00228A
+__pstringtext46                                stringtext46     002293
+__pstringtext47                                stringtext47     00229C
+__pstringtext48                                stringtext48     0022A5
+__pstringtext49                                stringtext49     0022AE
 __pstringtext5                                 stringtext5      00201A
-__pstringtext50                                stringtext50     0022BE
-__pstringtext51                                stringtext51     0022C6
-__pstringtext52                                stringtext52     0022CE
-__pstringtext53                                stringtext53     0022D6
-__pstringtext54                                stringtext54     0022DE
-__pstringtext55                                stringtext55     0022E6
-__pstringtext56                                stringtext56     0022EE
-__pstringtext57                                stringtext57     0022F6
-__pstringtext58                                stringtext58     0022FE
-__pstringtext59                                stringtext59     002306
+__pstringtext50                                stringtext50     0022B6
+__pstringtext51                                stringtext51     0022BE
+__pstringtext52                                stringtext52     0022C6
+__pstringtext53                                stringtext53     0022CE
+__pstringtext54                                stringtext54     0022D6
+__pstringtext55                                stringtext55     0022DE
+__pstringtext56                                stringtext56     0022E6
+__pstringtext57                                stringtext57     0022EE
+__pstringtext58                                stringtext58     0022F6
+__pstringtext59                                stringtext59     0022FE
 __pstringtext6                                 stringtext6      002034
-__pstringtext60                                stringtext60     00230E
-__pstringtext61                                stringtext61     002316
-__pstringtext62                                stringtext62     00231E
-__pstringtext63                                stringtext63     000000
+__pstringtext60                                stringtext60     002306
+__pstringtext61                                stringtext61     00230E
+__pstringtext62                                stringtext62     000000
 __pstringtext7                                 stringtext7      002049
 __pstringtext8                                 stringtext8      00205E
 __pstringtext9                                 stringtext9      002073
@@ -1942,13 +1937,13 @@ pad@fp                                         cstackBANK0      00003E
 pad@i                                          cstackBANK0      00003A
 pad@p                                          cstackBANK0      000037
 pad@w                                          cstackBANK0      00003C
-pnum$maintext                                  (abs)            000055
-pnum$maintext_split_1                          (abs)            0000CB
+pnum$maintext                                  (abs)            000054
+pnum$maintext_split_1                          (abs)            0000CA
 pressBP1@active                                cstackBANK0      000023
 pressBP2@active                                cstackBANK0      000023
 printf@ap                                      cstackBANK1      0000AF
 printf@fmt                                     cstackBANK1      0000AD
-psplit$0                                       (abs)            5500CB
+psplit$0                                       (abs)            5400CA
 putch@txData                                   cstackBANK0      000025
 rd1RegCompleteHandler@ptr                      cstackCOMMON     000079
 rd2RegCompleteHandler@ptr                      cstackCOMMON     000079
