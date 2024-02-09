@@ -5383,9 +5383,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 415 "./mcc_generated_files/pin_manager.h"
+# 426 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 427 "./mcc_generated_files/pin_manager.h"
+# 438 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5818,6 +5818,7 @@ void okAlert(void);
 void attenteDemarrage2(_Bool *, _Bool *);
 void attenteAquittement(_Bool *, _Bool *);
 void sortieErreur(_Bool *, _Bool *,_Bool *);
+void marchePAP();
 # 12 "tester.c" 2
 
 # 1 "./display.h" 1
@@ -6491,7 +6492,7 @@ void alerteDefautEtape16(char etape[], _Bool *testAct, _Bool *testVoy, _Bool *au
         *testAct = 0;
         *testVoy = 0;
 
-        displayManager("ETAPE 16", "NON CONFORME", "RESULTAT CONFIRME", "ATTENTE ACQUITTEMENT" );
+        displayManager("ETAPE 16", "NON CONFORME", "RESULTAT CONFIRME", "ATTENTE ACQUITTEMENT");
         sortieErreur(&autom, &testAct, &testVoy);
 
     } else {
@@ -6518,4 +6519,18 @@ void alerteDefautEtape16(char etape[], _Bool *testAct, _Bool *testVoy, _Bool *au
     }
 
 
+}
+
+void marchePAP() {
+
+    _Bool repOperateur = 0;
+    printf("-> Appuyer sur OK\r\n");
+    while (!repOperateur) {
+
+
+        if (PORTDbits.RD2 == 0) {
+
+            repOperateur = 1;
+        }
+    }
 }

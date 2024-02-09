@@ -5376,9 +5376,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 415 "./mcc_generated_files/pin_manager.h"
+# 426 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 427 "./mcc_generated_files/pin_manager.h"
+# 438 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5811,6 +5811,7 @@ void okAlert(void);
 void attenteDemarrage2(_Bool *, _Bool *);
 void attenteAquittement(_Bool *, _Bool *);
 void sortieErreur(_Bool *, _Bool *,_Bool *);
+void marchePAP();
 # 55 "main.c" 2
 
 # 1 "./display.h" 1
@@ -5844,6 +5845,7 @@ void main(void) {
     char slectureAN1[5];
     _Bool testLeds = 1;
     _Bool automatique = 0;
+    _Bool pap = 0;
 
 
 
@@ -5871,6 +5873,15 @@ void main(void) {
             do { LATAbits.LATA7 = 0; } while(0);
         }
 
+        if (PORTCbits.RC1 == 0) {
+
+            pap = 1;
+
+        } else {
+
+            pap = 0;
+        }
+
 
 
 
@@ -5890,12 +5901,17 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
 
         pressBP1(1);
         pressBP2(1);
         _delay((unsigned long)((100)*(16000000/4000.0)));
         alimenter(1);
         _delay((unsigned long)((2000)*(16000000/4000.0)));
+
 
 
         if (testR1(1) && testR2(1) && testR3(1)) {
@@ -5917,6 +5933,11 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 2", "TEST 3 RELAIS OFF", "", "");
@@ -5935,6 +5956,10 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -5959,6 +5984,11 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 4", "TEST LED BLEUE", "", "");
@@ -5980,6 +6010,11 @@ void main(void) {
         }
 
 
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -6004,11 +6039,16 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 6", "TEST R1 ON", "", "");
             pressBP1(1);
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
+            _delay((unsigned long)((2000)*(16000000/4000.0)));
             pressBP1(0);
 
             _delay((unsigned long)((1000)*(16000000/4000.0)));
@@ -6025,6 +6065,11 @@ void main(void) {
         }
 
 
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -6048,6 +6093,11 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 8", "TEST R2 OFF - R3 ON", "", "");
@@ -6069,6 +6119,11 @@ void main(void) {
         }
 
 
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -6103,6 +6158,11 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", "");
@@ -6136,6 +6196,11 @@ void main(void) {
 
 
 
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -6173,6 +6238,10 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -6198,6 +6267,11 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 14", "TEST BP2", "", "");
@@ -6219,6 +6293,11 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 15", "TEST HORLOGE", "", "");
@@ -6239,6 +6318,11 @@ void main(void) {
         }
 
 
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -6263,6 +6347,11 @@ void main(void) {
 
 
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 17", "TEST P2", "", "");
@@ -6284,6 +6373,11 @@ void main(void) {
 
 
 
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 

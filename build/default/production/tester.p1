@@ -1492,8 +1492,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _testAct `*a ~T0 @X0 1 r2 ]
 [v _testVoy `*a ~T0 @X0 1 r3 ]
 [f ]
-[v F3745 `uc ~T0 @X0 -> 20 `i s ]
-[i F3745
+[v F3746 `uc ~T0 @X0 -> 20 `i s ]
+[i F3746
 :U ..
 "335
 [; ;tester.c: 335:     char error[20] = "-> ERREUR: ";
@@ -1512,9 +1512,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _error `uc ~T0 @X0 -> 20 `i a ]
-[e = _error F3745 ]
-[v F3747 `uc ~T0 @X0 -> 10 `i s ]
-[i F3747
+[e = _error F3746 ]
+[v F3748 `uc ~T0 @X0 -> 10 `i s ]
+[i F3748
 :U ..
 "336
 [; ;tester.c: 336:     char eol[10] = "\r\n";
@@ -1524,7 +1524,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _eol `uc ~T0 @X0 -> 10 `i a ]
-[e = _eol F3747 ]
+[e = _eol F3748 ]
 "337
 [; ;tester.c: 337:     ledNonConforme(1);
 [e ( _ledNonConforme (1 -> -> 1 `i `a ]
@@ -2293,8 +2293,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _testVoy `*a ~T0 @X0 1 r3 ]
 [v _autom `*a ~T0 @X0 1 r4 ]
 [f ]
-[v F3791 `uc ~T0 @X0 -> 20 `i s ]
-[i F3791
+[v F3792 `uc ~T0 @X0 -> 20 `i s ]
+[i F3792
 :U ..
 "606
 [; ;tester.c: 606:     char error[20] = "-> ERREUR: ";
@@ -2313,9 +2313,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _error `uc ~T0 @X0 -> 20 `i a ]
-[e = _error F3791 ]
-[v F3793 `uc ~T0 @X0 -> 10 `i s ]
-[i F3793
+[e = _error F3792 ]
+[v F3794 `uc ~T0 @X0 -> 10 `i s ]
+[i F3794
 :U ..
 "607
 [; ;tester.c: 607:     char eol[10] = "\r\n";
@@ -2325,7 +2325,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _eol `uc ~T0 @X0 -> 10 `i a ]
-[e = _eol F3793 ]
+[e = _eol F3794 ]
 "608
 [; ;tester.c: 608:     ledNonConforme(1);
 [e ( _ledNonConforme (1 -> -> 1 `i `a ]
@@ -2362,7 +2362,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tester.c: 622:         *testVoy = 0;
 [e = *U _testVoy -> -> 0 `i `a ]
 "624
-[; ;tester.c: 624:         displayManager("ETAPE 16", "NON CONFORME", "RESULTAT CONFIRME", "ATTENTE ACQUITTEMENT" );
+[; ;tester.c: 624:         displayManager("ETAPE 16", "NON CONFORME", "RESULTAT CONFIRME", "ATTENTE ACQUITTEMENT");
 [e ( _displayManager (4 , , , :s 21C :s 22C :s 23C :s 24C ]
 "625
 [; ;tester.c: 625:         sortieErreur(&autom, &testAct, &testVoy);
@@ -2431,6 +2431,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tester.c: 651: }
 [e :UE 591 ]
 }
+"653
+[; ;tester.c: 653: void marchePAP() {
+[v _marchePAP `(v ~T0 @X0 1 ef ]
+{
+[e :U _marchePAP ]
+[f ]
+"655
+[; ;tester.c: 655:     _Bool repOperateur = 0;
+[v _repOperateur `a ~T0 @X0 1 a ]
+[e = _repOperateur -> -> 0 `i `a ]
+"656
+[; ;tester.c: 656:     printf("-> Appuyer sur OK\r\n");
+[e ( _printf :s 34C ]
+"657
+[; ;tester.c: 657:     while (!repOperateur) {
+[e $U 597  ]
+[e :U 598 ]
+{
+"660
+[; ;tester.c: 660:         if (PORTDbits.RD2 == 0) {
+[e $ ! == -> . . _PORTDbits 0 2 `i -> 0 `i 600  ]
+{
+"662
+[; ;tester.c: 662:             repOperateur = 1;
+[e = _repOperateur -> -> 1 `i `a ]
+"663
+[; ;tester.c: 663:         }
+}
+[e :U 600 ]
+"664
+[; ;tester.c: 664:     }
+}
+[e :U 597 ]
+"657
+[; ;tester.c: 657:     while (!repOperateur) {
+[e $ ! != -> _repOperateur `i -> 0 `i 598  ]
+[e :U 599 ]
+"665
+[; ;tester.c: 665: }
+[e :UE 596 ]
+}
 [p f _printf 9437696 ]
 [a 10C 65 84 84 69 78 84 69 32 65 67 81 85 73 84 84 69 77 69 78 84 0 ]
 [a 24C 65 84 84 69 78 84 69 32 65 67 81 85 73 84 84 69 77 69 78 84 0 ]
@@ -2457,6 +2498,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 2C 45 62 32 70 73 78 32 84 69 83 84 32 77 65 78 85 69 76 13 10 0 ]
 [a 12C 45 62 32 70 73 78 32 84 69 83 84 32 77 65 78 85 69 76 13 10 0 ]
 [a 16C 45 62 32 70 73 78 32 84 69 83 84 32 77 65 78 85 69 76 13 10 0 ]
+[a 34C 45 62 32 65 112 112 117 121 101 114 32 115 117 114 32 79 75 13 10 0 ]
 [a 4C 45 62 32 84 69 83 84 32 79 70 70 13 10 0 ]
 [a 7C 45 62 32 84 69 83 84 32 79 70 70 13 10 0 ]
 [a 5C 45 62 32 84 69 83 84 32 65 67 81 85 73 84 84 69 13 10 0 ]

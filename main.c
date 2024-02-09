@@ -29,7 +29,7 @@
  * J16/IN4: NC2
  * J17/IN5: NO2
  * J19/IN6: NC3
- * J18/IN7: NO3
+ * J18/IN7: NO30
  * J14/IN3: Bouton de validation OK 
  * J20/IN8: Bouton de confirmation NOK
  * J21/AN1: test éclairage clavier par mesure analogique
@@ -88,6 +88,7 @@ void main(void) {
     char slectureAN1[5];
     bool testLeds = true;
     bool automatique = false;
+    bool pap = false;
 
 
 
@@ -115,6 +116,15 @@ void main(void) {
             REL8_SetLow();
         }
 
+        if (GPIO2_GetValue() == 0) {
+
+            pap = true;
+
+        } else {
+
+            pap = false;
+        }
+
 
         // Attente de démarrage
 
@@ -134,12 +144,17 @@ void main(void) {
 
         // ETAPE 1
 
+        if (pap) {
+
+            marchePAP();
+        }
 
         pressBP1(true);
         pressBP2(true);
         __delay_ms(100);
         alimenter(true);
         __delay_ms(2000); // 2000 pour D925ED4; 10000 pour D850
+
 
 
         if (testR1(true) && testR2(true) && testR3(true)) {
@@ -161,6 +176,11 @@ void main(void) {
 
         // ETAPE 2
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 2", "TEST 3 RELAIS OFF", LIGNE_VIDE, LIGNE_VIDE);
@@ -177,8 +197,12 @@ void main(void) {
             }
         }
 
-
         // ETAPE 3
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -203,6 +227,11 @@ void main(void) {
 
         // ETAPE 4
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 4", "TEST LED BLEUE", LIGNE_VIDE, LIGNE_VIDE);
@@ -224,6 +253,11 @@ void main(void) {
         }
 
         // ETAPE 5
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -248,11 +282,16 @@ void main(void) {
 
         // ETAPE 6
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 6", "TEST R1 ON", LIGNE_VIDE, LIGNE_VIDE);
             pressBP1(true);
-            __delay_ms(1000);
+            __delay_ms(250);
             pressBP1(false);
 
             __delay_ms(1000);
@@ -269,6 +308,11 @@ void main(void) {
         }
 
         // ETAPE 7
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -292,6 +336,11 @@ void main(void) {
 
         // ETAPE 8
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 8", "TEST R2 OFF - R3 ON", LIGNE_VIDE, LIGNE_VIDE);
@@ -313,6 +362,11 @@ void main(void) {
         }
 
         // ETAPE 9
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -347,6 +401,11 @@ void main(void) {
 
         // ETAPE 10
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", LIGNE_VIDE);
@@ -380,6 +439,11 @@ void main(void) {
 
 
         // ETAPE 12
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -417,6 +481,10 @@ void main(void) {
 
         // ETAPE 13
 
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -442,6 +510,11 @@ void main(void) {
 
         // ETAPE 14
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 14", "TEST BP2", LIGNE_VIDE, LIGNE_VIDE);
@@ -463,6 +536,11 @@ void main(void) {
 
         // ETAPE 15
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 15", "TEST HORLOGE", LIGNE_VIDE, LIGNE_VIDE);
@@ -483,6 +561,11 @@ void main(void) {
         }
 
         // ETAPE 16
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 
@@ -507,6 +590,11 @@ void main(void) {
 
         // ETAPE 17
 
+        if (pap) {
+
+            marchePAP();
+        }
+
         if (testActif) {
 
             displayManager("ETAPE 17", "TEST P2", LIGNE_VIDE, LIGNE_VIDE);
@@ -528,6 +616,11 @@ void main(void) {
 
 
         // ETAPE 18
+
+        if (pap) {
+
+            marchePAP();
+        }
 
         if (testActif) {
 

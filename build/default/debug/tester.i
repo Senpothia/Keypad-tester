@@ -5383,9 +5383,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 404 "./mcc_generated_files/pin_manager.h"
+# 415 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 416 "./mcc_generated_files/pin_manager.h"
+# 427 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5788,7 +5788,9 @@ void LCD_Clear();
 
 # 1 "./tester.h" 1
 
-void initialConditions(_Bool *, _Bool *);
+
+
+void initialConditions(_Bool *, _Bool *, _Bool *);
 void pressBP1(_Bool active);
 void pressBP2(_Bool active);
 void alimenter(_Bool active);
@@ -5800,21 +5802,86 @@ _Bool testNOK(_Bool active);
 void ledNonConforme(_Bool active);
 void ledConforme(_Bool active);
 void ledProgession(_Bool active);
-void attenteDemarrage();
+void attenteDemarrage(_Bool *, _Bool *);
 void alerteDefaut(char etape[], _Bool *, _Bool *);
-_Bool reponseOperateur();
+void alerteDefautEtape16(char etape[], _Bool *, _Bool *, _Bool *);
+_Bool reponseOperateur(_Bool automatique);
 _Bool controlVisuel();
 void setHorloge(_Bool active);
 void setP1(_Bool active);
 void setP2(_Bool active);
-void activerBuzzer(_Bool active);
+void activerBuzzer();
 void activerTouche(void);
+void startAlert(void);
+void errorAlert(void);
+void okAlert(void);
+void attenteDemarrage2(_Bool *, _Bool *);
+void attenteAquittement(_Bool *, _Bool *);
+void sortieErreur(_Bool *, _Bool *,_Bool *);
 # 12 "tester.c" 2
 
 # 1 "./display.h" 1
-# 17 "./display.h"
+# 16 "./display.h"
 void displayManager(char s1[], char s2[], char s3[], char s4[]);
 # 13 "tester.c" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 15 "tester.c" 2
 
 
 void alimenter(_Bool active) {
@@ -6021,44 +6088,197 @@ void ledProgession(_Bool active) {
     }
 }
 
-void attenteDemarrage() {
+void attenteDemarrage(_Bool *autom, _Bool *testAct) {
 
-    while (PORTDbits.RD2 == 1) {
+
+    unsigned char reception;
+    _Bool repOperateur = 0;
+
+    if (!*autom) {
+
+        while (PORTDbits.RD2 == 1 && !*autom) {
+
+            if (PORTDbits.RD2 == 0) {
+
+                if (!*testAct) {
+
+                    printf("-> TEST MANUEL EN COURS\r\n");
+
+                } else {
+
+                    printf("-> FIN TEST MANUEL\r\n");
+                }
+
+            }
+
+            if (eusartRxCount != 0) {
+
+                *autom = 1;
+                reception = EUSART_Read();
+
+                switch (reception)
+                {
+                    case '1':
+                    {
+                        printf("-> TEST ON\r\n");
+                        *autom = 1;
+                        _delay((unsigned long)((50)*(16000000/4000.0)));
+                        repOperateur = 1;
+                        break;
+                    }
+
+                    case '0':
+                    {
+                        printf("-> TEST OFF\r\n");
+                        _delay((unsigned long)((50)*(16000000/4000.0)));
+                        repOperateur = 1;
+                        *autom = 0;
+                        break;
+                    }
+
+                    case '4':
+                    {
+                        printf("-> TEST ACQUITTE\r\n");
+                        _delay((unsigned long)((50)*(16000000/4000.0)));
+                        repOperateur = 0;
+                        *autom = 0;
+                        break;
+                    }
+                }
+            }
+
+        }
+        repOperateur = 1;
     }
+
+    if (*autom) {
+
+        while (!repOperateur) {
+
+
+
+
+
+            if (eusartRxCount != 0) {
+                *autom = 1;
+                reception = EUSART_Read();
+
+                switch (reception)
+                {
+                    case '1':
+                    {
+                        printf("-> TEST ON\r\n");
+                        _delay((unsigned long)((50)*(16000000/4000.0)));
+                        repOperateur = 1;
+                        *autom = 1;
+                        break;
+                    }
+
+                    case '0':
+                    {
+                        printf("-> TEST OFF\r\n");
+                        _delay((unsigned long)((50)*(16000000/4000.0)));
+                        repOperateur = 1;
+                        *autom = 0;
+                        break;
+                    }
+
+                    case '4':
+                    {
+                        printf("-> TEST ACQUITTE\r\n");
+                        _delay((unsigned long)((50)*(16000000/4000.0)));
+                        repOperateur = 1;
+                        *autom = 0;
+                        break;
+                    }
+                }
+
+            }
+        }
+
+    }
+
 }
 
 void alerteDefaut(char etape[], _Bool *testAct, _Bool *testVoy) {
 
+    char error[20] = "-> ERREUR: ";
+    char eol[10] = "\r\n";
     ledNonConforme(1);
-    ledProgession(0);
+    ledProgession(1);
     ledConforme(0);
+    alimenter(0);
     displayManager(etape, "TEST NON CONFORME", "ATTENTE ACQUITTEMENT", "");
+    printf(strcat(strcat(error, etape), eol));
+    errorAlert();
 
-    while (PORTDbits.RD2 == 1) {
-    }
     while (PORTDbits.RD2 == 0) {
+        ;
     }
-    ledNonConforme(0);
+
+
     *testAct = 0;
     *testVoy = 0;
 
-
 }
 
-_Bool reponseOperateur() {
+_Bool reponseOperateur(_Bool automatique) {
 
     _Bool reponse = 0;
-    while (testOK(0) && testNOK(0)) {
-    }
-    if (testNOK(1)) {
-        reponse = 0;
-    }
-    if (testOK(1)) {
-        reponse = 1;
+    _Bool repOperateur = 0;
+    unsigned char reception;
+
+    if (automatique) {
+
+        while (!repOperateur) {
+
+            if (eusartRxCount != 0) {
+
+                reception = EUSART_Read();
+
+                switch (reception)
+                {
+                    case '2':
+                    {
+
+                        _delay((unsigned long)((50)*(16000000/4000.0)));
+                        reponse = 1;
+                        repOperateur = 1;
+                        break;
+                    }
+
+                    case '3':
+                    {
+
+                        _delay((unsigned long)((50)*(16000000/4000.0)));
+                        reponse = 0;
+                        repOperateur = 1;
+                        break;
+                    }
+                }
+
+            }
+
+        }
+
     }
 
-    while (testOK(1) || testNOK(1)) {
+    if (!automatique) {
+
+        while (!repOperateur) {
+
+            if (testNOK(1)) {
+                reponse = 0;
+                repOperateur = 1;
+            }
+            if (testOK(1)) {
+                reponse = 1;
+                repOperateur = 1;
+            }
+        }
+
     }
+
     return reponse;
 
 }
@@ -6085,10 +6305,15 @@ void setP2(_Bool active) {
 
 }
 
-void initialConditions(_Bool *testAct, _Bool *testVoy) {
+void initialConditions(_Bool *testAct, _Bool *testVoy, _Bool *autom) {
 
+    if (!*autom) {
+
+        printf("-> FIN TEST MANUEL\r\n");
+    }
     *testAct = 0;
     *testVoy = 0;
+    *autom = 0;
     ledConforme(0);
     ledNonConforme(0);
     ledProgession(0);
@@ -6100,14 +6325,19 @@ void initialConditions(_Bool *testAct, _Bool *testVoy) {
 
 }
 
-void activerBuzzer(_Bool active) {
+void activerBuzzer() {
 
 
-    if (active) {
+    for (int i = 0; i < 50; i++) {
 
         do { LATBbits.LATB4 = 1; } while(0);
-    } else {
+
+        _delay((unsigned long)((1000)*(16000000/4000000.0)));
+
         do { LATBbits.LATB4 = 0; } while(0);
+
+        _delay((unsigned long)((1000)*(16000000/4000000.0)));
+
     }
 
 }
@@ -6118,5 +6348,174 @@ void activerTouche(void) {
     _delay((unsigned long)((250)*(16000000/4000.0)));
     do { LATAbits.LATA6 = 0; } while(0);
     _delay((unsigned long)((250)*(16000000/4000.0)));
+
+}
+
+void startAlert(void) {
+
+    for (int i = 0; i < 2; i++) {
+
+        activerBuzzer();
+        _delay((unsigned long)((500)*(16000000/4000.0)));
+
+    }
+
+}
+
+void errorAlert(void) {
+
+    for (int j = 0; j < 4; j++) {
+
+        for (int i = 0; i < 4; i++) {
+
+            activerBuzzer();
+            _delay((unsigned long)((500)*(16000000/4000.0)));
+
+        }
+        _delay((unsigned long)((500)*(16000000/4000.0)));
+    }
+
+
+}
+
+void okAlert(void) {
+
+
+    printf("-> TEST CONFORME - ATTENTE ACQUITTEMENT\r\n");
+    for (int i = 0; i < 2; i++) {
+
+        startAlert();
+
+    }
+
+
+}
+
+void attenteDemarrage2(_Bool *autom, _Bool *testAct) {
+
+    unsigned char reception;
+    _Bool repOperateur = 0;
+
+    while (!repOperateur) {
+
+
+        if (PORTDbits.RD2 == 0) {
+
+            printf("-> TEST MANUEL EN COURS\r\n");
+            repOperateur = 1;
+            *autom = 0;
+        }
+
+        if (eusartRxCount != 0) {
+
+            reception = EUSART_Read();
+
+            switch (reception)
+            {
+                case '1':
+                {
+                    printf("-> TEST ON\r\n");
+                    *autom = 1;
+                    _delay((unsigned long)((50)*(16000000/4000.0)));
+                    repOperateur = 1;
+                    break;
+                }
+            }
+        }
+    }
+
+}
+
+void attenteAquittement(_Bool *autom, _Bool *testAct) {
+
+    unsigned char reception;
+    _Bool repOperateur = 0;
+
+    while (!repOperateur) {
+
+
+        if (PORTDbits.RD2 == 0) {
+
+            printf("-> FIN TEST MANUEL\r\n");
+            repOperateur = 1;
+            *autom = 0;
+            *testAct = 0;
+        }
+
+        if (eusartRxCount != 0) {
+
+            reception = EUSART_Read();
+
+            switch (reception)
+            {
+                case '4':
+                {
+                    printf("-> TEST ACQUITTE\r\n");
+                    *autom = 0;
+                    *testAct = 0;
+                    _delay((unsigned long)((50)*(16000000/4000.0)));
+                    repOperateur = 1;
+                    break;
+                }
+            }
+        }
+    }
+
+}
+
+void sortieErreur(_Bool *autom, _Bool *testAct, _Bool *testVoy) {
+
+    attenteAquittement(*autom, *testAct);
+    initialConditions(*testAct, *testVoy, *autom);
+    _delay((unsigned long)((2000)*(16000000/4000.0)));
+
+}
+
+void alerteDefautEtape16(char etape[], _Bool *testAct, _Bool *testVoy, _Bool *autom) {
+
+    char error[20] = "-> ERREUR: ";
+    char eol[10] = "\r\n";
+    ledNonConforme(1);
+    ledProgession(1);
+    ledConforme(0);
+
+    displayManager(etape, "TEST NON CONFORME", "VERIFIER P1 ET P2", "PRESSER OK OU ERREUR");
+    printf(strcat(strcat(error, etape), eol));
+    errorAlert();
+
+    _Bool reponse = reponseOperateur(*autom);
+    _delay((unsigned long)((500)*(16000000/4000.0)));
+    if (reponse) {
+
+
+        *testAct = 0;
+        *testVoy = 0;
+
+        displayManager("ETAPE 16", "NON CONFORME", "RESULTAT CONFIRME", "ATTENTE ACQUITTEMENT" );
+        sortieErreur(&autom, &testAct, &testVoy);
+
+    } else {
+
+        displayManager("ETAPE 16", "TEST P1", "", "");
+        ledNonConforme(0);
+        ledProgession(1);
+        ledConforme(0);
+        setP1(1);
+        _delay((unsigned long)((1200)*(16000000/4000.0)));
+        setP1(0);
+        _delay((unsigned long)((1000)*(16000000/4000.0)));
+        if (testR1(1) && testR2(1) && testR3(1)) {
+
+            displayManager("ETAPE 16", "TEST P1", "ERREUR VALIDEE", "TEST OK");
+
+        } else {
+
+            *testAct = 0;
+            alerteDefaut("ETAPE 16", &testAct, &testVoy);
+            sortieErreur(&autom, &testAct, &testVoy);
+        }
+
+    }
+
 
 }

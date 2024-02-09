@@ -621,7 +621,7 @@ void alerteDefautEtape16(char etape[], bool *testAct, bool *testVoy, bool *autom
         *testAct = false;
         *testVoy = false;
         //alerteDefaut("ETAPE 16 CONFIRMEE", &testAct, &testVoy);
-        displayManager("ETAPE 16", "NON CONFORME", "RESULTAT CONFIRME", ACQ );
+        displayManager("ETAPE 16", "NON CONFORME", "RESULTAT CONFIRME", ACQ);
         sortieErreur(&autom, &testAct, &testVoy);
 
     } else {
@@ -648,4 +648,18 @@ void alerteDefautEtape16(char etape[], bool *testAct, bool *testVoy, bool *autom
     }
 
 
+}
+
+void marchePAP() {
+
+    bool repOperateur = false;
+    printf("-> Appuyer sur OK\r\n");
+    while (!repOperateur) {
+
+
+        if (IN3_GetValue() == 0) {
+
+            repOperateur = true;
+        }
+    }
 }

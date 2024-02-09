@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 44 "main.c"
+# 53 "main.c"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 1 3
@@ -5376,9 +5376,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 404 "./mcc_generated_files/pin_manager.h"
+# 415 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 416 "./mcc_generated_files/pin_manager.h"
+# 427 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5749,7 +5749,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 99 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 44 "main.c" 2
+# 53 "main.c" 2
 
 # 1 "./I2C_LCD.h" 1
 # 99 "./I2C_LCD.h"
@@ -5777,11 +5777,13 @@ void noBacklight();
 void LCD_SR();
 void LCD_SL();
 void LCD_Clear();
-# 45 "main.c" 2
+# 54 "main.c" 2
 
 # 1 "./tester.h" 1
 
-void initialConditions(_Bool *, _Bool *);
+
+
+void initialConditions(_Bool *, _Bool *, _Bool *);
 void pressBP1(_Bool active);
 void pressBP2(_Bool active);
 void alimenter(_Bool active);
@@ -5793,21 +5795,29 @@ _Bool testNOK(_Bool active);
 void ledNonConforme(_Bool active);
 void ledConforme(_Bool active);
 void ledProgession(_Bool active);
-void attenteDemarrage();
+void attenteDemarrage(_Bool *, _Bool *);
 void alerteDefaut(char etape[], _Bool *, _Bool *);
-_Bool reponseOperateur();
+void alerteDefautEtape16(char etape[], _Bool *, _Bool *, _Bool *);
+_Bool reponseOperateur(_Bool automatique);
 _Bool controlVisuel();
 void setHorloge(_Bool active);
 void setP1(_Bool active);
 void setP2(_Bool active);
-void activerBuzzer(_Bool active);
+void activerBuzzer();
 void activerTouche(void);
-# 46 "main.c" 2
+void startAlert(void);
+void errorAlert(void);
+void okAlert(void);
+void attenteDemarrage2(_Bool *, _Bool *);
+void attenteAquittement(_Bool *, _Bool *);
+void sortieErreur(_Bool *, _Bool *,_Bool *);
+# 55 "main.c" 2
 
 # 1 "./display.h" 1
-# 17 "./display.h"
+# 16 "./display.h"
 void displayManager(char s1[], char s2[], char s3[], char s4[]);
-# 47 "main.c" 2
+# 56 "main.c" 2
+
 
 
 
@@ -5825,32 +5835,57 @@ void main(void) {
 
 
     (INTCONbits.PEIE = 1);
-# 74 "main.c"
+# 83 "main.c"
     I2C_Master_Init();
     LCD_Init(0x4E);
     _Bool testActif = 0;
     _Bool testVoyants = 0;
     int lectureAN1;
+    char slectureAN1[5];
+    _Bool testLeds = 1;
+    _Bool automatique = 0;
+
+
+
 
 
 
     displayManager("TEST CARTE D925ED4", "POSITIONNER CARTE", "APPUYER SUR OK", "");
     _delay((unsigned long)((1000)*(16000000/4000.0)));
 
+
     while (1) {
 
 
 
-        displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "RETIRER P1 et P2", "APPUYER SUR OK");
-        _delay((unsigned long)((100)*(16000000/4000.0)));
-        attenteDemarrage();
 
+
+        if (PORTCbits.RC0 == 1) {
+
+            do { LATAbits.LATA7 = 1; } while(0);
+            testLeds = 1;
+
+        } else {
+
+            testLeds = 0;
+            do { LATAbits.LATA7 = 0; } while(0);
+        }
+
+
+
+
+        displayManager("TEST CARTE D925ED4", "ATTENTE DEMARRAGE", "", "APPUYER SUR OK");
+        _delay((unsigned long)((100)*(16000000/4000.0)));
+
+        attenteDemarrage2(&automatique, &testActif);
+        testActif = 1;
+        startAlert();
         displayManager("ETAPE 1", "TEST 3 RELAIS ON", "", "");
         testActif = 1;
         ledConforme(0);
         ledNonConforme(0);
         ledProgession(1);
-
+        do { LATAbits.LATA7 = 0; } while(0);
 
 
 
@@ -5871,6 +5906,7 @@ void main(void) {
             pressBP1(0);
             pressBP2(0);
             alerteDefaut("ETAPE 1", &testActif, &testVoyants);
+            sortieErreur(&automatique, &testActif, &testVoyants);
 
         }
 
@@ -5893,6 +5929,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 2", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
         }
 
@@ -5905,12 +5942,18 @@ void main(void) {
             pressBP1(1);
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
+            if (testLeds) {
 
-                testActif = 0;
-                alerteDefaut("ETAPE 3", &testActif, &testVoyants);
+                printf("Attente validation led rouge\r\n");
+                testVoyants = reponseOperateur(automatique);
+                if (!testVoyants) {
+
+                    testActif = 0;
+                    alerteDefaut("ETAPE 3", &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants);
+                }
             }
+
 
         }
 
@@ -5922,12 +5965,17 @@ void main(void) {
             pressBP1(1);
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
+            if (testLeds) {
 
-                testActif = 0;
-                alerteDefaut("ETAPE 4", &testActif, &testVoyants);
+                testVoyants = reponseOperateur(automatique);
+                if (!testVoyants) {
+
+                    testActif = 0;
+                    alerteDefaut("ETAPE 4", &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants);
+                }
             }
+
 
         }
 
@@ -5939,14 +5987,20 @@ void main(void) {
             pressBP1(1);
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
-            testVoyants = reponseOperateur();
-            if (!testVoyants) {
+            if (testLeds) {
 
-                testActif = 0;
-                alerteDefaut("ETAPE 5", &testActif, &testVoyants);
+                testVoyants = reponseOperateur(automatique);
+                if (!testVoyants) {
+
+                    testActif = 0;
+                    alerteDefaut("ETAPE 5", &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants);
+                }
             }
 
         }
+
+
 
 
 
@@ -5965,6 +6019,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 6", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -5986,6 +6041,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 7", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6007,6 +6063,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 8", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6015,55 +6072,66 @@ void main(void) {
 
         if (testActif) {
 
-            displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE?", "PRESSER OK / NOK");
+            displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE?", "");
             pressBP1(1);
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
+            _delay((unsigned long)((500)*(16000000/4000.0)));
 
 
 
 
             lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 < 480) {
+            int buffer = sprintf(slectureAN1, "%d", lectureAN1);
+            if (lectureAN1 < 800) {
 
 
                 do { LATAbits.LATA7 = 1; } while(0);
 
             } else {
 
+                alerteDefaut("ETAPE 9", &testActif, &testVoyants);
+
                 do { LATAbits.LATA7 = 0; } while(0);
+                sortieErreur(&automatique, &testActif, &testVoyants);
 
             }
 
             _delay((unsigned long)((2000)*(16000000/4000.0)));
-# 297 "main.c"
+
         }
 
 
 
         if (testActif) {
 
-            displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", "PRESSER OK / NOK");
+            displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", "");
             pressBP1(1);
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
+
 
 
 
             _delay((unsigned long)((500)*(16000000/4000.0)));
             lectureAN1 = ADC_GetConversion(VIN1);
-            if (lectureAN1 > 480) {
+            int buffer = sprintf(slectureAN1, "%d", lectureAN1);
+
+            if (lectureAN1 < 600) {
 
 
                 do { LATAbits.LATA7 = 0; } while(0);
 
             } else {
 
+                alerteDefaut("ETAPE 10", &testActif, &testVoyants);
+
                 do { LATAbits.LATA7 = 1; } while(0);
+                sortieErreur(&automatique, &testActif, &testVoyants);
 
             }
             _delay((unsigned long)((2000)*(16000000/4000.0)));
-# 336 "main.c"
+
         }
 
 
@@ -6092,6 +6160,7 @@ void main(void) {
                 pressBP1(0);
                 pressBP2(0);
                 alerteDefaut("ETAPE 12", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
 
             }
 
@@ -6112,11 +6181,18 @@ void main(void) {
             _delay((unsigned long)((250)*(16000000/4000.0)));
             pressBP1(0);
 
-            testVoyants = reponseOperateur();
+            printf("ATTENTE VALIDATION LEDS\r\n");
+            testVoyants = reponseOperateur(automatique);
             if (!testVoyants) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 13", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
+
+
+
+
+
             }
         }
 
@@ -6136,6 +6212,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 14", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6156,6 +6233,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 15", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6167,14 +6245,18 @@ void main(void) {
             displayManager("ETAPE 16", "TEST P1", "", "");
             setP1(1);
             _delay((unsigned long)((1200)*(16000000/4000.0)));
+
             setP1(0);
             _delay((unsigned long)((500)*(16000000/4000.0)));
             if (testR1(1) && testR2(1) && testR3(1)) {
 
+
+
             } else {
 
-                testActif = 0;
-                alerteDefaut("ETAPE 16", &testActif, &testVoyants);
+
+                alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique);
+
             }
 
         }
@@ -6195,6 +6277,7 @@ void main(void) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
         }
@@ -6206,14 +6289,16 @@ void main(void) {
 
             displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
             activerTouche();
-            testVoyants = reponseOperateur();
+            printf("ATTENTE VALIDATION BLUETOOTH\r\n");
+            testVoyants = reponseOperateur(automatique);
             if (!testVoyants) {
 
                 testActif = 0;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants);
+
+                _delay((unsigned long)((2000)*(16000000/4000.0)));
             }
-
-
         }
 
 
@@ -6223,8 +6308,11 @@ void main(void) {
 
             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "ATTENTE ACQUITTEMENT");
             ledConforme(1);
-            attenteDemarrage();
-            initialConditions(&testActif, &testVoyants);
+            alimenter(0);
+            okAlert();
+
+            attenteAquittement(&automatique, &testActif);
+            initialConditions(&testActif, &testVoyants, &automatique);
             _delay((unsigned long)((2000)*(16000000/4000.0)));
 
         }

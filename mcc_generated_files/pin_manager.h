@@ -216,6 +216,17 @@
 #define GPIO1_SetDigitalInput()    do { TRISCbits.TRISC0 = 1; } while(0)
 #define GPIO1_SetDigitalOutput()   do { TRISCbits.TRISC0 = 0; } while(0)
 
+// get/set GPIO2 aliases
+#define GPIO2_TRIS                 TRISCbits.TRISC1
+#define GPIO2_LAT                  LATCbits.LATC1
+#define GPIO2_PORT                 PORTCbits.RC1
+#define GPIO2_SetHigh()            do { LATCbits.LATC1 = 1; } while(0)
+#define GPIO2_SetLow()             do { LATCbits.LATC1 = 0; } while(0)
+#define GPIO2_Toggle()             do { LATCbits.LATC1 = ~LATCbits.LATC1; } while(0)
+#define GPIO2_GetValue()           PORTCbits.RC1
+#define GPIO2_SetDigitalInput()    do { TRISCbits.TRISC1 = 1; } while(0)
+#define GPIO2_SetDigitalOutput()   do { TRISCbits.TRISC1 = 0; } while(0)
+
 // get/set RC3 procedures
 #define RC3_SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
 #define RC3_SetLow()             do { LATCbits.LATC3 = 0; } while(0)
