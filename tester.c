@@ -658,7 +658,7 @@ void marchePAP() {
 
 
         if (IN3_GetValue() == 0) {
-
+            
             repOperateur = true;
         }
     }

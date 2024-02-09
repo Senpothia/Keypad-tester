@@ -5908,7 +5908,7 @@ void main(void) {
 
         pressBP1(1);
         pressBP2(1);
-        _delay((unsigned long)((100)*(16000000/4000.0)));
+        _delay((unsigned long)((1000)*(16000000/4000.0)));
         alimenter(1);
         _delay((unsigned long)((2000)*(16000000/4000.0)));
 
@@ -5927,6 +5927,7 @@ void main(void) {
         }
 
         _delay((unsigned long)((1000)*(16000000/4000.0)));
+
 
         pressBP1(0);
         pressBP2(0);
@@ -6048,7 +6049,7 @@ void main(void) {
 
             displayManager("ETAPE 6", "TEST R1 ON", "", "");
             pressBP1(1);
-            _delay((unsigned long)((2000)*(16000000/4000.0)));
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
             pressBP1(0);
 
             _delay((unsigned long)((1000)*(16000000/4000.0)));
@@ -6177,7 +6178,7 @@ void main(void) {
             lectureAN1 = ADC_GetConversion(VIN1);
             int buffer = sprintf(slectureAN1, "%d", lectureAN1);
 
-            if (lectureAN1 < 600) {
+            if (lectureAN1 < 650) {
 
 
                 do { LATAbits.LATA7 = 0; } while(0);
@@ -6185,7 +6186,7 @@ void main(void) {
             } else {
 
                 alerteDefaut("ETAPE 10", &testActif, &testVoyants);
-
+                displayManager("ETAPE 10", "TEST LED CLAVIER", slectureAN1, "");
                 do { LATAbits.LATA7 = 1; } while(0);
                 sortieErreur(&automatique, &testActif, &testVoyants);
 

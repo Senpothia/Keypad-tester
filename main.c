@@ -151,10 +151,10 @@ void main(void) {
 
         pressBP1(true);
         pressBP2(true);
-        __delay_ms(100);
+        __delay_ms(1000);
         alimenter(true);
         __delay_ms(2000); // 2000 pour D925ED4; 10000 pour D850
-
+        
 
 
         if (testR1(true) && testR2(true) && testR3(true)) {
@@ -170,10 +170,11 @@ void main(void) {
         }
 
         __delay_ms(1000);
-
+        
+       
         pressBP1(false);
         pressBP2(false);
-
+         
         // ETAPE 2
 
         if (pap) {
@@ -291,7 +292,7 @@ void main(void) {
 
             displayManager("ETAPE 6", "TEST R1 ON", LIGNE_VIDE, LIGNE_VIDE);
             pressBP1(true);
-            __delay_ms(250);
+            __delay_ms(1000);
             pressBP1(false);
 
             __delay_ms(1000);
@@ -428,7 +429,7 @@ void main(void) {
             } else {
 
                 alerteDefaut("ETAPE 10", &testActif, &testVoyants);
-                //displayManager("ETAPE 10", "TEST LED CLAVIER", slectureAN1, LIGNE_VIDE); // Ligne de test: affichage valeur de mesure analogique
+                displayManager("ETAPE 10", "TEST LED CLAVIER", slectureAN1, LIGNE_VIDE); // Ligne de test: affichage valeur de mesure analogique
                 REL8_SetHigh();
                 sortieErreur(&automatique, &testActif, &testVoyants);
 
