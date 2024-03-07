@@ -1,7 +1,7 @@
 #define LIM_H 800  // 480 pour Vcc=3.3V
 #define LIM_L 650  // 480 pour Vcc=3.3V
 
-void initialConditions(bool *, bool *, bool *);
+void initialConditions(bool *, bool *, bool *, bool *);
 void pressBP1(bool active);
 void pressBP2(bool active);
 void alimenter(bool active);
@@ -15,7 +15,7 @@ void ledConforme(bool active);
 void ledProgession(bool active);
 void attenteDemarrage(bool *, bool *);
 void alerteDefaut(char etape[], bool *, bool *);
-void alerteDefautEtape16(char etape[], bool *, bool *, bool *);
+void alerteDefautEtape16(char etape[], bool *, bool *, bool *, bool *);
 bool reponseOperateur(bool automatique);
 bool controlVisuel();
 void setHorloge(bool active);
@@ -27,8 +27,9 @@ void startAlert(void);
 void errorAlert(void);
 void okAlert(void);
 void attenteDemarrage2(bool *, bool *);
+void attenteDemarrage3(bool *, bool *, bool *);
 void attenteAquittement(bool *, bool *);
-void sortieErreur(bool *, bool *,bool *);
+void sortieErreur(bool *, bool *,bool *, bool *);
 void marchePAP();
 
 

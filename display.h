@@ -11,6 +11,10 @@
 #define BOARD_REQUEST "POSITIONNER CARTE"
 #define ACQ "ATTENTE ACQUITTEMENT"
 #define FIN "FIN DE TEST"
+#define EN_PROG "PROGRAMMATION"
+#define FIN_PROG "FIN PROGRAMMATION"
+#define EN_EFFACEMENT "EFFACEMENT"
+#define FIN_EFFACEMENT "FIN EFFACEMENT"
 
 
 void displayManager(char s1[], char s2[], char s3[], char s4[]);

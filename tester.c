@@ -385,6 +385,33 @@ bool reponseOperateur(bool automatique) {
                         repOperateur = true;
                         break;
                     }
+
+                        /*
+                     
+                          case '7': //  lancement programmation
+                        {
+
+                            __delay_ms(50);
+                            reponse = true;
+                            repOperateur = true;
+                            REL8_SetHigh();
+                            break;
+                        }
+                     
+                     
+                         */
+
+
+
+                    case '9': // fin de programmation
+                    {
+
+                        __delay_ms(50);
+                        reponse = true;
+                        repOperateur = true;
+                        REL8_SetLow();
+                        break;
+                    }
                 }
 
             }
@@ -435,7 +462,7 @@ void setP2(bool active) {
 
 }
 
-void initialConditions(bool *testAct, bool *testVoy, bool *autom) {
+void initialConditions(bool *testAct, bool *testVoy, bool *autom, bool *prog) {
 
     if (!*autom) {
 
@@ -444,6 +471,7 @@ void initialConditions(bool *testAct, bool *testVoy, bool *autom) {
     *testAct = false;
     *testVoy = false;
     *autom = false;
+    *prog = true;
     ledConforme(false);
     ledNonConforme(false);
     ledProgession(false);
@@ -452,6 +480,7 @@ void initialConditions(bool *testAct, bool *testVoy, bool *autom) {
     pressBP2(false);
     setP1(false);
     setP2(false);
+    REL8_SetLow();
 
 }
 
@@ -534,6 +563,7 @@ void attenteDemarrage2(bool *autom, bool *testAct) {
             printf("-> TEST MANUEL EN COURS\r\n");
             repOperateur = true;
             *autom = false;
+            *testAct = true;
         }
 
         if (eusartRxCount != 0) {
@@ -548,8 +578,112 @@ void attenteDemarrage2(bool *autom, bool *testAct) {
                     *autom = true;
                     __delay_ms(50);
                     repOperateur = true;
+                    *testAct = true;
                     break;
                 }
+
+                case '9':
+                {
+                    printf("-> PROGRAMMATION TERMINEE\r\n");
+                    displayManager(TITRE, LIGNE_VIDE, FIN_PROG, LIGNE_VIDE);
+                    *autom = true;
+                    __delay_ms(50);
+                    repOperateur = true;
+                    *testAct = false;
+                    REL8_SetLow();
+                    break;
+                }
+            }
+        }
+    }
+
+}
+
+void attenteDemarrage3(bool *autom, bool *testAct, bool *prog) {
+
+    unsigned char reception;
+    bool repOperateur = false;
+
+    while (!repOperateur) {
+
+
+        if (IN3_GetValue() == 0) {
+
+            printf("-> TEST MANUEL EN COURS\r\n");
+            repOperateur = true;
+            *autom = false;
+            *prog = false;
+            *testAct = true;
+        }
+
+        if (eusartRxCount != 0) {
+
+            reception = EUSART_Read(); // read a byte for RX
+
+            switch (reception) // check command  
+            {
+                case '1':
+                {
+                    printf("-> TEST ON\r\n");
+                    *autom = true;
+                    *testAct = true;
+                    *prog = false;
+                    __delay_ms(50);
+                    repOperateur = true;
+                    break;
+                }
+
+                case '7':
+                {
+                    printf("-> PROGRAMMATION EN COURS\r\n");
+                    displayManager(TITRE, LIGNE_VIDE, EN_PROG, LIGNE_VIDE);
+                    *autom = true;
+                    *testAct = false;
+                    *prog = false;
+                    __delay_ms(50);
+                    repOperateur = true;
+                    REL8_SetHigh();
+                    break;
+                }
+                
+                 case '9':
+                {
+                    printf("-> PROGRAMMATION TERMINEE\r\n");
+                    displayManager(TITRE, LIGNE_VIDE, FIN_PROG, LIGNE_VIDE);
+                    *autom = true;
+                    __delay_ms(50);
+                    repOperateur = true;
+                    *testAct = false;
+                    REL8_SetLow();
+                    break;
+                }
+                
+                 case '8':
+                {
+                    printf("-> EFFACEMENT EN COURS\r\n");
+                    displayManager(TITRE, LIGNE_VIDE, EN_EFFACEMENT, LIGNE_VIDE);
+                    *autom = true;
+                    *testAct = false;
+                    *prog = true;
+                    __delay_ms(50);
+                    repOperateur = true;
+                    REL8_SetHigh();
+                    break;
+                }
+                 
+                   case '5':
+                {
+                    printf("-> EFFACEMENT TERMINE\r\n");
+                    displayManager(TITRE, LIGNE_VIDE, FIN_EFFACEMENT, LIGNE_VIDE);
+                    *autom = true;
+                    *testAct = false;
+                    *prog = true;
+                    __delay_ms(50);
+                    repOperateur = true;
+                    REL8_SetLow();
+                    break;
+                }
+
             }
         }
     }
@@ -593,15 +727,15 @@ void attenteAquittement(bool *autom, bool *testAct) {
 
 }
 
-void sortieErreur(bool *autom, bool *testAct, bool *testVoy) {
+void sortieErreur(bool *autom, bool *testAct, bool *testVoy, bool *prog) {
 
     attenteAquittement(*autom, *testAct);
-    initialConditions(*testAct, *testVoy, *autom);
+    initialConditions(*testAct, *testVoy, *autom, *prog);
     __delay_ms(2000);
 
 }
 
-void alerteDefautEtape16(char etape[], bool *testAct, bool *testVoy, bool *autom) {
+void alerteDefautEtape16(char etape[], bool *testAct, bool *testVoy, bool *autom, bool *prog) {
 
     char error[20] = "-> ERREUR: ";
     char eol[10] = "\r\n";
@@ -622,7 +756,7 @@ void alerteDefautEtape16(char etape[], bool *testAct, bool *testVoy, bool *autom
         *testVoy = false;
         //alerteDefaut("ETAPE 16 CONFIRMEE", &testAct, &testVoy);
         displayManager("ETAPE 16", "NON CONFORME", "RESULTAT CONFIRME", ACQ);
-        sortieErreur(&autom, &testAct, &testVoy);
+        sortieErreur(&autom, &testAct, &testVoy, &prog);
 
     } else {
 
@@ -642,7 +776,7 @@ void alerteDefautEtape16(char etape[], bool *testAct, bool *testVoy, bool *autom
 
             *testAct = false;
             alerteDefaut("ETAPE 16", &testAct, &testVoy);
-            sortieErreur(&autom, &testAct, &testVoy);
+            sortieErreur(&autom, &testAct, &testVoy, &prog);
         }
 
     }
@@ -658,7 +792,7 @@ void marchePAP() {
 
 
         if (IN3_GetValue() == 0) {
-            
+
             repOperateur = true;
         }
     }

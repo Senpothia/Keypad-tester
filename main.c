@@ -89,6 +89,7 @@ void main(void) {
     bool testLeds = true;
     bool automatique = false;
     bool pap = false;
+    bool programmation = true;
 
 
 
@@ -105,15 +106,17 @@ void main(void) {
         // sélection test individuel des leds
         // le test est inhibé si l'entrée GPIO1 est à zéro
 
+
+        REL8_SetLow();
+
         if (GPIO1_GetValue() == 1) {
 
-            REL8_SetHigh();
             testLeds = true;
 
         } else {
 
             testLeds = false;
-            REL8_SetLow();
+
         }
 
         if (GPIO2_GetValue() == 0) {
@@ -130,31 +133,43 @@ void main(void) {
 
         displayManager(TITRE, ATTENTE, CAVALIERS, OK_REQUEST);
         __delay_ms(100);
-        // attenteDemarrage(&automatique, &testActif);
-        attenteDemarrage2(&automatique, &testActif);
-        testActif = true;
+       
+        while (!testActif) {
+
+            attenteDemarrage3(&automatique, &testActif, &programmation);
+        }
+        /*
+        while (!testActif) {
+
+            attenteDemarrage2(&automatique, &testActif);
+        }
+         */
+         
+        programmation = false;
         startAlert();
         displayManager("ETAPE 1", "TEST 3 RELAIS ON", LIGNE_VIDE, LIGNE_VIDE);
         testActif = true;
         ledConforme(false);
         ledNonConforme(false);
         ledProgession(true);
-        REL8_SetLow();
+
         // entrée dans la séquence de test
 
         // ETAPE 1
 
+        /*
         if (pap) {
 
             marchePAP();
         }
+         * */
 
         pressBP1(true);
         pressBP2(true);
         __delay_ms(1000);
         alimenter(true);
         __delay_ms(2000); // 2000 pour D925ED4; 10000 pour D850
-        
+
 
 
         if (testR1(true) && testR2(true) && testR3(true)) {
@@ -165,22 +180,19 @@ void main(void) {
             pressBP1(false);
             pressBP2(false);
             alerteDefaut("ETAPE 1", &testActif, &testVoyants);
-            sortieErreur(&automatique, &testActif, &testVoyants);
+            sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 
         }
 
         __delay_ms(1000);
-        
-       
+
+
         pressBP1(false);
         pressBP2(false);
-         
+
         // ETAPE 2
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -194,16 +206,13 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 2", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
             }
         }
 
         // ETAPE 3
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -219,7 +228,7 @@ void main(void) {
 
                     testActif = false;
                     alerteDefaut("ETAPE 3", &testActif, &testVoyants);
-                    sortieErreur(&automatique, &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
                 }
             }
 
@@ -228,10 +237,7 @@ void main(void) {
 
         // ETAPE 4
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -246,7 +252,7 @@ void main(void) {
 
                     testActif = false;
                     alerteDefaut("ETAPE 4", &testActif, &testVoyants);
-                    sortieErreur(&automatique, &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
                 }
             }
 
@@ -255,10 +261,7 @@ void main(void) {
 
         // ETAPE 5
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -273,7 +276,7 @@ void main(void) {
 
                     testActif = false;
                     alerteDefaut("ETAPE 5", &testActif, &testVoyants);
-                    sortieErreur(&automatique, &testActif, &testVoyants);
+                    sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
                 }
             }
 
@@ -283,10 +286,7 @@ void main(void) {
 
         // ETAPE 6
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -303,17 +303,14 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 6", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
             }
 
         }
 
         // ETAPE 7
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -330,17 +327,13 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 7", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
             }
 
         }
 
         // ETAPE 8
 
-        if (pap) {
-
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -357,17 +350,13 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 8", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
             }
 
         }
 
         // ETAPE 9
 
-        if (pap) {
-
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -392,7 +381,7 @@ void main(void) {
                 alerteDefaut("ETAPE 9", &testActif, &testVoyants);
                 //displayManager("ETAPE 9", "TEST LED CLAVIER", slectureAN1, LIGNE_VIDE); // Ligne de test: affichage valeur de mesure analogique
                 REL8_SetLow();
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 
             }
 
@@ -402,10 +391,7 @@ void main(void) {
 
         // ETAPE 10
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -431,7 +417,7 @@ void main(void) {
                 alerteDefaut("ETAPE 10", &testActif, &testVoyants);
                 displayManager("ETAPE 10", "TEST LED CLAVIER", slectureAN1, LIGNE_VIDE); // Ligne de test: affichage valeur de mesure analogique
                 REL8_SetHigh();
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 
             }
             __delay_ms(2000);
@@ -441,10 +427,7 @@ void main(void) {
 
         // ETAPE 12
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -469,7 +452,7 @@ void main(void) {
                 pressBP1(false);
                 pressBP2(false);
                 alerteDefaut("ETAPE 12", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 
             }
 
@@ -482,10 +465,7 @@ void main(void) {
 
         // ETAPE 13
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -500,7 +480,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 13", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
                 /*
                 attenteAquittement(&automatique, &testActif);
                 initialConditions(&testActif, &testVoyants, &automatique);
@@ -511,10 +491,6 @@ void main(void) {
 
         // ETAPE 14
 
-        if (pap) {
-
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -530,17 +506,14 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 14", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
             }
 
         }
 
         // ETAPE 15
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -556,17 +529,13 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 15", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
             }
 
         }
 
         // ETAPE 16
 
-        if (pap) {
-
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -583,7 +552,7 @@ void main(void) {
             } else {
 
                 //testActif = false;
-                alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique);
+                alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique, &programmation);
                 //sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
@@ -591,10 +560,7 @@ void main(void) {
 
         // ETAPE 17
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -610,7 +576,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
             }
 
         }
@@ -618,10 +584,7 @@ void main(void) {
 
         // ETAPE 18
 
-        if (pap) {
 
-            marchePAP();
-        }
 
         if (testActif) {
 
@@ -633,7 +596,7 @@ void main(void) {
 
                 testActif = false;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
-                sortieErreur(&automatique, &testActif, &testVoyants);
+                sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
                 //initialConditions(&testActif, &testVoyants, &automatique);
                 __delay_ms(2000);
             }
@@ -650,7 +613,7 @@ void main(void) {
             okAlert();
             //attenteDemarrage(&automatique, &testActif);
             attenteAquittement(&automatique, &testActif);
-            initialConditions(&testActif, &testVoyants, &automatique);
+            initialConditions(&testActif, &testVoyants, &automatique, &programmation);
             __delay_ms(2000);
 
         }
