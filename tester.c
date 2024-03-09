@@ -248,6 +248,9 @@ void attenteDemarrage(bool *autom, bool *testAct) {
 
                 switch (reception) // check command  
                 {
+
+
+
                     case '1':
                     {
                         printf("-> TEST ON\r\n");
@@ -368,6 +371,14 @@ bool reponseOperateur(bool automatique) {
 
                 switch (reception) // check command  
                 {
+
+
+                    case '0':
+                    {
+                        RESET();
+
+                    }
+
                     case '2':
                     {
 
@@ -572,6 +583,13 @@ void attenteDemarrage2(bool *autom, bool *testAct) {
 
             switch (reception) // check command  
             {
+
+                case '0':
+                {
+                    RESET();
+
+                }
+
                 case '1':
                 {
                     printf("-> TEST ON\r\n");
@@ -622,6 +640,13 @@ void attenteDemarrage3(bool *autom, bool *testAct, bool *prog) {
 
             switch (reception) // check command  
             {
+
+                case '0':
+                {
+                    RESET();
+
+                }
+
                 case '1':
                 {
                     printf("-> TEST ON\r\n");
@@ -630,6 +655,18 @@ void attenteDemarrage3(bool *autom, bool *testAct, bool *prog) {
                     *prog = false;
                     __delay_ms(50);
                     repOperateur = true;
+                    break;
+                }
+                
+                   case '6':
+                {
+                    printf("-> ERREUR PROGRAMMATION\r\n");
+                    displayManager(TITRE, LIGNE_VIDE, ERREUR_PROGRAMMATION, LIGNE_VIDE);
+                    *autom = true;
+                    __delay_ms(50);
+                    repOperateur = true;
+                    *testAct = false;
+                    REL8_SetLow();
                     break;
                 }
 
@@ -645,8 +682,8 @@ void attenteDemarrage3(bool *autom, bool *testAct, bool *prog) {
                     REL8_SetHigh();
                     break;
                 }
-                
-                 case '9':
+
+                case '9':
                 {
                     printf("-> PROGRAMMATION TERMINEE\r\n");
                     displayManager(TITRE, LIGNE_VIDE, FIN_PROG, LIGNE_VIDE);
@@ -657,8 +694,8 @@ void attenteDemarrage3(bool *autom, bool *testAct, bool *prog) {
                     REL8_SetLow();
                     break;
                 }
-                
-                 case '8':
+
+                case '8':
                 {
                     printf("-> EFFACEMENT EN COURS\r\n");
                     displayManager(TITRE, LIGNE_VIDE, EN_EFFACEMENT, LIGNE_VIDE);
@@ -670,8 +707,8 @@ void attenteDemarrage3(bool *autom, bool *testAct, bool *prog) {
                     REL8_SetHigh();
                     break;
                 }
-                 
-                   case '5':
+
+                case '5':
                 {
                     printf("-> EFFACEMENT TERMINE\r\n");
                     displayManager(TITRE, LIGNE_VIDE, FIN_EFFACEMENT, LIGNE_VIDE);
@@ -712,6 +749,13 @@ void attenteAquittement(bool *autom, bool *testAct) {
 
             switch (reception) // check command  
             {
+
+                case '0':
+                {
+                    RESET();
+
+                }
+
                 case '4':
                 {
                     printf("-> TEST ACQUITTE\r\n");

@@ -15,6 +15,7 @@
 #define FIN_PROG "FIN PROGRAMMATION"
 #define EN_EFFACEMENT "EFFACEMENT"
 #define FIN_EFFACEMENT "FIN EFFACEMENT"
+#define ERREUR_PROGRAMMATION "ERREUR PROGRAMMATION"
 
 
 void displayManager(char s1[], char s2[], char s3[], char s4[]);

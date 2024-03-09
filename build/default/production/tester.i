@@ -5828,7 +5828,7 @@ void marchePAP();
 # 12 "tester.c" 2
 
 # 1 "./display.h" 1
-# 20 "./display.h"
+# 21 "./display.h"
 void displayManager(char s1[], char s2[], char s3[], char s4[]);
 # 13 "tester.c" 2
 
@@ -6125,6 +6125,9 @@ void attenteDemarrage(_Bool *autom, _Bool *testAct) {
 
                 switch (reception)
                 {
+
+
+
                     case '1':
                     {
                         printf("-> TEST ON\r\n");
@@ -6245,6 +6248,14 @@ _Bool reponseOperateur(_Bool automatique) {
 
                 switch (reception)
                 {
+
+
+                    case '0':
+                    {
+                        __asm("reset");
+
+                    }
+
                     case '2':
                     {
 
@@ -6262,7 +6273,7 @@ _Bool reponseOperateur(_Bool automatique) {
                         repOperateur = 1;
                         break;
                     }
-# 406 "tester.c"
+# 417 "tester.c"
                     case '9':
                     {
 
@@ -6432,6 +6443,13 @@ void attenteDemarrage2(_Bool *autom, _Bool *testAct) {
 
             switch (reception)
             {
+
+                case '0':
+                {
+                    __asm("reset");
+
+                }
+
                 case '1':
                 {
                     printf("-> TEST ON\r\n");
@@ -6482,6 +6500,13 @@ void attenteDemarrage3(_Bool *autom, _Bool *testAct, _Bool *prog) {
 
             switch (reception)
             {
+
+                case '0':
+                {
+                    __asm("reset");
+
+                }
+
                 case '1':
                 {
                     printf("-> TEST ON\r\n");
@@ -6490,6 +6515,18 @@ void attenteDemarrage3(_Bool *autom, _Bool *testAct, _Bool *prog) {
                     *prog = 0;
                     _delay((unsigned long)((50)*(16000000/4000.0)));
                     repOperateur = 1;
+                    break;
+                }
+
+                   case '6':
+                {
+                    printf("-> ERREUR PROGRAMMATION\r\n");
+                    displayManager("TEST CARTE D925ED4", "", "ERREUR PROGRAMMATION", "");
+                    *autom = 1;
+                    _delay((unsigned long)((50)*(16000000/4000.0)));
+                    repOperateur = 1;
+                    *testAct = 0;
+                    do { LATAbits.LATA7 = 0; } while(0);
                     break;
                 }
 
@@ -6506,7 +6543,7 @@ void attenteDemarrage3(_Bool *autom, _Bool *testAct, _Bool *prog) {
                     break;
                 }
 
-                 case '9':
+                case '9':
                 {
                     printf("-> PROGRAMMATION TERMINEE\r\n");
                     displayManager("TEST CARTE D925ED4", "", "FIN PROGRAMMATION", "");
@@ -6518,7 +6555,7 @@ void attenteDemarrage3(_Bool *autom, _Bool *testAct, _Bool *prog) {
                     break;
                 }
 
-                 case '8':
+                case '8':
                 {
                     printf("-> EFFACEMENT EN COURS\r\n");
                     displayManager("TEST CARTE D925ED4", "", "EFFACEMENT", "");
@@ -6531,7 +6568,7 @@ void attenteDemarrage3(_Bool *autom, _Bool *testAct, _Bool *prog) {
                     break;
                 }
 
-                   case '5':
+                case '5':
                 {
                     printf("-> EFFACEMENT TERMINE\r\n");
                     displayManager("TEST CARTE D925ED4", "", "FIN EFFACEMENT", "");
@@ -6572,6 +6609,13 @@ void attenteAquittement(_Bool *autom, _Bool *testAct) {
 
             switch (reception)
             {
+
+                case '0':
+                {
+                    __asm("reset");
+
+                }
+
                 case '4':
                 {
                     printf("-> TEST ACQUITTE\r\n");

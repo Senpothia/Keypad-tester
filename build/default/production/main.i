@@ -5821,7 +5821,7 @@ void marchePAP();
 # 55 "main.c" 2
 
 # 1 "./display.h" 1
-# 20 "./display.h"
+# 21 "./display.h"
 void displayManager(char s1[], char s2[], char s3[], char s4[]);
 # 56 "main.c" 2
 
