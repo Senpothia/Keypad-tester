@@ -133,7 +133,7 @@ void main(void) {
 
         displayManager(TITRE, ATTENTE, CAVALIERS, OK_REQUEST);
         __delay_ms(100);
-       
+
         while (!testActif) {
 
             attenteDemarrage3(&automatique, &testActif, &programmation);
@@ -144,7 +144,7 @@ void main(void) {
             attenteDemarrage2(&automatique, &testActif);
         }
          */
-         
+
         programmation = false;
         startAlert();
         displayManager("ETAPE 1", "TEST 3 RELAIS ON", LIGNE_VIDE, LIGNE_VIDE);
@@ -174,6 +174,8 @@ void main(void) {
 
         if (testR1(true) && testR2(true) && testR3(true)) {
 
+            printf("-> TEST:1:1");
+
         } else {
 
             testActif = false;
@@ -181,7 +183,7 @@ void main(void) {
             pressBP2(false);
             alerteDefaut("ETAPE 1", &testActif, &testVoyants);
             sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-
+            printf("-> TEST:1:0");
         }
 
         __delay_ms(1000);
@@ -202,11 +204,14 @@ void main(void) {
             __delay_ms(500);
             if (!testR1(true) && !testR2(true) && !testR3(true)) {
 
+                printf("-> TEST:2:1");
+
             } else {
 
                 testActif = false;
                 alerteDefaut("ETAPE 2", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:2:0");
             }
         }
 
@@ -229,6 +234,10 @@ void main(void) {
                     testActif = false;
                     alerteDefaut("ETAPE 3", &testActif, &testVoyants);
                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                    printf("-> TEST:3:0");
+                } else {
+
+                    printf("-> TEST:3:1");
                 }
             }
 
@@ -253,6 +262,10 @@ void main(void) {
                     testActif = false;
                     alerteDefaut("ETAPE 4", &testActif, &testVoyants);
                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                    printf("-> TEST:4:0");
+                } else {
+
+                    printf("-> TEST:4:1");
                 }
             }
 
@@ -277,6 +290,11 @@ void main(void) {
                     testActif = false;
                     alerteDefaut("ETAPE 5", &testActif, &testVoyants);
                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                    printf("-> TEST:5:0");
+
+                } else {
+
+                    printf("-> TEST:5:1");
                 }
             }
 
@@ -299,11 +317,14 @@ void main(void) {
 
             if (testR1(true)) {
 
+                printf("-> TEST:6:1");
+
             } else {
 
                 testActif = false;
                 alerteDefaut("ETAPE 6", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:6:0");
             }
 
         }
@@ -323,11 +344,14 @@ void main(void) {
 
             if (testR1(false) && testR2(true)) {
 
+                printf("-> TEST:7:1");
+
             } else {
 
                 testActif = false;
                 alerteDefaut("ETAPE 7", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:7:0");
             }
 
         }
@@ -346,11 +370,14 @@ void main(void) {
 
             if (testR2(false) && testR3(true)) {
 
+                printf("-> TEST:8:1");
+
             } else {
 
                 testActif = false;
                 alerteDefaut("ETAPE 8", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:8:0");
             }
 
         }
@@ -375,6 +402,7 @@ void main(void) {
 
 
                 REL8_SetHigh();
+                printf("-> TEST:9:1");
 
             } else {
 
@@ -382,6 +410,7 @@ void main(void) {
                 //displayManager("ETAPE 9", "TEST LED CLAVIER", slectureAN1, LIGNE_VIDE); // Ligne de test: affichage valeur de mesure analogique
                 REL8_SetLow();
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:9:0");
 
             }
 
@@ -411,6 +440,7 @@ void main(void) {
 
 
                 REL8_SetLow();
+                printf("-> TEST:10:1");
 
             } else {
 
@@ -418,6 +448,7 @@ void main(void) {
                 displayManager("ETAPE 10", "TEST LED CLAVIER", slectureAN1, LIGNE_VIDE); // Ligne de test: affichage valeur de mesure analogique
                 REL8_SetHigh();
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:10:0");
 
             }
             __delay_ms(2000);
@@ -446,6 +477,8 @@ void main(void) {
 
             if (testR1(true) && testR2(true) && testR3(false)) {
 
+                printf("-> TEST:12:1");
+
             } else {
 
                 testActif = false;
@@ -453,6 +486,7 @@ void main(void) {
                 pressBP2(false);
                 alerteDefaut("ETAPE 12", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:12:0");
 
             }
 
@@ -481,11 +515,15 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 13", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:13:0");
                 /*
                 attenteAquittement(&automatique, &testActif);
                 initialConditions(&testActif, &testVoyants, &automatique);
                 __delay_ms(2000);
                  */
+            } else {
+
+                printf("-> TEST:13:0");
             }
         }
 
@@ -502,11 +540,14 @@ void main(void) {
 
             if (testR1(true) && testR2(true) && testR3(true)) {
 
+                printf("-> TEST:14:1");
+
             } else {
 
                 testActif = false;
                 alerteDefaut("ETAPE 14", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:14:0");
             }
 
         }
@@ -525,11 +566,14 @@ void main(void) {
 
             if (testR1(false) && testR2(false) && testR3(false)) {
 
+                printf("-> TEST:15:1");
+
             } else {
 
                 testActif = false;
                 alerteDefaut("ETAPE 15", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:15:0");
             }
 
         }
@@ -547,12 +591,13 @@ void main(void) {
             __delay_ms(500);
             if (testR1(true) && testR2(true) && testR3(true)) {
 
-
+                printf("-> TEST:16:1");
 
             } else {
 
                 //testActif = false;
                 alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique, &programmation);
+                printf("-> TEST:16:0");
                 //sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
@@ -572,11 +617,14 @@ void main(void) {
 
             if (testR1(false) && testR2(false) && testR3(false)) {
 
+                printf("-> TEST:17:1");
+
             } else {
 
                 testActif = false;
                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
+                printf("-> TEST:17:0");
             }
 
         }
@@ -599,6 +647,10 @@ void main(void) {
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
                 //initialConditions(&testActif, &testVoyants, &automatique);
                 __delay_ms(2000);
+                printf("-> TEST:18:0");
+            } else {
+
+                printf("-> TEST:18:0");
             }
         }
 

@@ -5823,7 +5823,7 @@ void okAlert(void);
 void attenteDemarrage2(_Bool *, _Bool *);
 void attenteDemarrage3(_Bool *, _Bool *, _Bool *);
 void attenteAquittement(_Bool *, _Bool *);
-void sortieErreur(_Bool *, _Bool *,_Bool *, _Bool *);
+void sortieErreur(_Bool *, _Bool *, _Bool *, _Bool *);
 void marchePAP();
 # 12 "tester.c" 2
 

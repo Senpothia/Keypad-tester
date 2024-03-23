@@ -29,7 +29,8 @@ void okAlert(void);
 void attenteDemarrage2(bool *, bool *);
 void attenteDemarrage3(bool *, bool *, bool *);
 void attenteAquittement(bool *, bool *);
-void sortieErreur(bool *, bool *,bool *, bool *);
+void sortieErreur(bool *, bool *, bool *, bool *);
 void marchePAP();
+
 
 
