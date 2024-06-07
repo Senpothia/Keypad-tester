@@ -20,7 +20,7 @@
  * R5: Cavalier P1
  * R6: Cavalier P2
  * R7: Touche clavier - "Doigt"
- * R8: Avant séquence de test = indicateur inhibition tests des leds; dans sequence de test = indicateur éclairage clavier
+ * R8: Commutation alimentation programmateur STM32
  * 
  * Entrées:
  * 
@@ -33,12 +33,13 @@
  * J14/IN3: Bouton de validation OK 
  * J20/IN8: Bouton de confirmation NOK
  * J21/AN1: test éclairage clavier par mesure analogique
+ * J26(serigraphie OV)/GPIO1: inhibition test des leds - starp au OV = tests des leds inhibé
  * 
  * Sorties:
  * J25.1/C2: led rouge (indication non conforme)
  * J25.2/C4: led verte (indication conforme)
  * J25.3/C2: led jaune (indication test en cours)
- * J26(serigraphie OV)/GPIO1: inhibition test des leds - starp au OV = tests des leds inhibé
+ 
  * 
  * Mode d'emploi:
  * 1- Sélectionner mode de test des leds (strap = inhibition)
@@ -183,7 +184,7 @@ void main(void) {
             pressBP2(false);
             alerteDefaut("ETAPE 1", &testActif, &testVoyants);
             sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-            printf("-> TEST:1:0");
+            //printf("-> TEST:1:0");
         }
 
         __delay_ms(1000);
@@ -211,7 +212,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 2", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:2:0");
+                //printf("-> TEST:2:0");
             }
         }
 
@@ -234,7 +235,7 @@ void main(void) {
                     testActif = false;
                     alerteDefaut("ETAPE 3", &testActif, &testVoyants);
                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                    printf("-> TEST:3:0");
+                    //printf("-> TEST:3:0");
                 } else {
 
                     printf("-> TEST:3:1");
@@ -262,7 +263,7 @@ void main(void) {
                     testActif = false;
                     alerteDefaut("ETAPE 4", &testActif, &testVoyants);
                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                    printf("-> TEST:4:0");
+                    //printf("-> TEST:4:0");
                 } else {
 
                     printf("-> TEST:4:1");
@@ -290,7 +291,7 @@ void main(void) {
                     testActif = false;
                     alerteDefaut("ETAPE 5", &testActif, &testVoyants);
                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                    printf("-> TEST:5:0");
+                    //printf("-> TEST:5:0");
 
                 } else {
 
@@ -324,7 +325,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 6", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:6:0");
+                //printf("-> TEST:6:0");
             }
 
         }
@@ -351,7 +352,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 7", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:7:0");
+                //printf("-> TEST:7:0");
             }
 
         }
@@ -377,7 +378,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 8", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:8:0");
+                //printf("-> TEST:8:0");
             }
 
         }
@@ -410,7 +411,7 @@ void main(void) {
                 //displayManager("ETAPE 9", "TEST LED CLAVIER", slectureAN1, LIGNE_VIDE); // Ligne de test: affichage valeur de mesure analogique
                 REL8_SetLow();
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:9:0");
+                //printf("-> TEST:9:0");
 
             }
 
@@ -448,7 +449,7 @@ void main(void) {
                 displayManager("ETAPE 10", "TEST LED CLAVIER", slectureAN1, LIGNE_VIDE); // Ligne de test: affichage valeur de mesure analogique
                 REL8_SetHigh();
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:10:0");
+                //printf("-> TEST:10:0");
 
             }
             __delay_ms(2000);
@@ -486,7 +487,7 @@ void main(void) {
                 pressBP2(false);
                 alerteDefaut("ETAPE 12", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:12:0");
+                //printf("-> TEST:12:0");
 
             }
 
@@ -515,7 +516,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 13", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:13:0");
+                //printf("-> TEST:13:0");
                 /*
                 attenteAquittement(&automatique, &testActif);
                 initialConditions(&testActif, &testVoyants, &automatique);
@@ -523,7 +524,7 @@ void main(void) {
                  */
             } else {
 
-                printf("-> TEST:13:0");
+                printf("-> TEST:13:1");
             }
         }
 
@@ -547,7 +548,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 14", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:14:0");
+                //printf("-> TEST:14:0");
             }
 
         }
@@ -573,7 +574,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 15", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:15:0");
+                //printf("-> TEST:15:0");
             }
 
         }
@@ -597,7 +598,7 @@ void main(void) {
 
                 //testActif = false;
                 alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique, &programmation);
-                printf("-> TEST:16:0");
+                //printf("-> TEST:16:0");
                 //sortieErreur(&automatique, &testActif, &testVoyants);
             }
 
@@ -624,7 +625,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:17:0");
+                //printf("-> TEST:17:0");
             }
 
         }
@@ -638,7 +639,7 @@ void main(void) {
 
             displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
             activerTouche();
-            printf("ATTENTE VALIDATION BLUETOOTH\r\n");
+            //printf("ATTENTE VALIDATION BLUETOOTH\r\n");
             testVoyants = reponseOperateur(automatique);
             if (!testVoyants) {
 
@@ -647,10 +648,10 @@ void main(void) {
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
                 //initialConditions(&testActif, &testVoyants, &automatique);
                 __delay_ms(2000);
-                printf("-> TEST:18:0");
+                //printf("-> TEST:18:0");
             } else {
 
-                printf("-> TEST:18:0");
+                printf("-> TEST:18:1");
             }
         }
 

@@ -854,9 +854,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "185
 [; ;main.c: 185:             sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"186
-[; ;main.c: 186:             printf("-> TEST:1:0");
-[e ( _printf :s 15C ]
 "187
 [; ;main.c: 187:         }
 }
@@ -876,7 +873,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "201
 [; ;main.c: 201:             displayManager("ETAPE 2", "TEST 3 RELAIS OFF", "", "");
-[e ( _displayManager (4 , , , :s 16C :s 17C :s 18C :s 19C ]
+[e ( _displayManager (4 , , , :s 15C :s 16C :s 17C :s 18C ]
 "202
 [; ;main.c: 202:             pressBP1(0);
 [e ( _pressBP1 (1 -> -> 0 `i `a ]
@@ -892,7 +889,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "207
 [; ;main.c: 207:                 printf("-> TEST:2:1");
-[e ( _printf :s 20C ]
+[e ( _printf :s 19C ]
 "209
 [; ;main.c: 209:             } else {
 }
@@ -904,13 +901,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "212
 [; ;main.c: 212:                 alerteDefaut("ETAPE 2", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 21C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 20C &U _testActif &U _testVoyants ]
 "213
 [; ;main.c: 213:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"214
-[; ;main.c: 214:                 printf("-> TEST:2:0");
-[e ( _printf :s 22C ]
 "215
 [; ;main.c: 215:             }
 }
@@ -925,7 +919,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "224
 [; ;main.c: 224:             displayManager("ETAPE 3", "TEST LED ROUGE", "", "");
-[e ( _displayManager (4 , , , :s 23C :s 24C :s 25C :s 26C ]
+[e ( _displayManager (4 , , , :s 21C :s 22C :s 23C :s 24C ]
 "225
 [; ;main.c: 225:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
@@ -941,7 +935,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "230
 [; ;main.c: 230:                 printf("Attente validation led rouge\r\n");
-[e ( _printf :s 27C ]
+[e ( _printf :s 25C ]
 "231
 [; ;main.c: 231:                 testVoyants = reponseOperateur(automatique);
 [e = _testVoyants ( _reponseOperateur (1 _automatique ]
@@ -954,13 +948,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "235
 [; ;main.c: 235:                     alerteDefaut("ETAPE 3", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 28C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 26C &U _testActif &U _testVoyants ]
 "236
 [; ;main.c: 236:                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"237
-[; ;main.c: 237:                     printf("-> TEST:3:0");
-[e ( _printf :s 29C ]
 "238
 [; ;main.c: 238:                 } else {
 }
@@ -969,7 +960,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "240
 [; ;main.c: 240:                     printf("-> TEST:3:1");
-[e ( _printf :s 30C ]
+[e ( _printf :s 27C ]
 "241
 [; ;main.c: 241:                 }
 }
@@ -988,7 +979,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "253
 [; ;main.c: 253:             displayManager("ETAPE 4", "TEST LED BLEUE", "", "");
-[e ( _displayManager (4 , , , :s 31C :s 32C :s 33C :s 34C ]
+[e ( _displayManager (4 , , , :s 28C :s 29C :s 30C :s 31C ]
 "254
 [; ;main.c: 254:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
@@ -1014,13 +1005,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "263
 [; ;main.c: 263:                     alerteDefaut("ETAPE 4", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 35C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 32C &U _testActif &U _testVoyants ]
 "264
 [; ;main.c: 264:                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"265
-[; ;main.c: 265:                     printf("-> TEST:4:0");
-[e ( _printf :s 36C ]
 "266
 [; ;main.c: 266:                 } else {
 }
@@ -1029,7 +1017,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "268
 [; ;main.c: 268:                     printf("-> TEST:4:1");
-[e ( _printf :s 37C ]
+[e ( _printf :s 33C ]
 "269
 [; ;main.c: 269:                 }
 }
@@ -1048,7 +1036,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "281
 [; ;main.c: 281:             displayManager("ETAPE 5", "TEST LED VERTE", "", "");
-[e ( _displayManager (4 , , , :s 38C :s 39C :s 40C :s 41C ]
+[e ( _displayManager (4 , , , :s 34C :s 35C :s 36C :s 37C ]
 "282
 [; ;main.c: 282:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
@@ -1074,13 +1062,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "291
 [; ;main.c: 291:                     alerteDefaut("ETAPE 5", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 42C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 38C &U _testActif &U _testVoyants ]
 "292
 [; ;main.c: 292:                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"293
-[; ;main.c: 293:                     printf("-> TEST:5:0");
-[e ( _printf :s 43C ]
 "295
 [; ;main.c: 295:                 } else {
 }
@@ -1089,7 +1074,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "297
 [; ;main.c: 297:                     printf("-> TEST:5:1");
-[e ( _printf :s 44C ]
+[e ( _printf :s 39C ]
 "298
 [; ;main.c: 298:                 }
 }
@@ -1108,7 +1093,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "311
 [; ;main.c: 311:             displayManager("ETAPE 6", "TEST R1 ON", "", "");
-[e ( _displayManager (4 , , , :s 45C :s 46C :s 47C :s 48C ]
+[e ( _displayManager (4 , , , :s 40C :s 41C :s 42C :s 43C ]
 "312
 [; ;main.c: 312:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
@@ -1127,7 +1112,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "320
 [; ;main.c: 320:                 printf("-> TEST:6:1");
-[e ( _printf :s 49C ]
+[e ( _printf :s 44C ]
 "322
 [; ;main.c: 322:             } else {
 }
@@ -1139,13 +1124,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "325
 [; ;main.c: 325:                 alerteDefaut("ETAPE 6", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 50C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 45C &U _testActif &U _testVoyants ]
 "326
 [; ;main.c: 326:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"327
-[; ;main.c: 327:                 printf("-> TEST:6:0");
-[e ( _printf :s 51C ]
 "328
 [; ;main.c: 328:             }
 }
@@ -1160,7 +1142,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "338
 [; ;main.c: 338:             displayManager("ETAPE 7", "TEST R1 OFF - R2 ON", "", "");
-[e ( _displayManager (4 , , , :s 52C :s 53C :s 54C :s 55C ]
+[e ( _displayManager (4 , , , :s 46C :s 47C :s 48C :s 49C ]
 "339
 [; ;main.c: 339:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
@@ -1179,7 +1161,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "347
 [; ;main.c: 347:                 printf("-> TEST:7:1");
-[e ( _printf :s 56C ]
+[e ( _printf :s 50C ]
 "349
 [; ;main.c: 349:             } else {
 }
@@ -1191,13 +1173,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "352
 [; ;main.c: 352:                 alerteDefaut("ETAPE 7", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 57C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 51C &U _testActif &U _testVoyants ]
 "353
 [; ;main.c: 353:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"354
-[; ;main.c: 354:                 printf("-> TEST:7:0");
-[e ( _printf :s 58C ]
 "355
 [; ;main.c: 355:             }
 }
@@ -1212,7 +1191,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "364
 [; ;main.c: 364:             displayManager("ETAPE 8", "TEST R2 OFF - R3 ON", "", "");
-[e ( _displayManager (4 , , , :s 59C :s 60C :s 61C :s 62C ]
+[e ( _displayManager (4 , , , :s 52C :s 53C :s 54C :s 55C ]
 "365
 [; ;main.c: 365:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
@@ -1231,7 +1210,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "373
 [; ;main.c: 373:                 printf("-> TEST:8:1");
-[e ( _printf :s 63C ]
+[e ( _printf :s 56C ]
 "375
 [; ;main.c: 375:             } else {
 }
@@ -1243,13 +1222,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "378
 [; ;main.c: 378:                 alerteDefaut("ETAPE 8", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 64C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 57C &U _testActif &U _testVoyants ]
 "379
 [; ;main.c: 379:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"380
-[; ;main.c: 380:                 printf("-> TEST:8:0");
-[e ( _printf :s 65C ]
 "381
 [; ;main.c: 381:             }
 }
@@ -1264,7 +1240,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "390
 [; ;main.c: 390:             displayManager("ETAPE 9", "TEST LED CLAVIER", "CLAVIER ECLAIRE?", "");
-[e ( _displayManager (4 , , , :s 66C :s 67C :s 68C :s 69C ]
+[e ( _displayManager (4 , , , :s 58C :s 59C :s 60C :s 61C ]
 "391
 [; ;main.c: 391:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
@@ -1283,7 +1259,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "400
 [; ;main.c: 400:             int buffer = sprintf(slectureAN1, "%d", lectureAN1);
 [v _buffer `i ~T0 @X0 1 a ]
-[e = _buffer ( _sprintf (1 , (. , &U _slectureAN1 :s 70C _lectureAN1 ]
+[e = _buffer ( _sprintf (1 , (. , &U _slectureAN1 :s 62C _lectureAN1 ]
 "401
 [; ;main.c: 401:             if (lectureAN1 < 800) {
 [e $ ! < _lectureAN1 -> 800 `i 425  ]
@@ -1297,7 +1273,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 427 ]
 "405
 [; ;main.c: 405:                 printf("-> TEST:9:1");
-[e ( _printf :s 71C ]
+[e ( _printf :s 63C ]
 "407
 [; ;main.c: 407:             } else {
 }
@@ -1306,7 +1282,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "409
 [; ;main.c: 409:                 alerteDefaut("ETAPE 9", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 72C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 64C &U _testActif &U _testVoyants ]
 "411
 [; ;main.c: 411:                 do { LATAbits.LATA7 = 0; } while(0);
 [e :U 432 ]
@@ -1317,9 +1293,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "412
 [; ;main.c: 412:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"413
-[; ;main.c: 413:                 printf("-> TEST:9:0");
-[e ( _printf :s 73C ]
 "415
 [; ;main.c: 415:             }
 }
@@ -1337,7 +1310,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "427
 [; ;main.c: 427:             displayManager("ETAPE 10", "TEST LED CLAVIER", "CLAVIER ETEINT?", "");
-[e ( _displayManager (4 , , , :s 74C :s 75C :s 76C :s 77C ]
+[e ( _displayManager (4 , , , :s 65C :s 66C :s 67C :s 68C ]
 "428
 [; ;main.c: 428:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
@@ -1356,7 +1329,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "437
 [; ;main.c: 437:             int buffer = sprintf(slectureAN1, "%d", lectureAN1);
 [v _buffer `i ~T0 @X0 1 a ]
-[e = _buffer ( _sprintf (1 , (. , &U _slectureAN1 :s 78C _lectureAN1 ]
+[e = _buffer ( _sprintf (1 , (. , &U _slectureAN1 :s 69C _lectureAN1 ]
 "439
 [; ;main.c: 439:             if (lectureAN1 < 650) {
 [e $ ! < _lectureAN1 -> 650 `i 434  ]
@@ -1370,7 +1343,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 436 ]
 "443
 [; ;main.c: 443:                 printf("-> TEST:10:1");
-[e ( _printf :s 79C ]
+[e ( _printf :s 70C ]
 "445
 [; ;main.c: 445:             } else {
 }
@@ -1379,10 +1352,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "447
 [; ;main.c: 447:                 alerteDefaut("ETAPE 10", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 80C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 71C &U _testActif &U _testVoyants ]
 "448
 [; ;main.c: 448:                 displayManager("ETAPE 10", "TEST LED CLAVIER", slectureAN1, "");
-[e ( _displayManager (4 , , , :s 81C :s 82C &U _slectureAN1 :s 83C ]
+[e ( _displayManager (4 , , , :s 72C :s 73C &U _slectureAN1 :s 74C ]
 "449
 [; ;main.c: 449:                 do { LATAbits.LATA7 = 1; } while(0);
 [e :U 441 ]
@@ -1393,9 +1366,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "450
 [; ;main.c: 450:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"451
-[; ;main.c: 451:                 printf("-> TEST:10:0");
-[e ( _printf :s 84C ]
 "453
 [; ;main.c: 453:             }
 }
@@ -1413,7 +1383,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "465
 [; ;main.c: 465:             displayManager("ETAPE 12", "TEST SFLASH", "", "");
-[e ( _displayManager (4 , , , :s 85C :s 86C :s 87C :s 88C ]
+[e ( _displayManager (4 , , , :s 75C :s 76C :s 77C :s 78C ]
 "466
 [; ;main.c: 466:             _delay((unsigned long)((500)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
@@ -1447,7 +1417,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "480
 [; ;main.c: 480:                 printf("-> TEST:12:1");
-[e ( _printf :s 89C ]
+[e ( _printf :s 79C ]
 "482
 [; ;main.c: 482:             } else {
 }
@@ -1465,13 +1435,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _pressBP2 (1 -> -> 0 `i `a ]
 "487
 [; ;main.c: 487:                 alerteDefaut("ETAPE 12", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 90C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 80C &U _testActif &U _testVoyants ]
 "488
 [; ;main.c: 488:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"489
-[; ;main.c: 489:                 printf("-> TEST:12:0");
-[e ( _printf :s 91C ]
 "491
 [; ;main.c: 491:             }
 }
@@ -1495,7 +1462,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "506
 [; ;main.c: 506:             displayManager("ETAPE 13", "TEST LEDS CARTE", "LEDS ALLUMEES", "PRESSER OK / NOK");
-[e ( _displayManager (4 , , , :s 92C :s 93C :s 94C :s 95C ]
+[e ( _displayManager (4 , , , :s 81C :s 82C :s 83C :s 84C ]
 "507
 [; ;main.c: 507:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
@@ -1507,7 +1474,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _pressBP1 (1 -> -> 0 `i `a ]
 "511
 [; ;main.c: 511:             printf("ATTENTE VALIDATION LEDS\r\n");
-[e ( _printf :s 96C ]
+[e ( _printf :s 85C ]
 "512
 [; ;main.c: 512:             testVoyants = reponseOperateur(automatique);
 [e = _testVoyants ( _reponseOperateur (1 _automatique ]
@@ -1520,13 +1487,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "516
 [; ;main.c: 516:                 alerteDefaut("ETAPE 13", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 97C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 86C &U _testActif &U _testVoyants ]
 "517
 [; ;main.c: 517:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"518
-[; ;main.c: 518:                 printf("-> TEST:13:0");
-[e ( _printf :s 98C ]
 "524
 [; ;main.c: 524:             } else {
 }
@@ -1534,8 +1498,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 446 ]
 {
 "526
-[; ;main.c: 526:                 printf("-> TEST:13:0");
-[e ( _printf :s 99C ]
+[; ;main.c: 526:                 printf("-> TEST:13:1");
+[e ( _printf :s 87C ]
 "527
 [; ;main.c: 527:             }
 }
@@ -1550,7 +1514,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "535
 [; ;main.c: 535:             displayManager("ETAPE 14", "TEST BP2", "", "");
-[e ( _displayManager (4 , , , :s 100C :s 101C :s 102C :s 103C ]
+[e ( _displayManager (4 , , , :s 88C :s 89C :s 90C :s 91C ]
 "536
 [; ;main.c: 536:             pressBP2(1);
 [e ( _pressBP2 (1 -> -> 1 `i `a ]
@@ -1569,7 +1533,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "543
 [; ;main.c: 543:                 printf("-> TEST:14:1");
-[e ( _printf :s 104C ]
+[e ( _printf :s 92C ]
 "545
 [; ;main.c: 545:             } else {
 }
@@ -1581,13 +1545,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "548
 [; ;main.c: 548:                 alerteDefaut("ETAPE 14", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 105C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 93C &U _testActif &U _testVoyants ]
 "549
 [; ;main.c: 549:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"550
-[; ;main.c: 550:                 printf("-> TEST:14:0");
-[e ( _printf :s 106C ]
 "551
 [; ;main.c: 551:             }
 }
@@ -1602,7 +1563,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "561
 [; ;main.c: 561:             displayManager("ETAPE 15", "TEST HORLOGE", "", "");
-[e ( _displayManager (4 , , , :s 107C :s 108C :s 109C :s 110C ]
+[e ( _displayManager (4 , , , :s 94C :s 95C :s 96C :s 97C ]
 "562
 [; ;main.c: 562:             setHorloge(1);
 [e ( _setHorloge (1 -> -> 1 `i `a ]
@@ -1621,7 +1582,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "569
 [; ;main.c: 569:                 printf("-> TEST:15:1");
-[e ( _printf :s 111C ]
+[e ( _printf :s 98C ]
 "571
 [; ;main.c: 571:             } else {
 }
@@ -1633,13 +1594,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "574
 [; ;main.c: 574:                 alerteDefaut("ETAPE 15", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 112C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 99C &U _testActif &U _testVoyants ]
 "575
 [; ;main.c: 575:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"576
-[; ;main.c: 576:                 printf("-> TEST:15:0");
-[e ( _printf :s 113C ]
 "577
 [; ;main.c: 577:             }
 }
@@ -1654,7 +1612,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "586
 [; ;main.c: 586:             displayManager("ETAPE 16", "TEST P1", "", "");
-[e ( _displayManager (4 , , , :s 114C :s 115C :s 116C :s 117C ]
+[e ( _displayManager (4 , , , :s 100C :s 101C :s 102C :s 103C ]
 "587
 [; ;main.c: 587:             setP1(1);
 [e ( _setP1 (1 -> -> 1 `i `a ]
@@ -1673,7 +1631,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "594
 [; ;main.c: 594:                 printf("-> TEST:16:1");
-[e ( _printf :s 118C ]
+[e ( _printf :s 104C ]
 "596
 [; ;main.c: 596:             } else {
 }
@@ -1682,10 +1640,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "599
 [; ;main.c: 599:                 alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique, &programmation);
-[e ( _alerteDefautEtape16 (4 , , , , :s 119C &U _testActif &U _testVoyants &U _automatique &U _programmation ]
-"600
-[; ;main.c: 600:                 printf("-> TEST:16:0");
-[e ( _printf :s 120C ]
+[e ( _alerteDefautEtape16 (4 , , , , :s 105C &U _testActif &U _testVoyants &U _automatique &U _programmation ]
 "602
 [; ;main.c: 602:             }
 }
@@ -1700,7 +1655,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "612
 [; ;main.c: 612:             displayManager("ETAPE 17", "TEST P2", "", "");
-[e ( _displayManager (4 , , , :s 121C :s 122C :s 123C :s 124C ]
+[e ( _displayManager (4 , , , :s 106C :s 107C :s 108C :s 109C ]
 "613
 [; ;main.c: 613:             setP2(1);
 [e ( _setP2 (1 -> -> 1 `i `a ]
@@ -1719,7 +1674,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "620
 [; ;main.c: 620:                 printf("-> TEST:17:1");
-[e ( _printf :s 125C ]
+[e ( _printf :s 110C ]
 "622
 [; ;main.c: 622:             } else {
 }
@@ -1731,13 +1686,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "625
 [; ;main.c: 625:                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 126C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 111C &U _testActif &U _testVoyants ]
 "626
 [; ;main.c: 626:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
-"627
-[; ;main.c: 627:                 printf("-> TEST:17:0");
-[e ( _printf :s 127C ]
 "628
 [; ;main.c: 628:             }
 }
@@ -1752,13 +1704,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "639
 [; ;main.c: 639:             displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
-[e ( _displayManager (4 , , , :s 128C :s 129C :s 130C :s 131C ]
+[e ( _displayManager (4 , , , :s 112C :s 113C :s 114C :s 115C ]
 "640
 [; ;main.c: 640:             activerTouche();
 [e ( _activerTouche ..  ]
-"641
-[; ;main.c: 641:             printf("ATTENTE VALIDATION BLUETOOTH\r\n");
-[e ( _printf :s 132C ]
 "642
 [; ;main.c: 642:             testVoyants = reponseOperateur(automatique);
 [e = _testVoyants ( _reponseOperateur (1 _automatique ]
@@ -1771,16 +1720,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _testActif -> -> 0 `i `a ]
 "646
 [; ;main.c: 646:                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
-[e ( _alerteDefaut (3 , , :s 133C &U _testActif &U _testVoyants ]
+[e ( _alerteDefaut (3 , , :s 116C &U _testActif &U _testVoyants ]
 "647
 [; ;main.c: 647:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
 "649
 [; ;main.c: 649:                 _delay((unsigned long)((2000)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"650
-[; ;main.c: 650:                 printf("-> TEST:18:0");
-[e ( _printf :s 134C ]
 "651
 [; ;main.c: 651:             } else {
 }
@@ -1788,8 +1734,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 461 ]
 {
 "653
-[; ;main.c: 653:                 printf("-> TEST:18:0");
-[e ( _printf :s 135C ]
+[; ;main.c: 653:                 printf("-> TEST:18:1");
+[e ( _printf :s 117C ]
 "654
 [; ;main.c: 654:             }
 }
@@ -1804,7 +1750,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "662
 [; ;main.c: 662:             displayManager("FIN DE TEST", "CONFORME", "RETIRER CARTE", "ATTENTE ACQUITTEMENT");
-[e ( _displayManager (4 , , , :s 136C :s 137C :s 138C :s 139C ]
+[e ( _displayManager (4 , , , :s 118C :s 119C :s 120C :s 121C ]
 "663
 [; ;main.c: 663:             ledConforme(1);
 [e ( _ledConforme (1 -> -> 1 `i `a ]
@@ -1839,142 +1785,124 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [p f _printf 8388608 ]
 [p f _sprintf 8388736 ]
-[a 70C 37 100 0 ]
-[a 78C 37 100 0 ]
-[a 136C 70 73 78 32 68 69 32 84 69 83 84 0 ]
-[a 139C 65 84 84 69 78 84 69 32 65 67 81 85 73 84 84 69 77 69 78 84 0 ]
-[a 94C 76 69 68 83 32 65 76 76 85 77 69 69 83 0 ]
-[a 67C 84 69 83 84 32 76 69 68 32 67 76 65 86 73 69 82 0 ]
-[a 75C 84 69 83 84 32 76 69 68 32 67 76 65 86 73 69 82 0 ]
-[a 82C 84 69 83 84 32 76 69 68 32 67 76 65 86 73 69 82 0 ]
+[a 62C 37 100 0 ]
+[a 69C 37 100 0 ]
+[a 118C 70 73 78 32 68 69 32 84 69 83 84 0 ]
+[a 121C 65 84 84 69 78 84 69 32 65 67 81 85 73 84 84 69 77 69 78 84 0 ]
+[a 83C 76 69 68 83 32 65 76 76 85 77 69 69 83 0 ]
+[a 59C 84 69 83 84 32 76 69 68 32 67 76 65 86 73 69 82 0 ]
+[a 66C 84 69 83 84 32 76 69 68 32 67 76 65 86 73 69 82 0 ]
+[a 73C 84 69 83 84 32 76 69 68 32 67 76 65 86 73 69 82 0 ]
 [a 10C 84 69 83 84 32 51 32 82 69 76 65 73 83 32 79 78 0 ]
-[a 60C 84 69 83 84 32 82 50 32 79 70 70 32 45 32 82 51 32 79 78 0 ]
-[a 53C 84 69 83 84 32 82 49 32 79 70 70 32 45 32 82 50 32 79 78 0 ]
-[a 46C 84 69 83 84 32 82 49 32 79 78 0 ]
-[a 95C 80 82 69 83 83 69 82 32 79 75 32 47 32 78 79 75 0 ]
-[a 131C 80 82 69 83 83 69 82 32 79 75 32 47 32 78 79 75 0 ]
+[a 53C 84 69 83 84 32 82 50 32 79 70 70 32 45 32 82 51 32 79 78 0 ]
+[a 47C 84 69 83 84 32 82 49 32 79 70 70 32 45 32 82 50 32 79 78 0 ]
+[a 41C 84 69 83 84 32 82 49 32 79 78 0 ]
+[a 84C 80 82 69 83 83 69 82 32 79 75 32 47 32 78 79 75 0 ]
+[a 115C 80 82 69 83 83 69 82 32 79 75 32 47 32 78 79 75 0 ]
 [a 3C 65 80 80 85 89 69 82 32 83 85 82 32 79 75 0 ]
 [a 8C 65 80 80 85 89 69 82 32 83 85 82 32 79 75 0 ]
-[a 130C 86 79 73 82 32 65 80 80 76 73 0 ]
-[a 129C 84 69 83 84 32 66 76 85 69 84 79 79 84 72 0 ]
-[a 86C 84 69 83 84 32 83 70 76 65 83 72 0 ]
-[a 17C 84 69 83 84 32 51 32 82 69 76 65 73 83 32 79 70 70 0 ]
-[a 32C 84 69 83 84 32 76 69 68 32 66 76 69 85 69 0 ]
-[a 39C 84 69 83 84 32 76 69 68 32 86 69 82 84 69 0 ]
-[a 93C 84 69 83 84 32 76 69 68 83 32 67 65 82 84 69 0 ]
-[a 138C 82 69 84 73 82 69 82 32 67 65 82 84 69 0 ]
+[a 114C 86 79 73 82 32 65 80 80 76 73 0 ]
+[a 113C 84 69 83 84 32 66 76 85 69 84 79 79 84 72 0 ]
+[a 76C 84 69 83 84 32 83 70 76 65 83 72 0 ]
+[a 16C 84 69 83 84 32 51 32 82 69 76 65 73 83 32 79 70 70 0 ]
+[a 29C 84 69 83 84 32 76 69 68 32 66 76 69 85 69 0 ]
+[a 35C 84 69 83 84 32 76 69 68 32 86 69 82 84 69 0 ]
+[a 82C 84 69 83 84 32 76 69 68 83 32 67 65 82 84 69 0 ]
+[a 120C 82 69 84 73 82 69 82 32 67 65 82 84 69 0 ]
 [a 2C 80 79 83 73 84 73 79 78 78 69 82 32 67 65 82 84 69 0 ]
-[a 137C 67 79 78 70 79 82 77 69 0 ]
-[a 24C 84 69 83 84 32 76 69 68 32 82 79 85 71 69 0 ]
-[a 108C 84 69 83 84 32 72 79 82 76 79 71 69 0 ]
+[a 119C 67 79 78 70 79 82 77 69 0 ]
+[a 22C 84 69 83 84 32 76 69 68 32 82 79 85 71 69 0 ]
+[a 95C 84 69 83 84 32 72 79 82 76 79 71 69 0 ]
 [a 6C 65 84 84 69 78 84 69 32 68 69 77 65 82 82 65 71 69 0 ]
-[a 76C 67 76 65 86 73 69 82 32 69 84 69 73 78 84 63 0 ]
-[a 68C 67 76 65 86 73 69 82 32 69 67 76 65 73 82 69 63 0 ]
-[a 66C 69 84 65 80 69 32 57 0 ]
-[a 72C 69 84 65 80 69 32 57 0 ]
-[a 128C 69 84 65 80 69 32 49 56 0 ]
-[a 133C 69 84 65 80 69 32 49 56 0 ]
-[a 59C 69 84 65 80 69 32 56 0 ]
-[a 64C 69 84 65 80 69 32 56 0 ]
-[a 121C 69 84 65 80 69 32 49 55 0 ]
-[a 126C 69 84 65 80 69 32 49 55 0 ]
-[a 52C 69 84 65 80 69 32 55 0 ]
-[a 57C 69 84 65 80 69 32 55 0 ]
-[a 114C 69 84 65 80 69 32 49 54 0 ]
-[a 119C 69 84 65 80 69 32 49 54 0 ]
+[a 67C 67 76 65 86 73 69 82 32 69 84 69 73 78 84 63 0 ]
+[a 60C 67 76 65 86 73 69 82 32 69 67 76 65 73 82 69 63 0 ]
+[a 58C 69 84 65 80 69 32 57 0 ]
+[a 64C 69 84 65 80 69 32 57 0 ]
+[a 112C 69 84 65 80 69 32 49 56 0 ]
+[a 116C 69 84 65 80 69 32 49 56 0 ]
+[a 52C 69 84 65 80 69 32 56 0 ]
+[a 57C 69 84 65 80 69 32 56 0 ]
+[a 106C 69 84 65 80 69 32 49 55 0 ]
+[a 111C 69 84 65 80 69 32 49 55 0 ]
+[a 46C 69 84 65 80 69 32 55 0 ]
+[a 51C 69 84 65 80 69 32 55 0 ]
+[a 100C 69 84 65 80 69 32 49 54 0 ]
+[a 105C 69 84 65 80 69 32 49 54 0 ]
+[a 40C 69 84 65 80 69 32 54 0 ]
 [a 45C 69 84 65 80 69 32 54 0 ]
-[a 50C 69 84 65 80 69 32 54 0 ]
-[a 107C 69 84 65 80 69 32 49 53 0 ]
-[a 112C 69 84 65 80 69 32 49 53 0 ]
+[a 94C 69 84 65 80 69 32 49 53 0 ]
+[a 99C 69 84 65 80 69 32 49 53 0 ]
+[a 34C 69 84 65 80 69 32 53 0 ]
 [a 38C 69 84 65 80 69 32 53 0 ]
-[a 42C 69 84 65 80 69 32 53 0 ]
 [a 1C 84 69 83 84 32 67 65 82 84 69 32 68 57 50 53 69 68 52 0 ]
 [a 5C 84 69 83 84 32 67 65 82 84 69 32 68 57 50 53 69 68 52 0 ]
-[a 100C 69 84 65 80 69 32 49 52 0 ]
-[a 105C 69 84 65 80 69 32 49 52 0 ]
-[a 31C 69 84 65 80 69 32 52 0 ]
-[a 35C 69 84 65 80 69 32 52 0 ]
-[a 92C 69 84 65 80 69 32 49 51 0 ]
-[a 97C 69 84 65 80 69 32 49 51 0 ]
-[a 23C 69 84 65 80 69 32 51 0 ]
-[a 28C 69 84 65 80 69 32 51 0 ]
-[a 101C 84 69 83 84 32 66 80 50 0 ]
-[a 122C 84 69 83 84 32 80 50 0 ]
-[a 85C 69 84 65 80 69 32 49 50 0 ]
-[a 90C 69 84 65 80 69 32 49 50 0 ]
-[a 16C 69 84 65 80 69 32 50 0 ]
-[a 21C 69 84 65 80 69 32 50 0 ]
-[a 115C 84 69 83 84 32 80 49 0 ]
-[a 71C 45 62 32 84 69 83 84 58 57 58 49 0 ]
-[a 63C 45 62 32 84 69 83 84 58 56 58 49 0 ]
-[a 56C 45 62 32 84 69 83 84 58 55 58 49 0 ]
-[a 125C 45 62 32 84 69 83 84 58 49 55 58 49 0 ]
-[a 49C 45 62 32 84 69 83 84 58 54 58 49 0 ]
-[a 118C 45 62 32 84 69 83 84 58 49 54 58 49 0 ]
-[a 44C 45 62 32 84 69 83 84 58 53 58 49 0 ]
-[a 111C 45 62 32 84 69 83 84 58 49 53 58 49 0 ]
-[a 37C 45 62 32 84 69 83 84 58 52 58 49 0 ]
-[a 104C 45 62 32 84 69 83 84 58 49 52 58 49 0 ]
-[a 30C 45 62 32 84 69 83 84 58 51 58 49 0 ]
-[a 20C 45 62 32 84 69 83 84 58 50 58 49 0 ]
-[a 89C 45 62 32 84 69 83 84 58 49 50 58 49 0 ]
+[a 88C 69 84 65 80 69 32 49 52 0 ]
+[a 93C 69 84 65 80 69 32 49 52 0 ]
+[a 28C 69 84 65 80 69 32 52 0 ]
+[a 32C 69 84 65 80 69 32 52 0 ]
+[a 81C 69 84 65 80 69 32 49 51 0 ]
+[a 86C 69 84 65 80 69 32 49 51 0 ]
+[a 21C 69 84 65 80 69 32 51 0 ]
+[a 26C 69 84 65 80 69 32 51 0 ]
+[a 89C 84 69 83 84 32 66 80 50 0 ]
+[a 107C 84 69 83 84 32 80 50 0 ]
+[a 75C 69 84 65 80 69 32 49 50 0 ]
+[a 80C 69 84 65 80 69 32 49 50 0 ]
+[a 15C 69 84 65 80 69 32 50 0 ]
+[a 20C 69 84 65 80 69 32 50 0 ]
+[a 101C 84 69 83 84 32 80 49 0 ]
+[a 63C 45 62 32 84 69 83 84 58 57 58 49 0 ]
+[a 56C 45 62 32 84 69 83 84 58 56 58 49 0 ]
+[a 117C 45 62 32 84 69 83 84 58 49 56 58 49 0 ]
+[a 50C 45 62 32 84 69 83 84 58 55 58 49 0 ]
+[a 110C 45 62 32 84 69 83 84 58 49 55 58 49 0 ]
+[a 44C 45 62 32 84 69 83 84 58 54 58 49 0 ]
+[a 104C 45 62 32 84 69 83 84 58 49 54 58 49 0 ]
+[a 39C 45 62 32 84 69 83 84 58 53 58 49 0 ]
+[a 98C 45 62 32 84 69 83 84 58 49 53 58 49 0 ]
+[a 33C 45 62 32 84 69 83 84 58 52 58 49 0 ]
+[a 92C 45 62 32 84 69 83 84 58 49 52 58 49 0 ]
+[a 27C 45 62 32 84 69 83 84 58 51 58 49 0 ]
+[a 87C 45 62 32 84 69 83 84 58 49 51 58 49 0 ]
+[a 19C 45 62 32 84 69 83 84 58 50 58 49 0 ]
+[a 79C 45 62 32 84 69 83 84 58 49 50 58 49 0 ]
 [a 13C 45 62 32 84 69 83 84 58 49 58 49 0 ]
-[a 79C 45 62 32 84 69 83 84 58 49 48 58 49 0 ]
+[a 70C 45 62 32 84 69 83 84 58 49 48 58 49 0 ]
 [a 9C 69 84 65 80 69 32 49 0 ]
 [a 14C 69 84 65 80 69 32 49 0 ]
-[a 73C 45 62 32 84 69 83 84 58 57 58 48 0 ]
-[a 65C 45 62 32 84 69 83 84 58 56 58 48 0 ]
-[a 134C 45 62 32 84 69 83 84 58 49 56 58 48 0 ]
-[a 135C 45 62 32 84 69 83 84 58 49 56 58 48 0 ]
-[a 58C 45 62 32 84 69 83 84 58 55 58 48 0 ]
-[a 127C 45 62 32 84 69 83 84 58 49 55 58 48 0 ]
-[a 51C 45 62 32 84 69 83 84 58 54 58 48 0 ]
-[a 120C 45 62 32 84 69 83 84 58 49 54 58 48 0 ]
-[a 43C 45 62 32 84 69 83 84 58 53 58 48 0 ]
-[a 113C 45 62 32 84 69 83 84 58 49 53 58 48 0 ]
-[a 36C 45 62 32 84 69 83 84 58 52 58 48 0 ]
-[a 106C 45 62 32 84 69 83 84 58 49 52 58 48 0 ]
-[a 29C 45 62 32 84 69 83 84 58 51 58 48 0 ]
-[a 98C 45 62 32 84 69 83 84 58 49 51 58 48 0 ]
-[a 99C 45 62 32 84 69 83 84 58 49 51 58 48 0 ]
-[a 22C 45 62 32 84 69 83 84 58 50 58 48 0 ]
-[a 91C 45 62 32 84 69 83 84 58 49 50 58 48 0 ]
-[a 15C 45 62 32 84 69 83 84 58 49 58 48 0 ]
-[a 84C 45 62 32 84 69 83 84 58 49 48 58 48 0 ]
-[a 74C 69 84 65 80 69 32 49 48 0 ]
-[a 80C 69 84 65 80 69 32 49 48 0 ]
-[a 81C 69 84 65 80 69 32 49 48 0 ]
-[a 27C 65 116 116 101 110 116 101 32 118 97 108 105 100 97 116 105 111 110 32 108 101 100 32 114 111 117 103 101 13 10 0 ]
-[a 96C 65 84 84 69 78 84 69 32 86 65 76 73 68 65 84 73 79 78 32 76 69 68 83 13 10 0 ]
-[a 132C 65 84 84 69 78 84 69 32 86 65 76 73 68 65 84 73 79 78 32 66 76 85 69 84 79 79 84 72 13 10 0 ]
+[a 65C 69 84 65 80 69 32 49 48 0 ]
+[a 71C 69 84 65 80 69 32 49 48 0 ]
+[a 72C 69 84 65 80 69 32 49 48 0 ]
+[a 25C 65 116 116 101 110 116 101 32 118 97 108 105 100 97 116 105 111 110 32 108 101 100 32 114 111 117 103 101 13 10 0 ]
+[a 85C 65 84 84 69 78 84 69 32 86 65 76 73 68 65 84 73 79 78 32 76 69 68 83 13 10 0 ]
 [a 4C 0 ]
 [a 7C 0 ]
 [a 11C 0 ]
 [a 12C 0 ]
+[a 17C 0 ]
 [a 18C 0 ]
-[a 19C 0 ]
-[a 25C 0 ]
-[a 26C 0 ]
-[a 33C 0 ]
-[a 34C 0 ]
-[a 40C 0 ]
-[a 41C 0 ]
-[a 47C 0 ]
+[a 23C 0 ]
+[a 24C 0 ]
+[a 30C 0 ]
+[a 31C 0 ]
+[a 36C 0 ]
+[a 37C 0 ]
+[a 42C 0 ]
+[a 43C 0 ]
 [a 48C 0 ]
+[a 49C 0 ]
 [a 54C 0 ]
 [a 55C 0 ]
 [a 61C 0 ]
-[a 62C 0 ]
-[a 69C 0 ]
+[a 68C 0 ]
+[a 74C 0 ]
 [a 77C 0 ]
-[a 83C 0 ]
-[a 87C 0 ]
-[a 88C 0 ]
+[a 78C 0 ]
+[a 90C 0 ]
+[a 91C 0 ]
+[a 96C 0 ]
+[a 97C 0 ]
 [a 102C 0 ]
 [a 103C 0 ]
+[a 108C 0 ]
 [a 109C 0 ]
-[a 110C 0 ]
-[a 116C 0 ]
-[a 117C 0 ]
-[a 123C 0 ]
-[a 124C 0 ]

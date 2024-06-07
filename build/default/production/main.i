@@ -5935,7 +5935,7 @@ void main(void) {
             pressBP2(0);
             alerteDefaut("ETAPE 1", &testActif, &testVoyants);
             sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-            printf("-> TEST:1:0");
+
         }
 
         _delay((unsigned long)((1000)*(16000000/4000.0)));
@@ -5963,7 +5963,7 @@ void main(void) {
                 testActif = 0;
                 alerteDefaut("ETAPE 2", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:2:0");
+
             }
         }
 
@@ -5986,7 +5986,7 @@ void main(void) {
                     testActif = 0;
                     alerteDefaut("ETAPE 3", &testActif, &testVoyants);
                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                    printf("-> TEST:3:0");
+
                 } else {
 
                     printf("-> TEST:3:1");
@@ -6014,7 +6014,7 @@ void main(void) {
                     testActif = 0;
                     alerteDefaut("ETAPE 4", &testActif, &testVoyants);
                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                    printf("-> TEST:4:0");
+
                 } else {
 
                     printf("-> TEST:4:1");
@@ -6042,7 +6042,7 @@ void main(void) {
                     testActif = 0;
                     alerteDefaut("ETAPE 5", &testActif, &testVoyants);
                     sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                    printf("-> TEST:5:0");
+
 
                 } else {
 
@@ -6076,7 +6076,7 @@ void main(void) {
                 testActif = 0;
                 alerteDefaut("ETAPE 6", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:6:0");
+
             }
 
         }
@@ -6103,7 +6103,7 @@ void main(void) {
                 testActif = 0;
                 alerteDefaut("ETAPE 7", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:7:0");
+
             }
 
         }
@@ -6129,7 +6129,7 @@ void main(void) {
                 testActif = 0;
                 alerteDefaut("ETAPE 8", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:8:0");
+
             }
 
         }
@@ -6162,7 +6162,7 @@ void main(void) {
 
                 do { LATAbits.LATA7 = 0; } while(0);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:9:0");
+
 
             }
 
@@ -6200,7 +6200,7 @@ void main(void) {
                 displayManager("ETAPE 10", "TEST LED CLAVIER", slectureAN1, "");
                 do { LATAbits.LATA7 = 1; } while(0);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:10:0");
+
 
             }
             _delay((unsigned long)((2000)*(16000000/4000.0)));
@@ -6238,7 +6238,7 @@ void main(void) {
                 pressBP2(0);
                 alerteDefaut("ETAPE 12", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:12:0");
+
 
             }
 
@@ -6267,7 +6267,7 @@ void main(void) {
                 testActif = 0;
                 alerteDefaut("ETAPE 13", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:13:0");
+
 
 
 
@@ -6275,7 +6275,7 @@ void main(void) {
 
             } else {
 
-                printf("-> TEST:13:0");
+                printf("-> TEST:13:1");
             }
         }
 
@@ -6299,7 +6299,7 @@ void main(void) {
                 testActif = 0;
                 alerteDefaut("ETAPE 14", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:14:0");
+
             }
 
         }
@@ -6325,7 +6325,7 @@ void main(void) {
                 testActif = 0;
                 alerteDefaut("ETAPE 15", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:15:0");
+
             }
 
         }
@@ -6349,7 +6349,7 @@ void main(void) {
 
 
                 alerteDefautEtape16("ETAPE 16", &testActif, &testVoyants, &automatique, &programmation);
-                printf("-> TEST:16:0");
+
 
             }
 
@@ -6376,7 +6376,7 @@ void main(void) {
                 testActif = 0;
                 alerteDefaut("ETAPE 17", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                printf("-> TEST:17:0");
+
             }
 
         }
@@ -6390,7 +6390,7 @@ void main(void) {
 
             displayManager("ETAPE 18", "TEST BLUETOOTH", "VOIR APPLI", "PRESSER OK / NOK");
             activerTouche();
-            printf("ATTENTE VALIDATION BLUETOOTH\r\n");
+
             testVoyants = reponseOperateur(automatique);
             if (!testVoyants) {
 
@@ -6399,10 +6399,10 @@ void main(void) {
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 
                 _delay((unsigned long)((2000)*(16000000/4000.0)));
-                printf("-> TEST:18:0");
+
             } else {
 
-                printf("-> TEST:18:0");
+                printf("-> TEST:18:1");
             }
         }
 
